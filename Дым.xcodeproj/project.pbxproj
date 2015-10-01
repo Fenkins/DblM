@@ -17,6 +17,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		AA013E441BBDC28900BEE017 /* ru */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = ru; path = ru.lproj/Main.storyboard; sourceTree = "<group>"; };
+		AA013E451BBDC28900BEE017 /* ru */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = ru; path = ru.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		AA543CB61BBDC18D0074329E /* Дым.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Дым.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AA543CBA1BBDC18D0074329E /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		AA543CBC1BBDC18D0074329E /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -25,9 +27,7 @@
 		AA543CC01BBDC18D0074329E /* FirstViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FirstViewController.m; sourceTree = "<group>"; };
 		AA543CC21BBDC18D0074329E /* SecondViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SecondViewController.h; sourceTree = "<group>"; };
 		AA543CC31BBDC18D0074329E /* SecondViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SecondViewController.m; sourceTree = "<group>"; };
-		AA543CC61BBDC18D0074329E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		AA543CC81BBDC18D0074329E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		AA543CCB1BBDC18D0074329E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		AA543CCD1BBDC18D0074329E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -123,8 +123,8 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
-				en,
 				Base,
+				ru,
 			);
 			mainGroup = AA543CAD1BBDC18D0074329E;
 			productRefGroup = AA543CB71BBDC18D0074329E /* Products */;
@@ -167,7 +167,7 @@
 		AA543CC51BBDC18D0074329E /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				AA543CC61BBDC18D0074329E /* Base */,
+				AA013E441BBDC28900BEE017 /* ru */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -175,7 +175,7 @@
 		AA543CCA1BBDC18D0074329E /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				AA543CCB1BBDC18D0074329E /* Base */,
+				AA013E451BBDC28900BEE017 /* ru */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -304,6 +304,7 @@
 				AA543CD21BBDC18D0074329E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
