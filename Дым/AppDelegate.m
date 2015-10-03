@@ -21,7 +21,7 @@
     // We DO want local dataStore
     [Parse enableLocalDatastore];
     // Initializing Parse
-    //[Parse setApplicationId:<#(nonnull NSString *)#> clientKey:<#(nonnull NSString *)#>];
+    
     return YES;
 }
 
