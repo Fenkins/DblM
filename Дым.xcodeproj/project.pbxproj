@@ -13,8 +13,8 @@
 		AA543CC11BBDC18D0074329E /* FirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AA543CC01BBDC18D0074329E /* FirstViewController.m */; };
 		AA543CC41BBDC18D0074329E /* SecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AA543CC31BBDC18D0074329E /* SecondViewController.m */; };
 		AA543CC71BBDC18D0074329E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AA543CC51BBDC18D0074329E /* Main.storyboard */; };
-		AA543CC91BBDC18D0074329E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AA543CC81BBDC18D0074329E /* Assets.xcassets */; };
 		AA543CCC1BBDC18D0074329E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AA543CCA1BBDC18D0074329E /* LaunchScreen.storyboard */; };
+		AADD012C1BC0414A00069573 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AADD012B1BC0414A00069573 /* Assets.xcassets */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,8 +29,8 @@
 		AA543CC01BBDC18D0074329E /* FirstViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FirstViewController.m; sourceTree = "<group>"; };
 		AA543CC21BBDC18D0074329E /* SecondViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SecondViewController.h; sourceTree = "<group>"; };
 		AA543CC31BBDC18D0074329E /* SecondViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SecondViewController.m; sourceTree = "<group>"; };
-		AA543CC81BBDC18D0074329E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AA543CCD1BBDC18D0074329E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AADD012B1BC0414A00069573 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B150DD8103D667C1E22140D3 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		CC43F59338FA4B93D9838915 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -77,6 +77,7 @@
 		AA543CB81BBDC18D0074329E /* Дым */ = {
 			isa = PBXGroup;
 			children = (
+				AADD012B1BC0414A00069573 /* Assets.xcassets */,
 				AA543CBC1BBDC18D0074329E /* AppDelegate.h */,
 				AA543CBD1BBDC18D0074329E /* AppDelegate.m */,
 				AA543CBF1BBDC18D0074329E /* FirstViewController.h */,
@@ -84,7 +85,6 @@
 				AA543CC21BBDC18D0074329E /* SecondViewController.h */,
 				AA543CC31BBDC18D0074329E /* SecondViewController.m */,
 				AA543CC51BBDC18D0074329E /* Main.storyboard */,
-				AA543CC81BBDC18D0074329E /* Assets.xcassets */,
 				AA543CCA1BBDC18D0074329E /* LaunchScreen.storyboard */,
 				AA543CCD1BBDC18D0074329E /* Info.plist */,
 				AA543CB91BBDC18D0074329E /* Supporting Files */,
@@ -168,7 +168,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AA543CCC1BBDC18D0074329E /* LaunchScreen.storyboard in Resources */,
-				AA543CC91BBDC18D0074329E /* Assets.xcassets in Resources */,
+				AADD012C1BC0414A00069573 /* Assets.xcassets in Resources */,
 				AA543CC71BBDC18D0074329E /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
