@@ -56,26 +56,27 @@
     
     static NSString *simpleTableIdentifier = @"menuItemCell";
     
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:simpleTableIdentifier];
+    MenuDetailTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:simpleTableIdentifier];
     if (cell == nil) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:simpleTableIdentifier];
+        cell = [[MenuDetailTableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:simpleTableIdentifier];
     }
     
     
 //  Configure the cell to show title and description
-    cell.textLabel.text = [object objectForKey:@"name"];
-    cell.detailTextLabel.text = [object objectForKey:@"shortDescription"];    
+    cell.nameLabel.text = [object objectForKey:@"name"];
+    cell.shortDescriptionLabel.text = [object objectForKey:@"shortDescription"];
+    cell.priceLabel.text = [[object objectForKey:@"priceRegular"]stringValue];
     
 //  Configure cell to show photo placeholder and thumbnail
 //  Set your placeholder image first
-    cell.imageView.image = [UIImage imageNamed:@"placeholder"];
-    cell.imageView.backgroundColor = [UIColor blackColor];
+    cell.thumbnailImageView.image = [UIImage imageNamed:@"placeholder"];
+    cell.thumbnailImageView.backgroundColor = [UIColor blackColor];
     
     PFFile *thumbnail = [object objectForKey:@"image"];
     [thumbnail getDataInBackgroundWithBlock:^(NSData *data, NSError *error) {
         if (!error) {
             // Now that the data is fetched, update the cell's image property with thumbnail
-            cell.imageView.image = [UIImage imageWithData:data];
+            cell.thumbnailImageView.image = [UIImage imageWithData:data];
         } else {
             // Log details of the failure
             NSLog(@"Error: %@ %@", error, [error userInfo]);

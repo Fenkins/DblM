@@ -9,6 +9,7 @@
 #import <Parse.h>
 #import <ParseUI.h>
 #import <Bolts.h>
+#import "MenuDetailTableViewCell.h"
 
 @interface MenuDetailTableViewController : PFQueryTableViewController
 @property (nonatomic) NSString* menuName;

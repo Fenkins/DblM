@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		18F95C5AA80914EACDB5E5FA /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 37AC6A06FF451A7595A55063 /* libPods.a */; };
+		AA2CBB0F1BC17C44003A8801 /* MenuDetailTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = AA2CBB0E1BC17C44003A8801 /* MenuDetailTableViewCell.m */; settings = {ASSET_TAGS = (); }; };
 		AA4B8B9E1BC05A250029C815 /* MenuDetailTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AA4B8B9D1BC05A250029C815 /* MenuDetailTableViewController.m */; settings = {ASSET_TAGS = (); }; };
 		AA4B8BA11BC05EEC0029C815 /* MenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AA4B8BA01BC05EEC0029C815 /* MenuViewController.m */; settings = {ASSET_TAGS = (); }; };
 		AA543CBB1BBDC18D0074329E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = AA543CBA1BBDC18D0074329E /* main.m */; };
@@ -21,6 +22,8 @@
 		37AC6A06FF451A7595A55063 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		AA013E441BBDC28900BEE017 /* ru */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = ru; path = ru.lproj/Main.storyboard; sourceTree = "<group>"; };
 		AA013E451BBDC28900BEE017 /* ru */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = ru; path = ru.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		AA2CBB0D1BC17C44003A8801 /* MenuDetailTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuDetailTableViewCell.h; sourceTree = "<group>"; };
+		AA2CBB0E1BC17C44003A8801 /* MenuDetailTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuDetailTableViewCell.m; sourceTree = "<group>"; };
 		AA4B8B9C1BC05A250029C815 /* MenuDetailTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuDetailTableViewController.h; sourceTree = "<group>"; };
 		AA4B8B9D1BC05A250029C815 /* MenuDetailTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuDetailTableViewController.m; sourceTree = "<group>"; };
 		AA4B8B9F1BC05EEC0029C815 /* MenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuViewController.h; sourceTree = "<group>"; };
@@ -82,6 +85,8 @@
 				AA4B8BA01BC05EEC0029C815 /* MenuViewController.m */,
 				AA4B8B9C1BC05A250029C815 /* MenuDetailTableViewController.h */,
 				AA4B8B9D1BC05A250029C815 /* MenuDetailTableViewController.m */,
+				AA2CBB0D1BC17C44003A8801 /* MenuDetailTableViewCell.h */,
+				AA2CBB0E1BC17C44003A8801 /* MenuDetailTableViewCell.m */,
 				AA543CBC1BBDC18D0074329E /* AppDelegate.h */,
 				AA543CBD1BBDC18D0074329E /* AppDelegate.m */,
 				AA543CC51BBDC18D0074329E /* Main.storyboard */,
@@ -214,6 +219,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AA4B8B9E1BC05A250029C815 /* MenuDetailTableViewController.m in Sources */,
+				AA2CBB0F1BC17C44003A8801 /* MenuDetailTableViewCell.m in Sources */,
 				AA543CBE1BBDC18D0074329E /* AppDelegate.m in Sources */,
 				AA543CBB1BBDC18D0074329E /* main.m in Sources */,
 				AA4B8BA11BC05EEC0029C815 /* MenuViewController.m in Sources */,
