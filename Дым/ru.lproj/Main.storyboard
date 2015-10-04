@@ -110,6 +110,7 @@
                                     <outlet property="priceLabel" destination="jSc-AE-ydc" id="W5V-3w-e0e"/>
                                     <outlet property="shortDescriptionLabel" destination="ti8-i3-leA" id="1GM-HY-p3N"/>
                                     <outlet property="thumbnailImageView" destination="mdB-jN-reL" id="PQB-Tk-PIh"/>
+                                    <segue destination="Syx-dH-lyv" kind="show" identifier="productSegueID" id="H1H-KH-utZ"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -123,6 +124,46 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BDc-7y-iro" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1632" y="-650"/>
+        </scene>
+        <!--Menu Detail Product View Controller-->
+        <scene sceneID="hVL-RZ-f0m">
+            <objects>
+                <viewController id="Syx-dH-lyv" customClass="MenuDetailProductViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="xCD-NK-6LE"/>
+                        <viewControllerLayoutGuide type="bottom" id="sKz-Ee-yeG"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Ars-qN-j7G">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6We-R0-xsE">
+                                <rect key="frame" x="0.0" y="41" width="240" height="128"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jcg-X3-fgX">
+                                <rect key="frame" x="55" y="340" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NYw-Rf-3gM">
+                                <rect key="frame" x="248" y="107" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <outlet property="productDescription" destination="jcg-X3-fgX" id="JFF-xa-w7E"/>
+                        <outlet property="productImageView" destination="6We-R0-xsE" id="UlJ-E4-UA5"/>
+                        <outlet property="productPriceLabel" destination="NYw-Rf-3gM" id="Mim-nN-msO"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="co4-5K-243" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2330" y="-650"/>
         </scene>
         <!--Контакты-->
         <scene sceneID="GW4-cJ-zQm">
