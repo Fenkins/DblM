@@ -30,7 +30,7 @@
     self = [super initWithCoder:aCoder];
     if (self) {
         // The className to query on
-        self.parseClassName = @"Recipe";
+        self.parseClassName = @"MenuItems";
         
         // The key of the PFObject to display in the label of the default cell style
         self.textKey = @"name";
@@ -47,31 +47,40 @@
 - (PFQuery *)queryForTable
 {
     PFQuery *query = [PFQuery queryWithClassName:self.parseClassName];
+    [query whereKey:@"category" equalTo:self.menuName];
     
     return query;
 }
 
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath object:(PFObject *)object
-{
-    static NSString *simpleTableIdentifier = @"RecipeCell";
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath object:(PFObject *)object {
+    
+    static NSString *simpleTableIdentifier = @"menuItemCell";
     
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:simpleTableIdentifier];
     if (cell == nil) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:simpleTableIdentifier];
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:simpleTableIdentifier];
     }
     
-    // Configure the cell
-    PFFile *thumbnail = [object objectForKey:@"imageFile"];
-    PFImageView *thumbnailImageView = (PFImageView*)[cell viewWithTag:100];
-    thumbnailImageView.image = [UIImage imageNamed:@"placeholder.jpg"];
-    thumbnailImageView.file = thumbnail;
-    [thumbnailImageView loadInBackground];
     
-    UILabel *nameLabel = (UILabel*) [cell viewWithTag:101];
-    nameLabel.text = [object objectForKey:@"name"];
+//  Configure the cell to show title and description
+    cell.textLabel.text = [object objectForKey:@"name"];
+    cell.detailTextLabel.text = [object objectForKey:@"shortDescription"];    
     
-    UILabel *prepTimeLabel = (UILabel*) [cell viewWithTag:102];
-    prepTimeLabel.text = [object objectForKey:@"prepTime"];
+//  Configure cell to show photo placeholder and thumbnail
+//  Set your placeholder image first
+    cell.imageView.image = [UIImage imageNamed:@"placeholder"];
+    cell.imageView.backgroundColor = [UIColor blackColor];
+    
+    PFFile *thumbnail = [object objectForKey:@"image"];
+    [thumbnail getDataInBackgroundWithBlock:^(NSData *data, NSError *error) {
+        if (!error) {
+            // Now that the data is fetched, update the cell's image property with thumbnail
+            cell.imageView.image = [UIImage imageWithData:data];
+        } else {
+            // Log details of the failure
+            NSLog(@"Error: %@ %@", error, [error userInfo]);
+        }
+    }];
     
     return cell;
 }

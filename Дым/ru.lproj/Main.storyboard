@@ -21,21 +21,21 @@
                                 <rect key="frame" x="268" y="96" width="65" height="30"/>
                                 <state key="normal" title="hookah"/>
                                 <connections>
-                                    <segue destination="gF8-28-OA7" kind="showDetail" identifier="hookahSegueID" id="TPR-zs-HAH"/>
+                                    <segue destination="gF8-28-OA7" kind="show" identifier="hookahSegueID" id="TPR-zs-HAH"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7pt-iJ-pEs">
                                 <rect key="frame" x="277" y="387" width="46" height="30"/>
                                 <state key="normal" title="tea"/>
                                 <connections>
-                                    <segue destination="gF8-28-OA7" kind="showDetail" identifier="teaSegueID" id="yJ7-Z9-yI5"/>
+                                    <segue destination="gF8-28-OA7" kind="show" identifier="teaSegueID" id="yJ7-Z9-yI5"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YJH-ej-YLZ">
                                 <rect key="frame" x="264" y="228" width="72" height="30"/>
                                 <state key="normal" title="tobacco"/>
                                 <connections>
-                                    <segue destination="gF8-28-OA7" kind="showDetail" identifier="tobaccoSegueID" id="aT7-P9-lNn"/>
+                                    <segue destination="gF8-28-OA7" kind="show" identifier="tobaccoSegueID" id="aT7-P9-lNn"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -75,7 +75,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="lif-Yy-uO6">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="menuItemCell" id="lif-Yy-uO6">
                                 <rect key="frame" x="0.0" y="28" width="600" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="lif-Yy-uO6" id="yQN-gq-gIb">
@@ -89,6 +89,7 @@
                             <outlet property="delegate" destination="gF8-28-OA7" id="ces-Fc-cjk"/>
                         </connections>
                     </tableView>
+                    <navigationItem key="navigationItem" id="fff-t7-kXj"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BDc-7y-iro" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -140,6 +141,6 @@
         <image name="top_charts" width="30" height="30"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="yJ7-Z9-yI5"/>
+        <segue reference="TPR-zs-HAH"/>
     </inferredMetricsTieBreakers>
 </document>
