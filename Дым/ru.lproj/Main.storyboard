@@ -5,7 +5,7 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
     </dependencies>
     <scenes>
-        <!--Меню-->
+        <!--Menu View Controller-->
         <scene sceneID="hNz-n2-bh7">
             <objects>
                 <viewController id="9pv-A4-QxB" customClass="MenuViewController" sceneMemberID="viewController">
@@ -41,11 +41,11 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Меню" image="top_charts" id="acW-dT-cKf"/>
+                    <navigationItem key="navigationItem" id="EXM-cw-U4m"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W5J-7L-Pyd" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="755" y="-341"/>
+            <point key="canvasLocation" x="1567" y="-341"/>
         </scene>
         <!--Забронировать-->
         <scene sceneID="wg7-f3-ORb">
@@ -76,7 +76,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="menuItemCell" rowHeight="100" id="lif-Yy-uO6" customClass="MenuDetailTableViewCell">
-                                <rect key="frame" x="0.0" y="28" width="600" height="100"/>
+                                <rect key="frame" x="0.0" y="92" width="600" height="100"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="lif-Yy-uO6" id="yQN-gq-gIb">
                                     <rect key="frame" x="0.0" y="0.0" width="600" height="99"/>
@@ -123,7 +123,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BDc-7y-iro" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1632" y="-650"/>
+            <point key="canvasLocation" x="2444" y="-650"/>
         </scene>
         <!--Menu Detail Product View Controller-->
         <scene sceneID="hVL-RZ-f0m">
@@ -163,7 +163,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="co4-5K-243" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2330" y="-650"/>
+            <point key="canvasLocation" x="3142" y="-650"/>
         </scene>
         <!--Контакты-->
         <scene sceneID="GW4-cJ-zQm">
@@ -182,7 +182,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6Pd-fi-aXR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1382" y="0.0"/>
+            <point key="canvasLocation" x="2194" y="0.0"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="yl2-sM-qoP">
@@ -195,7 +195,7 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     </tabBar>
                     <connections>
-                        <segue destination="9pv-A4-QxB" kind="relationship" relationship="viewControllers" id="u7Y-xg-7CH"/>
+                        <segue destination="48x-Wk-mBm" kind="relationship" relationship="viewControllers" id="u7Y-xg-7CH"/>
                         <segue destination="8rJ-Kc-sve" kind="relationship" relationship="viewControllers" id="lzU-1b-eKA"/>
                         <segue destination="C85-Eu-evA" kind="relationship" relationship="viewControllers" id="uHs-2r-8uJ"/>
                     </connections>
@@ -204,6 +204,25 @@
             </objects>
             <point key="canvasLocation" x="0.0" y="0.0"/>
         </scene>
+        <!--Меню-->
+        <scene sceneID="Aqd-5D-mrc">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="48x-Wk-mBm" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Меню" image="top_charts" id="acW-dT-cKf"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="pgz-Sk-tf9">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="9pv-A4-QxB" kind="relationship" relationship="rootViewController" id="cX1-jV-UZG"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="oKX-3P-nkF" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="755" y="-341"/>
+        </scene>
     </scenes>
     <resources>
         <image name="contacts" width="30" height="30"/>
@@ -211,6 +230,6 @@
         <image name="top_charts" width="30" height="30"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="TPR-zs-HAH"/>
+        <segue reference="yJ7-Z9-yI5"/>
     </inferredMetricsTieBreakers>
 </document>

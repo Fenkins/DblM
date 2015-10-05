@@ -19,6 +19,9 @@
     NSLog(@"We are looking at %@ table",self.menuName);
     // Do any additional setup after loading the view.
 }
+-(void)viewWillAppear:(BOOL)animated {
+    [[self navigationController]setNavigationBarHidden:NO];
+}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
