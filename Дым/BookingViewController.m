@@ -9,7 +9,7 @@
 #import "BookingViewController.h"
 
 @interface BookingViewController ()
-
+@property (nonatomic) NSString *phoneNumber;
 @end
 
 static const NSString* kCCStaffMembersClassKey = @"StuffMembers";
@@ -21,26 +21,20 @@ static const NSString* kCCPhoneNumberKey = @"phoneNumber";
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
-    
-    
     PFQuery *query = [PFQuery queryWithClassName:(NSString*)kCCStaffMembersClassKey];
     [query whereKey:@"position" equalTo:kCCStaffPositionKey];
     [query getFirstObjectInBackgroundWithBlock:^(PFObject *object, NSError *error) {
         if (!object) {
+            // DEFAULT PHONE NUMBER / CHANGE UPON RELEASE
+            _phoneNumber = @"9286110200";
             NSLog(@"Error while quering for phone number, %@",error);
         } else {
             // Administrator found
-            NSNumber* phoneNumber = (NSNumber*)[object objectForKey:(NSString*)kCCPhoneNumberKey];
-            NSLog(@"%@",phoneNumber);
+            _phoneNumber = (NSString*)[object objectForKey:(NSString*)kCCPhoneNumberKey];
+            NSLog(@"%@",_phoneNumber);
         }
     }];
-    
 }
-
-
-
-
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
@@ -58,16 +52,14 @@ static const NSString* kCCPhoneNumberKey = @"phoneNumber";
 */
 
 - (IBAction)callUsButton:(UIButton *)sender {
-    NSString *phNo = @"+919876543210";
-    NSURL *phoneUrl = [NSURL URLWithString:[NSString  stringWithFormat:@"telprompt://%@",phNo]];
+    NSURL *phoneUrl = [NSURL URLWithString:[NSString  stringWithFormat:@"telprompt://+7%@",_phoneNumber]];
     
     if ([[UIApplication sharedApplication] canOpenURL:phoneUrl]) {
         [[UIApplication sharedApplication] openURL:phoneUrl];
     } else
     {
-        UIAlertView* calert = [[UIAlertView alloc]initWithTitle:@"Alert" message:@"Call facility is not available!!!" delegate:nil cancelButtonTitle:@"ok" otherButtonTitles:nil, nil];
+        UIAlertView* calert = [[UIAlertView alloc]initWithTitle:@"Ошибка сети" message:@"Номер недоступен" delegate:nil cancelButtonTitle:@"Ок" otherButtonTitles:nil, nil];
         [calert show];
     }
-    
 }
 @end
