@@ -10,6 +10,7 @@
 		18F95C5AA80914EACDB5E5FA /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 37AC6A06FF451A7595A55063 /* libPods.a */; };
 		AA2CBB0F1BC17C44003A8801 /* MenuDetailTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = AA2CBB0E1BC17C44003A8801 /* MenuDetailTableViewCell.m */; settings = {ASSET_TAGS = (); }; };
 		AA2CBB121BC184EB003A8801 /* MenuDetailProductViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AA2CBB111BC184EB003A8801 /* MenuDetailProductViewController.m */; settings = {ASSET_TAGS = (); }; };
+		AA39A2BB1BC581B1009BE4AB /* ContactsSegmentsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AA39A2BA1BC581B1009BE4AB /* ContactsSegmentsViewController.m */; settings = {ASSET_TAGS = (); }; };
 		AA4B8B9E1BC05A250029C815 /* MenuDetailTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AA4B8B9D1BC05A250029C815 /* MenuDetailTableViewController.m */; settings = {ASSET_TAGS = (); }; };
 		AA4B8BA11BC05EEC0029C815 /* MenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AA4B8BA01BC05EEC0029C815 /* MenuViewController.m */; settings = {ASSET_TAGS = (); }; };
 		AA543CBB1BBDC18D0074329E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = AA543CBA1BBDC18D0074329E /* main.m */; };
@@ -28,6 +29,8 @@
 		AA2CBB0E1BC17C44003A8801 /* MenuDetailTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuDetailTableViewCell.m; sourceTree = "<group>"; };
 		AA2CBB101BC184EB003A8801 /* MenuDetailProductViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuDetailProductViewController.h; sourceTree = "<group>"; };
 		AA2CBB111BC184EB003A8801 /* MenuDetailProductViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuDetailProductViewController.m; sourceTree = "<group>"; };
+		AA39A2B91BC581B1009BE4AB /* ContactsSegmentsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContactsSegmentsViewController.h; sourceTree = "<group>"; };
+		AA39A2BA1BC581B1009BE4AB /* ContactsSegmentsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContactsSegmentsViewController.m; sourceTree = "<group>"; };
 		AA4B8B9C1BC05A250029C815 /* MenuDetailTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuDetailTableViewController.h; sourceTree = "<group>"; };
 		AA4B8B9D1BC05A250029C815 /* MenuDetailTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuDetailTableViewController.m; sourceTree = "<group>"; };
 		AA4B8B9F1BC05EEC0029C815 /* MenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuViewController.h; sourceTree = "<group>"; };
@@ -65,6 +68,15 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		AA39A2BC1BC581BC009BE4AB /* Contacts */ = {
+			isa = PBXGroup;
+			children = (
+				AA39A2B91BC581B1009BE4AB /* ContactsSegmentsViewController.h */,
+				AA39A2BA1BC581B1009BE4AB /* ContactsSegmentsViewController.m */,
+			);
+			name = Contacts;
+			sourceTree = "<group>";
+		};
 		AA543CAD1BBDC18D0074329E = {
 			isa = PBXGroup;
 			children = (
@@ -89,6 +101,7 @@
 				AADD012B1BC0414A00069573 /* Assets.xcassets */,
 				AA86D2E41BC2C3110060AF28 /* Menu */,
 				AA86D2E81BC2C57B0060AF28 /* Booking */,
+				AA39A2BC1BC581BC009BE4AB /* Contacts */,
 				AA543CBC1BBDC18D0074329E /* AppDelegate.h */,
 				AA543CBD1BBDC18D0074329E /* AppDelegate.m */,
 				AA543CC51BBDC18D0074329E /* Main.storyboard */,
@@ -251,6 +264,7 @@
 				AA86D2E71BC2C56C0060AF28 /* BookingViewController.m in Sources */,
 				AA543CBE1BBDC18D0074329E /* AppDelegate.m in Sources */,
 				AA543CBB1BBDC18D0074329E /* main.m in Sources */,
+				AA39A2BB1BC581B1009BE4AB /* ContactsSegmentsViewController.m in Sources */,
 				AA4B8BA11BC05EEC0029C815 /* MenuViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
