@@ -13,6 +13,7 @@
 		AA39A2BB1BC581B1009BE4AB /* ContactsSegmentsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AA39A2BA1BC581B1009BE4AB /* ContactsSegmentsViewController.m */; settings = {ASSET_TAGS = (); }; };
 		AA4B8B9E1BC05A250029C815 /* MenuDetailTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AA4B8B9D1BC05A250029C815 /* MenuDetailTableViewController.m */; settings = {ASSET_TAGS = (); }; };
 		AA4B8BA11BC05EEC0029C815 /* MenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AA4B8BA01BC05EEC0029C815 /* MenuViewController.m */; settings = {ASSET_TAGS = (); }; };
+		AA4F2C2E1BC7F19F000FBF8F /* ContactsAboutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AA4F2C2D1BC7F19F000FBF8F /* ContactsAboutViewController.m */; settings = {ASSET_TAGS = (); }; };
 		AA543CBB1BBDC18D0074329E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = AA543CBA1BBDC18D0074329E /* main.m */; };
 		AA543CBE1BBDC18D0074329E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = AA543CBD1BBDC18D0074329E /* AppDelegate.m */; };
 		AA543CC71BBDC18D0074329E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AA543CC51BBDC18D0074329E /* Main.storyboard */; };
@@ -35,6 +36,8 @@
 		AA4B8B9D1BC05A250029C815 /* MenuDetailTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuDetailTableViewController.m; sourceTree = "<group>"; };
 		AA4B8B9F1BC05EEC0029C815 /* MenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuViewController.h; sourceTree = "<group>"; };
 		AA4B8BA01BC05EEC0029C815 /* MenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuViewController.m; sourceTree = "<group>"; };
+		AA4F2C2C1BC7F19F000FBF8F /* ContactsAboutViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContactsAboutViewController.h; sourceTree = "<group>"; };
+		AA4F2C2D1BC7F19F000FBF8F /* ContactsAboutViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContactsAboutViewController.m; sourceTree = "<group>"; };
 		AA543CB61BBDC18D0074329E /* Дым.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Дым.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AA543CBA1BBDC18D0074329E /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		AA543CBC1BBDC18D0074329E /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -73,6 +76,8 @@
 			children = (
 				AA39A2B91BC581B1009BE4AB /* ContactsSegmentsViewController.h */,
 				AA39A2BA1BC581B1009BE4AB /* ContactsSegmentsViewController.m */,
+				AA4F2C2C1BC7F19F000FBF8F /* ContactsAboutViewController.h */,
+				AA4F2C2D1BC7F19F000FBF8F /* ContactsAboutViewController.m */,
 			);
 			name = Contacts;
 			sourceTree = "<group>";
@@ -265,6 +270,7 @@
 				AA543CBE1BBDC18D0074329E /* AppDelegate.m in Sources */,
 				AA543CBB1BBDC18D0074329E /* main.m in Sources */,
 				AA39A2BB1BC581B1009BE4AB /* ContactsSegmentsViewController.m in Sources */,
+				AA4F2C2E1BC7F19F000FBF8F /* ContactsAboutViewController.m in Sources */,
 				AA4B8BA11BC05EEC0029C815 /* MenuViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

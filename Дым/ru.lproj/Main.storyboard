@@ -243,10 +243,10 @@
             </objects>
             <point key="canvasLocation" x="3312" y="997"/>
         </scene>
-        <!--View Controller-->
+        <!--Contacts About View Controller-->
         <scene sceneID="6l5-CV-wGC">
             <objects>
-                <viewController storyboardIdentifier="howto-find" id="zi5-2h-DNr" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="howto-find" id="zi5-2h-DNr" customClass="ContactsAboutViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="DZH-4u-gSS"/>
                         <viewControllerLayoutGuide type="bottom" id="GI2-Xk-yjQ"/>

@@ -9,19 +9,46 @@
 #import "AppDelegate.h"
 #import <Parse.h>
 #import <Bolts.h>
+#import <Reachability.h>
 
-@interface AppDelegate ()
+@interface AppDelegate () {
+    Reachability* internetReachableCheck;
+}
 
 @end
 
 @implementation AppDelegate
+-(void)testInternetConnection {
+    internetReachableCheck = [Reachability reachabilityWithHostName:@"www.google.com"];
+    // If internet is reachable
+    internetReachableCheck.reachableBlock = ^(Reachability*reach) {
+        // Update the UI on the main thread
+        dispatch_async(dispatch_get_main_queue(), ^{
+            NSLog(@"yea");
+        });
+    };
+    // If internet is not reachable
+    internetReachableCheck.unreachableBlock = ^(Reachability*reach) {
+        // Update the UI on the main thread
+        dispatch_async(dispatch_get_main_queue(), ^{
+            NSLog(@"nope");
+        });
+    };
+    [internetReachableCheck startNotifier];
+}
+
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    // Running that method up there to check if we are connected to the internets
+    [self testInternetConnection];
+    
     // We DO want local dataStore
     [Parse enableLocalDatastore];
     // Initializing Parse
+    
     return YES;
+    
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application {
