@@ -8,19 +8,47 @@
 
 #import "ContactsSegmentsViewController.h"
 
-@interface ContactsSegmentsViewController ()
+@interface ContactsSegmentsViewController (){
+    Reachability* internetReachableCheck;
+    BOOL _isNetworkReachable;
+}
 @property (nonatomic) NSArray* viewControllersArray;
 @property (nonatomic) UIViewController* currentViewController;
 @end
 
 @implementation ContactsSegmentsViewController
 
+-(void)testInternetConnection {
+    internetReachableCheck = [Reachability reachabilityWithHostName:@"www.google.com"];
+    // If internet is reachable
+    internetReachableCheck.reachableBlock = ^(Reachability*reach) {
+        // Update the UI on the main thread
+        dispatch_async(dispatch_get_main_queue(), ^{
+            _isNetworkReachable = YES;
+            NSLog(@"yea");
+        });
+    };
+    // If internet is not reachable
+    internetReachableCheck.unreachableBlock = ^(Reachability*reach) {
+        // Update the UI on the main thread
+        dispatch_async(dispatch_get_main_queue(), ^{
+            _isNetworkReachable = NO;
+            NSLog(@"nope");
+        });
+    };
+    [internetReachableCheck startNotifier];
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
 
+    // Running that method up there to check if we are connected to the internets
+    [self testInternetConnection];
+
     // Loading vc1
-    UIViewController *howtoFind = [self.storyboard instantiateViewControllerWithIdentifier:@"howto-find"];
+    ContactsAboutViewController *howtoFind = [self.storyboard instantiateViewControllerWithIdentifier:@"howto-find"];
+    howtoFind.isInternetReachable = YES;
     // Loading vc2
     UIViewController *ourTeam = [self.storyboard instantiateViewControllerWithIdentifier:@"our-team"];
     // Adding controllers to array

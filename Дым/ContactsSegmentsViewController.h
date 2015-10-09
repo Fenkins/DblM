@@ -7,6 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "ContactsAboutViewController.h"
+#import <Reachability.h>
 
 @interface ContactsSegmentsViewController : UIViewController
 

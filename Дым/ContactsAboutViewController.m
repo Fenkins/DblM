@@ -8,10 +8,7 @@
 
 #import "ContactsAboutViewController.h"
 
-@interface ContactsAboutViewController () {
-    BOOL _isInternetReachable;
-}
-
+@interface ContactsAboutViewController ()
 @end
 
 @implementation ContactsAboutViewController
@@ -22,10 +19,11 @@
 }
 
 - (void)viewWillAppear:(BOOL)animated {
+    
 }
 
 - (void)viewDidAppear:(BOOL)animated {
-    NSLog(@"Internets is %hhd",_isInternetReachable);
+    NSLog(@"ABT CONTR INTRNS %hhd",self.isInternetReachable);
 }
 
 
