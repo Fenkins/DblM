@@ -20,6 +20,12 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
 
+    // What day of week it is?
+    NSCalendar *calendar = [[NSCalendar alloc]initWithCalendarIdentifier:NSCalendarIdentifierGregorian];
+    NSDateComponents *dateComps = [calendar components:NSCalendarUnitWeekday fromDate:[NSDate date]];
+    int weekday = [dateComps weekday];
+    NSLog(@"What day is it? %i",weekday);
+    
     // Loading vc1
     ContactsAboutViewController *howtoFind = [self.storyboard instantiateViewControllerWithIdentifier:@"howto-find"];
     howtoFind.isInternetReachable = YES;
