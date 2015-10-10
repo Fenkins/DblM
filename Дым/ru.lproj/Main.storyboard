@@ -268,8 +268,8 @@
                                 <state key="normal" title="instagram"/>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dmG-el-qV7">
-                                <rect key="frame" x="20" y="135" width="272" height="30"/>
-                                <state key="normal" title="Сегодня мы работаем с 14:00 до 2:00"/>
+                                <rect key="frame" x="85" y="135" width="143" height="30"/>
+                                <state key="normal" title="Расписание работы"/>
                                 <connections>
                                     <segue destination="bL8-hi-PJU" kind="show" id="o3G-oV-4uP"/>
                                 </connections>

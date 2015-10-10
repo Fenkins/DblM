@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 #import "ContactsAboutViewController.h"
+#import <Parse.h>
+#import <Bolts.h>
 
 @interface ContactsSegmentsViewController : UIViewController
 

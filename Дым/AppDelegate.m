@@ -15,14 +15,12 @@
 
 @implementation AppDelegate
 
-
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {    
     // We DO want local dataStore
     [Parse enableLocalDatastore];
     // Initializing Parse
-
-    return YES;
     
+    return YES;
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application {

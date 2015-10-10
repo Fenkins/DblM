@@ -23,7 +23,7 @@
 }
 
 - (void)viewDidAppear:(BOOL)animated {
-    NSLog(@"ABT CONTR INTRNS %hhd",self.isInternetReachable);
+    NSLog(@"ABT CONTR INTRNS %@",self.sheduleButtonLine);
 }
 
 

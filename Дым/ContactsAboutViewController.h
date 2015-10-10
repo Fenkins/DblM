@@ -9,5 +9,5 @@
 #import <UIKit/UIKit.h>
 
 @interface ContactsAboutViewController : UIViewController
-@property BOOL isInternetReachable;
+@property (nonatomic) NSString* sheduleButtonLine;
 @end

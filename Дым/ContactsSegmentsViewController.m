@@ -8,10 +8,17 @@
 
 #import "ContactsSegmentsViewController.h"
 
-@interface ContactsSegmentsViewController ()
+@interface ContactsSegmentsViewController (){
+    NSString* _sheduleButtonLinePrep;
+}
 @property (nonatomic) NSArray* viewControllersArray;
 @property (nonatomic) UIViewController* currentViewController;
 @end
+
+static const NSString* kCCSheduleClassName = @"Shedule";
+static const NSString* kCCDayIndex = @"dayIndex";
+static const NSString* kCCStartTime = @"startTime";
+static const NSString* kCCEndTime = @"endTime";
 
 @implementation ContactsSegmentsViewController
 
@@ -23,12 +30,43 @@
     // What day of week it is?
     NSCalendar *calendar = [[NSCalendar alloc]initWithCalendarIdentifier:NSCalendarIdentifierGregorian];
     NSDateComponents *dateComps = [calendar components:NSCalendarUnitWeekday fromDate:[NSDate date]];
-    int weekday = [dateComps weekday];
+    NSInteger weekday = [dateComps weekday];
+    NSNumber* weekdayNBR = [NSNumber numberWithInteger:weekday];
     NSLog(@"What day is it? %i",weekday);
+
+    
+    // Query for shedule
+    PFQuery *query = [PFQuery queryWithClassName:(NSString*)kCCSheduleClassName];
+    [query whereKey:(NSString*)kCCDayIndex equalTo:weekdayNBR];
+    [query getFirstObjectInBackgroundWithBlock:^(PFObject * _Nullable object, NSError * _Nullable error) {
+        if (!object) {
+            NSLog(@"Wow this is bad, but what we could do?");
+        } else {
+            NSLog(@"Work is starting at %@",[object objectForKey:(NSString*)kCCStartTime]);
+            if (!_sheduleButtonLinePrep) {
+                NSLog(@"Beep");
+                _sheduleButtonLinePrep = [[NSString alloc]init];
+                _sheduleButtonLinePrep = [NSString stringWithFormat:@"Сегодня мы работаем с %@ до %@",
+                                          [object objectForKey:(NSString*)kCCStartTime],
+                                          [object objectForKey:(NSString*)kCCEndTime]];
+                NSLog(@"%@",_sheduleButtonLinePrep);
+            } else {
+                NSLog(@"Blurp");
+                _sheduleButtonLinePrep = [NSString stringWithFormat:@"Сегодня мы работаем с %@ до %@",
+                                          [object objectForKey:(NSString*)kCCStartTime],
+                                          [object objectForKey:(NSString*)kCCEndTime]];
+                NSLog(@"%@",_sheduleButtonLinePrep);
+            }
+        }
+    }];
     
     // Loading vc1
     ContactsAboutViewController *howtoFind = [self.storyboard instantiateViewControllerWithIdentifier:@"howto-find"];
-    howtoFind.isInternetReachable = YES;
+    if (_sheduleButtonLinePrep) {
+        howtoFind.sheduleButtonLine = _sheduleButtonLinePrep;
+    } else {
+        NSLog(@"NOOOOOOOOOO!!!!!!!");
+    }
     // Loading vc2
     UIViewController *ourTeam = [self.storyboard instantiateViewControllerWithIdentifier:@"our-team"];
     // Adding controllers to array
