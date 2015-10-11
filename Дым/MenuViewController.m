@@ -17,6 +17,12 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    ContactsSheduleSupplementary *sheduleCheck = [[ContactsSheduleSupplementary alloc]initWithDate:[NSDate date]];
+    if ([sheduleCheck isTodaysSheduleValid]) {
+        // Do fuckin nothing
+    } else {
+        [sheduleCheck queryForShedule:[NSDate date]];
+    }
 }
 
 -(void)viewWillAppear:(BOOL)animated {

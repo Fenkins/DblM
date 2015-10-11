@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "MenuDetailTableViewController.h"
+#import "ContactsSheduleSupplementary.h"
 
 @interface MenuViewController : UIViewController
 

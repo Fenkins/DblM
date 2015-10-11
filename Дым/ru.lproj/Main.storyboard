@@ -268,7 +268,7 @@
                                 <state key="normal" title="instagram"/>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dmG-el-qV7">
-                                <rect key="frame" x="85" y="135" width="143" height="30"/>
+                                <rect key="frame" x="20" y="135" width="290" height="30"/>
                                 <state key="normal" title="Расписание работы"/>
                                 <connections>
                                     <segue destination="bL8-hi-PJU" kind="show" id="o3G-oV-4uP"/>
@@ -287,6 +287,9 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <connections>
+                        <outlet property="sheduleButtonOutlet" destination="dmG-el-qV7" id="Ljz-eE-RFN"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yu4-rI-04w" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

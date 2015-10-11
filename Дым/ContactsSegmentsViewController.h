@@ -8,8 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "ContactsAboutViewController.h"
-#import <Parse.h>
-#import <Bolts.h>
+#import "ContactsSheduleSupplementary.h"
 
 @interface ContactsSegmentsViewController : UIViewController
 

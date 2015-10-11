@@ -9,5 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @interface ContactsAboutViewController : UIViewController
+@property (weak, nonatomic) IBOutlet UIButton *sheduleButtonOutlet;
+
 @property (nonatomic) NSString* sheduleButtonLine;
 @end

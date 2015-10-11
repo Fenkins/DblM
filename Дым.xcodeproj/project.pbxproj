@@ -18,6 +18,7 @@
 		AA543CBE1BBDC18D0074329E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = AA543CBD1BBDC18D0074329E /* AppDelegate.m */; };
 		AA543CC71BBDC18D0074329E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AA543CC51BBDC18D0074329E /* Main.storyboard */; };
 		AA543CCC1BBDC18D0074329E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AA543CCA1BBDC18D0074329E /* LaunchScreen.storyboard */; };
+		AA586A0D1BCA95DF00C3A34F /* ContactsSheduleSupplementary.m in Sources */ = {isa = PBXBuildFile; fileRef = AA586A0C1BCA95DF00C3A34F /* ContactsSheduleSupplementary.m */; settings = {ASSET_TAGS = (); }; };
 		AA86D2E71BC2C56C0060AF28 /* BookingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AA86D2E61BC2C56C0060AF28 /* BookingViewController.m */; settings = {ASSET_TAGS = (); }; };
 		AADD012C1BC0414A00069573 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AADD012B1BC0414A00069573 /* Assets.xcassets */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
@@ -43,6 +44,8 @@
 		AA543CBC1BBDC18D0074329E /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		AA543CBD1BBDC18D0074329E /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		AA543CCD1BBDC18D0074329E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AA586A0B1BCA95DF00C3A34F /* ContactsSheduleSupplementary.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContactsSheduleSupplementary.h; sourceTree = "<group>"; };
+		AA586A0C1BCA95DF00C3A34F /* ContactsSheduleSupplementary.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContactsSheduleSupplementary.m; sourceTree = "<group>"; };
 		AA86D2E51BC2C56C0060AF28 /* BookingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BookingViewController.h; sourceTree = "<group>"; };
 		AA86D2E61BC2C56C0060AF28 /* BookingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BookingViewController.m; sourceTree = "<group>"; };
 		AADD012B1BC0414A00069573 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -74,6 +77,8 @@
 		AA39A2BC1BC581BC009BE4AB /* Contacts */ = {
 			isa = PBXGroup;
 			children = (
+				AA586A0B1BCA95DF00C3A34F /* ContactsSheduleSupplementary.h */,
+				AA586A0C1BCA95DF00C3A34F /* ContactsSheduleSupplementary.m */,
 				AA39A2B91BC581B1009BE4AB /* ContactsSegmentsViewController.h */,
 				AA39A2BA1BC581B1009BE4AB /* ContactsSegmentsViewController.m */,
 				AA4F2C2C1BC7F19F000FBF8F /* ContactsAboutViewController.h */,
@@ -272,6 +277,7 @@
 				AA39A2BB1BC581B1009BE4AB /* ContactsSegmentsViewController.m in Sources */,
 				AA4F2C2E1BC7F19F000FBF8F /* ContactsAboutViewController.m in Sources */,
 				AA4B8BA11BC05EEC0029C815 /* MenuViewController.m in Sources */,
+				AA586A0D1BCA95DF00C3A34F /* ContactsSheduleSupplementary.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
