@@ -28,7 +28,7 @@ static const NSString* kCCnullStringPhrase = @"Сегодня мы работа�
 }
 
 - (void)viewDidAppear:(BOOL)animated {
-    NSLog(@"ABT CONTR INTRNS %@",self.sheduleButtonLine);
+    NSLog(@"sheduleButtonLineReceived: %@",self.sheduleButtonLine);
 }
 
 

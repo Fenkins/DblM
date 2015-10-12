@@ -35,13 +35,19 @@ static const NSString* kCCEndTime = @"endTime";
     PFQuery *query = [PFQuery queryWithClassName:(NSString*)kCCSheduleClassName];
     [query whereKey:(NSString*)kCCDayIndex equalTo:weekdayNBR];
     [query getFirstObjectInBackgroundWithBlock:^(PFObject * _Nullable object, NSError * _Nullable error) {
-        NSString* sheduleString = [NSString stringWithFormat:
-                                   @"Сегодня мы работаем с %@ до %@",
-                                   [object objectForKey:(NSString*)kCCStartTime],
-                                   [object objectForKey:(NSString*)kCCEndTime]];
-        [[NSUserDefaults standardUserDefaults]setObject:sheduleString forKey:@"sheduleForDayNumber"];
-        [[NSUserDefaults standardUserDefaults]setObject:weekdayNBR forKey:@"weekDayNumber"];
-        [[NSUserDefaults standardUserDefaults]synchronize];
+
+        if ([[object objectForKey:(NSString*)kCCStartTime] isKindOfClass:[NSNumber class]] ||
+            [[object objectForKey:(NSString*)kCCEndTime] isKindOfClass:[NSNumber class]]) {
+            NSString* sheduleString = [NSString stringWithFormat:
+                                       @"Сегодня мы работаем с %@ до %@",
+                                       [object objectForKey:(NSString*)kCCStartTime],
+                                       [object objectForKey:(NSString*)kCCEndTime]];
+            [[NSUserDefaults standardUserDefaults]setObject:sheduleString forKey:@"sheduleForDayNumber"];
+            [[NSUserDefaults standardUserDefaults]setObject:weekdayNBR forKey:@"weekDayNumber"];
+            [[NSUserDefaults standardUserDefaults]synchronize];
+        } else {
+            NSLog(@"Not able to retrieve schedule from server and store it in NSUserDefaults");
+        }
     }];
 }
 
