@@ -18,9 +18,8 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     ContactsSheduleSupplementary *sheduleCheck = [[ContactsSheduleSupplementary alloc]initWithDate:[NSDate date]];
-    if ([sheduleCheck isTodaysSheduleValid]) {
-        // Do fuckin nothing
-    } else {
+    // If todays schedule is not valid, go for a new query
+    if (![sheduleCheck isTodaysSheduleValid]) {
         [sheduleCheck queryForShedule:[NSDate date]];
     }
 }

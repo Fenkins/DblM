@@ -232,6 +232,14 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                             </tableViewCell>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="64" id="5VQ-82-dGg">
+                                <rect key="frame" x="0.0" y="72" width="600" height="64"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="5VQ-82-dGg" id="mvc-ve-xVZ">
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="63"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
                         </prototypes>
                         <connections>
                             <outlet property="dataSource" destination="bL8-hi-PJU" id="IUz-k9-evO"/>

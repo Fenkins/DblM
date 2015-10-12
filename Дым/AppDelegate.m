@@ -19,7 +19,7 @@
     // We DO want local dataStore
     [Parse enableLocalDatastore];
     // Initializing Parse
-    
+
     return YES;
 }
 

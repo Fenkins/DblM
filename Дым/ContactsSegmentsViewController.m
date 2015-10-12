@@ -26,6 +26,8 @@
     ContactsSheduleSupplementary *receiveShedule = [[ContactsSheduleSupplementary alloc]initWithDate:[NSDate date]];
     if ([receiveShedule isTodaysSheduleValid]) {
         _sheduleButtonLinePrep = [receiveShedule loadTodaysSheduleQuery];
+    } else {
+        [receiveShedule queryForShedule:[NSDate date]];
     }
     
     // Loading vc1
