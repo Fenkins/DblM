@@ -19,6 +19,8 @@
 		AA543CC71BBDC18D0074329E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AA543CC51BBDC18D0074329E /* Main.storyboard */; };
 		AA543CCC1BBDC18D0074329E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AA543CCA1BBDC18D0074329E /* LaunchScreen.storyboard */; };
 		AA586A0D1BCA95DF00C3A34F /* ContactsSheduleSupplementary.m in Sources */ = {isa = PBXBuildFile; fileRef = AA586A0C1BCA95DF00C3A34F /* ContactsSheduleSupplementary.m */; settings = {ASSET_TAGS = (); }; };
+		AA72F23D1BCC27DD00B6EC82 /* ContactsAboutSheduleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AA72F23C1BCC27DD00B6EC82 /* ContactsAboutSheduleViewController.m */; settings = {ASSET_TAGS = (); }; };
+		AA72F2401BCC2F0400B6EC82 /* ContactsAboutSheduleTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = AA72F23F1BCC2F0400B6EC82 /* ContactsAboutSheduleTableViewCell.m */; settings = {ASSET_TAGS = (); }; };
 		AA86D2E71BC2C56C0060AF28 /* BookingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AA86D2E61BC2C56C0060AF28 /* BookingViewController.m */; settings = {ASSET_TAGS = (); }; };
 		AADD012C1BC0414A00069573 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AADD012B1BC0414A00069573 /* Assets.xcassets */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
@@ -46,6 +48,10 @@
 		AA543CCD1BBDC18D0074329E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AA586A0B1BCA95DF00C3A34F /* ContactsSheduleSupplementary.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContactsSheduleSupplementary.h; sourceTree = "<group>"; };
 		AA586A0C1BCA95DF00C3A34F /* ContactsSheduleSupplementary.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContactsSheduleSupplementary.m; sourceTree = "<group>"; };
+		AA72F23B1BCC27DD00B6EC82 /* ContactsAboutSheduleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContactsAboutSheduleViewController.h; sourceTree = "<group>"; };
+		AA72F23C1BCC27DD00B6EC82 /* ContactsAboutSheduleViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContactsAboutSheduleViewController.m; sourceTree = "<group>"; };
+		AA72F23E1BCC2F0400B6EC82 /* ContactsAboutSheduleTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContactsAboutSheduleTableViewCell.h; sourceTree = "<group>"; };
+		AA72F23F1BCC2F0400B6EC82 /* ContactsAboutSheduleTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContactsAboutSheduleTableViewCell.m; sourceTree = "<group>"; };
 		AA86D2E51BC2C56C0060AF28 /* BookingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BookingViewController.h; sourceTree = "<group>"; };
 		AA86D2E61BC2C56C0060AF28 /* BookingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BookingViewController.m; sourceTree = "<group>"; };
 		AADD012B1BC0414A00069573 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -83,6 +89,10 @@
 				AA39A2BA1BC581B1009BE4AB /* ContactsSegmentsViewController.m */,
 				AA4F2C2C1BC7F19F000FBF8F /* ContactsAboutViewController.h */,
 				AA4F2C2D1BC7F19F000FBF8F /* ContactsAboutViewController.m */,
+				AA72F23B1BCC27DD00B6EC82 /* ContactsAboutSheduleViewController.h */,
+				AA72F23C1BCC27DD00B6EC82 /* ContactsAboutSheduleViewController.m */,
+				AA72F23E1BCC2F0400B6EC82 /* ContactsAboutSheduleTableViewCell.h */,
+				AA72F23F1BCC2F0400B6EC82 /* ContactsAboutSheduleTableViewCell.m */,
 			);
 			name = Contacts;
 			sourceTree = "<group>";
@@ -277,6 +287,8 @@
 				AA39A2BB1BC581B1009BE4AB /* ContactsSegmentsViewController.m in Sources */,
 				AA4F2C2E1BC7F19F000FBF8F /* ContactsAboutViewController.m in Sources */,
 				AA4B8BA11BC05EEC0029C815 /* MenuViewController.m in Sources */,
+				AA72F2401BCC2F0400B6EC82 /* ContactsAboutSheduleTableViewCell.m in Sources */,
+				AA72F23D1BCC27DD00B6EC82 /* ContactsAboutSheduleViewController.m in Sources */,
 				AA586A0D1BCA95DF00C3A34F /* ContactsSheduleSupplementary.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
