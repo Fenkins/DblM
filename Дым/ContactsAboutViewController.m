@@ -7,7 +7,8 @@
 //
 
 #import "ContactsAboutViewController.h"
-
+// PARSE COULD RETURN NULL RESULT(if keys got removed or smth), AND YOUR SUPPLEMENTARY CLASS WILL STORE THAT CRAP IN NSUSERDEFAULTS. FIX IT BEFORE RELEASE!
+static const NSString* kCCnullStringPhrase = @"Сегодня мы работаем с (null) до (null)";
 @interface ContactsAboutViewController ()
 @end
 
@@ -16,9 +17,10 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    if (self.sheduleButtonLine) {
+    if (self.sheduleButtonLine && ![self.sheduleButtonLine isEqualToString:(NSString*)kCCnullStringPhrase]) {
         [self.sheduleButtonOutlet setTitle:self.sheduleButtonLine forState:UIControlStateNormal];
     }
+    NSLog(@"%@",self.sheduleButtonLine);
 }
 
 - (void)viewWillAppear:(BOOL)animated {
