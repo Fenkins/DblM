@@ -20,27 +20,28 @@ static const NSString* kCCEndTime = @"endTime";
     // Do any additional setup after loading the view.
     self.sheduleImage.image = [UIImage imageNamed:@"placeholder"];
     self.sheduleImage.backgroundColor = [UIColor blackColor];
-    
-    PFQuery *query = [PFQuery queryWithClassName:@"Shedule"];
-    [query whereKey:@"dayIndex" equalTo:[NSNumber numberWithInt:0]];
-    [query getFirstObject];
-    [query getFirstObjectInBackgroundWithBlock:^(PFObject *object, NSError *error) {
-        if (!object) {
-            // DEFAULT PHONE NUMBER / CHANGE UPON RELEASE
-            NSLog(@"Error while quering for image, %@",error);
-        } else {
-            PFFile *thumbnail = [object objectForKey:@"image"];
-            [thumbnail getDataInBackgroundWithBlock:^(NSData *data, NSError *error) {
-                if (!error) {
-                    // Now that the data is fetched, update the cell's image property with thumbnail
-                    self.sheduleImage.image = [UIImage imageWithData:data];
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_LOW, 0), ^{
+            PFQuery *query = [PFQuery queryWithClassName:@"Shedule"];
+            [query whereKey:@"dayIndex" equalTo:[NSNumber numberWithInt:0]];
+            [query getFirstObject];
+            [query getFirstObjectInBackgroundWithBlock:^(PFObject *object, NSError *error) {
+                if (!object) {
+                    // DEFAULT PHONE NUMBER / CHANGE UPON RELEASE
+                    NSLog(@"Error while quering for image, %@",error);
                 } else {
-                    // Log details of the failure
-                    NSLog(@"Error: %@ %@", error, [error userInfo]);
+                    PFFile *thumbnail = [object objectForKey:@"image"];
+                    [thumbnail getDataInBackgroundWithBlock:^(NSData *data, NSError *error) {
+                        if (!error) {
+                            // Now that the data is fetched, update the cell's image property with thumbnail
+                            self.sheduleImage.image = [UIImage imageWithData:data];
+                        } else {
+                            // Log details of the failure
+                            NSLog(@"Error: %@ %@", error, [error userInfo]);
+                        }
+                    }];
                 }
             }];
-        }
-    }];
+    });
 }
 
 - (void)didReceiveMemoryWarning {
