@@ -7,9 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <Parse.h>
+#import <Bolts.h>
+#import <MapKit/MapKit.h>
 
 @interface ContactsAboutViewController : UIViewController
 @property (weak, nonatomic) IBOutlet UIButton *sheduleButtonOutlet;
+- (IBAction)openMapButton:(UIButton *)sender;
 
 @property (nonatomic) NSString* sheduleButtonLine;
 @end

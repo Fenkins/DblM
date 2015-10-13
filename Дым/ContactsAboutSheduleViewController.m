@@ -26,7 +26,6 @@ static const NSString* kCCEndTime = @"endTime";
             [query getFirstObject];
             [query getFirstObjectInBackgroundWithBlock:^(PFObject *object, NSError *error) {
                 if (!object) {
-                    // DEFAULT PHONE NUMBER / CHANGE UPON RELEASE
                     NSLog(@"Error while quering for image, %@",error);
                 } else {
                     PFFile *thumbnail = [object objectForKey:@"image"];

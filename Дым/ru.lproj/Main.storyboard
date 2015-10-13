@@ -295,6 +295,9 @@
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8H8-ue-7Xn">
                                 <rect key="frame" x="20" y="233" width="132" height="30"/>
                                 <state key="normal" title="Показать на карте"/>
+                                <connections>
+                                    <action selector="openMapButton:" destination="zi5-2h-DNr" eventType="touchUpInside" id="9qu-yp-nna"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Адрес г. Ростов-на-Дону, Серафимовича 74" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3dN-vR-uHB">
                                 <rect key="frame" x="20" y="204" width="354" height="21"/>
