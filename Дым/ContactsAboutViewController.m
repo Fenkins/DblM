@@ -63,7 +63,9 @@ static const NSString* kCCnullStringPhrase = @"Сегодня мы работа�
         UIAlertAction* yandexMapsButton = [UIAlertAction actionWithTitle:@"Open with Yandex Maps"
                                                                    style:UIAlertActionStyleDefault
                                                                  handler:^(UIAlertAction * action) {
-                                                                     
+                                                                     NSString *string = [NSString stringWithFormat:@"yandexmaps://?pt=%f,%f&z=16",desiredLocation.longitude,desiredLocation.latitude];
+                                                                     NSURL *url = [NSURL URLWithString:[string stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]];
+                                                                     [[UIApplication sharedApplication]openURL:url];
                                                                  }];
         [alert addAction:yandexMapsButton];
     }
@@ -86,14 +88,14 @@ static const NSString* kCCnullStringPhrase = @"Сегодня мы работа�
 }
 
 -(void)queryForLocation {
-    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0), ^{
         PFQuery *query = [PFQuery queryWithClassName:@"Locations"];
         [query whereKey:@"placeName" equalTo:@"Дым Серафимовича"];
         [query getFirstObject];
         [query getFirstObjectInBackgroundWithBlock:^(PFObject *object, NSError *error) {
             if (!object) {
                 NSLog(@"Error while quering for location,using default one %@",error);
-                desiredLocation = CLLocationCoordinate2DMake(47.2197376, 39.7128673);
+                desiredLocation = CLLocationCoordinate2DMake(47.219722, 39.715085);
                 // CHANGE THIS NUMBER UPON RELEASE
                 locationPhoneNumber = [NSNumber numberWithInt:(int)9286110200];
                 locationName = @"Дым Серафимовича";
