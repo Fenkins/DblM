@@ -25,7 +25,8 @@
 }
 
 -(void)viewWillAppear:(BOOL)animated {
-[[self navigationController]setNavigationBarHidden:YES];
+    // TEMPORARY DISABLING FOR DEVELOPMENT, ENABLE UPON RELEASE OF THE FULL VERSION
+    //[[self navigationController]setNavigationBarHidden:YES];
 }
 
 - (void)didReceiveMemoryWarning {

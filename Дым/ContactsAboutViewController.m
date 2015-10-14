@@ -7,8 +7,9 @@
 //
 
 #import "ContactsAboutViewController.h"
-// PARSE COULD RETURN NULL RESULT(if keys got removed or smth), AND YOUR SUPPLEMENTARY CLASS WILL STORE THAT CRAP IN NSUSERDEFAULTS. FIX IT BEFORE RELEASE!
+
 static const NSString* kCCnullStringPhrase = @"Сегодня мы работаем с (null) до (null)";
+
 @interface ContactsAboutViewController ()
 @end
 
@@ -17,11 +18,41 @@ static const NSString* kCCnullStringPhrase = @"Сегодня мы работа�
     NSString* locationName;
     NSString* locationPlaceName;
     NSNumber* locationPhoneNumber;
+    NSString* locationVKLink;
+    NSString* locationInstagramLink;
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    // Query for phone number & vk link & instagram link
+    PFQuery *query = [PFQuery queryWithClassName:@"Locations"];
+    [query whereKey:@"placeName" equalTo:@"Дым Серафимовича"];
+    [query getFirstObjectInBackgroundWithBlock:^(PFObject *object, NSError *error) {
+        if (!object) {
+            // DEFAULT PHONE NUMBER / CHANGE UPON RELEASE
+            locationPhoneNumber = [NSNumber numberWithInt:(int)9286110200];
+            locationVKLink = @"https://vk.com/dym_rostov";
+            locationInstagramLink = @"https://instagram.com/dym_rostov/";
+            NSLog(@"Error while quering for phone number, %@",error);
+        } else {
+            // Object found
+            NSNumber *phoneNumber = [object objectForKey:@"phoneNumber"];
+            if (phoneNumber) {
+                locationPhoneNumber = phoneNumber;
+            }
+            NSString *vkLink = [object objectForKey:@"vkLink"];
+            if (vkLink) {
+                locationVKLink = vkLink;
+            }
+            NSString *instagramLink = [object objectForKey:@"instagramLink"];
+            if (instagramLink) {
+                locationInstagramLink = instagramLink;
+            }
+        }
+    }];
+    
+    // Setting up button name with Schedule
     if (self.sheduleButtonLine && ![self.sheduleButtonLine isEqualToString:(NSString*)kCCnullStringPhrase]) {
         [self.sheduleButtonOutlet setTitle:self.sheduleButtonLine forState:UIControlStateNormal];
     }
@@ -75,7 +106,6 @@ static const NSString* kCCnullStringPhrase = @"Сегодня мы работа�
                                                                 handler:^(UIAlertAction * action) {
                                                                     MKPlacemark* placeMark = [[MKPlacemark alloc]initWithCoordinate:desiredLocation addressDictionary:nil];
                                                                     MKMapItem* mapItem = [[MKMapItem alloc]initWithPlacemark:placeMark];
-                                                                    // DEFAULT PHONE NUMBER / CHANGE UPON RELEASE
                                                                     [mapItem setName:locationName];
                                                                     [mapItem setPhoneNumber:[NSString stringWithFormat:@"+7%@",(NSString*)locationPhoneNumber]];
                                                                     [mapItem openInMapsWithLaunchOptions:nil];
@@ -140,5 +170,33 @@ static const NSString* kCCnullStringPhrase = @"Сегодня мы работа�
 - (IBAction)openMapButton:(UIButton *)sender {
     [self queryForLocation];
     [self presentAlertSheet];
+}
+
+- (IBAction)callButton:(UIButton *)sender {
+    NSURL *phoneUrl = [NSURL URLWithString:[NSString  stringWithFormat:@"telprompt://+7%@",locationPhoneNumber]];
+    
+    if ([[UIApplication sharedApplication] canOpenURL:phoneUrl]) {
+        [[UIApplication sharedApplication] openURL:phoneUrl];
+    } else
+    {
+        UIAlertView* alert = [[UIAlertView alloc]initWithTitle:@"Ошибка сети" message:@"Номер недоступен" delegate:nil cancelButtonTitle:@"Ок" otherButtonTitles:nil, nil];
+        [alert show];
+    }
+}
+
+- (IBAction)vkButton:(UIButton *)sender {
+    if ([[UIApplication sharedApplication]canOpenURL:[NSURL URLWithString:@"vk://"]]) {
+        [[UIApplication sharedApplication]openURL:[NSURL URLWithString:[NSString stringWithFormat:@"vk://%@",locationVKLink]]];
+    } else {
+        [[UIApplication sharedApplication]openURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@",locationVKLink]]];
+    }
+}
+
+- (IBAction)instagramButton:(UIButton *)sender {
+    if ([[UIApplication sharedApplication]canOpenURL:[NSURL URLWithString:@"instagram://"]]) {
+        [[UIApplication sharedApplication]openURL:[NSURL URLWithString:[NSString stringWithFormat:@"instagram://%@",locationInstagramLink]]];
+    } else {
+        [[UIApplication sharedApplication]openURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@",locationInstagramLink]]];
+    }
 }
 @end
