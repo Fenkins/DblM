@@ -94,6 +94,14 @@ static const NSString* kCCimage = @"image";
     return cell;
 }
 
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    NSLog(@"%ld",(long)indexPath.row);
+
+    LocationPlaceTableViewCell* cell = [tableView cellForRowAtIndexPath:indexPath];
+    NSLog(@"%@",cell.locationName.text);
+    [self dismissViewControllerAnimated:true completion:nil/*<#^(void)completion#>*/];
+}
+
 
 /*
 #pragma mark - Navigation
