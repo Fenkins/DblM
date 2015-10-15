@@ -12,6 +12,13 @@ static const NSString* kCCDayIndex = @"dayIndex";
 static const NSString* kCCStartTime = @"startTime";
 static const NSString* kCCEndTime = @"endTime";
 
+@interface ContactsSheduleSupplementary()
+// Using current date to store date received when class is loaded
+@property (nonatomic) NSDate* currentDate;
+// Using supplied date to store date received as an argument
+@property (nonatomic) NSDate* suppliedDate;
+@end
+
 @implementation ContactsSheduleSupplementary
 
 -(id)initWithDate:(NSDate*)date {

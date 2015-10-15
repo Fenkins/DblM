@@ -9,7 +9,7 @@
 #import "LocationChangerTableViewController.h"
 static const NSString* kCCName = @"placeName";
 static const NSString* kCCDescription = @"placeDescription";
-static const NSString* kCCPlaneLocation = @"placePlainLocation";
+static const NSString* kCCPlaсeLocation = @"placePlainLocation";
 static const NSString* kCCGeoPoint = @"geoPoint";
 static const NSString* kCCPhone = @"phoneNumber";
 static const NSString* kCCVkontakte = @"vkLink";
@@ -96,10 +96,14 @@ static const NSString* kCCimage = @"image";
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     NSLog(@"%ld",(long)indexPath.row);
-
+    [self dismissViewControllerAnimated:true completion:^{
     LocationPlaceTableViewCell* cell = [tableView cellForRowAtIndexPath:indexPath];
     NSLog(@"%@",cell.locationName.text);
-    [self dismissViewControllerAnimated:true completion:nil/*<#^(void)completion#>*/];
+    PFObject *object = [self.objects objectAtIndex:indexPath.row];
+    NSLog(@"%@",[object objectForKey:(NSString*)kCCName]);
+//    LocationSupplementary *storeLocation = [[LocationSupplementary alloc]init];
+//    [storeLocation storeLocationDataObject:object];
+    }];
 }
 
 

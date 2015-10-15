@@ -11,10 +11,7 @@
 #import <Bolts.h>
 
 @interface ContactsSheduleSupplementary : NSObject
-// Using current date to store date received when class is loaded
-@property (nonatomic) NSDate* currentDate;
-// Using supplied date to store date received as an argument
-@property (nonatomic) NSDate* suppliedDate;
+
 // Initializing class with date - setting up a suppliedDate and currentDate
 -(id)initWithDate:(NSDate*)date;
 // Triggers the query to db that updates the stored shedule string

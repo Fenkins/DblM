@@ -18,10 +18,15 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     ContactsSheduleSupplementary *sheduleCheck = [[ContactsSheduleSupplementary alloc]initWithDate:[NSDate date]];
+    LocationSupplementary *locationCheck = [[LocationSupplementary alloc]init];
     // If todays schedule is not valid, go for a new query
     if (![sheduleCheck isTodaysSheduleValid]) {
         [sheduleCheck queryForShedule:[NSDate date]];
     }
+// Somehow dis crap is crashing us
+//    if (![locationCheck checkIfLocationObjectExist]) {
+//        [self performSegueWithIdentifier:@"locationChangerSegue" sender:self];
+//    }
 }
 
 -(void)viewWillAppear:(BOOL)animated {
