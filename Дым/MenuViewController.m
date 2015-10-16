@@ -18,7 +18,6 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     ContactsSheduleSupplementary *sheduleCheck = [[ContactsSheduleSupplementary alloc]initWithDate:[NSDate date]];
-    LocationSupplementary *locationCheck = [[LocationSupplementary alloc]init];
     // If todays schedule is not valid, go for a new query
     if (![sheduleCheck isTodaysSheduleValid]) {
         [sheduleCheck queryForShedule:[NSDate date]];
@@ -27,11 +26,26 @@
 //    if (![locationCheck checkIfLocationObjectExist]) {
 //        [self performSegueWithIdentifier:@"locationChangerSegue" sender:self];
 //    }
+    
+    
+    
+    
 }
 
 -(void)viewWillAppear:(BOOL)animated {
     // TEMPORARY DISABLING FOR DEVELOPMENT, ENABLE UPON RELEASE OF THE FULL VERSION
     //[[self navigationController]setNavigationBarHidden:YES];
+    
+    PFQuery *query = [PFQuery queryWithClassName:@"Locations"];
+    [query fromPinWithName:@"StoredLocation"];
+    [query whereKey:@"enabled" equalTo:[NSNumber numberWithBool:YES]];
+    [query getFirstObjectInBackgroundWithBlock:^(PFObject * _Nullable object, NSError * _Nullable error) {
+        if ([[object objectForKey:@"placeName"] isKindOfClass:[NSString class]]) {
+            NSLog(@"Got our stuff %@",[object objectForKey:@"placeDescription"]);
+        } else {
+            NSLog(@"Something goes terribly wrong");
+        }
+    }];
 }
 
 - (void)didReceiveMemoryWarning {

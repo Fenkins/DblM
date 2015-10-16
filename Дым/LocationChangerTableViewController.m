@@ -100,6 +100,7 @@ static const NSString* kCCimage = @"image";
     LocationPlaceTableViewCell* cell = [tableView cellForRowAtIndexPath:indexPath];
     NSLog(@"%@",cell.locationName.text);
     PFObject *object = [self.objects objectAtIndex:indexPath.row];
+        [object pinInBackgroundWithName:@"StoredLocation"];
     NSLog(@"%@",[object objectForKey:(NSString*)kCCName]);
 //    LocationSupplementary *storeLocation = [[LocationSupplementary alloc]init];
 //    [storeLocation storeLocationDataObject:object];
