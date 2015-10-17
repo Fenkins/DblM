@@ -10,7 +10,7 @@
 #import <Parse.h>
 #import <Bolts.h>
 #import "LocationPlaceTableViewCell.h"
-#import "LocationSupplementary.h"
+#import "LocationSupplementaryObject.h"
 
 @interface LocationChangerTableViewController : PFQueryTableViewController
 

@@ -100,8 +100,34 @@ static const NSString* kCCimage = @"image";
     LocationPlaceTableViewCell* cell = [tableView cellForRowAtIndexPath:indexPath];
     NSLog(@"%@",cell.locationName.text);
     PFObject *object = [self.objects objectAtIndex:indexPath.row];
-        [object pinInBackgroundWithName:@"StoredLocation"];
+
     NSLog(@"%@",[object objectForKey:(NSString*)kCCName]);
+    
+    // Extracting and preparing geopoint to pass it to object
+    PFGeoPoint* geoPoint = [object objectForKey:(NSString*)kCCGeoPoint];
+    CLLocationCoordinate2D location = CLLocationCoordinate2DMake(geoPoint.latitude, geoPoint.longitude);
+    // Preparing image data
+    PFFile *image = [object objectForKey:(NSString*)kCCimage];
+    NSData* imageData = [image getData];
+        
+        
+//  Creating custom class object to put our PFObject there for further archive/unarchive procedures
+    
+    LocationSupplementaryObject *suppObject = [[LocationSupplementaryObject alloc]
+                                               initWithLocationName:[object objectForKey:(NSString*)kCCName]
+                                               description:[object objectForKey:(NSString*)kCCDescription]
+                                               planeLocation:[object objectForKey:(NSString*)kCCPlaсeLocation]
+                                               geoPoint:location
+                                               phoneNumber:[object objectForKey:(NSString*)kCCPhone]
+                                               vkontakteLink:[object objectForKey:(NSString*)kCCVkontakte]
+                                               instagramLink:[object objectForKey:(NSString*)kCCInstagram]
+                                               imageFile:imageData
+                                               isEnabledOption:[object objectForKey:(NSString*)kCCisEnabled]];
+    
+//  Writing the object to defaults
+    [suppObject saveCustomObject:suppObject key:@"StoredLocation"];
+        
+        
 //    LocationSupplementary *storeLocation = [[LocationSupplementary alloc]init];
 //    [storeLocation storeLocationDataObject:object];
     }];

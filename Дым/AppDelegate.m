@@ -16,10 +16,12 @@
 @implementation AppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {    
-    // We DO want local dataStore
+    // We DO want local dataStore DONOT disable this
     [Parse enableLocalDatastore];
     // Initializing Parse
-
+    [Parse setApplicationId:@"DmjOIUI2H7dbCae0SdEG1A4cROv6rbwrUMzDL70A"
+     
+                  clientKey:@"lEebPSyFYcB4AgvfV8RnYZmoEx2mwtFZjbWHPySH"];
     return YES;
 }
 

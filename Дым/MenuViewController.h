@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "MenuDetailTableViewController.h"
 #import "ContactsSheduleSupplementary.h"
-#import "LocationSupplementary.h"
+#import "LocationSupplementaryObject.h"
 
 @interface MenuViewController : UIViewController
 

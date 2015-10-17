@@ -22,4 +22,21 @@ static const NSString* kCClocationObjectName;
     [[NSUserDefaults standardUserDefaults]synchronize];
         });
 }
+
+- (void)saveCustomObject:(LocationSupplementaryObject *)object key:(NSString *)key {
+    NSData *encodedObject = [NSKeyedArchiver archivedDataWithRootObject:object];
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    [defaults setObject:encodedObject forKey:key];
+    [defaults synchronize];
+    
+}
+
+- (LocationSupplementaryObject *)loadCustomObjectWithKey:(NSString *)key {
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    NSData *encodedObject = [defaults objectForKey:key];
+    LocationSupplementaryObject *object = [NSKeyedUnarchiver unarchiveObjectWithData:encodedObject];
+    return object;
+}
+
+
 @end
