@@ -125,11 +125,16 @@ static const NSString* kCCimage = @"image";
                                                isEnabledOption:[object objectForKey:(NSString*)kCCisEnabled]];
     
 //  Writing the object to defaults
+    
     [suppObject saveCustomObject:suppObject key:@"StoredLocation"];
-        
-        
-//    LocationSupplementary *storeLocation = [[LocationSupplementary alloc]init];
-//    [storeLocation storeLocationDataObject:object];
+    NSLog(@"%@ Successfully packed",suppObject.storedPlaceName);
+    NSLog(@"%@ is our stored object",[[NSUserDefaults standardUserDefaults]objectForKey:@"StoredLocation"]);
+    
+    LocationSupplementaryObject *newObject = [[LocationSupplementaryObject alloc]loadCustomObjectWithKey:@"StoredLocation"];
+    NSLog(@"Re initializing from defaults %@",newObject.storedPlaceName);
+
+//  LocationSupplementary *storeLocation = [[LocationSupplementary alloc]init];
+//  [storeLocation storeLocationDataObject:object];
     }];
 }
 

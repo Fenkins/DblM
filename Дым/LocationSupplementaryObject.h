@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 #import <MapKit/MapKit.h>
 
-@interface LocationSupplementaryObject : NSObject
+@interface LocationSupplementaryObject : NSObject <NSCoding>
 
 @property (nonatomic) NSString* storedPlaceName;
 @property (nonatomic) NSString* storedPlaceDescription;
