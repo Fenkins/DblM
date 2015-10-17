@@ -22,8 +22,11 @@
 		AA72F23D1BCC27DD00B6EC82 /* ContactsAboutSheduleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AA72F23C1BCC27DD00B6EC82 /* ContactsAboutSheduleViewController.m */; settings = {ASSET_TAGS = (); }; };
 		AA72F2401BCC2F0400B6EC82 /* ContactsAboutSheduleTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = AA72F23F1BCC2F0400B6EC82 /* ContactsAboutSheduleTableViewCell.m */; settings = {ASSET_TAGS = (); }; };
 		AA86D2E71BC2C56C0060AF28 /* BookingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AA86D2E61BC2C56C0060AF28 /* BookingViewController.m */; settings = {ASSET_TAGS = (); }; };
+		AA911A851BD13D1F005ECC6F /* LocationSupplementary.m in Sources */ = {isa = PBXBuildFile; fileRef = AA911A841BD13D1F005ECC6F /* LocationSupplementary.m */; settings = {ASSET_TAGS = (); }; };
 		AADD012C1BC0414A00069573 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AADD012B1BC0414A00069573 /* Assets.xcassets */; settings = {ASSET_TAGS = (); }; };
 		AAFD71721BCD9A5C00100E79 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AAFD71711BCD9A5C00100E79 /* MapKit.framework */; };
+		AAFD71751BCEB97C00100E79 /* LocationChangerTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AAFD71741BCEB97C00100E79 /* LocationChangerTableViewController.m */; settings = {ASSET_TAGS = (); }; };
+		AAFD71791BCEC0A900100E79 /* LocationPlaceTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = AAFD71781BCEC0A900100E79 /* LocationPlaceTableViewCell.m */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -55,8 +58,14 @@
 		AA72F23F1BCC2F0400B6EC82 /* ContactsAboutSheduleTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContactsAboutSheduleTableViewCell.m; sourceTree = "<group>"; };
 		AA86D2E51BC2C56C0060AF28 /* BookingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BookingViewController.h; sourceTree = "<group>"; };
 		AA86D2E61BC2C56C0060AF28 /* BookingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BookingViewController.m; sourceTree = "<group>"; };
+		AA911A831BD13D1F005ECC6F /* LocationSupplementary.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocationSupplementary.h; sourceTree = "<group>"; };
+		AA911A841BD13D1F005ECC6F /* LocationSupplementary.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocationSupplementary.m; sourceTree = "<group>"; };
 		AADD012B1BC0414A00069573 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AAFD71711BCD9A5C00100E79 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		AAFD71731BCEB97C00100E79 /* LocationChangerTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocationChangerTableViewController.h; sourceTree = "<group>"; };
+		AAFD71741BCEB97C00100E79 /* LocationChangerTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocationChangerTableViewController.m; sourceTree = "<group>"; };
+		AAFD71771BCEC0A900100E79 /* LocationPlaceTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocationPlaceTableViewCell.h; sourceTree = "<group>"; };
+		AAFD71781BCEC0A900100E79 /* LocationPlaceTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocationPlaceTableViewCell.m; sourceTree = "<group>"; };
 		B150DD8103D667C1E22140D3 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		CC43F59338FA4B93D9838915 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -122,6 +131,7 @@
 			isa = PBXGroup;
 			children = (
 				AADD012B1BC0414A00069573 /* Assets.xcassets */,
+				AAFD71761BCEB98800100E79 /* Location */,
 				AA86D2E41BC2C3110060AF28 /* Menu */,
 				AA86D2E81BC2C57B0060AF28 /* Booking */,
 				AA39A2BC1BC581BC009BE4AB /* Contacts */,
@@ -165,6 +175,19 @@
 				AA86D2E61BC2C56C0060AF28 /* BookingViewController.m */,
 			);
 			name = Booking;
+			sourceTree = "<group>";
+		};
+		AAFD71761BCEB98800100E79 /* Location */ = {
+			isa = PBXGroup;
+			children = (
+				AA911A831BD13D1F005ECC6F /* LocationSupplementary.h */,
+				AA911A841BD13D1F005ECC6F /* LocationSupplementary.m */,
+				AAFD71731BCEB97C00100E79 /* LocationChangerTableViewController.h */,
+				AAFD71741BCEB97C00100E79 /* LocationChangerTableViewController.m */,
+				AAFD71771BCEC0A900100E79 /* LocationPlaceTableViewCell.h */,
+				AAFD71781BCEC0A900100E79 /* LocationPlaceTableViewCell.m */,
+			);
+			name = Location;
 			sourceTree = "<group>";
 		};
 		C0729CB50A82479B58BDC0C6 /* Frameworks */ = {
@@ -283,12 +306,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				AA2CBB121BC184EB003A8801 /* MenuDetailProductViewController.m in Sources */,
+				AA911A851BD13D1F005ECC6F /* LocationSupplementary.m in Sources */,
 				AA4B8B9E1BC05A250029C815 /* MenuDetailTableViewController.m in Sources */,
 				AA2CBB0F1BC17C44003A8801 /* MenuDetailTableViewCell.m in Sources */,
 				AA86D2E71BC2C56C0060AF28 /* BookingViewController.m in Sources */,
 				AA543CBE1BBDC18D0074329E /* AppDelegate.m in Sources */,
 				AA543CBB1BBDC18D0074329E /* main.m in Sources */,
 				AA39A2BB1BC581B1009BE4AB /* ContactsSegmentsViewController.m in Sources */,
+				AAFD71751BCEB97C00100E79 /* LocationChangerTableViewController.m in Sources */,
+				AAFD71791BCEC0A900100E79 /* LocationPlaceTableViewCell.m in Sources */,
 				AA4F2C2E1BC7F19F000FBF8F /* ContactsAboutViewController.m in Sources */,
 				AA4B8BA11BC05EEC0029C815 /* MenuViewController.m in Sources */,
 				AA72F2401BCC2F0400B6EC82 /* ContactsAboutSheduleTableViewCell.m in Sources */,
