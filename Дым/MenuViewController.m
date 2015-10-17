@@ -38,7 +38,7 @@
     // TEMPORARY DISABLING FOR DEVELOPMENT, ENABLE UPON RELEASE OF THE FULL VERSION
     //[[self navigationController]setNavigationBarHidden:YES];
 
-    LocationSupplementaryObject *suppObject = [[LocationSupplementaryObject alloc]loadCustomObjectWithKey:@"StoredLocation"];
+    LocationSupplementary *suppObject = [[LocationSupplementary alloc]loadCustomObjectWithKey:@"StoredLocation"];
 
     if (suppObject) {
         NSLog(@"We got our name %@",suppObject.storedPlaceName);

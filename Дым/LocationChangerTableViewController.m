@@ -113,7 +113,7 @@ static const NSString* kCCimage = @"image";
         
 //  Creating custom class object to put our PFObject there for further archive/unarchive procedures
     
-    LocationSupplementaryObject *suppObject = [[LocationSupplementaryObject alloc]
+    LocationSupplementary *suppObject = [[LocationSupplementary alloc]
                                                initWithLocationName:[object objectForKey:(NSString*)kCCName]
                                                description:[object objectForKey:(NSString*)kCCDescription]
                                                planeLocation:[object objectForKey:(NSString*)kCCPlaсeLocation]
@@ -130,7 +130,7 @@ static const NSString* kCCimage = @"image";
     NSLog(@"%@ Successfully packed",suppObject.storedPlaceName);
     NSLog(@"%@ is our stored object",[[NSUserDefaults standardUserDefaults]objectForKey:@"StoredLocation"]);
     
-    LocationSupplementaryObject *newObject = [[LocationSupplementaryObject alloc]loadCustomObjectWithKey:@"StoredLocation"];
+    LocationSupplementary *newObject = [[LocationSupplementary alloc]loadCustomObjectWithKey:@"StoredLocation"];
     NSLog(@"Re initializing from defaults %@",newObject.storedPlaceName);
 
 //  LocationSupplementary *storeLocation = [[LocationSupplementary alloc]init];
