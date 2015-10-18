@@ -19,13 +19,16 @@
     // Do any additional setup after loading the view.
     // Checkin for schedule
     ContactsSheduleSupplementary *sheduleCheck = [[ContactsSheduleSupplementary alloc]initWithDate:[NSDate date]];
+    // Checkin for location
+    LocationSupplementary *locationCheck = [[LocationSupplementary alloc]init];
+    
     // If todays schedule is not valid, go for a new query
-    if (![sheduleCheck isTodaysSheduleValid]) {
+    // We dont want to queue for schedule until location is set, otherwise we will have a bad time
+    // So we are going to update schedule line IF today's schedule is invalid and location IS set
+    if (![sheduleCheck isTodaysSheduleValid] && [locationCheck isLocationSet]) {
         [sheduleCheck queryForShedule:[NSDate date]];
     }
     
-    // Checkin for location
-    LocationSupplementary *locationCheck = [[LocationSupplementary alloc]init];
     double delayInSeconds = 0.5;
     dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, delayInSeconds * NSEC_PER_SEC);
     dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
