@@ -23,37 +23,16 @@
     if (![sheduleCheck isTodaysSheduleValid]) {
         [sheduleCheck queryForShedule:[NSDate date]];
     }
-    
-// Somehow dis crap is crashing us
-//    if (![locationCheck checkIfLocationObjectExist]) {
-//        [self performSegueWithIdentifier:@"locationChangerSegue" sender:self];
-//    }
-    
-    
-    
-    
 }
 
 -(void)viewWillAppear:(BOOL)animated {
     // TEMPORARY DISABLING FOR DEVELOPMENT, ENABLE UPON RELEASE OF THE FULL VERSION
     //[[self navigationController]setNavigationBarHidden:YES];
 
-    LocationSupplementary *suppObject = [[LocationSupplementary alloc]loadCustomObjectWithKey:@"StoredLocation"];
-
+    LocationSupplementary *suppObject = [LocationSupplementary loadCustomObjectWithKey:@"StoredLocation"];
     if (suppObject) {
         NSLog(@"We got our name %@",suppObject.storedPlaceName);
     }
-// Trying the query for pinned object
-//    PFQuery *query = [PFQuery queryWithClassName:@"Locations"];
-//    [query fromPinWithName:@"StoredLocation"];
-//    [query whereKey:@"enabled" equalTo:[NSNumber numberWithBool:YES]];
-//    [query getFirstObjectInBackgroundWithBlock:^(PFObject * _Nullable object, NSError * _Nullable error) {
-//        if ([[object objectForKey:@"placeName"] isKindOfClass:[NSString class]]) {
-//            NSLog(@"Got our stuff %@",[object objectForKey:@"placeDescription"]);
-//        } else {
-//            NSLog(@"Something goes terribly wrong");
-//        }
-//    }];
 }
 
 - (void)didReceiveMemoryWarning {

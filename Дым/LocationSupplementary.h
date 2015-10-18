@@ -34,6 +34,6 @@
 -(void)encodeWithCoder:(NSCoder*)encoder;
 -(id)initWithCoder:(NSCoder*)decoder;
 
-- (void)saveCustomObject:(LocationSupplementary *)object key:(NSString *)key;
-- (LocationSupplementary *)loadCustomObjectWithKey:(NSString *)key;
++ (void)saveCustomObject:(LocationSupplementary *)object key:(NSString *)key;
++ (LocationSupplementary *)loadCustomObjectWithKey:(NSString *)key;
 @end

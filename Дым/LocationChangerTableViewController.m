@@ -97,11 +97,7 @@ static const NSString* kCCimage = @"image";
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     NSLog(@"%ld",(long)indexPath.row);
     [self dismissViewControllerAnimated:true completion:^{
-    LocationPlaceTableViewCell* cell = [tableView cellForRowAtIndexPath:indexPath];
-    NSLog(@"%@",cell.locationName.text);
     PFObject *object = [self.objects objectAtIndex:indexPath.row];
-
-    NSLog(@"%@",[object objectForKey:(NSString*)kCCName]);
     
     // Extracting and preparing geopoint to pass it to object
     PFGeoPoint* geoPoint = [object objectForKey:(NSString*)kCCGeoPoint];
@@ -126,15 +122,7 @@ static const NSString* kCCimage = @"image";
     
 //  Writing the object to defaults
     
-    [suppObject saveCustomObject:suppObject key:@"StoredLocation"];
-    NSLog(@"%@ Successfully packed",suppObject.storedPlaceName);
-    NSLog(@"%@ is our stored object",[[NSUserDefaults standardUserDefaults]objectForKey:@"StoredLocation"]);
-    
-    LocationSupplementary *newObject = [[LocationSupplementary alloc]loadCustomObjectWithKey:@"StoredLocation"];
-    NSLog(@"Re initializing from defaults %@",newObject.storedPlaceName);
-
-//  LocationSupplementary *storeLocation = [[LocationSupplementary alloc]init];
-//  [storeLocation storeLocationDataObject:object];
+    [LocationSupplementary saveCustomObject:suppObject key:@"StoredLocation"];
     }];
 }
 

@@ -7,17 +7,6 @@
 //
 
 #import "LocationSupplementary.h"
-@interface LocationSupplementary()
-//@property NSString* storedPlaceName;
-//@property NSString* storedPlaceDescription;
-//@property NSString* storedPlacePlaneLocation;
-//@property CLLocationCoordinate2D storedGeoPoint;
-//@property NSNumber* storedPhoneNumber;
-//@property NSString* storedVkontakteLink;
-//@property NSString* storedInstagramLink;
-//@property NSData* storedImageFile;
-//@property NSNumber* storedIsEnabledOption;
-@end
 
 @implementation LocationSupplementary
 
@@ -70,7 +59,7 @@
     return self;
 }
 
-- (void)saveCustomObject:(LocationSupplementary *)object key:(NSString *)key {
++ (void)saveCustomObject:(LocationSupplementary *)object key:(NSString *)key {
     NSData *encodedObject = [NSKeyedArchiver archivedDataWithRootObject:object];
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     [defaults setObject:encodedObject forKey:key];
@@ -78,7 +67,7 @@
     
 }
 
-- (LocationSupplementary *)loadCustomObjectWithKey:(NSString *)key {
++ (LocationSupplementary *)loadCustomObjectWithKey:(NSString *)key {
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     NSData *encodedObject = [defaults objectForKey:key];
     LocationSupplementary *object = [NSKeyedUnarchiver unarchiveObjectWithData:encodedObject];

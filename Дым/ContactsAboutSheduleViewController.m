@@ -70,6 +70,7 @@ static const NSString* kCCEndTime = @"endTime";
 - (PFQuery *)queryForTable
 {
     PFQuery *query = [PFQuery queryWithClassName:self.parseClassName];
+    [query whereKey:@"dayIndex" notEqualTo:[NSNumber numberWithInt:0]];
     return query;
 }
 
@@ -83,11 +84,14 @@ static const NSString* kCCEndTime = @"endTime";
         cell = [[ContactsAboutSheduleTableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:sheduleCellID];
     }
     
-    //  Configure the cell to show title and description
-    cell.sheduleDayText.text = [NSString stringWithFormat:@"В %@ мы работаем с %@ до %@",
-                                [object objectForKey:@"dayOfWeek"],
-                                [object objectForKey:(NSString*)kCCStartTime],
-                                [object objectForKey:(NSString*)kCCEndTime]];
+    if ([[object objectForKey:(NSString*)kCCStartTime]isKindOfClass:[NSNumber class]] &&
+        [[object objectForKey:(NSString*)kCCEndTime]isKindOfClass:[NSNumber class]]) {
+        //  Configure the cell to show title and description
+        cell.sheduleDayText.text = [NSString stringWithFormat:@"В %@ мы работаем с %@ до %@",
+                                    [object objectForKey:@"dayOfWeek"],
+                                    [object objectForKey:(NSString*)kCCStartTime],
+                                    [object objectForKey:(NSString*)kCCEndTime]];
+    }
     return cell;
 }
 
