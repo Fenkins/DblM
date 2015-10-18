@@ -9,6 +9,7 @@
 #import <Foundation/Foundation.h>
 #import <Parse.h>
 #import <Bolts.h>
+#import "LocationSupplementary.h"
 
 @interface ContactsSheduleSupplementary : NSObject
 

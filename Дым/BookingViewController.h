@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #import <Parse.h>
 #import <Bolts.h>
+#import "LocationSupplementary.h"
 
 @interface BookingViewController : UIViewController
 - (IBAction)callUsButton:(UIButton *)sender;

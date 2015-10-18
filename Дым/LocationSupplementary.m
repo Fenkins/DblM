@@ -74,4 +74,16 @@
     return object;
 }
 
+-(void)locationHasBeenSet {
+    [[NSUserDefaults standardUserDefaults] setValue:[NSNumber numberWithInt:1] forKey:@"isLocationSet"];
+}
+
+-(BOOL)isLocationSet {
+    if ([[[NSUserDefaults standardUserDefaults]objectForKey:@"isLocationSet"] isEqualToValue:[NSNumber numberWithInt:1]]) {
+        return YES;
+    } else {
+        return NO;
+    }
+}
+
 @end

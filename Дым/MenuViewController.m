@@ -23,6 +23,19 @@
     if (![sheduleCheck isTodaysSheduleValid]) {
         [sheduleCheck queryForShedule:[NSDate date]];
     }
+    
+    // Checkin for location
+    LocationSupplementary *locationCheck = [[LocationSupplementary alloc]init];
+    double delayInSeconds = 0.5;
+    dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, delayInSeconds * NSEC_PER_SEC);
+    dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
+        
+        //code to be executed on the main queue after delay
+        
+        if (![locationCheck isLocationSet]) {
+            [self performSegueWithIdentifier:@"locationChangerSegue" sender:self];
+        }
+    });
 }
 
 -(void)viewWillAppear:(BOOL)animated {

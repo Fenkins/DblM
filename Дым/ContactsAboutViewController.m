@@ -27,7 +27,9 @@ static const NSString* kCCnullStringPhrase = @"Сегодня мы работа�
     // Do any additional setup after loading the view.
     // Query for phone number & vk link & instagram link
     PFQuery *query = [PFQuery queryWithClassName:@"Locations"];
-    [query whereKey:@"placeName" equalTo:@"Дым Серафимовича"];
+    // Adding location check to query
+    LocationSupplementary *suppObject = [LocationSupplementary loadCustomObjectWithKey:@"StoredLocation"];
+    [query whereKey:@"placeName" equalTo:suppObject.storedPlaceName];
     [query getFirstObjectInBackgroundWithBlock:^(PFObject *object, NSError *error) {
         if (!object) {
             // DEFAULT PHONE NUMBER / CHANGE UPON RELEASE
@@ -120,7 +122,9 @@ static const NSString* kCCnullStringPhrase = @"Сегодня мы работа�
 -(void)queryForLocation {
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0), ^{
         PFQuery *query = [PFQuery queryWithClassName:@"Locations"];
-        [query whereKey:@"placeName" equalTo:@"Дым Серафимовича"];
+        // Adding location check to query
+        LocationSupplementary *suppObject = [LocationSupplementary loadCustomObjectWithKey:@"StoredLocation"];
+        [query whereKey:@"placeName" equalTo:suppObject.storedPlaceName];
         [query getFirstObject];
         [query getFirstObjectInBackgroundWithBlock:^(PFObject *object, NSError *error) {
             if (!object) {

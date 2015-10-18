@@ -23,6 +23,11 @@ static const NSString* kCCPhoneNumberKey = @"phoneNumber";
     [super viewDidLoad];
     PFQuery *query = [PFQuery queryWithClassName:(NSString*)kCCStaffMembersClassKey];
     [query whereKey:@"position" equalTo:kCCStaffPositionKey];
+    
+    // Adding location check to query
+    LocationSupplementary *suppObject = [LocationSupplementary loadCustomObjectWithKey:@"StoredLocation"];
+    [query whereKey:@"availibleAt" equalTo:suppObject.storedPlaceName];
+
     [query getFirstObjectInBackgroundWithBlock:^(PFObject *object, NSError *error) {
         if (!object) {
             // DEFAULT PHONE NUMBER / CHANGE UPON RELEASE

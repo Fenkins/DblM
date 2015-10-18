@@ -10,6 +10,7 @@
 #import <Parse.h>
 #import <Bolts.h>
 #import <MapKit/MapKit.h>
+#import "LocationSupplementary.h"
 
 @interface ContactsAboutViewController : UIViewController
 @property (weak, nonatomic) IBOutlet UIButton *sheduleButtonOutlet;

@@ -34,6 +34,11 @@
 -(void)encodeWithCoder:(NSCoder*)encoder;
 -(id)initWithCoder:(NSCoder*)decoder;
 
+// Checking if location key is set or not
+-(BOOL)isLocationSet;
+// Setting up location key
+-(void)locationHasBeenSet;
+
 + (void)saveCustomObject:(LocationSupplementary *)object key:(NSString *)key;
 + (LocationSupplementary *)loadCustomObjectWithKey:(NSString *)key;
 @end

@@ -21,7 +21,11 @@ static const NSString* kCCEndTime = @"endTime";
     self.sheduleImage.image = [UIImage imageNamed:@"placeholder"];
     self.sheduleImage.backgroundColor = [UIColor blackColor];
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_LOW, 0), ^{
-            PFQuery *query = [PFQuery queryWithClassName:@"Shedule"];
+            PFQuery *query = [PFQuery queryWithClassName:@"Schedule"];
+            // Adding location check to query
+            LocationSupplementary *suppObject = [LocationSupplementary loadCustomObjectWithKey:@"StoredLocation"];
+            [query whereKey:@"availibleAt" equalTo:suppObject.storedPlaceName];
+
             [query whereKey:@"dayIndex" equalTo:[NSNumber numberWithInt:0]];
             [query getFirstObject];
             [query getFirstObjectInBackgroundWithBlock:^(PFObject *object, NSError *error) {
@@ -53,7 +57,7 @@ static const NSString* kCCEndTime = @"endTime";
     self = [super initWithCoder:aCoder];
     if (self) {
         // The className to query on
-        self.parseClassName = @"Shedule";
+        self.parseClassName = @"Schedule";
         
         // The key of the PFObject to display in the label of the default cell style
         self.textKey = @"dayIndex";
@@ -71,6 +75,10 @@ static const NSString* kCCEndTime = @"endTime";
 {
     PFQuery *query = [PFQuery queryWithClassName:self.parseClassName];
     [query whereKey:@"dayIndex" notEqualTo:[NSNumber numberWithInt:0]];
+    // Adding location check to query
+    LocationSupplementary *suppObject = [LocationSupplementary loadCustomObjectWithKey:@"StoredLocation"];
+    [query whereKey:@"availibleAt" equalTo:suppObject.storedPlaceName];
+
     return query;
 }
 

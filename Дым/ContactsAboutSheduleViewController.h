@@ -10,6 +10,7 @@
 #import <ParseUI.h>
 #import <Bolts.h>
 #import "ContactsAboutSheduleTableViewCell.h"
+#import "LocationSupplementary.h"
 
 @interface ContactsAboutSheduleViewController : PFQueryTableViewController
 @property (weak, nonatomic) IBOutlet UIImageView *sheduleImage;

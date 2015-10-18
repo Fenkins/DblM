@@ -123,6 +123,7 @@ static const NSString* kCCimage = @"image";
 //  Writing the object to defaults
     
     [LocationSupplementary saveCustomObject:suppObject key:@"StoredLocation"];
+    [suppObject locationHasBeenSet];
     }];
 }
 

@@ -11,6 +11,7 @@
 #import <Bolts.h>
 #import "MenuDetailTableViewCell.h"
 #import "MenuDetailProductViewController.h"
+#import "LocationSupplementary.h"
 
 @interface MenuDetailTableViewController : PFQueryTableViewController
 @property (nonatomic) NSString* menuName;

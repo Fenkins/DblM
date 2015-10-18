@@ -7,7 +7,7 @@
 //
 
 #import "ContactsSheduleSupplementary.h"
-static const NSString* kCCSheduleClassName = @"Shedule";
+static const NSString* kCCSheduleClassName = @"Schedule";
 static const NSString* kCCDayIndex = @"dayIndex";
 static const NSString* kCCStartTime = @"startTime";
 static const NSString* kCCEndTime = @"endTime";
@@ -41,6 +41,10 @@ static const NSString* kCCEndTime = @"endTime";
     // Query for shedule
     PFQuery *query = [PFQuery queryWithClassName:(NSString*)kCCSheduleClassName];
     [query whereKey:(NSString*)kCCDayIndex equalTo:weekdayNBR];
+    // Adding location check to query
+    LocationSupplementary *suppObject = [LocationSupplementary loadCustomObjectWithKey:@"StoredLocation"];
+    [query whereKey:@"availibleAt" equalTo:suppObject.storedPlaceName];
+
     [query getFirstObjectInBackgroundWithBlock:^(PFObject * _Nullable object, NSError * _Nullable error) {
 
         if ([[object objectForKey:(NSString*)kCCStartTime] isKindOfClass:[NSNumber class]] ||
