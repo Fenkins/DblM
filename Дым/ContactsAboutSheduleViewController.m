@@ -24,8 +24,9 @@ static const NSString* kCCEndTime = @"endTime";
             PFQuery *query = [PFQuery queryWithClassName:@"Schedule"];
             // Adding location check to query
             LocationSupplementary *suppObject = [LocationSupplementary loadCustomObjectWithKey:@"StoredLocation"];
-            [query whereKey:@"availibleAt" equalTo:suppObject.storedPlaceName];
-
+            if ([suppObject isLocationSet]) {
+                [query whereKey:@"availibleAt" equalTo:suppObject.storedPlaceName];
+            }
             [query whereKey:@"dayIndex" equalTo:[NSNumber numberWithInt:0]];
             [query getFirstObject];
             [query getFirstObjectInBackgroundWithBlock:^(PFObject *object, NSError *error) {
@@ -77,8 +78,9 @@ static const NSString* kCCEndTime = @"endTime";
     [query whereKey:@"dayIndex" notEqualTo:[NSNumber numberWithInt:0]];
     // Adding location check to query
     LocationSupplementary *suppObject = [LocationSupplementary loadCustomObjectWithKey:@"StoredLocation"];
-    [query whereKey:@"availibleAt" equalTo:suppObject.storedPlaceName];
-
+    if ([suppObject isLocationSet]) {
+        [query whereKey:@"availibleAt" equalTo:suppObject.storedPlaceName];
+    }
     return query;
 }
 

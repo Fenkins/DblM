@@ -36,14 +36,16 @@ static const NSString* kCCEndTime = @"endTime";
     NSDateComponents *dateComps = [calendar components:NSCalendarUnitWeekday fromDate:date];
     NSInteger weekday = [dateComps weekday];
     NSNumber* weekdayNBR = [NSNumber numberWithInteger:weekday];
-    NSLog(@"What day is it? %i",weekday);
+    NSLog(@"What day is it? %li",(long)weekday);
     
     // Query for shedule
     PFQuery *query = [PFQuery queryWithClassName:(NSString*)kCCSheduleClassName];
     [query whereKey:(NSString*)kCCDayIndex equalTo:weekdayNBR];
     // Adding location check to query
     LocationSupplementary *suppObject = [LocationSupplementary loadCustomObjectWithKey:@"StoredLocation"];
-    [query whereKey:@"availibleAt" equalTo:suppObject.storedPlaceName];
+    if ([suppObject isLocationSet]) {
+        [query whereKey:@"availibleAt" equalTo:suppObject.storedPlaceName];
+    }
 
     [query getFirstObjectInBackgroundWithBlock:^(PFObject * _Nullable object, NSError * _Nullable error) {
 

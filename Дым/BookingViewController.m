@@ -26,8 +26,9 @@ static const NSString* kCCPhoneNumberKey = @"phoneNumber";
     
     // Adding location check to query
     LocationSupplementary *suppObject = [LocationSupplementary loadCustomObjectWithKey:@"StoredLocation"];
-    [query whereKey:@"availibleAt" equalTo:suppObject.storedPlaceName];
-
+    if ([suppObject isLocationSet]) {
+        [query whereKey:@"availibleAt" equalTo:suppObject.storedPlaceName];
+    }
     [query getFirstObjectInBackgroundWithBlock:^(PFObject *object, NSError *error) {
         if (!object) {
             // DEFAULT PHONE NUMBER / CHANGE UPON RELEASE

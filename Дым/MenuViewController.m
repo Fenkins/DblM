@@ -17,8 +17,10 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    
     // Checkin for schedule
     ContactsSheduleSupplementary *sheduleCheck = [[ContactsSheduleSupplementary alloc]initWithDate:[NSDate date]];
+    
     // Checkin for location
     LocationSupplementary *locationCheck = [[LocationSupplementary alloc]init];
     

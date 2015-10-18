@@ -53,8 +53,9 @@
     [query whereKey:@"category" equalTo:self.menuName];
     // Adding location check to query
     LocationSupplementary *suppObject = [LocationSupplementary loadCustomObjectWithKey:@"StoredLocation"];
-    [query whereKey:@"availibleAt" equalTo:suppObject.storedPlaceName];    
-    
+    if ([suppObject isLocationSet]) {
+        [query whereKey:@"availibleAt" equalTo:suppObject.storedPlaceName];    
+    }
     return query;
 }
 

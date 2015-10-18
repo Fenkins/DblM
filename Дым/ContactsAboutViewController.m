@@ -29,7 +29,9 @@ static const NSString* kCCnullStringPhrase = @"Сегодня мы работа�
     PFQuery *query = [PFQuery queryWithClassName:@"Locations"];
     // Adding location check to query
     LocationSupplementary *suppObject = [LocationSupplementary loadCustomObjectWithKey:@"StoredLocation"];
-    [query whereKey:@"placeName" equalTo:suppObject.storedPlaceName];
+    if ([suppObject isLocationSet]) {
+        [query whereKey:@"placeName" equalTo:suppObject.storedPlaceName];
+    }
     [query getFirstObjectInBackgroundWithBlock:^(PFObject *object, NSError *error) {
         if (!object) {
             // DEFAULT PHONE NUMBER / CHANGE UPON RELEASE
@@ -124,7 +126,9 @@ static const NSString* kCCnullStringPhrase = @"Сегодня мы работа�
         PFQuery *query = [PFQuery queryWithClassName:@"Locations"];
         // Adding location check to query
         LocationSupplementary *suppObject = [LocationSupplementary loadCustomObjectWithKey:@"StoredLocation"];
-        [query whereKey:@"placeName" equalTo:suppObject.storedPlaceName];
+        if ([suppObject isLocationSet]) {
+            [query whereKey:@"placeName" equalTo:suppObject.storedPlaceName];
+        }
         [query getFirstObject];
         [query getFirstObjectInBackgroundWithBlock:^(PFObject *object, NSError *error) {
             if (!object) {
