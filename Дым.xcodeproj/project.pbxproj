@@ -11,6 +11,7 @@
 		AA2CBB0F1BC17C44003A8801 /* MenuDetailTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = AA2CBB0E1BC17C44003A8801 /* MenuDetailTableViewCell.m */; settings = {ASSET_TAGS = (); }; };
 		AA2CBB121BC184EB003A8801 /* MenuDetailProductViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AA2CBB111BC184EB003A8801 /* MenuDetailProductViewController.m */; settings = {ASSET_TAGS = (); }; };
 		AA39A2BB1BC581B1009BE4AB /* ContactsSegmentsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AA39A2BA1BC581B1009BE4AB /* ContactsSegmentsViewController.m */; settings = {ASSET_TAGS = (); }; };
+		AA3C97081BD515D100BE99AF /* OurTeamCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AA3C97071BD515D100BE99AF /* OurTeamCollectionViewController.m */; settings = {ASSET_TAGS = (); }; };
 		AA4B8B9E1BC05A250029C815 /* MenuDetailTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AA4B8B9D1BC05A250029C815 /* MenuDetailTableViewController.m */; settings = {ASSET_TAGS = (); }; };
 		AA4B8BA11BC05EEC0029C815 /* MenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AA4B8BA01BC05EEC0029C815 /* MenuViewController.m */; settings = {ASSET_TAGS = (); }; };
 		AA4F2C2E1BC7F19F000FBF8F /* ContactsAboutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AA4F2C2D1BC7F19F000FBF8F /* ContactsAboutViewController.m */; settings = {ASSET_TAGS = (); }; };
@@ -24,7 +25,6 @@
 		AA86D2E71BC2C56C0060AF28 /* BookingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AA86D2E61BC2C56C0060AF28 /* BookingViewController.m */; settings = {ASSET_TAGS = (); }; };
 		AA911A851BD13D1F005ECC6F /* LocationSupplementary.m in Sources */ = {isa = PBXBuildFile; fileRef = AA911A841BD13D1F005ECC6F /* LocationSupplementary.m */; settings = {ASSET_TAGS = (); }; };
 		AAB78AD11BD3FFE800104B0C /* OurTeamCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = AAB78AD01BD3FFE800104B0C /* OurTeamCollectionViewCell.m */; settings = {ASSET_TAGS = (); }; };
-		AAB78AD41BD4000700104B0C /* OurTeamCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AAB78AD31BD4000700104B0C /* OurTeamCollectionViewController.m */; settings = {ASSET_TAGS = (); }; };
 		AADD012C1BC0414A00069573 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AADD012B1BC0414A00069573 /* Assets.xcassets */; settings = {ASSET_TAGS = (); }; };
 		AAFD71721BCD9A5C00100E79 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AAFD71711BCD9A5C00100E79 /* MapKit.framework */; };
 		AAFD71751BCEB97C00100E79 /* LocationChangerTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AAFD71741BCEB97C00100E79 /* LocationChangerTableViewController.m */; settings = {ASSET_TAGS = (); }; };
@@ -41,6 +41,8 @@
 		AA2CBB111BC184EB003A8801 /* MenuDetailProductViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuDetailProductViewController.m; sourceTree = "<group>"; };
 		AA39A2B91BC581B1009BE4AB /* ContactsSegmentsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContactsSegmentsViewController.h; sourceTree = "<group>"; };
 		AA39A2BA1BC581B1009BE4AB /* ContactsSegmentsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContactsSegmentsViewController.m; sourceTree = "<group>"; };
+		AA3C97061BD515D100BE99AF /* OurTeamCollectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OurTeamCollectionViewController.h; sourceTree = "<group>"; };
+		AA3C97071BD515D100BE99AF /* OurTeamCollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OurTeamCollectionViewController.m; sourceTree = "<group>"; };
 		AA4B8B9C1BC05A250029C815 /* MenuDetailTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuDetailTableViewController.h; sourceTree = "<group>"; };
 		AA4B8B9D1BC05A250029C815 /* MenuDetailTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuDetailTableViewController.m; sourceTree = "<group>"; };
 		AA4B8B9F1BC05EEC0029C815 /* MenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuViewController.h; sourceTree = "<group>"; };
@@ -64,8 +66,6 @@
 		AA911A841BD13D1F005ECC6F /* LocationSupplementary.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocationSupplementary.m; sourceTree = "<group>"; };
 		AAB78ACF1BD3FFE800104B0C /* OurTeamCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OurTeamCollectionViewCell.h; sourceTree = "<group>"; };
 		AAB78AD01BD3FFE800104B0C /* OurTeamCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OurTeamCollectionViewCell.m; sourceTree = "<group>"; };
-		AAB78AD21BD4000700104B0C /* OurTeamCollectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OurTeamCollectionViewController.h; sourceTree = "<group>"; };
-		AAB78AD31BD4000700104B0C /* OurTeamCollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OurTeamCollectionViewController.m; sourceTree = "<group>"; };
 		AADD012B1BC0414A00069573 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AAFD71711BCD9A5C00100E79 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		AAFD71731BCEB97C00100E79 /* LocationChangerTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocationChangerTableViewController.h; sourceTree = "<group>"; };
@@ -113,8 +113,8 @@
 				AA72F23F1BCC2F0400B6EC82 /* ContactsAboutSheduleTableViewCell.m */,
 				AAB78ACF1BD3FFE800104B0C /* OurTeamCollectionViewCell.h */,
 				AAB78AD01BD3FFE800104B0C /* OurTeamCollectionViewCell.m */,
-				AAB78AD21BD4000700104B0C /* OurTeamCollectionViewController.h */,
-				AAB78AD31BD4000700104B0C /* OurTeamCollectionViewController.m */,
+				AA3C97061BD515D100BE99AF /* OurTeamCollectionViewController.h */,
+				AA3C97071BD515D100BE99AF /* OurTeamCollectionViewController.m */,
 			);
 			name = Contacts;
 			sourceTree = "<group>";
@@ -315,7 +315,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AAB78AD41BD4000700104B0C /* OurTeamCollectionViewController.m in Sources */,
+				AA3C97081BD515D100BE99AF /* OurTeamCollectionViewController.m in Sources */,
 				AA2CBB121BC184EB003A8801 /* MenuDetailProductViewController.m in Sources */,
 				AA911A851BD13D1F005ECC6F /* LocationSupplementary.m in Sources */,
 				AA4B8B9E1BC05A250029C815 /* MenuDetailTableViewController.m in Sources */,

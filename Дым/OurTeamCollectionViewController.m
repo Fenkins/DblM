@@ -2,7 +2,7 @@
 //  OurTeamCollectionViewController.m
 //  Дым
 //
-//  Created by Fenkins on 18/10/15.
+//  Created by Fenkins on 19/10/15.
 //  Copyright © 2015 Fenkins. All rights reserved.
 //
 
@@ -14,23 +14,74 @@
 
 @implementation OurTeamCollectionViewController
 
-static NSString * const reuseIdentifier = @"Cell";
-
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-    // Uncomment the following line to preserve selection between presentations
-    // self.clearsSelectionOnViewWillAppear = NO;
-    
-    // Register cell classes
-    [self.collectionView registerClass:[UICollectionViewCell class] forCellWithReuseIdentifier:reuseIdentifier];
-    
     // Do any additional setup after loading the view.
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (id)initWithCoder:(NSCoder *)aCoder
+{
+    self = [super initWithCoder:aCoder];
+    if (self) {
+        // The className to query on
+        self.parseClassName = @"StuffMembers";
+        
+        // Whether the built-in pull-to-refresh is enabled
+        self.pullToRefreshEnabled = NO;
+        
+        // Whether the built-in pagination is enabled
+        self.paginationEnabled = NO;
+    }
+    return self;
+}
+
+- (PFQuery *)queryForCollection
+{
+    PFQuery *query = [PFQuery queryWithClassName:self.parseClassName];
+    // Adding location check to query
+    LocationSupplementary *suppObject = [LocationSupplementary loadCustomObjectWithKey:@"StoredLocation"];
+    if ([suppObject isLocationSet]) {
+        [query whereKey:@"availibleAt" equalTo:suppObject.storedPlaceName];
+    }
+    return query;
+}
+
+-(PFCollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath object:(PFObject *)object {
+    
+    static NSString *simpleTableIdentifier = @"teamMemberCell";
+    
+    OurTeamCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:simpleTableIdentifier forIndexPath:indexPath];
+    if (cell == nil) {
+        cell = [[OurTeamCollectionViewCell alloc] init];
+    }
+    
+    
+    //  Configure the cell to show title and description
+    cell.teamMemberNameLabel.text = [object objectForKey:@"name"];
+    cell.teamMemberPositionLabel.text = [object objectForKey:@"position"];
+    
+    //  Configure cell to show photo placeholder and thumbnail
+    //  Set your placeholder image first
+    cell.teamMemberImage.image = [UIImage imageNamed:@"placeholder"];
+    cell.teamMemberImage.backgroundColor = [UIColor blackColor];
+    
+    PFFile *thumbnail = [object objectForKey:@"image"];
+    [thumbnail getDataInBackgroundWithBlock:^(NSData *data, NSError *error) {
+        if (!error) {
+            // Now that the data is fetched, update the cell's image property with thumbnail
+            cell.teamMemberImage.image = [UIImage imageWithData:data];
+        } else {
+            // Log details of the failure
+            NSLog(@"Error: %@ %@", error, [error userInfo]);
+        }
+    }];
+    
+    return cell;
 }
 
 /*
@@ -40,58 +91,6 @@ static NSString * const reuseIdentifier = @"Cell";
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
-}
-*/
-
-#pragma mark <UICollectionViewDataSource>
-
-- (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView {
-#warning Incomplete implementation, return the number of sections
-    return 0;
-}
-
-
-- (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
-#warning Incomplete implementation, return the number of items
-    return 0;
-}
-
-- (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
-    UICollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:reuseIdentifier forIndexPath:indexPath];
-    
-    // Configure the cell
-    
-    return cell;
-}
-
-#pragma mark <UICollectionViewDelegate>
-
-/*
-// Uncomment this method to specify if the specified item should be highlighted during tracking
-- (BOOL)collectionView:(UICollectionView *)collectionView shouldHighlightItemAtIndexPath:(NSIndexPath *)indexPath {
-	return YES;
-}
-*/
-
-/*
-// Uncomment this method to specify if the specified item should be selected
-- (BOOL)collectionView:(UICollectionView *)collectionView shouldSelectItemAtIndexPath:(NSIndexPath *)indexPath {
-    return YES;
-}
-*/
-
-/*
-// Uncomment these methods to specify if an action menu should be displayed for the specified item, and react to actions performed on the item
-- (BOOL)collectionView:(UICollectionView *)collectionView shouldShowMenuForItemAtIndexPath:(NSIndexPath *)indexPath {
-	return NO;
-}
-
-- (BOOL)collectionView:(UICollectionView *)collectionView canPerformAction:(SEL)action forItemAtIndexPath:(NSIndexPath *)indexPath withSender:(id)sender {
-	return NO;
-}
-
-- (void)collectionView:(UICollectionView *)collectionView performAction:(SEL)action forItemAtIndexPath:(NSIndexPath *)indexPath withSender:(id)sender {
-	
 }
 */
 
