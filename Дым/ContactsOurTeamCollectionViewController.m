@@ -6,13 +6,13 @@
 //  Copyright © 2015 Fenkins. All rights reserved.
 //
 
-#import "OurTeamCollectionViewController.h"
+#import "ContactsOurTeamCollectionViewController.h"
 
-@interface OurTeamCollectionViewController ()
+@interface ContactsOurTeamCollectionViewController ()
 
 @end
 
-@implementation OurTeamCollectionViewController
+@implementation ContactsOurTeamCollectionViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -43,6 +43,7 @@
 - (PFQuery *)queryForCollection
 {
     PFQuery *query = [PFQuery queryWithClassName:self.parseClassName];
+    [query whereKey:@"enabled" equalTo:[NSNumber numberWithBool:YES]];
     // Adding location check to query
     LocationSupplementary *suppObject = [LocationSupplementary loadCustomObjectWithKey:@"StoredLocation"];
     if ([suppObject isLocationSet]) {
@@ -55,9 +56,9 @@
     
     static NSString *simpleTableIdentifier = @"teamMemberCell";
     
-    OurTeamCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:simpleTableIdentifier forIndexPath:indexPath];
+    ContactsOurTeamCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:simpleTableIdentifier forIndexPath:indexPath];
     if (cell == nil) {
-        cell = [[OurTeamCollectionViewCell alloc] init];
+        cell = [[ContactsOurTeamCollectionViewCell alloc] init];
     }
     
     
@@ -84,14 +85,23 @@
     return cell;
 }
 
-/*
 #pragma mark - Navigation
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+ - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+ if ([segue.identifier isEqualToString:@"ourTeamDetailSegueID"]) {
+ // Capture the object (e.g. exam) the user has selected from the list
+     if ([sender isKindOfClass:[ContactsOurTeamCollectionViewCell class]]) {
+         ContactsOurTeamCollectionViewCell *cell = sender;
+         NSIndexPath *indexPath = [self.collectionView indexPathForCell:cell];
+         PFObject *object = [self.objects objectAtIndex:indexPath.row];
+         
+         // Set destination view controller to DetailViewController to avoid the NavigationViewController in the middle (if you have it embedded into a navigation controller, if not ignore that part)
+         ContactsOurTeamDetailViewController *controller = segue.destinationViewController;
+         controller.object = object;
+     } else {
+         NSLog(@"Incorrect cell feeded as sender in ContactsOurTeamCollectionViewController");
+     }
 }
-*/
+}
 
 @end

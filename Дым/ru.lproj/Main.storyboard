@@ -381,10 +381,10 @@
             </objects>
             <point key="canvasLocation" x="3784" y="327"/>
         </scene>
-        <!--Our Team Collection View Controller-->
+        <!--Contacts Our Team Collection View Controller-->
         <scene sceneID="iOf-1e-hLD">
             <objects>
-                <collectionViewController storyboardIdentifier="our-team" id="4wl-Xs-SVW" customClass="OurTeamCollectionViewController" sceneMemberID="viewController">
+                <collectionViewController storyboardIdentifier="our-team" id="4wl-Xs-SVW" customClass="ContactsOurTeamCollectionViewController" sceneMemberID="viewController">
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="HDM-Dj-bFM">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -395,7 +395,7 @@
                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                         </collectionViewFlowLayout>
                         <cells>
-                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="teamMemberCell" id="LuL-uF-raU" customClass="OurTeamCollectionViewCell">
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="teamMemberCell" id="LuL-uF-raU" customClass="ContactsOurTeamCollectionViewCell">
                                 <rect key="frame" x="0.0" y="0.0" width="148" height="211"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
@@ -405,16 +405,16 @@
                                         <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="MGC-hR-FPZ">
                                             <rect key="frame" x="23" y="8" width="102" height="88"/>
                                         </imageView>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cLf-bM-3qD">
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cLf-bM-3qD">
                                             <rect key="frame" x="23" y="117" width="102" height="21"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eue-6o-mQe">
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="position" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eue-6o-mQe">
                                             <rect key="frame" x="23" y="144" width="102" height="21"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
@@ -424,6 +424,7 @@
                                     <outlet property="teamMemberImage" destination="MGC-hR-FPZ" id="Mcd-Jl-gQQ"/>
                                     <outlet property="teamMemberNameLabel" destination="cLf-bM-3qD" id="T2U-8r-abW"/>
                                     <outlet property="teamMemberPositionLabel" destination="eue-6o-mQe" id="CD5-JS-WpV"/>
+                                    <segue destination="aGf-UQ-bA9" kind="show" identifier="ourTeamDetailSegueID" id="wCY-c9-WLv"/>
                                 </connections>
                             </collectionViewCell>
                         </cells>
@@ -436,6 +437,53 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2l0-hj-0OZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="4503" y="331"/>
+        </scene>
+        <!--Contacts Our Team Detail View Controller-->
+        <scene sceneID="vjk-W0-Xky">
+            <objects>
+                <viewController id="aGf-UQ-bA9" customClass="ContactsOurTeamDetailViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="ozB-0P-VqA"/>
+                        <viewControllerLayoutGuide type="bottom" id="8np-kd-7zz"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Wp6-nQ-b8i">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gc6-Vv-Fqb">
+                                <rect key="frame" x="20" y="20" width="240" height="128"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sTv-Zx-KPi">
+                                <rect key="frame" x="116" y="177" width="45" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Position" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6vN-MO-eai">
+                                <rect key="frame" x="100" y="212" width="61" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Description" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UZS-Cc-JZF">
+                                <rect key="frame" x="73" y="248" width="88" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <outlet property="teamMemberDescriptionMember" destination="UZS-Cc-JZF" id="kYx-Tc-Elr"/>
+                        <outlet property="teamMemberImage" destination="gc6-Vv-Fqb" id="5Rc-vo-9uk"/>
+                        <outlet property="teamMemberNameLabel" destination="sTv-Zx-KPi" id="s3j-j1-Xn1"/>
+                        <outlet property="teamMemberPositionLabel" destination="6vN-MO-eai" id="Tei-5a-7OK"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="DKs-9e-Ht7" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="5151" y="331"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="yl2-sM-qoP">

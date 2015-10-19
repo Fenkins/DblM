@@ -10,9 +10,10 @@
 #import <Bolts.h>
 #import <ParseUI.h>
 #import "PFQueryCollectionViewController.h"
-#import "OurTeamCollectionViewCell.h"
+#import "ContactsOurTeamCollectionViewCell.h"
 #import "LocationSupplementary.h"
+#import "ContactsOurTeamDetailViewController.h"
 
-@interface OurTeamCollectionViewController : PFQueryCollectionViewController
+@interface ContactsOurTeamCollectionViewController : PFQueryCollectionViewController
 
 @end

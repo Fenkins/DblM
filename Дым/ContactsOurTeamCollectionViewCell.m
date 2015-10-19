@@ -6,8 +6,8 @@
 //  Copyright © 2015 Fenkins. All rights reserved.
 //
 
-#import "OurTeamCollectionViewCell.h"
+#import "ContactsOurTeamCollectionViewCell.h"
 
-@implementation OurTeamCollectionViewCell
+@implementation ContactsOurTeamCollectionViewCell
 
 @end
