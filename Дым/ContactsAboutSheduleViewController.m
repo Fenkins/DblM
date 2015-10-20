@@ -97,10 +97,23 @@ static const NSString* kCCEndTime = @"endTime";
     if ([[object objectForKey:(NSString*)kCCStartTime]isKindOfClass:[NSNumber class]] &&
         [[object objectForKey:(NSString*)kCCEndTime]isKindOfClass:[NSNumber class]]) {
         //  Configure the cell to show title and description
+        // Extracting start and end time
+        NSString* startTimeString = [NSString stringWithFormat:@"%@",
+                                     [object objectForKey:(NSString*)kCCStartTime]];
+        NSString* endTimeString = [NSString stringWithFormat:@"%@",
+                                   [object objectForKey:(NSString*)kCCEndTime]];
+        // Formatting the strings to HH:MM format
+        NSString* startTimeFormatted = [NSString stringWithFormat:@"%@:%@",
+            [startTimeString substringToIndex:[startTimeString length]-2],
+            [startTimeString substringFromIndex:[startTimeString length]-2]];
+        // Formatting the strings to HH:MM format
+        NSString* endTimeFormatted = [NSString stringWithFormat:@"%@:%@",
+            [endTimeString substringToIndex:[startTimeString length]-3],
+            [endTimeString substringFromIndex:[startTimeString length]-3]];
         cell.sheduleDayText.text = [NSString stringWithFormat:@"В %@ мы работаем с %@ до %@",
                                     [object objectForKey:@"dayOfWeek"],
-                                    [object objectForKey:(NSString*)kCCStartTime],
-                                    [object objectForKey:(NSString*)kCCEndTime]];
+                                    startTimeFormatted,
+                                    endTimeFormatted];
     }
     return cell;
 }
