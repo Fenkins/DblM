@@ -108,8 +108,8 @@ static const NSString* kCCEndTime = @"endTime";
             [startTimeString substringFromIndex:[startTimeString length]-2]];
         // Formatting the strings to HH:MM format
         NSString* endTimeFormatted = [NSString stringWithFormat:@"%@:%@",
-            [endTimeString substringToIndex:[startTimeString length]-3],
-            [endTimeString substringFromIndex:[startTimeString length]-3]];
+            [endTimeString substringToIndex:[endTimeString length]-2],
+            [endTimeString substringFromIndex:[endTimeString length]-2]];
         cell.sheduleDayText.text = [NSString stringWithFormat:@"В %@ мы работаем с %@ до %@",
                                     [object objectForKey:@"dayOfWeek"],
                                     startTimeFormatted,
