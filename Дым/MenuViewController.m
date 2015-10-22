@@ -78,4 +78,40 @@
 }
 
 
+- (IBAction)specialsShowButton:(UIButton *)sender {
+    self.specialsHideButtonOutlet.hidden = NO;
+    self.specialsHideButtonOutlet.alpha = 0.00001;
+    [UIView animateWithDuration:0.5 animations:^{
+        // Specials button going in
+        self.specialsButtonOutlet.transform = CGAffineTransformTranslate(self.specialsButtonOutlet.transform, -100.0, 0.0);
+        self.specialsButtonOutlet.alpha = 1.0;
+        // Rotating the !
+        self.specialsShowButtonOutlet.transform = CGAffineTransformRotate(self.specialsShowButtonOutlet.transform, -M_PI_2);
+        self.specialsShowButtonOutlet.alpha = 0.0;
+        // Rotating the cross
+        self.specialsHideButtonOutlet.transform = CGAffineTransformRotate(self.specialsHideButtonOutlet.transform, -M_PI_2);
+        self.specialsHideButtonOutlet.alpha = 1.0;
+    }completion:^(BOOL finished) {
+        self.specialsShowButtonOutlet.hidden = YES;
+    }];
+}
+
+- (IBAction)specialsHideButton:(UIButton *)sender {
+    // Making sure show button is set and ready to rotation and presentation
+    self.specialsShowButtonOutlet.hidden = NO;
+    self.specialsShowButtonOutlet.alpha = 0.00001;
+    [UIView animateWithDuration:0.5 animations:^{
+        // Specials button going out
+        self.specialsButtonOutlet.transform = CGAffineTransformTranslate(self.specialsButtonOutlet.transform, 100.0, 0.0);
+        self.specialsButtonOutlet.alpha = 0.0;
+        // Rotating the cross
+        self.specialsHideButtonOutlet.transform = CGAffineTransformRotate(self.specialsHideButtonOutlet.transform, M_PI_2);
+        self.specialsHideButtonOutlet.alpha = 0.0;
+        // Rotating the !
+        self.specialsShowButtonOutlet.transform = CGAffineTransformRotate(self.specialsShowButtonOutlet.transform, M_PI_2);
+        self.specialsShowButtonOutlet.alpha = 1.0;
+    } completion:^(BOOL finished) {
+        self.specialsHideButtonOutlet.hidden = YES;
+    }];
+}
 @end
