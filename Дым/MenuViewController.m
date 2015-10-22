@@ -103,10 +103,17 @@
     self.specialsHideButtonOutlet.hidden = NO;
     self.specialsHideButtonOutlet.alpha = 0.00001;
     [UIView animateWithDuration:0.5 animations:^{
+        
         // Specials button going in
-        self.specialsButtonOutlet.transform = CGAffineTransformTranslate(self.specialsButtonOutlet.transform, -self.specialsButtonOutlet.frame.size.width*2/3, 0.0);
+        self.specialsButtonOutlet.transform = CGAffineTransformTranslate(self.specialsButtonOutlet.transform, -self.specialsButtonOutlet.frame.size.width, 0.0);
         self.specialsButtonOutlet.transform = CGAffineTransformMakeScale(1.0, 1.0);
         self.specialsButtonOutlet.alpha = 1.0;
+        
+        // Background view going in
+        self.specialsBackgroundView.transform = CGAffineTransformTranslate(self.specialsBackgroundView.transform, -self.specialsBackgroundView.frame.size.width*2/4, 0.0);
+        self.specialsBackgroundView.transform = CGAffineTransformMakeScale(1.0, 1.0);
+        self.specialsBackgroundView.alpha = 1.0;
+        
         // Rotating the showButton
         self.specialsShowButtonOutlet.transform = CGAffineTransformRotate(self.specialsShowButtonOutlet.transform, -M_PI_2);
         self.specialsShowButtonOutlet.alpha = 0.0;
@@ -126,10 +133,19 @@
     self.specialsShowButtonOutlet.hidden = NO;
     self.specialsShowButtonOutlet.alpha = 0.00001;
     [UIView animateWithDuration:0.5 animations:^{
+        
         // Specials button going out
-        self.specialsButtonOutlet.transform = CGAffineTransformTranslate(self.specialsButtonOutlet.transform, self.specialsButtonOutlet.frame.size.width*2/3, 0.0);
-        self.specialsButtonOutlet.transform = CGAffineTransformScale(self.specialsButtonOutlet.transform, 0.5, 1.0);
+        CGAffineTransform movingSpecialsButtonRight = CGAffineTransformTranslate(self.specialsButtonOutlet.transform, self.specialsButtonOutlet.frame.size.width, 0.0);
+        CGAffineTransform scalingSpecialsButtonDown = CGAffineTransformScale(self.specialsButtonOutlet.transform, 0.5, 1.0);
         self.specialsButtonOutlet.alpha = 0.0;
+        self.specialsButtonOutlet.transform = CGAffineTransformConcat(movingSpecialsButtonRight, scalingSpecialsButtonDown);
+        
+        // Background view going out
+        CGAffineTransform movingBackgroundViewRight = CGAffineTransformTranslate(self.specialsBackgroundView.transform, self.specialsBackgroundView.frame.size.width*2/4, 0.0);
+        CGAffineTransform scalingBackgroundView = CGAffineTransformScale(self.specialsBackgroundView.transform, 0.5, 1.0);
+        self.specialsBackgroundView.alpha = 0.0;
+        self.specialsBackgroundView.transform = CGAffineTransformConcat(movingBackgroundViewRight, scalingBackgroundView);
+        
         // Rotating the hideButton
         self.specialsHideButtonOutlet.transform = CGAffineTransformRotate(self.specialsHideButtonOutlet.transform, M_PI_2);
         self.specialsHideButtonOutlet.alpha = 0.0;
