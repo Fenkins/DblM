@@ -110,7 +110,7 @@ static const NSString* kCCEndTime = @"endTime";
         NSString* endTimeFormatted = [NSString stringWithFormat:@"%@:%@",
             [endTimeString substringToIndex:[endTimeString length]-2],
             [endTimeString substringFromIndex:[endTimeString length]-2]];
-        cell.sheduleDayText.text = [NSString stringWithFormat:@"В %@ мы работаем с %@ до %@",
+        cell.sheduleDayText.text = [NSString stringWithFormat:@"%@ с %@ до %@",
                                     [object objectForKey:@"dayOfWeek"],
                                     startTimeFormatted,
                                     endTimeFormatted];
