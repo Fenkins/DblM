@@ -53,7 +53,6 @@
     }
     
     // Setting up a specials button
-    NSLog(@"%hhd",[[NSUserDefaults standardUserDefaults]boolForKey:@"isSpecialsHidden"]);
     if ([[NSUserDefaults standardUserDefaults]boolForKey:@"isSpecialsHidden"]) {
         // Hiding the hide button and showing the showbutton
         self.specialsShowButtonOutlet.hidden = NO;
@@ -64,6 +63,11 @@
         if (!self.isSpecialsShifted) {
             // Specials button going out
             self.specialsButtonOutlet.transform = CGAffineTransformTranslate(self.specialsButtonOutlet.transform, self.specialsButtonOutlet.frame.size.width*2/3, 0.0);
+            // Background view going out
+            CGAffineTransform movingBackgroundViewRight = CGAffineTransformTranslate(self.specialsBackgroundView.transform, self.specialsBackgroundView.frame.size.width*2/4, 0.0);
+            CGAffineTransform scalingBackgroundView = CGAffineTransformScale(self.specialsBackgroundView.transform, 0.5, 1.0);
+            self.specialsBackgroundView.alpha = 0.0;
+            self.specialsBackgroundView.transform = CGAffineTransformConcat(movingBackgroundViewRight, scalingBackgroundView);
             // Rotating the hideButton
             self.specialsHideButtonOutlet.transform = CGAffineTransformRotate(self.specialsHideButtonOutlet.transform, M_PI_2);
             // Rotating the showButton
