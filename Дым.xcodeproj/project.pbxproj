@@ -23,6 +23,9 @@
 		AA586A0D1BCA95DF00C3A34F /* ContactsSheduleSupplementary.m in Sources */ = {isa = PBXBuildFile; fileRef = AA586A0C1BCA95DF00C3A34F /* ContactsSheduleSupplementary.m */; settings = {ASSET_TAGS = (); }; };
 		AA72F23D1BCC27DD00B6EC82 /* ContactsAboutSheduleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AA72F23C1BCC27DD00B6EC82 /* ContactsAboutSheduleViewController.m */; settings = {ASSET_TAGS = (); }; };
 		AA72F2401BCC2F0400B6EC82 /* ContactsAboutSheduleTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = AA72F23F1BCC2F0400B6EC82 /* ContactsAboutSheduleTableViewCell.m */; settings = {ASSET_TAGS = (); }; };
+		AA83DCB61BDA56FE0097370D /* SpecialsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AA83DCB51BDA56FE0097370D /* SpecialsTableViewController.m */; settings = {ASSET_TAGS = (); }; };
+		AA83DCBA1BDA57740097370D /* SpecialsTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = AA83DCB91BDA57740097370D /* SpecialsTableViewCell.m */; settings = {ASSET_TAGS = (); }; };
+		AA83DCBD1BDA6BA20097370D /* SpecialsDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AA83DCBC1BDA6BA20097370D /* SpecialsDetailViewController.m */; settings = {ASSET_TAGS = (); }; };
 		AA86D2E71BC2C56C0060AF28 /* BookingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AA86D2E61BC2C56C0060AF28 /* BookingViewController.m */; settings = {ASSET_TAGS = (); }; };
 		AA911A851BD13D1F005ECC6F /* LocationSupplementary.m in Sources */ = {isa = PBXBuildFile; fileRef = AA911A841BD13D1F005ECC6F /* LocationSupplementary.m */; settings = {ASSET_TAGS = (); }; };
 		AAB78AD11BD3FFE800104B0C /* ContactsOurTeamCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = AAB78AD01BD3FFE800104B0C /* ContactsOurTeamCollectionViewCell.m */; settings = {ASSET_TAGS = (); }; };
@@ -63,6 +66,12 @@
 		AA72F23C1BCC27DD00B6EC82 /* ContactsAboutSheduleViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContactsAboutSheduleViewController.m; sourceTree = "<group>"; };
 		AA72F23E1BCC2F0400B6EC82 /* ContactsAboutSheduleTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContactsAboutSheduleTableViewCell.h; sourceTree = "<group>"; };
 		AA72F23F1BCC2F0400B6EC82 /* ContactsAboutSheduleTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContactsAboutSheduleTableViewCell.m; sourceTree = "<group>"; };
+		AA83DCB41BDA56FE0097370D /* SpecialsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpecialsTableViewController.h; sourceTree = "<group>"; };
+		AA83DCB51BDA56FE0097370D /* SpecialsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SpecialsTableViewController.m; sourceTree = "<group>"; };
+		AA83DCB81BDA57740097370D /* SpecialsTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpecialsTableViewCell.h; sourceTree = "<group>"; };
+		AA83DCB91BDA57740097370D /* SpecialsTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SpecialsTableViewCell.m; sourceTree = "<group>"; };
+		AA83DCBB1BDA6BA20097370D /* SpecialsDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpecialsDetailViewController.h; sourceTree = "<group>"; };
+		AA83DCBC1BDA6BA20097370D /* SpecialsDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SpecialsDetailViewController.m; sourceTree = "<group>"; };
 		AA86D2E51BC2C56C0060AF28 /* BookingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BookingViewController.h; sourceTree = "<group>"; };
 		AA86D2E61BC2C56C0060AF28 /* BookingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BookingViewController.m; sourceTree = "<group>"; };
 		AA911A831BD13D1F005ECC6F /* LocationSupplementary.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocationSupplementary.h; sourceTree = "<group>"; };
@@ -164,6 +173,7 @@
 				AADD012B1BC0414A00069573 /* Assets.xcassets */,
 				AAFD71761BCEB98800100E79 /* Location */,
 				AA86D2E41BC2C3110060AF28 /* Menu */,
+				AA83DCB71BDA570C0097370D /* Specials */,
 				AA86D2E81BC2C57B0060AF28 /* Booking */,
 				AA39A2BC1BC581BC009BE4AB /* Contacts */,
 				AA543CBC1BBDC18D0074329E /* AppDelegate.h */,
@@ -182,6 +192,19 @@
 				AA543CBA1BBDC18D0074329E /* main.m */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		AA83DCB71BDA570C0097370D /* Specials */ = {
+			isa = PBXGroup;
+			children = (
+				AA83DCB81BDA57740097370D /* SpecialsTableViewCell.h */,
+				AA83DCB91BDA57740097370D /* SpecialsTableViewCell.m */,
+				AA83DCB41BDA56FE0097370D /* SpecialsTableViewController.h */,
+				AA83DCB51BDA56FE0097370D /* SpecialsTableViewController.m */,
+				AA83DCBB1BDA6BA20097370D /* SpecialsDetailViewController.h */,
+				AA83DCBC1BDA6BA20097370D /* SpecialsDetailViewController.m */,
+			);
+			name = Specials;
 			sourceTree = "<group>";
 		};
 		AA86D2E41BC2C3110060AF28 /* Menu */ = {
@@ -338,6 +361,7 @@
 			files = (
 				AA3C97081BD515D100BE99AF /* ContactsOurTeamCollectionViewController.m in Sources */,
 				AA2CBB121BC184EB003A8801 /* MenuDetailProductViewController.m in Sources */,
+				AA83DCBD1BDA6BA20097370D /* SpecialsDetailViewController.m in Sources */,
 				AA911A851BD13D1F005ECC6F /* LocationSupplementary.m in Sources */,
 				AA4B8B9E1BC05A250029C815 /* MenuDetailTableViewController.m in Sources */,
 				AA2CBB0F1BC17C44003A8801 /* MenuDetailTableViewCell.m in Sources */,
@@ -348,6 +372,8 @@
 				AAFD71751BCEB97C00100E79 /* LocationChangerTableViewController.m in Sources */,
 				AAFD71791BCEC0A900100E79 /* LocationPlaceTableViewCell.m in Sources */,
 				AAB78AD11BD3FFE800104B0C /* ContactsOurTeamCollectionViewCell.m in Sources */,
+				AA83DCB61BDA56FE0097370D /* SpecialsTableViewController.m in Sources */,
+				AA83DCBA1BDA57740097370D /* SpecialsTableViewCell.m in Sources */,
 				AA3C970D1BD5371700BE99AF /* ContactsOurTeamDetailViewController.m in Sources */,
 				AA4F2C2E1BC7F19F000FBF8F /* ContactsAboutViewController.m in Sources */,
 				AA4B8BA11BC05EEC0029C815 /* MenuViewController.m in Sources */,
