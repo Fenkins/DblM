@@ -41,6 +41,28 @@
             [self performSegueWithIdentifier:@"locationChangerSegue" sender:self];
         }
     });
+    
+    
+    // Setting animation for specialsShowButton
+    if ([[NSUserDefaults standardUserDefaults]boolForKey:@"isSpecialsHidden"]) {
+        // Hiding the hide button and showing the showbutton
+        
+        if (!self.isSpecialsShifted) {
+            dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+                [NSThread sleepForTimeInterval:1.5f];
+                dispatch_async(dispatch_get_main_queue(), ^{
+                    [UIView animateWithDuration:1.0 animations:^{
+                        self.specialsShowButtonOutlet.alpha = 0.4;
+                    } completion:^(BOOL finished) {
+                        [UIView animateWithDuration:1.0 animations:^{
+                            self.specialsShowButtonOutlet.alpha = 1;
+                        }];
+                    }];
+                    
+                });
+            });
+        }
+    }
 }
 
 -(void)viewWillAppear:(BOOL)animated {
