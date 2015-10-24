@@ -74,6 +74,7 @@
     cell.nameLabel.text = [object objectForKey:@"name"];
     cell.shortDescriptionLabel.text = [object objectForKey:@"shortDescription"];
     cell.priceLabel.text = [[object objectForKey:@"priceRegular"]stringValue];
+    cell.specialPriceLabel.text = [[object objectForKey:@"priceSpecial"]stringValue];
     
 //  Configure cell to show photo placeholder and thumbnail
 //  Set your placeholder image first

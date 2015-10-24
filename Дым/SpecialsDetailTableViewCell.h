@@ -13,5 +13,6 @@
 @property (weak, nonatomic) IBOutlet UILabel *specialsDetailNameLabel;
 @property (weak, nonatomic) IBOutlet UILabel *specialsDetailPriceLabel;
 @property (weak, nonatomic) IBOutlet UILabel *specialsDetailShortDescriptionLabel;
+@property (weak, nonatomic) IBOutlet UILabel *specialsDetailSpecialPriceLabel;
 
 @end
