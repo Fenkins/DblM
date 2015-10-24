@@ -104,7 +104,7 @@
         PFObject *object = [self.objects objectAtIndex:indexPath.row];
         
         // Set destination view controller to DetailViewController to avoid the NavigationViewController in the middle (if you have it embedded into a navigation controller, if not ignore that part)
-        SpecialsDetailProductViewController *controller = segue.destinationViewController;
+        MenuDetailProductViewController *controller = segue.destinationViewController;
         controller.object = object;
     }
 }

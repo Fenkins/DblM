@@ -31,8 +31,10 @@
         }
     }];
 
-    self.productDescription.text = [_object objectForKey:@"description"];
+    self.productNameLabel.text = [_object objectForKey:@"name"];
+    self.productDescriptionLabel.text = [_object objectForKey:@"description"];
     self.productPriceLabel.text = [[_object objectForKey:@"priceRegular"]stringValue];
+    self.productSpecialPriceLabel.text = [[_object objectForKey:@"priceSpecial"]stringValue];
 }
 
 - (void)didReceiveMemoryWarning {

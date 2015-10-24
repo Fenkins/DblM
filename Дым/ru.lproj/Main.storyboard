@@ -5,10 +5,10 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
     </dependencies>
     <scenes>
-        <!--Specials Detail Product View Controller-->
+        <!--Menu Detail Product View Controller-->
         <scene sceneID="PAF-Lk-iWH">
             <objects>
-                <viewController id="4Yn-dL-G71" customClass="SpecialsDetailProductViewController" sceneMemberID="viewController">
+                <viewController id="4Yn-dL-G71" customClass="MenuDetailProductViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="82K-eK-b2X"/>
                         <viewControllerLayoutGuide type="bottom" id="jS5-KL-i0e"/>
@@ -21,7 +21,7 @@
                                 <rect key="frame" x="0.0" y="64" width="213" height="176"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="fullDescriptionLabel" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gzc-Nr-OQ4">
-                                <rect key="frame" x="0.0" y="294" width="213" height="21"/>
+                                <rect key="frame" x="0.0" y="346" width="213" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
@@ -32,8 +32,14 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="specialPriceLabel" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Q5Q-IX-Fl1">
+                                <rect key="frame" x="0.0" y="287" width="213" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="nameLabel" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i4c-V7-ks4">
-                                <rect key="frame" x="0.0" y="337" width="213" height="21"/>
+                                <rect key="frame" x="0.0" y="317" width="213" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
@@ -43,10 +49,11 @@
                     </view>
                     <navigationItem key="navigationItem" id="6rS-iV-0ro"/>
                     <connections>
-                        <outlet property="specialsDetailProductFullDescriptionLabel" destination="Gzc-Nr-OQ4" id="zlq-qB-R3W"/>
-                        <outlet property="specialsDetailProductImage" destination="ltq-Mp-sHw" id="4Q7-pi-IBO"/>
-                        <outlet property="specialsDetailProductNameLabel" destination="i4c-V7-ks4" id="zRt-8U-jEX"/>
-                        <outlet property="specialsDetailProductPriceLabel" destination="VvG-2C-Uja" id="Npf-OY-ZzD"/>
+                        <outlet property="productDescriptionLabel" destination="Gzc-Nr-OQ4" id="3fE-dS-KQl"/>
+                        <outlet property="productImageView" destination="ltq-Mp-sHw" id="ilv-eK-9ZF"/>
+                        <outlet property="productNameLabel" destination="i4c-V7-ks4" id="D7J-Q2-BaD"/>
+                        <outlet property="productPriceLabel" destination="VvG-2C-Uja" id="BKn-wP-J9f"/>
+                        <outlet property="productSpecialPriceLabel" destination="Q5Q-IX-Fl1" id="XoC-iR-BKS"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XdN-xq-9cO" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -255,6 +262,7 @@
                             <outlet property="delegate" destination="w6J-J5-nob" id="O0p-cq-Nsf"/>
                         </connections>
                     </tableView>
+                    <navigationItem key="navigationItem" id="raN-ny-70G"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="C5d-MD-uDv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -456,14 +464,26 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6We-R0-xsE">
                                 <rect key="frame" x="0.0" y="41" width="240" height="128"/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NYw-Rf-3gM">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="priceLabel" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NYw-Rf-3gM">
                                 <rect key="frame" x="20" y="228" width="220" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jcg-X3-fgX">
-                                <rect key="frame" x="20" y="310" width="220" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="nameLabel" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jcg-X3-fgX">
+                                <rect key="frame" x="20" y="267" width="220" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="descriptionLabel" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VFY-8O-hmL">
+                                <rect key="frame" x="20" y="304" width="220" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="specialPriceLabel" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YHv-NT-h3l">
+                                <rect key="frame" x="20" y="199" width="220" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -472,9 +492,11 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <connections>
-                        <outlet property="productDescription" destination="jcg-X3-fgX" id="JFF-xa-w7E"/>
+                        <outlet property="productDescriptionLabel" destination="VFY-8O-hmL" id="dkq-sD-HuM"/>
                         <outlet property="productImageView" destination="6We-R0-xsE" id="UlJ-E4-UA5"/>
+                        <outlet property="productNameLabel" destination="jcg-X3-fgX" id="R5J-lY-dVJ"/>
                         <outlet property="productPriceLabel" destination="NYw-Rf-3gM" id="Mim-nN-msO"/>
+                        <outlet property="productSpecialPriceLabel" destination="YHv-NT-h3l" id="pHL-5Q-Idt"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="co4-5K-243" userLabel="First Responder" sceneMemberID="firstResponder"/>

@@ -12,7 +12,7 @@
 #import <ParseUI.h>
 #import "LocationSupplementary.h"
 #import "SpecialsDetailTableViewCell.h"
-#import "SpecialsDetailProductViewController.h"
+#import "MenuDetailProductViewController.h"
 
 @interface SpecialsDetailTableViewController : PFQueryTableViewController
 @property (nonatomic) PFObject* object;

@@ -14,6 +14,8 @@
 @interface MenuDetailProductViewController : UIViewController
 @property (weak, nonatomic) IBOutlet UIImageView *productImageView;
 @property (weak, nonatomic) IBOutlet UILabel *productPriceLabel;
-@property (weak, nonatomic) IBOutlet UILabel *productDescription;
+@property (weak, nonatomic) IBOutlet UILabel *productDescriptionLabel;
+@property (weak, nonatomic) IBOutlet UILabel *productNameLabel;
+@property (weak, nonatomic) IBOutlet UILabel *productSpecialPriceLabel;
 @property (nonatomic) PFObject *object;
 @end
