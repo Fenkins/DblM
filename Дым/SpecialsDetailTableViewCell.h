@@ -9,5 +9,9 @@
 #import <UIKit/UIKit.h>
 
 @interface SpecialsDetailTableViewCell : UITableViewCell
+@property (weak, nonatomic) IBOutlet UIImageView *specialsDetailImageView;
+@property (weak, nonatomic) IBOutlet UILabel *specialsDetailNameLabel;
+@property (weak, nonatomic) IBOutlet UILabel *specialsDetailPriceLabel;
+@property (weak, nonatomic) IBOutlet UILabel *specialsDetailShortDescriptionLabel;
 
 @end

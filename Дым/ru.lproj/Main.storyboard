@@ -14,7 +14,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="152" id="W4A-C4-Uea" customClass="SpecialsDetailTableViewCell">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="specialsDetailTableViewCell" rowHeight="152" id="W4A-C4-Uea" customClass="SpecialsDetailTableViewCell">
                                 <rect key="frame" x="0.0" y="92" width="600" height="152"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="W4A-C4-Uea" id="tyf-mI-4Mk">
@@ -44,6 +44,12 @@
                                         </label>
                                     </subviews>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="specialsDetailImageView" destination="PqZ-dZ-aWw" id="bkJ-C4-diE"/>
+                                    <outlet property="specialsDetailNameLabel" destination="qKU-8J-Jy0" id="Nk5-cn-46e"/>
+                                    <outlet property="specialsDetailPriceLabel" destination="Y9M-eU-o6S" id="KdZ-Yd-ztM"/>
+                                    <outlet property="specialsDetailShortDescriptionLabel" destination="zxo-zr-vpK" id="b0f-fV-t7i"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>

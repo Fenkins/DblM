@@ -19,9 +19,79 @@
     // Do any additional setup after loading the view.
 }
 
+-(void)viewWillAppear:(BOOL)animated {
+    [[self navigationController]setNavigationBarHidden:NO];
+}
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (id)initWithCoder:(NSCoder *)aCoder
+{
+    self = [super initWithCoder:aCoder];
+    if (self) {
+        // The className to query on
+        self.parseClassName = @"MenuItems";
+        
+        // The key of the PFObject to display in the label of the default cell style
+        self.textKey = @"name";
+        
+        // Whether the built-in pull-to-refresh is enabled
+        self.pullToRefreshEnabled = YES;
+        
+        // Whether the built-in pagination is enabled
+        self.paginationEnabled = NO;
+    }
+    return self;
+}
+
+- (PFQuery *)queryForTable
+{
+    PFQuery *query = [PFQuery queryWithClassName:self.parseClassName];
+    [query whereKey:@"enabled" equalTo:[NSNumber numberWithBool:YES]];
+    [query whereKey:@"tags" containedIn:[_object objectForKey:@"tags"]];
+    // Adding location check to query
+    LocationSupplementary *suppObject = [LocationSupplementary loadCustomObjectWithKey:@"StoredLocation"];
+    if ([suppObject isLocationSet]) {
+        [query whereKey:@"availibleAt" equalTo:suppObject.storedPlaceName];
+    }
+    return query;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath object:(PFObject *)object {
+    
+    static NSString *simpleTableIdentifier = @"specialsDetailTableViewCell";
+    
+    SpecialsDetailTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:simpleTableIdentifier];
+    if (cell == nil) {
+        cell = [[SpecialsDetailTableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:simpleTableIdentifier];
+    }
+    
+    
+    //  Configure the cell to show title and description
+    cell.specialsDetailNameLabel.text = [object objectForKey:@"name"];
+    cell.specialsDetailShortDescriptionLabel.text = [object objectForKey:@"shortDescription"];
+    cell.specialsDetailPriceLabel.text = [[object objectForKey:@"priceRegular"]stringValue];
+    
+    //  Configure cell to show photo placeholder and thumbnail
+    //  Set your placeholder image first
+    cell.specialsDetailImageView.image = [UIImage imageNamed:@"placeholder"];
+    cell.specialsDetailImageView.backgroundColor = [UIColor blackColor];
+    
+    PFFile *thumbnail = [object objectForKey:@"image"];
+    [thumbnail getDataInBackgroundWithBlock:^(NSData *data, NSError *error) {
+        if (!error) {
+            // Now that the data is fetched, update the cell's image property with thumbnail
+            cell.specialsDetailImageView.image = [UIImage imageWithData:data];
+        } else {
+            // Log details of the failure
+            NSLog(@"Error: %@ %@", error, [error userInfo]);
+        }
+    }];
+    
+    return cell;
 }
 
 /*

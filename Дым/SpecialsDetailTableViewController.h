@@ -10,6 +10,9 @@
 #import <Parse.h>
 #import <Bolts.h>
 #import <ParseUI.h>
+#import "LocationSupplementary.h"
+#import "SpecialsDetailTableViewCell.h"
+
 @interface SpecialsDetailTableViewController : PFQueryTableViewController
 @property (nonatomic) PFObject* object;
 @end
