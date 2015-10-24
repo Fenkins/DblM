@@ -11,6 +11,6 @@
 @interface SpecialsTableViewCell : UITableViewCell
 @property (weak, nonatomic) IBOutlet UIImageView *specialsImageView;
 @property (weak, nonatomic) IBOutlet UILabel *specialsNameLabel;
-@property (weak, nonatomic) IBOutlet UILabel *specialsDescriptionLabel;
+@property (weak, nonatomic) IBOutlet UILabel *specialsShortDescriptionLabel;
 
 @end

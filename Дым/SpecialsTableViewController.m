@@ -71,7 +71,7 @@
     
     //  Configure the cell to show title and description
     cell.specialsNameLabel.text = [object objectForKey:@"name"];
-    cell.specialsDescriptionLabel.text = [object objectForKey:@"shortDescription"];
+    cell.specialsShortDescriptionLabel.text = [object objectForKey:@"shortDescription"];
     
     //  Configure cell to show photo placeholder and thumbnail
     //  Set your placeholder image first

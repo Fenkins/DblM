@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #import <Parse.h>
 #import <Bolts.h>
+#import "SpecialsDetailTableViewController.h"
 
 @interface SpecialsDetailViewController : UIViewController
 @property (weak, nonatomic) IBOutlet UIImageView *specialsImageView;
