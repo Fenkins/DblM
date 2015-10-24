@@ -5,6 +5,54 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
     </dependencies>
     <scenes>
+        <!--Specials Detail Product View Controller-->
+        <scene sceneID="PAF-Lk-iWH">
+            <objects>
+                <viewController id="4Yn-dL-G71" customClass="SpecialsDetailProductViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="82K-eK-b2X"/>
+                        <viewControllerLayoutGuide type="bottom" id="jS5-KL-i0e"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Xoa-4H-2s3">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ltq-Mp-sHw">
+                                <rect key="frame" x="0.0" y="64" width="213" height="176"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="fullDescriptionLabel" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gzc-Nr-OQ4">
+                                <rect key="frame" x="0.0" y="294" width="213" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="priceLabel" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VvG-2C-Uja">
+                                <rect key="frame" x="0.0" y="258" width="213" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="nameLabel" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i4c-V7-ks4">
+                                <rect key="frame" x="0.0" y="337" width="213" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="6rS-iV-0ro"/>
+                    <connections>
+                        <outlet property="specialsDetailProductFullDescriptionLabel" destination="Gzc-Nr-OQ4" id="zlq-qB-R3W"/>
+                        <outlet property="specialsDetailProductImage" destination="ltq-Mp-sHw" id="4Q7-pi-IBO"/>
+                        <outlet property="specialsDetailProductNameLabel" destination="i4c-V7-ks4" id="zRt-8U-jEX"/>
+                        <outlet property="specialsDetailProductPriceLabel" destination="VvG-2C-Uja" id="Npf-OY-ZzD"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="XdN-xq-9cO" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1078" y="-3058"/>
+        </scene>
         <!--Specials Detail Table View Controller-->
         <scene sceneID="h4w-TF-LEi">
             <objects>
@@ -14,11 +62,11 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="specialsDetailTableViewCell" rowHeight="152" id="W4A-C4-Uea" customClass="SpecialsDetailTableViewCell">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="specialsDetailTableViewCell" rowHeight="152" id="W4A-C4-Uea" customClass="SpecialsDetailTableViewCell">
                                 <rect key="frame" x="0.0" y="92" width="600" height="152"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="W4A-C4-Uea" id="tyf-mI-4Mk">
-                                    <rect key="frame" x="0.0" y="0.0" width="600" height="151"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="567" height="151"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="PqZ-dZ-aWw">
@@ -49,6 +97,7 @@
                                     <outlet property="specialsDetailNameLabel" destination="qKU-8J-Jy0" id="Nk5-cn-46e"/>
                                     <outlet property="specialsDetailPriceLabel" destination="Y9M-eU-o6S" id="KdZ-Yd-ztM"/>
                                     <outlet property="specialsDetailShortDescriptionLabel" destination="zxo-zr-vpK" id="b0f-fV-t7i"/>
+                                    <segue destination="4Yn-dL-G71" kind="show" identifier="showSpecialsDetailProductSegue" id="ySk-eu-ZPL"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>

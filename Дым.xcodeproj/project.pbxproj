@@ -23,6 +23,7 @@
 		AA586A0D1BCA95DF00C3A34F /* ContactsSheduleSupplementary.m in Sources */ = {isa = PBXBuildFile; fileRef = AA586A0C1BCA95DF00C3A34F /* ContactsSheduleSupplementary.m */; settings = {ASSET_TAGS = (); }; };
 		AA6500001BDBA6C6002AC0D7 /* SpecialsDetailTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AA65FFFF1BDBA6C6002AC0D7 /* SpecialsDetailTableViewController.m */; settings = {ASSET_TAGS = (); }; };
 		AA6500031BDBA70F002AC0D7 /* SpecialsDetailTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = AA6500021BDBA70F002AC0D7 /* SpecialsDetailTableViewCell.m */; settings = {ASSET_TAGS = (); }; };
+		AA6500061BDBB403002AC0D7 /* SpecialsDetailProductViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AA6500051BDBB403002AC0D7 /* SpecialsDetailProductViewController.m */; settings = {ASSET_TAGS = (); }; };
 		AA72F23D1BCC27DD00B6EC82 /* ContactsAboutSheduleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AA72F23C1BCC27DD00B6EC82 /* ContactsAboutSheduleViewController.m */; settings = {ASSET_TAGS = (); }; };
 		AA72F2401BCC2F0400B6EC82 /* ContactsAboutSheduleTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = AA72F23F1BCC2F0400B6EC82 /* ContactsAboutSheduleTableViewCell.m */; settings = {ASSET_TAGS = (); }; };
 		AA83DCB61BDA56FE0097370D /* SpecialsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AA83DCB51BDA56FE0097370D /* SpecialsTableViewController.m */; settings = {ASSET_TAGS = (); }; };
@@ -66,6 +67,8 @@
 		AA586A0C1BCA95DF00C3A34F /* ContactsSheduleSupplementary.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContactsSheduleSupplementary.m; sourceTree = "<group>"; };
 		AA6500011BDBA70F002AC0D7 /* SpecialsDetailTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpecialsDetailTableViewCell.h; sourceTree = "<group>"; };
 		AA6500021BDBA70F002AC0D7 /* SpecialsDetailTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SpecialsDetailTableViewCell.m; sourceTree = "<group>"; };
+		AA6500041BDBB403002AC0D7 /* SpecialsDetailProductViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpecialsDetailProductViewController.h; sourceTree = "<group>"; };
+		AA6500051BDBB403002AC0D7 /* SpecialsDetailProductViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SpecialsDetailProductViewController.m; sourceTree = "<group>"; };
 		AA65FFFE1BDBA6C6002AC0D7 /* SpecialsDetailTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpecialsDetailTableViewController.h; sourceTree = "<group>"; };
 		AA65FFFF1BDBA6C6002AC0D7 /* SpecialsDetailTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SpecialsDetailTableViewController.m; sourceTree = "<group>"; };
 		AA72F23B1BCC27DD00B6EC82 /* ContactsAboutSheduleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContactsAboutSheduleViewController.h; sourceTree = "<group>"; };
@@ -213,6 +216,8 @@
 				AA83DCBC1BDA6BA20097370D /* SpecialsDetailViewController.m */,
 				AA65FFFE1BDBA6C6002AC0D7 /* SpecialsDetailTableViewController.h */,
 				AA65FFFF1BDBA6C6002AC0D7 /* SpecialsDetailTableViewController.m */,
+				AA6500041BDBB403002AC0D7 /* SpecialsDetailProductViewController.h */,
+				AA6500051BDBB403002AC0D7 /* SpecialsDetailProductViewController.m */,
 			);
 			name = Specials;
 			sourceTree = "<group>";
@@ -376,6 +381,7 @@
 				AA911A851BD13D1F005ECC6F /* LocationSupplementary.m in Sources */,
 				AA4B8B9E1BC05A250029C815 /* MenuDetailTableViewController.m in Sources */,
 				AA2CBB0F1BC17C44003A8801 /* MenuDetailTableViewCell.m in Sources */,
+				AA6500061BDBB403002AC0D7 /* SpecialsDetailProductViewController.m in Sources */,
 				AA86D2E71BC2C56C0060AF28 /* BookingViewController.m in Sources */,
 				AA543CBE1BBDC18D0074329E /* AppDelegate.m in Sources */,
 				AA543CBB1BBDC18D0074329E /* main.m in Sources */,
