@@ -73,8 +73,16 @@
     //  Configure the cell to show title and description
     cell.specialsDetailNameLabel.text = [object objectForKey:@"name"];
     cell.specialsDetailShortDescriptionLabel.text = [object objectForKey:@"shortDescription"];
-    cell.specialsDetailPriceLabel.text = [[object objectForKey:@"priceRegular"]stringValue];
-    cell.specialsDetailSpecialPriceLabel.text = [[object objectForKey:@"priceSpecial"]stringValue];
+    if ([[object objectForKey:@"priceSpecialEnabled"]boolValue]) {
+        // Preparing crossed out string
+        NSDictionary *attributes = @{NSStrikethroughStyleAttributeName:[NSNumber numberWithInt:NSUnderlineStyleSingle]};
+        NSAttributedString *attributedString = [[NSAttributedString alloc]initWithString:[[object objectForKey:@"priceRegular"]stringValue] attributes:attributes];
+        cell.specialsDetailPriceLabel.attributedText = attributedString;
+        cell.specialsDetailSpecialPriceLabel.text = [[object objectForKey:@"priceSpecial"]stringValue];
+    } else {
+        cell.specialsDetailPriceLabel.text = [[object objectForKey:@"priceRegular"]stringValue];
+        cell.specialsDetailSpecialPriceLabel.hidden = YES;
+    }
     
     //  Configure cell to show photo placeholder and thumbnail
     //  Set your placeholder image first

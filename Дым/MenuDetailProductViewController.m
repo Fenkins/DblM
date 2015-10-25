@@ -33,6 +33,7 @@
 
     // If special price is active, enabling it and crossing out the regular price
     if ([[_object objectForKey:@"priceSpecialEnabled"]boolValue]) {
+        // Preparing crossed out string
         NSDictionary *attributes = @{NSStrikethroughStyleAttributeName:[NSNumber numberWithInt:NSUnderlineStyleSingle]};
         NSAttributedString *attributedString = [[NSAttributedString alloc]initWithString:[[_object objectForKey:@"priceRegular"]stringValue] attributes:attributes];
         self.productPriceLabel.attributedText = attributedString;
