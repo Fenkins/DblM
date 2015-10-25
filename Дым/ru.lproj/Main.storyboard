@@ -348,7 +348,7 @@
                     <navigationItem key="navigationItem" id="EXM-cw-U4m">
                         <barButtonItem key="rightBarButtonItem" title="выбор места" id="Xwb-D5-abo">
                             <connections>
-                                <segue destination="w6J-J5-nob" kind="showDetail" identifier="locationChangerSegue" id="mC5-tO-g7b"/>
+                                <segue destination="w6J-J5-nob" kind="custom" identifier="locationChangerSegue" customClass="LocationChangerSegue" id="mC5-tO-g7b"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
