@@ -20,4 +20,8 @@
 @property (weak, nonatomic) IBOutlet UIButton *specialsHideButtonOutlet;
 @property (weak, nonatomic) IBOutlet UIButton *specialsShowButtonOutlet;
 
+@property (weak, nonatomic) IBOutlet UIButton *menuHookahButtonOutlet;
+@property (weak, nonatomic) IBOutlet UIButton *menuTobaccoButtonOutlet;
+@property (weak, nonatomic) IBOutlet UIButton *menuTeaButtonOutlet;
+
 @end

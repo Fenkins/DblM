@@ -288,28 +288,34 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hl9-97-H4F">
-                                <rect key="frame" x="36" y="217" width="65" height="30"/>
+                                <rect key="frame" x="110" y="192" width="100" height="100"/>
+                                <color key="backgroundColor" red="0.57053165803395856" green="0.40700437548737622" blue="1" alpha="0.75" colorSpace="calibratedRGB"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <state key="normal" title="hookah"/>
                                 <connections>
                                     <segue destination="gF8-28-OA7" kind="show" identifier="hookahSegueID" id="TPR-zs-HAH"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7pt-iJ-pEs">
-                                <rect key="frame" x="45" y="323" width="46" height="30"/>
+                                <rect key="frame" x="110" y="408" width="100" height="100"/>
+                                <color key="backgroundColor" red="0.57053165800000005" green="0.40700437550000002" blue="1" alpha="0.75" colorSpace="calibratedRGB"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <state key="normal" title="tea"/>
                                 <connections>
                                     <segue destination="gF8-28-OA7" kind="show" identifier="teaSegueID" id="yJ7-Z9-yI5"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YJH-ej-YLZ">
-                                <rect key="frame" x="32" y="275" width="72" height="30"/>
+                                <rect key="frame" x="110" y="300" width="100" height="100"/>
+                                <color key="backgroundColor" red="0.57053165800000005" green="0.40700437550000002" blue="1" alpha="0.75" colorSpace="calibratedRGB"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <state key="normal" title="tobacco"/>
                                 <connections>
                                     <segue destination="gF8-28-OA7" kind="show" identifier="tobaccoSegueID" id="aT7-P9-lNn"/>
                                 </connections>
                             </button>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cAq-jU-fkf">
-                                <rect key="frame" x="11" y="90" width="240" height="92"/>
+                                <rect key="frame" x="40" y="81" width="240" height="92"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Yz4-Nt-ayN">
                                         <rect key="frame" x="11" y="13" width="217" height="66"/>
@@ -318,6 +324,7 @@
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1xj-GD-ODW">
                                         <rect key="frame" x="19" y="20" width="149" height="52"/>
                                         <color key="backgroundColor" red="0.2901960784" green="0.6705882353" blue="0.96862745100000003" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <state key="normal" title="Specials"/>
                                         <connections>
                                             <segue destination="Xdr-ir-OSh" kind="show" identifier="showSpecialsSegue" id="YPT-lx-CP7"/>
@@ -353,6 +360,9 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="menuHookahButtonOutlet" destination="Hl9-97-H4F" id="Ubv-q2-AH4"/>
+                        <outlet property="menuTeaButtonOutlet" destination="7pt-iJ-pEs" id="ApR-f6-R5a"/>
+                        <outlet property="menuTobaccoButtonOutlet" destination="YJH-ej-YLZ" id="uLy-EX-oa6"/>
                         <outlet property="specialsBackgroundView" destination="Yz4-Nt-ayN" id="3hP-qG-a3d"/>
                         <outlet property="specialsButtonOutlet" destination="1xj-GD-ODW" id="SUI-wW-phf"/>
                         <outlet property="specialsHideButtonOutlet" destination="v1s-eO-pzn" id="Ln8-qR-p2j"/>

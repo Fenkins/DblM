@@ -69,7 +69,7 @@
 -(void)viewWillAppear:(BOOL)animated {
     // TEMPORARY DISABLING FOR DEVELOPMENT, ENABLE UPON RELEASE OF THE FULL VERSION
     //[[self navigationController]setNavigationBarHidden:YES];
-
+    
     LocationSupplementary *suppObject = [LocationSupplementary loadCustomObjectWithKey:@"StoredLocation"];
     if (suppObject) {
         NSLog(@"We got our name %@",suppObject.storedPlaceName);
@@ -98,6 +98,13 @@
             self.isSpecialsShifted = YES;
         }
     }
+}
+
+- (void)viewDidAppear:(BOOL)animated {
+    // Animating menuButtons
+    [self menuButtonPopAnimate:self.menuHookahButtonOutlet];
+    [self menuButtonPopAnimate:self.menuTobaccoButtonOutlet];
+    [self menuButtonPopAnimate:self.menuTeaButtonOutlet];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -186,4 +193,19 @@
         self.isSpecialsShifted = YES;
     }];
 }
+
+- (void)menuButtonPopAnimate:(UIView*)view {
+    [UIView animateWithDuration:0.07 animations:^{
+        view.transform = CGAffineTransformScale(view.transform, 0.9, 0.9);
+    }completion:^(BOOL finished) {
+        [UIView animateWithDuration:0.07 animations:^{
+            view.transform = CGAffineTransformMakeScale(1.1, 1.1);
+        }completion:^(BOOL finished) {
+            [UIView animateWithDuration:0.3 animations:^{
+                view.transform = CGAffineTransformMakeScale(1.0, 1.0);
+            }];
+        }];
+    }];
+}
+
 @end
