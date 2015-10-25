@@ -31,10 +31,18 @@
         }
     }];
 
+    // If special price is active, enabling it and crossing out the regular price
+    if ([[_object objectForKey:@"priceSpecialEnabled"]boolValue]) {
+        NSDictionary *attributes = @{NSStrikethroughStyleAttributeName:[NSNumber numberWithInt:NSUnderlineStyleSingle]};
+        NSAttributedString *attributedString = [[NSAttributedString alloc]initWithString:[[_object objectForKey:@"priceRegular"]stringValue] attributes:attributes];
+        self.productPriceLabel.attributedText = attributedString;
+        self.productSpecialPriceLabel.text = [[_object objectForKey:@"priceSpecial"]stringValue];
+    } else {
+        self.productPriceLabel.text = [[_object objectForKey:@"priceRegular"]stringValue];
+        self.productSpecialPriceLabel.hidden = YES;
+    }
     self.productNameLabel.text = [_object objectForKey:@"name"];
     self.productDescriptionLabel.text = [_object objectForKey:@"description"];
-    self.productPriceLabel.text = [[_object objectForKey:@"priceRegular"]stringValue];
-    self.productSpecialPriceLabel.text = [[_object objectForKey:@"priceSpecial"]stringValue];
 }
 
 - (void)didReceiveMemoryWarning {
