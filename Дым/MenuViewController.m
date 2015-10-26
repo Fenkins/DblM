@@ -64,6 +64,23 @@
             });
         }
     }
+    
+    // Moving buttons out
+    [UIView animateWithDuration:0.0 animations:^{
+        self.menuHookahButtonOutlet.transform = CGAffineTransformTranslate(self.menuHookahButtonOutlet.transform, 0.0, -30.0);
+        self.menuTeaButtonOutlet.transform = CGAffineTransformTranslate(self.menuTeaButtonOutlet.transform, 0.0, 30.0);
+        
+        // Scaling buttons down
+        self.menuHookahButtonOutlet.transform = CGAffineTransformScale(self.menuHookahButtonOutlet.transform, 0.0, 0.7);
+        self.menuTobaccoButtonOutlet.transform = CGAffineTransformScale(self.menuTobaccoButtonOutlet.transform, 0.0, 0.7);
+        self.menuTeaButtonOutlet.transform = CGAffineTransformScale(self.menuTeaButtonOutlet.transform, 0.0, 0.7);
+    }];
+    
+    // Animating menuButtons
+    
+    [self menuButtonPopAnimate:self.menuHookahButtonOutlet];
+    [self menuButtonPopAnimate:self.menuTobaccoButtonOutlet];
+    [self menuButtonPopAnimate:self.menuTeaButtonOutlet];
 }
 
 -(void)viewWillAppear:(BOOL)animated {
@@ -101,10 +118,6 @@
 }
 
 - (void)viewDidAppear:(BOOL)animated {
-    // Animating menuButtons
-    [self menuButtonPopAnimate:self.menuHookahButtonOutlet];
-    [self menuButtonPopAnimate:self.menuTobaccoButtonOutlet];
-    [self menuButtonPopAnimate:self.menuTeaButtonOutlet];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -195,17 +208,15 @@
 }
 
 - (void)menuButtonPopAnimate:(UIView*)view {
-    [UIView animateWithDuration:0.07 animations:^{
-        view.transform = CGAffineTransformScale(view.transform, 0.9, 0.9);
-    }completion:^(BOOL finished) {
-        [UIView animateWithDuration:0.07 animations:^{
-            view.transform = CGAffineTransformMakeScale(1.1, 1.1);
-        }completion:^(BOOL finished) {
-            [UIView animateWithDuration:0.3 animations:^{
-                view.transform = CGAffineTransformMakeScale(1.0, 1.0);
-            }];
-        }];
-    }];
-}
 
+    [UIView animateWithDuration:0.5 delay:0.0 usingSpringWithDamping:5.5 initialSpringVelocity:0.1 options:UIViewAnimationOptionCurveEaseOut animations:^{
+        view.transform = CGAffineTransformMakeTranslation(0.0, 0.0);
+        view.transform = CGAffineTransformMakeScale(1.07, 1.07);
+    } completion:^(BOOL finished) {
+        [UIView animateWithDuration:1.0 delay:0.0 usingSpringWithDamping:3.0 initialSpringVelocity:0.4 options:UIViewAnimationOptionCurveEaseOut animations:^{
+            view.transform = CGAffineTransformMakeScale(1.0, 1.0);
+        } completion:nil];
+    }];
+
+}
 @end

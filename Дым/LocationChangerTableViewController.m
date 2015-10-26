@@ -26,6 +26,10 @@ static const NSString* kCCimage = @"image";
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    [self.navigationItem setHidesBackButton:TRUE];
+    
+    UIBarButtonItem *leftBarButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCancel target:self action:@selector(dismissVC)];
+    [self.navigationItem setLeftBarButtonItem:leftBarButton];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -141,5 +145,16 @@ static const NSString* kCCimage = @"image";
     // Pass the selected object to the new view controller.
 }
 */
+
+- (void)dismissVC {
+    //  We want a customised animation, so we doing that like this:
+    CATransition* transition = [CATransition animation];
+    transition.duration = 0.5;
+    transition.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseInEaseOut];
+    transition.type = kCATransitionPush; //kCATransitionMoveIn; //, kCATransitionPush, kCATransitionReveal, kCATransitionFade
+    transition.subtype = kCATransitionFromTop; //kCATransitionFromLeft, kCATransitionFromRight, kCATransitionFromTop, kCATransitionFromBottom
+    [self.navigationController.view.layer addAnimation:transition forKey:nil];    
+    [self.navigationController popViewControllerAnimated:YES];
+}
 
 @end
