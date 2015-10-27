@@ -22,6 +22,10 @@
     [Parse setApplicationId:@"DmjOIUI2H7dbCae0SdEG1A4cROv6rbwrUMzDL70A"
      
                   clientKey:@"lEebPSyFYcB4AgvfV8RnYZmoEx2mwtFZjbWHPySH"];
+    
+    // Setting up statusBar text color
+    [[UIApplication sharedApplication]setStatusBarStyle:UIStatusBarStyleLightContent];
+    
     return YES;
 }
 
