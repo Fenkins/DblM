@@ -287,29 +287,18 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hl9-97-H4F">
-                                <rect key="frame" x="110" y="192" width="100" height="100"/>
-                                <color key="backgroundColor" red="0.57053165803395856" green="0.40700437548737622" blue="1" alpha="0.75" colorSpace="calibratedRGB"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7pt-iJ-pEs">
+                                <rect key="frame" x="110" y="426" width="100" height="100"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <state key="normal" title="hookah"/>
-                                <connections>
-                                    <segue destination="gF8-28-OA7" kind="show" identifier="hookahSegueID" id="TPR-zs-HAH"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7pt-iJ-pEs">
-                                <rect key="frame" x="110" y="408" width="100" height="100"/>
-                                <color key="backgroundColor" red="0.57053165800000005" green="0.40700437550000002" blue="1" alpha="0.75" colorSpace="calibratedRGB"/>
-                                <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <state key="normal" title="tea"/>
+                                <state key="normal" image="teacup"/>
                                 <connections>
                                     <segue destination="gF8-28-OA7" kind="show" identifier="teaSegueID" id="yJ7-Z9-yI5"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YJH-ej-YLZ">
-                                <rect key="frame" x="110" y="300" width="100" height="100"/>
-                                <color key="backgroundColor" red="0.57053165800000005" green="0.40700437550000002" blue="1" alpha="0.75" colorSpace="calibratedRGB"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YJH-ej-YLZ">
+                                <rect key="frame" x="110" y="302" width="100" height="100"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <state key="normal" title="tobacco"/>
+                                <state key="normal" image="hookah"/>
                                 <connections>
                                     <segue destination="gF8-28-OA7" kind="show" identifier="tobaccoSegueID" id="aT7-P9-lNn"/>
                                 </connections>
@@ -349,6 +338,14 @@
                                 </subviews>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hl9-97-H4F">
+                                <rect key="frame" x="110" y="181" width="100" height="100"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <state key="normal" image="hookah"/>
+                                <connections>
+                                    <segue destination="gF8-28-OA7" kind="show" identifier="hookahSegueID" id="TPR-zs-HAH"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -385,21 +382,23 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mpp-gE-T1j">
-                                <rect key="frame" x="85" y="364" width="46" height="30"/>
-                                <state key="normal" title="call us"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mpp-gE-T1j">
+                                <rect key="frame" x="91" y="376" width="110" height="110"/>
+                                <state key="normal" image="call_us">
+                                    <color key="titleColor" red="0.2470588235" green="0.68235294120000001" blue="0.74901960779999999" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
                                 <connections>
                                     <action selector="callUsButton:" destination="8rJ-Kc-sve" eventType="touchUpInside" id="r8e-sG-7UU"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="call us description text" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Phy-nL-jre">
-                                <rect key="frame" x="22" y="118" width="172" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Оставьте заявку сейчас, чтобы не пропустить самое интересное!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Phy-nL-jre">
+                                <rect key="frame" x="20" y="117" width="284" height="106"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="textColor" red="0.59999999999999998" green="0.5607843137254902" blue="0.23921568627450979" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Забронировать" image="telephone_signal" id="cPa-gy-q4n"/>
                 </viewController>
@@ -623,14 +622,18 @@
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dmG-el-qV7">
                                 <rect key="frame" x="20" y="135" width="290" height="30"/>
-                                <state key="normal" title="Расписание работы"/>
+                                <state key="normal" title="Расписание работы">
+                                    <color key="titleColor" red="0.2470588235" green="0.68235294120000001" blue="0.74901960779999999" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
                                 <connections>
                                     <segue destination="bL8-hi-PJU" kind="show" id="o3G-oV-4uP"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8H8-ue-7Xn">
                                 <rect key="frame" x="20" y="233" width="132" height="30"/>
-                                <state key="normal" title="Показать на карте"/>
+                                <state key="normal" title="Показать на карте">
+                                    <color key="titleColor" red="0.2470588235" green="0.68235294120000001" blue="0.74901960779999999" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
                                 <connections>
                                     <action selector="openMapButton:" destination="zi5-2h-DNr" eventType="touchUpInside" id="9qu-yp-nna"/>
                                 </connections>
@@ -641,29 +644,35 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aww-eY-QX9">
-                                <rect key="frame" x="20" y="338" width="30" height="30"/>
-                                <state key="normal" title="call"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aww-eY-QX9">
+                                <rect key="frame" x="-34" y="298" width="138" height="110"/>
+                                <state key="normal" image="call_us">
+                                    <color key="titleColor" red="0.2470588235" green="0.68235294120000001" blue="0.74901960779999999" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
                                 <connections>
                                     <action selector="callButton:" destination="zi5-2h-DNr" eventType="touchUpInside" id="wZt-tI-0od"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zE1-Aa-7ga">
-                                <rect key="frame" x="130" y="338" width="30" height="30"/>
-                                <state key="normal" title="vk"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zE1-Aa-7ga">
+                                <rect key="frame" x="81" y="298" width="129" height="110"/>
+                                <state key="normal" image="vk">
+                                    <color key="titleColor" red="0.2470588235" green="0.68235294120000001" blue="0.74901960779999999" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
                                 <connections>
                                     <action selector="vkButton:" destination="zi5-2h-DNr" eventType="touchUpInside" id="reb-Lt-aCn"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hb3-aa-9is">
-                                <rect key="frame" x="221" y="338" width="69" height="30"/>
-                                <state key="normal" title="instagram"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hb3-aa-9is">
+                                <rect key="frame" x="201" y="298" width="110" height="110"/>
+                                <state key="normal" image="instagram">
+                                    <color key="titleColor" red="0.2470588235" green="0.68235294120000001" blue="0.74901960779999999" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
                                 <connections>
                                     <action selector="instagramButton:" destination="zi5-2h-DNr" eventType="touchUpInside" id="wF3-7E-nK0"/>
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <connections>
                         <outlet property="sheduleButtonOutlet" destination="dmG-el-qV7" id="Ljz-eE-RFN"/>
@@ -788,7 +797,7 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                         <userDefinedRuntimeAttributes>
                             <userDefinedRuntimeAttribute type="color" keyPath="tintColor">
-                                <color key="value" red="0.24705882352941178" green="0.68235294117647061" blue="0.74901960784313726" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="value" red="1" green="0.68627450980392157" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                             </userDefinedRuntimeAttribute>
                         </userDefinedRuntimeAttributes>
                     </tabBar>
@@ -844,9 +853,14 @@
         </scene>
     </scenes>
     <resources>
+        <image name="call_us" width="110" height="110"/>
         <image name="contacts" width="30" height="30"/>
+        <image name="hookah" width="150" height="150"/>
+        <image name="instagram" width="110" height="110"/>
+        <image name="teacup" width="150" height="150"/>
         <image name="telephone_signal" width="30" height="30"/>
         <image name="top_charts" width="30" height="30"/>
+        <image name="vk" width="110" height="110"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="TPR-zs-HAH"/>

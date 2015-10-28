@@ -81,6 +81,12 @@
     [self menuButtonPopAnimate:self.menuHookahButtonOutlet];
     [self menuButtonPopAnimate:self.menuTobaccoButtonOutlet];
     [self menuButtonPopAnimate:self.menuTeaButtonOutlet];
+    
+    
+    // Drawing circles background
+    [self drawCircleBackgroundForButton:self.menuHookahButtonOutlet edge:2.0 strokeColor:[UIColor orangeColor] fillColor:[UIColor orangeColor]];
+    [self drawCircleBackgroundForButton:self.menuTobaccoButtonOutlet edge:2.0 strokeColor:[UIColor orangeColor] fillColor:[UIColor orangeColor]];
+    [self drawCircleBackgroundForButton:self.menuTeaButtonOutlet edge:2.0 strokeColor:[UIColor orangeColor] fillColor:[UIColor orangeColor]];
 }
 
 -(void)viewWillAppear:(BOOL)animated {
@@ -218,5 +224,15 @@
         } completion:nil];
     }];
 
+}
+
+- (void)drawCircleBackgroundForButton:(UIButton*)button edge:(CGFloat)edge strokeColor:(UIColor*)strokeColor fillColor:(UIColor*)fillColor {
+    CAShapeLayer* circleLayer = [CAShapeLayer layer];
+    [circleLayer setPath:[[UIBezierPath bezierPathWithOvalInRect:CGRectMake(-edge, -edge, button.bounds.size.width + edge*2, button.bounds.size.height + edge*2)]CGPath]];
+    [circleLayer setStrokeColor:[strokeColor CGColor]];
+    [circleLayer setFillColor:[fillColor CGColor]];
+    circleLayer.zPosition = -1.0;
+    button.layer.zPosition = 1.0;
+    [[button layer]addSublayer:circleLayer];
 }
 @end
