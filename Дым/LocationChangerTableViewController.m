@@ -104,34 +104,36 @@ static const NSString* kCCimage = @"image";
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     NSLog(@"%ld",(long)indexPath.row);
-    [self dismissViewControllerAnimated:true completion:^{
-    PFObject *object = [self.objects objectAtIndex:indexPath.row];
-    
-    // Extracting and preparing geopoint to pass it to object
-    PFGeoPoint* geoPoint = [object objectForKey:(NSString*)kCCGeoPoint];
-    CLLocationCoordinate2D location = CLLocationCoordinate2DMake(geoPoint.latitude, geoPoint.longitude);
-    // Preparing image data
-    PFFile *image = [object objectForKey:(NSString*)kCCimage];
-    NSData* imageData = [image getData];
-        
-        
-//  Creating custom class object to put our PFObject there for further archive/unarchive procedures
-    
-    LocationSupplementary *suppObject = [[LocationSupplementary alloc]
-                                               initWithLocationName:[object objectForKey:(NSString*)kCCName]
-                                               description:[object objectForKey:(NSString*)kCCDescription]
-                                               planeLocation:[object objectForKey:(NSString*)kCCPlaсeLocation]
-                                               geoPoint:location
-                                               phoneNumber:[object objectForKey:(NSString*)kCCPhone]
-                                               vkontakteLink:[object objectForKey:(NSString*)kCCVkontakte]
-                                               instagramLink:[object objectForKey:(NSString*)kCCInstagram]
-                                               imageFile:imageData
-                                               isEnabledOption:[object objectForKey:(NSString*)kCCisEnabled]];
-    
-//  Writing the object to defaults
-    
-    [LocationSupplementary saveCustomObject:suppObject key:@"StoredLocation"];
-    [suppObject locationHasBeenSet];
+    [self dismissVC:^(BOOL finished) {
+        if (finished) {
+            PFObject *object = [self.objects objectAtIndex:indexPath.row];
+            
+            // Extracting and preparing geopoint to pass it to object
+            PFGeoPoint* geoPoint = [object objectForKey:(NSString*)kCCGeoPoint];
+            CLLocationCoordinate2D location = CLLocationCoordinate2DMake(geoPoint.latitude, geoPoint.longitude);
+            // Preparing image data
+            PFFile *image = [object objectForKey:(NSString*)kCCimage];
+            NSData* imageData = [image getData];
+            
+            
+            //  Creating custom class object to put our PFObject there for further archive/unarchive procedures
+            
+            LocationSupplementary *suppObject = [[LocationSupplementary alloc]
+                                                 initWithLocationName:[object objectForKey:(NSString*)kCCName]
+                                                 description:[object objectForKey:(NSString*)kCCDescription]
+                                                 planeLocation:[object objectForKey:(NSString*)kCCPlaсeLocation]
+                                                 geoPoint:location
+                                                 phoneNumber:[object objectForKey:(NSString*)kCCPhone]
+                                                 vkontakteLink:[object objectForKey:(NSString*)kCCVkontakte]
+                                                 instagramLink:[object objectForKey:(NSString*)kCCInstagram]
+                                                 imageFile:imageData
+                                                 isEnabledOption:[object objectForKey:(NSString*)kCCisEnabled]];
+            
+            //  Writing the object to defaults
+            
+            [LocationSupplementary saveCustomObject:suppObject key:@"StoredLocation"];
+            [suppObject locationHasBeenSet];
+        }
     }];
 }
 
@@ -146,7 +148,8 @@ static const NSString* kCCimage = @"image";
 }
 */
 
-- (void)dismissVC {
+typedef void (^completion)(BOOL finished);
+- (void)dismissVC:(completion)finished {
     //  We want a customised animation, so we doing that like this:
     CATransition* transition = [CATransition animation];
     transition.duration = 0.5;
@@ -155,6 +158,7 @@ static const NSString* kCCimage = @"image";
     transition.subtype = kCATransitionFromTop; //kCATransitionFromLeft, kCATransitionFromRight, kCATransitionFromTop, kCATransitionFromBottom
     [self.navigationController.view.layer addAnimation:transition forKey:nil];    
     [self.navigationController popViewControllerAnimated:YES];
+    finished(YES);
 }
 
 @end
