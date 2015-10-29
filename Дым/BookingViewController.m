@@ -40,6 +40,9 @@ static const NSString* kCCPhoneNumberKey = @"phoneNumber";
             NSLog(@"%@",_phoneNumber);
         }
     }];
+    
+    // Drawing circles background
+    [self drawCircleBackgroundForButton:self.callUsButtonOutlet edge:2.0 strokeColor:[UIColor orangeColor] fillColor:[UIColor orangeColor]];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -68,4 +71,15 @@ static const NSString* kCCPhoneNumberKey = @"phoneNumber";
         [calert show];
     }
 }
+
+- (void)drawCircleBackgroundForButton:(UIButton*)button edge:(CGFloat)edge strokeColor:(UIColor*)strokeColor fillColor:(UIColor*)fillColor {
+    CAShapeLayer* circleLayer = [CAShapeLayer layer];
+    [circleLayer setPath:[[UIBezierPath bezierPathWithOvalInRect:CGRectMake(-edge, -edge, button.bounds.size.width + edge*2, button.bounds.size.height + edge*2)]CGPath]];
+    [circleLayer setStrokeColor:[strokeColor CGColor]];
+    [circleLayer setFillColor:[fillColor CGColor]];
+    circleLayer.zPosition = -1.0;
+    button.layer.zPosition = 1.0;
+    [[button layer]addSublayer:circleLayer];
+}
+
 @end

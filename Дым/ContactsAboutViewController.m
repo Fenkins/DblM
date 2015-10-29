@@ -61,6 +61,22 @@ static const NSString* kCCnullStringPhrase = @"Сегодня мы работа�
         [self.sheduleButtonOutlet setTitle:self.sheduleButtonLine forState:UIControlStateNormal];
     }
     NSLog(@"%@",self.sheduleButtonLine);
+    
+    // Drawing circles background
+    [self drawCircleBackgroundForButton:self.callButtonOutlet
+                                   edge:2.0
+                            strokeColor:[UIColor orangeColor]
+                              fillColor:[UIColor orangeColor]];
+    
+    [self drawCircleBackgroundForButton:self.vkButtonOutlet
+                                   edge:2.0
+                            strokeColor:[UIColor orangeColor]
+                              fillColor:[UIColor orangeColor]];
+    
+    [self drawCircleBackgroundForButton:self.instagramButtonOutlet
+                                   edge:2.0
+                            strokeColor:[UIColor orangeColor]
+                              fillColor:[UIColor orangeColor]];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -206,5 +222,16 @@ static const NSString* kCCnullStringPhrase = @"Сегодня мы работа�
     } else {
         [[UIApplication sharedApplication]openURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@",locationInstagramLink]]];
     }
+}
+
+
+- (void)drawCircleBackgroundForButton:(UIButton*)button edge:(CGFloat)edge strokeColor:(UIColor*)strokeColor fillColor:(UIColor*)fillColor {
+    CAShapeLayer* circleLayer = [CAShapeLayer layer];
+    [circleLayer setPath:[[UIBezierPath bezierPathWithOvalInRect:CGRectMake(-edge, -edge, button.bounds.size.width + edge*2, button.bounds.size.height + edge*2)]CGPath]];
+    [circleLayer setStrokeColor:[strokeColor CGColor]];
+    [circleLayer setFillColor:[fillColor CGColor]];
+    circleLayer.zPosition = -1.0;
+    button.layer.zPosition = 1.0;
+    [[button layer]addSublayer:circleLayer];
 }
 @end

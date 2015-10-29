@@ -383,7 +383,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mpp-gE-T1j">
-                                <rect key="frame" x="91" y="376" width="110" height="110"/>
+                                <rect key="frame" x="100" y="376" width="90" height="90"/>
                                 <state key="normal" image="call_us">
                                     <color key="titleColor" red="0.2470588235" green="0.68235294120000001" blue="0.74901960779999999" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
@@ -401,6 +401,9 @@
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Забронировать" image="telephone_signal" id="cPa-gy-q4n"/>
+                    <connections>
+                        <outlet property="callUsButtonOutlet" destination="Mpp-gE-T1j" id="j20-XE-AIt"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Nw-L8-lE0" sceneMemberID="firstResponder"/>
             </objects>
@@ -645,7 +648,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aww-eY-QX9">
-                                <rect key="frame" x="-34" y="298" width="138" height="110"/>
+                                <rect key="frame" x="3" y="351" width="90" height="90"/>
                                 <state key="normal" image="call_us">
                                     <color key="titleColor" red="0.2470588235" green="0.68235294120000001" blue="0.74901960779999999" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
@@ -654,7 +657,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zE1-Aa-7ga">
-                                <rect key="frame" x="81" y="298" width="129" height="110"/>
+                                <rect key="frame" x="105" y="351" width="90" height="90"/>
                                 <state key="normal" image="vk">
                                     <color key="titleColor" red="0.2470588235" green="0.68235294120000001" blue="0.74901960779999999" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
@@ -663,7 +666,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hb3-aa-9is">
-                                <rect key="frame" x="201" y="298" width="110" height="110"/>
+                                <rect key="frame" x="209" y="351" width="90" height="90"/>
                                 <state key="normal" image="instagram">
                                     <color key="titleColor" red="0.2470588235" green="0.68235294120000001" blue="0.74901960779999999" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
@@ -675,7 +678,10 @@
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <connections>
+                        <outlet property="callButtonOutlet" destination="aww-eY-QX9" id="vVf-jV-Tzr"/>
+                        <outlet property="instagramButtonOutlet" destination="hb3-aa-9is" id="P3T-Du-JkI"/>
                         <outlet property="sheduleButtonOutlet" destination="dmG-el-qV7" id="Ljz-eE-RFN"/>
+                        <outlet property="vkButtonOutlet" destination="zE1-Aa-7ga" id="2ge-Wp-XPW"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yu4-rI-04w" userLabel="First Responder" sceneMemberID="firstResponder"/>

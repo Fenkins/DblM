@@ -13,4 +13,6 @@
 
 @interface BookingViewController : UIViewController
 - (IBAction)callUsButton:(UIButton *)sender;
+@property (weak, nonatomic) IBOutlet UIButton *callUsButtonOutlet;
+
 @end

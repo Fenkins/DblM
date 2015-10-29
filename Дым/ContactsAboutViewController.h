@@ -14,6 +14,12 @@
 
 @interface ContactsAboutViewController : UIViewController
 @property (weak, nonatomic) IBOutlet UIButton *sheduleButtonOutlet;
+
+@property (weak, nonatomic) IBOutlet UIButton *callButtonOutlet;
+@property (weak, nonatomic) IBOutlet UIButton *vkButtonOutlet;
+@property (weak, nonatomic) IBOutlet UIButton *instagramButtonOutlet;
+
+
 - (IBAction)openMapButton:(UIButton *)sender;
 - (IBAction)callButton:(UIButton *)sender;
 - (IBAction)vkButton:(UIButton *)sender;
