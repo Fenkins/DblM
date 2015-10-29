@@ -15,6 +15,8 @@
 - (IBAction)specialsShowButton:(UIButton *)sender;
 - (IBAction)specialsHideButton:(UIButton *)sender;
 
+@property (weak, nonatomic) IBOutlet UIImageView *backgroundImageLayer;
+
 @property (weak, nonatomic) IBOutlet UIView *specialsBackgroundView;
 @property (weak, nonatomic) IBOutlet UIButton *specialsButtonOutlet;
 @property (weak, nonatomic) IBOutlet UIButton *specialsHideButtonOutlet;

@@ -87,6 +87,29 @@
     [self drawCircleBackgroundForButton:self.menuHookahButtonOutlet edge:2.0 strokeColor:[UIColor orangeColor] fillColor:[UIColor orangeColor]];
     [self drawCircleBackgroundForButton:self.menuTobaccoButtonOutlet edge:2.0 strokeColor:[UIColor orangeColor] fillColor:[UIColor orangeColor]];
     [self drawCircleBackgroundForButton:self.menuTeaButtonOutlet edge:2.0 strokeColor:[UIColor orangeColor] fillColor:[UIColor orangeColor]];
+        
+    // Applying darkness and blur to backgroundImageLayer
+    UIView *blackScreen = [[UIView alloc]init];
+    blackScreen.frame = CGRectMake(self.backgroundImageLayer.frame.origin.x,
+                                   self.backgroundImageLayer.frame.origin.y,
+                                   self.backgroundImageLayer.frame.size.width,
+                                   self.backgroundImageLayer.frame.size.height);
+    blackScreen.backgroundColor = [UIColor blackColor];
+    [self.backgroundImageLayer addSubview:blackScreen];
+    blackScreen.alpha = 0.4;
+    
+    // Adding blurEffect
+    UIBlurEffect *blurryBackgroundEffect = [UIBlurEffect effectWithStyle:UIBlurEffectStyleDark];
+    UIVisualEffectView *blurryBackground = [[UIVisualEffectView alloc]initWithEffect:blurryBackgroundEffect];
+    blurryBackground.frame = CGRectMake(self.view.frame.origin.x,
+                                        self.view.frame.origin.y,
+                                        self.view.frame.size.width,
+                                        self.view.frame.size.height);
+    [self.backgroundImageLayer addSubview:blurryBackground];
+    
+//  This should work, but its not
+//    self.specialsShowButtonOutlet.imageView.image = [self.specialsShowButtonOutlet.imageView.image imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
+//    [self.specialsShowButtonOutlet.imageView setTintColor:[UIColor redColor]];
 }
 
 -(void)viewWillAppear:(BOOL)animated {
@@ -165,7 +188,7 @@
         // Background view going in
         self.specialsBackgroundView.transform = CGAffineTransformTranslate(self.specialsBackgroundView.transform, -self.specialsBackgroundView.frame.size.width*2/4, 0.0);
         self.specialsBackgroundView.transform = CGAffineTransformMakeScale(1.0, 1.0);
-        self.specialsBackgroundView.alpha = 1.0;
+        self.specialsBackgroundView.alpha = 0.3;
         
         // Rotating the showButton
         self.specialsShowButtonOutlet.transform = CGAffineTransformRotate(self.specialsShowButtonOutlet.transform, -M_PI_2);
@@ -235,4 +258,5 @@
     button.layer.zPosition = 1.0;
     [[button layer]addSublayer:circleLayer];
 }
+
 @end

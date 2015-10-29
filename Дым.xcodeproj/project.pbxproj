@@ -8,34 +8,35 @@
 
 /* Begin PBXBuildFile section */
 		18F95C5AA80914EACDB5E5FA /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 37AC6A06FF451A7595A55063 /* libPods.a */; };
-		AA0B37B31BDD290100CF144B /* LocationChangerSegue.m in Sources */ = {isa = PBXBuildFile; fileRef = AA0B37B21BDD290100CF144B /* LocationChangerSegue.m */; settings = {ASSET_TAGS = (); }; };
-		AA2CBB0F1BC17C44003A8801 /* MenuDetailTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = AA2CBB0E1BC17C44003A8801 /* MenuDetailTableViewCell.m */; settings = {ASSET_TAGS = (); }; };
-		AA2CBB121BC184EB003A8801 /* MenuDetailProductViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AA2CBB111BC184EB003A8801 /* MenuDetailProductViewController.m */; settings = {ASSET_TAGS = (); }; };
-		AA39A2BB1BC581B1009BE4AB /* ContactsSegmentsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AA39A2BA1BC581B1009BE4AB /* ContactsSegmentsViewController.m */; settings = {ASSET_TAGS = (); }; };
-		AA3C97081BD515D100BE99AF /* ContactsOurTeamCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AA3C97071BD515D100BE99AF /* ContactsOurTeamCollectionViewController.m */; settings = {ASSET_TAGS = (); }; };
-		AA3C970D1BD5371700BE99AF /* ContactsOurTeamDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AA3C970C1BD5371700BE99AF /* ContactsOurTeamDetailViewController.m */; settings = {ASSET_TAGS = (); }; };
-		AA4B8B9E1BC05A250029C815 /* MenuDetailTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AA4B8B9D1BC05A250029C815 /* MenuDetailTableViewController.m */; settings = {ASSET_TAGS = (); }; };
-		AA4B8BA11BC05EEC0029C815 /* MenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AA4B8BA01BC05EEC0029C815 /* MenuViewController.m */; settings = {ASSET_TAGS = (); }; };
-		AA4F2C2E1BC7F19F000FBF8F /* ContactsAboutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AA4F2C2D1BC7F19F000FBF8F /* ContactsAboutViewController.m */; settings = {ASSET_TAGS = (); }; };
+		AA0B37B31BDD290100CF144B /* LocationChangerSegue.m in Sources */ = {isa = PBXBuildFile; fileRef = AA0B37B21BDD290100CF144B /* LocationChangerSegue.m */; };
+		AA2CBB0F1BC17C44003A8801 /* MenuDetailTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = AA2CBB0E1BC17C44003A8801 /* MenuDetailTableViewCell.m */; };
+		AA2CBB121BC184EB003A8801 /* MenuDetailProductViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AA2CBB111BC184EB003A8801 /* MenuDetailProductViewController.m */; };
+		AA39A2BB1BC581B1009BE4AB /* ContactsSegmentsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AA39A2BA1BC581B1009BE4AB /* ContactsSegmentsViewController.m */; };
+		AA3C97081BD515D100BE99AF /* ContactsOurTeamCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AA3C97071BD515D100BE99AF /* ContactsOurTeamCollectionViewController.m */; };
+		AA3C970D1BD5371700BE99AF /* ContactsOurTeamDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AA3C970C1BD5371700BE99AF /* ContactsOurTeamDetailViewController.m */; };
+		AA4B8B9E1BC05A250029C815 /* MenuDetailTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AA4B8B9D1BC05A250029C815 /* MenuDetailTableViewController.m */; };
+		AA4B8BA11BC05EEC0029C815 /* MenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AA4B8BA01BC05EEC0029C815 /* MenuViewController.m */; };
+		AA4F2C2E1BC7F19F000FBF8F /* ContactsAboutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AA4F2C2D1BC7F19F000FBF8F /* ContactsAboutViewController.m */; };
 		AA543CBB1BBDC18D0074329E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = AA543CBA1BBDC18D0074329E /* main.m */; };
 		AA543CBE1BBDC18D0074329E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = AA543CBD1BBDC18D0074329E /* AppDelegate.m */; };
 		AA543CC71BBDC18D0074329E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AA543CC51BBDC18D0074329E /* Main.storyboard */; };
 		AA543CCC1BBDC18D0074329E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AA543CCA1BBDC18D0074329E /* LaunchScreen.storyboard */; };
-		AA586A0D1BCA95DF00C3A34F /* ContactsSheduleSupplementary.m in Sources */ = {isa = PBXBuildFile; fileRef = AA586A0C1BCA95DF00C3A34F /* ContactsSheduleSupplementary.m */; settings = {ASSET_TAGS = (); }; };
-		AA6500001BDBA6C6002AC0D7 /* SpecialsDetailTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AA65FFFF1BDBA6C6002AC0D7 /* SpecialsDetailTableViewController.m */; settings = {ASSET_TAGS = (); }; };
-		AA6500031BDBA70F002AC0D7 /* SpecialsDetailTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = AA6500021BDBA70F002AC0D7 /* SpecialsDetailTableViewCell.m */; settings = {ASSET_TAGS = (); }; };
-		AA72F23D1BCC27DD00B6EC82 /* ContactsAboutSheduleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AA72F23C1BCC27DD00B6EC82 /* ContactsAboutSheduleViewController.m */; settings = {ASSET_TAGS = (); }; };
-		AA72F2401BCC2F0400B6EC82 /* ContactsAboutSheduleTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = AA72F23F1BCC2F0400B6EC82 /* ContactsAboutSheduleTableViewCell.m */; settings = {ASSET_TAGS = (); }; };
-		AA83DCB61BDA56FE0097370D /* SpecialsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AA83DCB51BDA56FE0097370D /* SpecialsTableViewController.m */; settings = {ASSET_TAGS = (); }; };
-		AA83DCBA1BDA57740097370D /* SpecialsTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = AA83DCB91BDA57740097370D /* SpecialsTableViewCell.m */; settings = {ASSET_TAGS = (); }; };
-		AA83DCBD1BDA6BA20097370D /* SpecialsDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AA83DCBC1BDA6BA20097370D /* SpecialsDetailViewController.m */; settings = {ASSET_TAGS = (); }; };
-		AA86D2E71BC2C56C0060AF28 /* BookingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AA86D2E61BC2C56C0060AF28 /* BookingViewController.m */; settings = {ASSET_TAGS = (); }; };
-		AA911A851BD13D1F005ECC6F /* LocationSupplementary.m in Sources */ = {isa = PBXBuildFile; fileRef = AA911A841BD13D1F005ECC6F /* LocationSupplementary.m */; settings = {ASSET_TAGS = (); }; };
-		AAB78AD11BD3FFE800104B0C /* ContactsOurTeamCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = AAB78AD01BD3FFE800104B0C /* ContactsOurTeamCollectionViewCell.m */; settings = {ASSET_TAGS = (); }; };
-		AADD012C1BC0414A00069573 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AADD012B1BC0414A00069573 /* Assets.xcassets */; settings = {ASSET_TAGS = (); }; };
+		AA586A0D1BCA95DF00C3A34F /* ContactsSheduleSupplementary.m in Sources */ = {isa = PBXBuildFile; fileRef = AA586A0C1BCA95DF00C3A34F /* ContactsSheduleSupplementary.m */; };
+		AA6500001BDBA6C6002AC0D7 /* SpecialsDetailTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AA65FFFF1BDBA6C6002AC0D7 /* SpecialsDetailTableViewController.m */; };
+		AA6500031BDBA70F002AC0D7 /* SpecialsDetailTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = AA6500021BDBA70F002AC0D7 /* SpecialsDetailTableViewCell.m */; };
+		AA72F23D1BCC27DD00B6EC82 /* ContactsAboutSheduleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AA72F23C1BCC27DD00B6EC82 /* ContactsAboutSheduleViewController.m */; };
+		AA72F2401BCC2F0400B6EC82 /* ContactsAboutSheduleTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = AA72F23F1BCC2F0400B6EC82 /* ContactsAboutSheduleTableViewCell.m */; };
+		AA83DCB61BDA56FE0097370D /* SpecialsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AA83DCB51BDA56FE0097370D /* SpecialsTableViewController.m */; };
+		AA83DCBA1BDA57740097370D /* SpecialsTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = AA83DCB91BDA57740097370D /* SpecialsTableViewCell.m */; };
+		AA83DCBD1BDA6BA20097370D /* SpecialsDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AA83DCBC1BDA6BA20097370D /* SpecialsDetailViewController.m */; };
+		AA86D2E71BC2C56C0060AF28 /* BookingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AA86D2E61BC2C56C0060AF28 /* BookingViewController.m */; };
+		AA911A851BD13D1F005ECC6F /* LocationSupplementary.m in Sources */ = {isa = PBXBuildFile; fileRef = AA911A841BD13D1F005ECC6F /* LocationSupplementary.m */; };
+		AAB78AD11BD3FFE800104B0C /* ContactsOurTeamCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = AAB78AD01BD3FFE800104B0C /* ContactsOurTeamCollectionViewCell.m */; };
+		AADD012C1BC0414A00069573 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AADD012B1BC0414A00069573 /* Assets.xcassets */; };
+		AAE1E3CC1BE28FE70028152B /* backgroundLayer.jpg in Resources */ = {isa = PBXBuildFile; fileRef = AAE1E3CB1BE28FE70028152B /* backgroundLayer.jpg */; };
 		AAFD71721BCD9A5C00100E79 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AAFD71711BCD9A5C00100E79 /* MapKit.framework */; };
-		AAFD71751BCEB97C00100E79 /* LocationChangerTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AAFD71741BCEB97C00100E79 /* LocationChangerTableViewController.m */; settings = {ASSET_TAGS = (); }; };
-		AAFD71791BCEC0A900100E79 /* LocationPlaceTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = AAFD71781BCEC0A900100E79 /* LocationPlaceTableViewCell.m */; settings = {ASSET_TAGS = (); }; };
+		AAFD71751BCEB97C00100E79 /* LocationChangerTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AAFD71741BCEB97C00100E79 /* LocationChangerTableViewController.m */; };
+		AAFD71791BCEC0A900100E79 /* LocationPlaceTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = AAFD71781BCEC0A900100E79 /* LocationPlaceTableViewCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -88,6 +89,7 @@
 		AAB78ACF1BD3FFE800104B0C /* ContactsOurTeamCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContactsOurTeamCollectionViewCell.h; sourceTree = "<group>"; };
 		AAB78AD01BD3FFE800104B0C /* ContactsOurTeamCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContactsOurTeamCollectionViewCell.m; sourceTree = "<group>"; };
 		AADD012B1BC0414A00069573 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		AAE1E3CB1BE28FE70028152B /* backgroundLayer.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = backgroundLayer.jpg; sourceTree = "<group>"; };
 		AAFD71711BCD9A5C00100E79 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		AAFD71731BCEB97C00100E79 /* LocationChangerTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocationChangerTableViewController.h; sourceTree = "<group>"; };
 		AAFD71741BCEB97C00100E79 /* LocationChangerTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocationChangerTableViewController.m; sourceTree = "<group>"; };
@@ -180,6 +182,7 @@
 			isa = PBXGroup;
 			children = (
 				AADD012B1BC0414A00069573 /* Assets.xcassets */,
+				AAE1E3CB1BE28FE70028152B /* backgroundLayer.jpg */,
 				AAFD71761BCEB98800100E79 /* Location */,
 				AA86D2E41BC2C3110060AF28 /* Menu */,
 				AA83DCB71BDA570C0097370D /* Specials */,
@@ -331,6 +334,7 @@
 				AA543CCC1BBDC18D0074329E /* LaunchScreen.storyboard in Resources */,
 				AADD012C1BC0414A00069573 /* Assets.xcassets in Resources */,
 				AA543CC71BBDC18D0074329E /* Main.storyboard in Resources */,
+				AAE1E3CC1BE28FE70028152B /* backgroundLayer.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
