@@ -330,7 +330,7 @@
                                 </subviews>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7pt-iJ-pEs">
-                                <rect key="frame" x="110" y="400" width="100" height="100"/>
+                                <rect key="frame" x="110" y="398" width="100" height="100"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <state key="normal" image="teacup"/>
                                 <connections>
@@ -338,7 +338,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YJH-ej-YLZ">
-                                <rect key="frame" x="110" y="276" width="100" height="100"/>
+                                <rect key="frame" x="110" y="274" width="100" height="100"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <state key="normal" image="hookah"/>
                                 <connections>
@@ -346,7 +346,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hl9-97-H4F">
-                                <rect key="frame" x="110" y="155" width="100" height="100"/>
+                                <rect key="frame" x="110" y="153" width="100" height="100"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <state key="normal" image="hookah"/>
                                 <connections>
@@ -390,6 +390,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="backgroundLayer.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="MVT-dA-ALh">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                            </imageView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mpp-gE-T1j">
                                 <rect key="frame" x="100" y="376" width="90" height="90"/>
                                 <state key="normal" image="call_us">
@@ -399,8 +402,17 @@
                                     <action selector="callUsButton:" destination="8rJ-Kc-sve" eventType="touchUpInside" id="r8e-sG-7UU"/>
                                 </connections>
                             </button>
+                            <view alpha="0.29999999999999999" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="E5Q-XV-dcw">
+                                <rect key="frame" x="0.0" y="174" width="345" height="99"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Оставьте заявку сейчас, чтобы не пропустить самое интересное!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Phy-nL-jre">
-                                <rect key="frame" x="20" y="117" width="284" height="106"/>
+                                <rect key="frame" x="28" y="181" width="284" height="99"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.59999999999999998" green="0.5607843137254902" blue="0.23921568627450979" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -410,7 +422,9 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Забронировать" image="telephone_signal" id="cPa-gy-q4n"/>
                     <connections>
+                        <outlet property="backgroundImageLayer" destination="MVT-dA-ALh" id="esG-pu-2l3"/>
                         <outlet property="callUsButtonOutlet" destination="Mpp-gE-T1j" id="j20-XE-AIt"/>
+                        <outlet property="descriptionLabelOutlet" destination="Phy-nL-jre" id="Mkv-S7-cQt"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Nw-L8-lE0" sceneMemberID="firstResponder"/>

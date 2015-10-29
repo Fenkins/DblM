@@ -10,9 +10,12 @@
 #import <Parse.h>
 #import <Bolts.h>
 #import "LocationSupplementary.h"
+#import "UIImageView+DarkBlurry.h"
 
 @interface BookingViewController : UIViewController
 - (IBAction)callUsButton:(UIButton *)sender;
 @property (weak, nonatomic) IBOutlet UIButton *callUsButtonOutlet;
+@property (weak, nonatomic) IBOutlet UILabel *descriptionLabelOutlet;
+@property (weak, nonatomic) IBOutlet UIImageView *backgroundImageLayer;
 
 @end

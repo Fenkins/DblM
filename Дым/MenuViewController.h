@@ -10,6 +10,7 @@
 #import "MenuDetailTableViewController.h"
 #import "ContactsSheduleSupplementary.h"
 #import "LocationSupplementary.h"
+#import "UIImageView+DarkBlurry.h"
 
 @interface MenuViewController : UIViewController
 - (IBAction)specialsShowButton:(UIButton *)sender;

@@ -43,6 +43,9 @@ static const NSString* kCCPhoneNumberKey = @"phoneNumber";
     
     // Drawing circles background
     [self drawCircleBackgroundForButton:self.callUsButtonOutlet edge:2.0 strokeColor:[UIColor orangeColor] fillColor:[UIColor orangeColor]];
+    
+    [self.backgroundImageLayer applyDarkBackground];
+    [self.backgroundImageLayer applyBlurryBackground];
 }
 
 - (void)didReceiveMemoryWarning {
