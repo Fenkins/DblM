@@ -32,6 +32,12 @@ static const NSString* kCCimage = @"image";
                                     target:self
                                     action:@selector(dismissVC)];
     [self.navigationItem setLeftBarButtonItem:leftBarButton];
+    
+    // Background color
+    self.tableView.backgroundColor = [UIColor blackColor];
+    
+    // Changing colors of the PFLoadingView
+    [self changePFLoadingViewLabelTextColor:[UIColor whiteColor] shadowColor:[UIColor darkGrayColor]];
 }
 
 - (void)didReceiveMemoryWarning {

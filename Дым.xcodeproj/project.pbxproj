@@ -14,6 +14,7 @@
 		AA39A2BB1BC581B1009BE4AB /* ContactsSegmentsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AA39A2BA1BC581B1009BE4AB /* ContactsSegmentsViewController.m */; };
 		AA3C97081BD515D100BE99AF /* ContactsOurTeamCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AA3C97071BD515D100BE99AF /* ContactsOurTeamCollectionViewController.m */; };
 		AA3C970D1BD5371700BE99AF /* ContactsOurTeamDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AA3C970C1BD5371700BE99AF /* ContactsOurTeamDetailViewController.m */; };
+		AA4104161BE3B69800478894 /* PFQueryTableViewController+ChangeLoadingLabelColor.m in Sources */ = {isa = PBXBuildFile; fileRef = AA4104151BE3B69800478894 /* PFQueryTableViewController+ChangeLoadingLabelColor.m */; };
 		AA4B8B9E1BC05A250029C815 /* MenuDetailTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AA4B8B9D1BC05A250029C815 /* MenuDetailTableViewController.m */; };
 		AA4B8BA11BC05EEC0029C815 /* MenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AA4B8BA01BC05EEC0029C815 /* MenuViewController.m */; };
 		AA4F2C2E1BC7F19F000FBF8F /* ContactsAboutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AA4F2C2D1BC7F19F000FBF8F /* ContactsAboutViewController.m */; };
@@ -56,6 +57,8 @@
 		AA3C97071BD515D100BE99AF /* ContactsOurTeamCollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContactsOurTeamCollectionViewController.m; sourceTree = "<group>"; };
 		AA3C970B1BD5371700BE99AF /* ContactsOurTeamDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContactsOurTeamDetailViewController.h; sourceTree = "<group>"; };
 		AA3C970C1BD5371700BE99AF /* ContactsOurTeamDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContactsOurTeamDetailViewController.m; sourceTree = "<group>"; };
+		AA4104141BE3B69800478894 /* PFQueryTableViewController+ChangeLoadingLabelColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "PFQueryTableViewController+ChangeLoadingLabelColor.h"; sourceTree = "<group>"; };
+		AA4104151BE3B69800478894 /* PFQueryTableViewController+ChangeLoadingLabelColor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "PFQueryTableViewController+ChangeLoadingLabelColor.m"; sourceTree = "<group>"; };
 		AA4B8B9C1BC05A250029C815 /* MenuDetailTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuDetailTableViewController.h; sourceTree = "<group>"; };
 		AA4B8B9D1BC05A250029C815 /* MenuDetailTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuDetailTableViewController.m; sourceTree = "<group>"; };
 		AA4B8B9F1BC05EEC0029C815 /* MenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuViewController.h; sourceTree = "<group>"; };
@@ -163,6 +166,17 @@
 			name = About;
 			sourceTree = "<group>";
 		};
+		AA4104171BE3B71100478894 /* Appearance Categories */ = {
+			isa = PBXGroup;
+			children = (
+				AA4104141BE3B69800478894 /* PFQueryTableViewController+ChangeLoadingLabelColor.h */,
+				AA4104151BE3B69800478894 /* PFQueryTableViewController+ChangeLoadingLabelColor.m */,
+				AAE1E3D01BE2BBA40028152B /* UIImageView+DarkBlurry.h */,
+				AAE1E3D11BE2BBA40028152B /* UIImageView+DarkBlurry.m */,
+			);
+			name = "Appearance Categories";
+			sourceTree = "<group>";
+		};
 		AA543CAD1BBDC18D0074329E = {
 			isa = PBXGroup;
 			children = (
@@ -191,6 +205,7 @@
 				AA83DCB71BDA570C0097370D /* Specials */,
 				AA86D2E81BC2C57B0060AF28 /* Booking */,
 				AA39A2BC1BC581BC009BE4AB /* Contacts */,
+				AA4104171BE3B71100478894 /* Appearance Categories */,
 				AA543CBC1BBDC18D0074329E /* AppDelegate.h */,
 				AA543CBD1BBDC18D0074329E /* AppDelegate.m */,
 				AA543CC51BBDC18D0074329E /* Main.storyboard */,
@@ -231,8 +246,6 @@
 			children = (
 				AA4B8B9F1BC05EEC0029C815 /* MenuViewController.h */,
 				AA4B8BA01BC05EEC0029C815 /* MenuViewController.m */,
-				AAE1E3D01BE2BBA40028152B /* UIImageView+DarkBlurry.h */,
-				AAE1E3D11BE2BBA40028152B /* UIImageView+DarkBlurry.m */,
 				AA2CBB0D1BC17C44003A8801 /* MenuDetailTableViewCell.h */,
 				AA2CBB0E1BC17C44003A8801 /* MenuDetailTableViewCell.m */,
 				AA4B8B9C1BC05A250029C815 /* MenuDetailTableViewController.h */,
@@ -393,6 +406,7 @@
 				AA2CBB0F1BC17C44003A8801 /* MenuDetailTableViewCell.m in Sources */,
 				AA86D2E71BC2C56C0060AF28 /* BookingViewController.m in Sources */,
 				AA543CBE1BBDC18D0074329E /* AppDelegate.m in Sources */,
+				AA4104161BE3B69800478894 /* PFQueryTableViewController+ChangeLoadingLabelColor.m in Sources */,
 				AA543CBB1BBDC18D0074329E /* main.m in Sources */,
 				AA39A2BB1BC581B1009BE4AB /* ContactsSegmentsViewController.m in Sources */,
 				AAFD71751BCEB97C00100E79 /* LocationChangerTableViewController.m in Sources */,

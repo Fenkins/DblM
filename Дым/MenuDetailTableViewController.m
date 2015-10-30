@@ -18,6 +18,9 @@
     [super viewDidLoad];
     NSLog(@"We are looking at %@ table",self.menuName);
     // Do any additional setup after loading the view.
+
+    // Background color
+    self.tableView.backgroundColor = [UIColor blackColor];
 }
 -(void)viewWillAppear:(BOOL)animated {
     [[self navigationController]setNavigationBarHidden:NO];

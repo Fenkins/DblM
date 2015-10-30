@@ -11,6 +11,7 @@
 #import <Bolts.h>
 #import "LocationPlaceTableViewCell.h"
 #import "LocationSupplementary.h"
+#import "PFQueryTableViewController+ChangeLoadingLabelColor.h"
 
 @interface LocationChangerTableViewController : PFQueryTableViewController
 
