@@ -163,7 +163,6 @@ static const NSString* kCCimage = @"image";
     }];
 }
 
-
 /*
 #pragma mark - Navigation
 
