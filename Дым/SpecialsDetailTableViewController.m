@@ -17,6 +17,26 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    
+    // Background color
+    self.tableView.backgroundColor = [UIColor blackColor];
+    
+    // Changing colors of the PFLoadingView
+    [self changePFLoadingViewLabelTextColor:[UIColor whiteColor] shadowColor:[UIColor darkGrayColor]];
+    
+    // Adding background UIImageView to a table
+    UIImageView *backgroundImageLayer = [[UIImageView alloc]
+                                         initWithImage:[UIImage imageNamed:@"backgroundLayer.jpg"]];
+    backgroundImageLayer.layer.zPosition = -1.0;
+    [backgroundImageLayer setFrame:self.tableView.frame];
+    // This way our image wont fool around/hang out betweet transitions    
+    backgroundImageLayer.clipsToBounds = YES;
+    [backgroundImageLayer setContentMode:UIViewContentModeScaleAspectFill];
+    self.tableView.backgroundView = backgroundImageLayer;
+    
+    // Adding layer of dark and blur
+    [backgroundImageLayer applyBlurryBackground];
+    [backgroundImageLayer applyDarkBackground];
 }
 
 -(void)viewWillAppear:(BOOL)animated {
@@ -61,7 +81,7 @@
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath object:(PFObject *)object {
-    
+
     static NSString *simpleTableIdentifier = @"specialsDetailTableViewCell";
     
     SpecialsDetailTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:simpleTableIdentifier];
@@ -69,7 +89,7 @@
         cell = [[SpecialsDetailTableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:simpleTableIdentifier];
     }
     
-    
+    [cell setBackgroundColor:[UIColor clearColor]];
     //  Configure the cell to show title and description
     cell.specialsDetailNameLabel.text = [object objectForKey:@"name"];
     cell.specialsDetailShortDescriptionLabel.text = [object objectForKey:@"shortDescription"];
@@ -101,6 +121,10 @@
     }];
     
     return cell;
+}
+
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
 
 #pragma mark - Navigation

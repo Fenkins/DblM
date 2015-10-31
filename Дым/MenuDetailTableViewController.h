@@ -12,6 +12,10 @@
 #import "MenuDetailTableViewCell.h"
 #import "MenuDetailProductViewController.h"
 #import "LocationSupplementary.h"
+#import "PFQueryTableViewController+ChangeLoadingLabelColor.h"
+#import "UIImageView+DarkBlurry.h"
+//#import "UIImage+vImageBlur.h"
+#import "UIImage+GPUImageBlur.h"
 
 @interface MenuDetailTableViewController : PFQueryTableViewController
 @property (nonatomic) NSString* menuName;

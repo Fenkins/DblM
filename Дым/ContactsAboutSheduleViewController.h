@@ -11,6 +11,8 @@
 #import <Bolts.h>
 #import "ContactsAboutSheduleTableViewCell.h"
 #import "LocationSupplementary.h"
+#import "PFQueryTableViewController+ChangeLoadingLabelColor.h"
+#import "UIImageView+DarkBlurry.h"
 
 @interface ContactsAboutSheduleViewController : PFQueryTableViewController
 @property (weak, nonatomic) IBOutlet UIImageView *sheduleImage;

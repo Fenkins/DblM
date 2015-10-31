@@ -46,6 +46,26 @@ static const NSString* kCCEndTime = @"endTime";
                 }
             }];
     });
+    
+    // Background color
+    self.tableView.backgroundColor = [UIColor blackColor];
+    
+    // Changing colors of the PFLoadingView
+    [self changePFLoadingViewLabelTextColor:[UIColor whiteColor] shadowColor:[UIColor darkGrayColor]];
+    
+    // Adding background UIImageView to a table
+    UIImageView *backgroundImageLayer = [[UIImageView alloc]
+                                         initWithImage:[UIImage imageNamed:@"backgroundLayer.jpg"]];
+    backgroundImageLayer.layer.zPosition = -1.0;
+    [backgroundImageLayer setFrame:self.tableView.frame];
+    // This way our image wont fool around/hang out betweet transitions
+    backgroundImageLayer.clipsToBounds = YES;
+    [backgroundImageLayer setContentMode:UIViewContentModeScaleAspectFill];
+    self.tableView.backgroundView = backgroundImageLayer;
+    
+    // Adding layer of dark and blur
+    [backgroundImageLayer applyBlurryBackground];
+    [backgroundImageLayer applyDarkBackground];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -93,7 +113,7 @@ static const NSString* kCCEndTime = @"endTime";
     if (cell == nil) {
         cell = [[ContactsAboutSheduleTableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:sheduleCellID];
     }
-    
+    [cell setBackgroundColor:[UIColor clearColor]];
     if ([[object objectForKey:(NSString*)kCCStartTime]isKindOfClass:[NSNumber class]] &&
         [[object objectForKey:(NSString*)kCCEndTime]isKindOfClass:[NSNumber class]]) {
         //  Configure the cell to show title and description

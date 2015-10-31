@@ -9,6 +9,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>GPUImage.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Parse.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -27,22 +32,27 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>0D78E5D8D47F321525D8A6D6DF23F7FF</key>
+		<key>0874D5882AF7949B3F793F4E33DABDA6</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>382E621E5D5728388819625849FFF2D2</key>
+		<key>35B5D0A81E642975A2B2284B6FE794F2</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>8A5E54941769F502C47E59574B295569</key>
+		<key>66DAB58B80ECC9427D6301AC949D28D0</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>FB179D43F4BD1D725F31FDE1656F142B</key>
+		<key>7B0EFBB877C1C0F2F864765ED689F03E</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>98E00F23E4C8B5FFA55194ED4E861C46</key>
 		<dict>
 			<key>primary</key>
 			<true/>

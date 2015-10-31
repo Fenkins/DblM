@@ -13,6 +13,8 @@
 #import "LocationSupplementary.h"
 #import "SpecialsDetailTableViewCell.h"
 #import "MenuDetailProductViewController.h"
+#import "UIImageView+DarkBlurry.h"
+#import "PFQueryTableViewController+ChangeLoadingLabelColor.h"
 
 @interface SpecialsDetailTableViewController : PFQueryTableViewController
 @property (nonatomic) PFObject* object;

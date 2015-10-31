@@ -13,6 +13,8 @@
 #import "LocationSupplementary.h"
 #import "SpecialsTableViewCell.h"
 #import "SpecialsDetailViewController.h"
+#import "PFQueryTableViewController+ChangeLoadingLabelColor.h"
+#import "UIImageView+DarkBlurry.h"
 
 @interface SpecialsTableViewController : PFQueryTableViewController
 

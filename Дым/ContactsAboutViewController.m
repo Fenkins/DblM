@@ -77,6 +77,11 @@ static const NSString* kCCnullStringPhrase = @"Сегодня мы работа�
                                    edge:2.0
                             strokeColor:[UIColor orangeColor]
                               fillColor:[UIColor orangeColor]];
+    
+    // Adding layer of dark and blur
+    [self.backgroundImageLayer applyBlurryBackground];
+    [self.backgroundImageLayer applyDarkBackground];
+
 }
 
 - (void)viewWillAppear:(BOOL)animated {

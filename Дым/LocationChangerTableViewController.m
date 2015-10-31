@@ -38,6 +38,20 @@ static const NSString* kCCimage = @"image";
     
     // Changing colors of the PFLoadingView
     [self changePFLoadingViewLabelTextColor:[UIColor whiteColor] shadowColor:[UIColor darkGrayColor]];
+    
+    // Adding background UIImageView to a table
+    UIImageView *backgroundImageLayer = [[UIImageView alloc]
+                                         initWithImage:[UIImage imageNamed:@"backgroundLayer.jpg"]];
+    backgroundImageLayer.layer.zPosition = -1.0;
+    [backgroundImageLayer setFrame:self.tableView.frame];
+    // This way our image wont fool around/hang out betweet transitions    
+    backgroundImageLayer.clipsToBounds = YES;
+    [backgroundImageLayer setContentMode:UIViewContentModeScaleAspectFill];
+    self.tableView.backgroundView = backgroundImageLayer;
+    
+    // Adding layer of dark and blur
+    [backgroundImageLayer applyBlurryBackground];
+    [backgroundImageLayer applyDarkBackground];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -85,7 +99,7 @@ static const NSString* kCCimage = @"image";
     if (cell == nil) {
         cell = [[LocationPlaceTableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:simpleTableIdentifier];
     }
-    
+    cell.backgroundColor = [UIColor clearColor];
     
     //  Configure the cell to show title and description
     cell.locationName.text = [object objectForKey:(NSString*)kCCName];
@@ -111,7 +125,9 @@ static const NSString* kCCimage = @"image";
 }
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    NSLog(@"%ld",(long)indexPath.row);
+    
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+//    NSLog(@"%ld",(long)indexPath.row);
     [self dismissVC:^(BOOL finished) {
         if (finished) {
             PFObject *object = [self.objects objectAtIndex:indexPath.row];

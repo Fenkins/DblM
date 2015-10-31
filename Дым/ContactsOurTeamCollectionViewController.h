@@ -13,6 +13,7 @@
 #import "ContactsOurTeamCollectionViewCell.h"
 #import "LocationSupplementary.h"
 #import "ContactsOurTeamDetailViewController.h"
+#import "UIImageView+DarkBlurry.h"
 
 @interface ContactsOurTeamCollectionViewController : PFQueryCollectionViewController
 

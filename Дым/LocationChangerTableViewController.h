@@ -12,6 +12,7 @@
 #import "LocationPlaceTableViewCell.h"
 #import "LocationSupplementary.h"
 #import "PFQueryTableViewController+ChangeLoadingLabelColor.h"
+#import "UIImageView+DarkBlurry.h"
 
 @interface LocationChangerTableViewController : PFQueryTableViewController
 

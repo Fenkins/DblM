@@ -10,6 +10,7 @@
 #import <ParseUI.h>
 #import <Bolts.h>
 #import <UIKit/UIKit.h>
+#import "UIImageView+DarkBlurry.h"
 
 @interface MenuDetailProductViewController : UIViewController
 @property (weak, nonatomic) IBOutlet UIImageView *productImageView;

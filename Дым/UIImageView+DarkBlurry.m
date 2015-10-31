@@ -11,22 +11,23 @@
 @implementation UIImageView (DarkBlurry)
 - (void)applyDarkBackground {
     UIView *blackScreen = [[UIView alloc]init];
-    blackScreen.frame = CGRectMake(self.frame.origin.x,
-                                   self.frame.origin.y,
-                                   self.frame.size.width,
-                                   self.frame.size.height);
+    blackScreen.frame = CGRectMake(self.bounds.origin.x,
+                                   self.bounds.origin.y,
+                                   self.bounds.size.width,
+                                   self.bounds.size.height);
     blackScreen.backgroundColor = [UIColor blackColor];
     [self addSubview:blackScreen];
-    blackScreen.alpha = 0.4;
+    blackScreen.alpha = 0.7;
 }
 
 - (void)applyBlurryBackground {
     UIBlurEffect *blurryBackgroundEffect = [UIBlurEffect effectWithStyle:UIBlurEffectStyleDark];
     UIVisualEffectView *blurryBackground = [[UIVisualEffectView alloc]initWithEffect:blurryBackgroundEffect];
-    blurryBackground.frame = CGRectMake(self.frame.origin.x,
-                                        self.frame.origin.y,
-                                        self.frame.size.width,
-                                        self.frame.size.height);
+    blurryBackground.frame = CGRectMake(self.bounds.origin.x,
+                                        self.bounds.origin.y,
+                                        self.bounds.size.width,
+                                        self.bounds.size.height);
     [self addSubview:blurryBackground];
 }
+
 @end

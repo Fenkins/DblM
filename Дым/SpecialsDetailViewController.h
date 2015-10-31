@@ -10,6 +10,7 @@
 #import <Parse.h>
 #import <Bolts.h>
 #import "SpecialsDetailTableViewController.h"
+#import "UIImageView+DarkBlurry.h"
 
 @interface SpecialsDetailViewController : UIViewController
 @property (weak, nonatomic) IBOutlet UIImageView *specialsImageView;

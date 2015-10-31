@@ -11,6 +11,7 @@
 #import <Bolts.h>
 #import <MapKit/MapKit.h>
 #import "LocationSupplementary.h"
+#import "UIImageView+DarkBlurry.h"
 
 @interface ContactsAboutViewController : UIViewController
 @property (weak, nonatomic) IBOutlet UIButton *sheduleButtonOutlet;
@@ -19,6 +20,7 @@
 @property (weak, nonatomic) IBOutlet UIButton *vkButtonOutlet;
 @property (weak, nonatomic) IBOutlet UIButton *instagramButtonOutlet;
 
+@property (weak, nonatomic) IBOutlet UIImageView *backgroundImageLayer;
 
 - (IBAction)openMapButton:(UIButton *)sender;
 - (IBAction)callButton:(UIButton *)sender;

@@ -34,6 +34,20 @@
     self.teamMemberNameLabel.text = [_object objectForKey:@"name"];
     self.teamMemberPositionLabel.text = [_object objectForKey:@"position"];
     self.teamMemberDescriptionMember.text = [_object objectForKey:@"description"];
+    
+    // Adding background UIImageView to a table
+    UIImageView *backgroundImageLayer = [[UIImageView alloc]
+                                         initWithImage:[UIImage imageNamed:@"backgroundLayer.jpg"]];
+    backgroundImageLayer.layer.zPosition = -1.0;
+    [backgroundImageLayer setFrame:self.view.frame];
+    // This way our image wont fool around/hang out betweet transitions
+    backgroundImageLayer.clipsToBounds = YES;
+    [backgroundImageLayer setContentMode:UIViewContentModeScaleAspectFill];
+    [self.view addSubview:backgroundImageLayer];
+    
+    // Adding layer of dark and blur
+    [backgroundImageLayer applyBlurryBackground];
+    [backgroundImageLayer applyDarkBackground];
 }
 
 - (void)didReceiveMemoryWarning {
