@@ -78,8 +78,12 @@ static const NSString* kCCnullStringPhrase = @"Сегодня мы работа�
                             strokeColor:[UIColor orangeColor]
                               fillColor:[UIColor orangeColor]];
     
+    UIImage *blurredImage = [UIImage blurryGPUImage:[UIImage imageNamed:@"backgroundLayer.jpg"]];
+    
+    self.backgroundImageLayer.image = blurredImage;
+    // This way our image wont fool around/hang out betweet transitions
+    
     // Adding layer of dark and blur
-    [self.backgroundImageLayer applyBlurryBackground];
     [self.backgroundImageLayer applyDarkBackground];
 
 }

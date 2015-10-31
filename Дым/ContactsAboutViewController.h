@@ -12,6 +12,7 @@
 #import <MapKit/MapKit.h>
 #import "LocationSupplementary.h"
 #import "UIImageView+DarkBlurry.h"
+#import "UIImage+GPUImageBlur.h"
 
 @interface ContactsAboutViewController : UIViewController
 @property (weak, nonatomic) IBOutlet UIButton *sheduleButtonOutlet;

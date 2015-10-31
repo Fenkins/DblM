@@ -11,6 +11,7 @@
 #import <Bolts.h>
 #import "LocationSupplementary.h"
 #import "UIImageView+DarkBlurry.h"
+#import "UIImage+GPUImageBlur.h"
 
 @interface BookingViewController : UIViewController
 - (IBAction)callUsButton:(UIButton *)sender;

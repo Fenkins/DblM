@@ -34,6 +34,7 @@
 		AA911A851BD13D1F005ECC6F /* LocationSupplementary.m in Sources */ = {isa = PBXBuildFile; fileRef = AA911A841BD13D1F005ECC6F /* LocationSupplementary.m */; };
 		AA925B611BE5064400EC69AB /* UIImage+vImageBlur.m in Sources */ = {isa = PBXBuildFile; fileRef = AA925B601BE5064400EC69AB /* UIImage+vImageBlur.m */; };
 		AA925B641BE508C900EC69AB /* UIImage+GPUImageBlur.m in Sources */ = {isa = PBXBuildFile; fileRef = AA925B631BE508C900EC69AB /* UIImage+GPUImageBlur.m */; };
+		AA925B671BE5257F00EC69AB /* PFQueryCollectionViewController+ChangeLoadingLabelColor.m in Sources */ = {isa = PBXBuildFile; fileRef = AA925B661BE5257F00EC69AB /* PFQueryCollectionViewController+ChangeLoadingLabelColor.m */; };
 		AAB78AD11BD3FFE800104B0C /* ContactsOurTeamCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = AAB78AD01BD3FFE800104B0C /* ContactsOurTeamCollectionViewCell.m */; };
 		AADD012C1BC0414A00069573 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AADD012B1BC0414A00069573 /* Assets.xcassets */; };
 		AAE1E3CC1BE28FE70028152B /* backgroundLayer.jpg in Resources */ = {isa = PBXBuildFile; fileRef = AAE1E3CB1BE28FE70028152B /* backgroundLayer.jpg */; };
@@ -96,6 +97,8 @@
 		AA925B601BE5064400EC69AB /* UIImage+vImageBlur.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+vImageBlur.m"; sourceTree = "<group>"; };
 		AA925B621BE508C900EC69AB /* UIImage+GPUImageBlur.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+GPUImageBlur.h"; sourceTree = "<group>"; };
 		AA925B631BE508C900EC69AB /* UIImage+GPUImageBlur.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+GPUImageBlur.m"; sourceTree = "<group>"; };
+		AA925B651BE5257F00EC69AB /* PFQueryCollectionViewController+ChangeLoadingLabelColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "PFQueryCollectionViewController+ChangeLoadingLabelColor.h"; sourceTree = "<group>"; };
+		AA925B661BE5257F00EC69AB /* PFQueryCollectionViewController+ChangeLoadingLabelColor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "PFQueryCollectionViewController+ChangeLoadingLabelColor.m"; sourceTree = "<group>"; };
 		AAB78ACF1BD3FFE800104B0C /* ContactsOurTeamCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContactsOurTeamCollectionViewCell.h; sourceTree = "<group>"; };
 		AAB78AD01BD3FFE800104B0C /* ContactsOurTeamCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContactsOurTeamCollectionViewCell.m; sourceTree = "<group>"; };
 		AADD012B1BC0414A00069573 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -177,6 +180,8 @@
 			children = (
 				AA4104141BE3B69800478894 /* PFQueryTableViewController+ChangeLoadingLabelColor.h */,
 				AA4104151BE3B69800478894 /* PFQueryTableViewController+ChangeLoadingLabelColor.m */,
+				AA925B651BE5257F00EC69AB /* PFQueryCollectionViewController+ChangeLoadingLabelColor.h */,
+				AA925B661BE5257F00EC69AB /* PFQueryCollectionViewController+ChangeLoadingLabelColor.m */,
 				AAE1E3D01BE2BBA40028152B /* UIImageView+DarkBlurry.h */,
 				AAE1E3D11BE2BBA40028152B /* UIImageView+DarkBlurry.m */,
 				AA925B5F1BE5064400EC69AB /* UIImage+vImageBlur.h */,
@@ -417,6 +422,7 @@
 				AA2CBB0F1BC17C44003A8801 /* MenuDetailTableViewCell.m in Sources */,
 				AA86D2E71BC2C56C0060AF28 /* BookingViewController.m in Sources */,
 				AA925B611BE5064400EC69AB /* UIImage+vImageBlur.m in Sources */,
+				AA925B671BE5257F00EC69AB /* PFQueryCollectionViewController+ChangeLoadingLabelColor.m in Sources */,
 				AA543CBE1BBDC18D0074329E /* AppDelegate.m in Sources */,
 				AA4104161BE3B69800478894 /* PFQueryTableViewController+ChangeLoadingLabelColor.m in Sources */,
 				AA543CBB1BBDC18D0074329E /* main.m in Sources */,

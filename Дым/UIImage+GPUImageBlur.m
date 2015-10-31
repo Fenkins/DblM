@@ -9,8 +9,7 @@
 #import "UIImage+GPUImageBlur.h"
 
 @implementation UIImage (GPUImageBlur)
-+ (UIImage *)blurryGPUImage:(UIImage *)image
-              withBlurLevel:(NSInteger)blur {
++ (UIImage *)blurryGPUImage:(UIImage *)image {
     GPUImageiOSBlurFilter *blurFilter =
     [[GPUImageiOSBlurFilter alloc] init];
     UIImage *result = [blurFilter imageByFilteringImage:image];

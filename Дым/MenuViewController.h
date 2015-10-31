@@ -11,6 +11,7 @@
 #import "ContactsSheduleSupplementary.h"
 #import "LocationSupplementary.h"
 #import "UIImageView+DarkBlurry.h"
+#import "UIImage+GPUImageBlur.h"
 
 @interface MenuViewController : UIViewController
 - (IBAction)specialsShowButton:(UIButton *)sender;

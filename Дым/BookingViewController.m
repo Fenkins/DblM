@@ -44,8 +44,13 @@ static const NSString* kCCPhoneNumberKey = @"phoneNumber";
     // Drawing circles background
     [self drawCircleBackgroundForButton:self.callUsButtonOutlet edge:2.0 strokeColor:[UIColor orangeColor] fillColor:[UIColor orangeColor]];
     
+    UIImage *blurredImage = [UIImage blurryGPUImage:[UIImage imageNamed:@"backgroundLayer.jpg"]];
+    
+    self.backgroundImageLayer.image = blurredImage;
+    // This way our image wont fool around/hang out betweet transitions
+    
+    // Adding layer of dark and blur
     [self.backgroundImageLayer applyDarkBackground];
-    [self.backgroundImageLayer applyBlurryBackground];
 }
 
 - (void)didReceiveMemoryWarning {

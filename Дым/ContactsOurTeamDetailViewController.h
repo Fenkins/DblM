@@ -10,6 +10,7 @@
 #import <Parse.h>
 #import <Bolts.h>
 #import "UIImageView+DarkBlurry.h"
+#import "UIImage+GPUImageBlur.h"
 
 @interface ContactsOurTeamDetailViewController : UIViewController
 @property (weak, nonatomic) IBOutlet UIImageView *teamMemberImage;

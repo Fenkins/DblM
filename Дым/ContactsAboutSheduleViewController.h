@@ -13,6 +13,7 @@
 #import "LocationSupplementary.h"
 #import "PFQueryTableViewController+ChangeLoadingLabelColor.h"
 #import "UIImageView+DarkBlurry.h"
+#import "UIImage+GPUImageBlur.h"
 
 @interface ContactsAboutSheduleViewController : PFQueryTableViewController
 @property (weak, nonatomic) IBOutlet UIImageView *sheduleImage;

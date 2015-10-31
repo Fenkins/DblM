@@ -10,6 +10,5 @@
 #import <GPUImage.h>
 
 @interface UIImage (GPUImageBlur)
-+ (UIImage *)blurryGPUImage:(UIImage *)image
-              withBlurLevel:(NSInteger)blur;
++ (UIImage *)blurryGPUImage:(UIImage *)image;
 @end

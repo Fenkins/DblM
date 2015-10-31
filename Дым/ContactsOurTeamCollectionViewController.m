@@ -19,6 +19,9 @@
     // Do any additional setup after loading the view.
     self.collectionView.backgroundColor = [UIColor blackColor];
     
+    // Changing colors of the PFLoadingView
+    [self changePFLoadingViewLabelTextColor:[UIColor whiteColor] shadowColor:[UIColor darkGrayColor]];
+    
     // Adding background UIImageView to a table
     UIImageView *backgroundImageLayer = [[UIImageView alloc]
                                          initWithImage:[UIImage imageNamed:@"backgroundLayer.jpg"]];
@@ -29,8 +32,12 @@
     [backgroundImageLayer setContentMode:UIViewContentModeScaleAspectFill];
     self.collectionView.backgroundView = backgroundImageLayer;
     
+    UIImage *blurredImage = [UIImage blurryGPUImage:[UIImage imageNamed:@"backgroundLayer.jpg"]];
+    
+    backgroundImageLayer.image = blurredImage;
+    // This way our image wont fool around/hang out betweet transitions
+    
     // Adding layer of dark and blur
-    [backgroundImageLayer applyBlurryBackground];
     [backgroundImageLayer applyDarkBackground];
 }
 

@@ -29,8 +29,7 @@
     //UIImageView *backgroundImageLayer = [[UIImageView alloc]
       //                                   initWithImage:[UIImage imageNamed:@"backgroundLayer.jpg"]];
     
-    //UIImage *blurredImage = [UIImage makeBlurryImageOutOfThis:[UIImage imageNamed:@"backgroundLayer.jpg"] withBlurLevel:0.9];
-    UIImage *blurredImage = [UIImage blurryGPUImage:[UIImage imageNamed:@"backgroundLayer.jpg"] withBlurLevel:0.0];
+    UIImage *blurredImage = [UIImage blurryGPUImage:[UIImage imageNamed:@"backgroundLayer.jpg"]];
     
     UIImageView *backgroundImageLayer = [[UIImageView alloc]
                                          initWithImage:blurredImage];
@@ -43,7 +42,6 @@
     self.tableView.backgroundView = backgroundImageLayer;
     
     // Adding layer of dark and blur
-//    [backgroundImageLayer applyBlurryBackground];
     [backgroundImageLayer applyDarkBackground];
 }
 -(void)viewWillAppear:(BOOL)animated {

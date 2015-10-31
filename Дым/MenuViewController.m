@@ -88,8 +88,12 @@
     [self drawCircleBackgroundForButton:self.menuTobaccoButtonOutlet edge:2.0 strokeColor:[UIColor orangeColor] fillColor:[UIColor orangeColor]];
     [self drawCircleBackgroundForButton:self.menuTeaButtonOutlet edge:2.0 strokeColor:[UIColor orangeColor] fillColor:[UIColor orangeColor]];
     
+    UIImage *blurredImage = [UIImage blurryGPUImage:[UIImage imageNamed:@"backgroundLayer.jpg"]];
+    
+    self.backgroundImageLayer.image = blurredImage;
+    // This way our image wont fool around/hang out betweet transitions
+    
     // Adding layer of dark and blur
-    [self.backgroundImageLayer applyBlurryBackground];
     [self.backgroundImageLayer applyDarkBackground];
     
 //  This should work, but its not

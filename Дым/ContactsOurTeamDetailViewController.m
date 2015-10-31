@@ -45,8 +45,12 @@
     [backgroundImageLayer setContentMode:UIViewContentModeScaleAspectFill];
     [self.view addSubview:backgroundImageLayer];
     
+    UIImage *blurredImage = [UIImage blurryGPUImage:[UIImage imageNamed:@"backgroundLayer.jpg"]];
+    
+    backgroundImageLayer.image = blurredImage;
+    // This way our image wont fool around/hang out betweet transitions
+    
     // Adding layer of dark and blur
-    [backgroundImageLayer applyBlurryBackground];
     [backgroundImageLayer applyDarkBackground];
 }
 

@@ -40,17 +40,19 @@ static const NSString* kCCimage = @"image";
     [self changePFLoadingViewLabelTextColor:[UIColor whiteColor] shadowColor:[UIColor darkGrayColor]];
     
     // Adding background UIImageView to a table
+    UIImage *blurredImage = [UIImage blurryGPUImage:[UIImage imageNamed:@"backgroundLayer.jpg"]];
+    
     UIImageView *backgroundImageLayer = [[UIImageView alloc]
-                                         initWithImage:[UIImage imageNamed:@"backgroundLayer.jpg"]];
+                                         initWithImage:blurredImage];
+    
     backgroundImageLayer.layer.zPosition = -1.0;
     [backgroundImageLayer setFrame:self.tableView.frame];
-    // This way our image wont fool around/hang out betweet transitions    
+    // This way our image wont fool around/hang out betweet transitions
     backgroundImageLayer.clipsToBounds = YES;
     [backgroundImageLayer setContentMode:UIViewContentModeScaleAspectFill];
     self.tableView.backgroundView = backgroundImageLayer;
     
     // Adding layer of dark and blur
-    [backgroundImageLayer applyBlurryBackground];
     [backgroundImageLayer applyDarkBackground];
 }
 

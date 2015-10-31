@@ -64,7 +64,7 @@ if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_resource "GPUImage/framework/Resources/lookup_soft_elegance_1.png"
   install_resource "GPUImage/framework/Resources/lookup_soft_elegance_2.png"
   install_resource "Parse/Parse/Resources/en.lproj"
-#  install_resource "ParseUI/ParseUI/Resources/Localization/en.lproj"
+  install_resource "ParseUI/ParseUI/Resources/Localization/en.lproj"
   install_resource "ParseUI/ParseUI/Resources/Localization/ru.lproj"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
@@ -74,7 +74,7 @@ if [[ "$CONFIGURATION" == "Release" ]]; then
   install_resource "GPUImage/framework/Resources/lookup_soft_elegance_1.png"
   install_resource "GPUImage/framework/Resources/lookup_soft_elegance_2.png"
   install_resource "Parse/Parse/Resources/en.lproj"
-#  install_resource "ParseUI/ParseUI/Resources/Localization/en.lproj"
+  install_resource "ParseUI/ParseUI/Resources/Localization/en.lproj"
   install_resource "ParseUI/ParseUI/Resources/Localization/ru.lproj"
 fi
 

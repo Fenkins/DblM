@@ -11,6 +11,7 @@
 #import <Bolts.h>
 #import <UIKit/UIKit.h>
 #import "UIImageView+DarkBlurry.h"
+#import "UIImage+GPUImageBlur.h"
 
 @interface MenuDetailProductViewController : UIViewController
 @property (weak, nonatomic) IBOutlet UIImageView *productImageView;

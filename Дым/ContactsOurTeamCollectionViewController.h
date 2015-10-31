@@ -14,6 +14,8 @@
 #import "LocationSupplementary.h"
 #import "ContactsOurTeamDetailViewController.h"
 #import "UIImageView+DarkBlurry.h"
+#import "UIImage+GPUImageBlur.h"
+#import "PFQueryCollectionViewController+ChangeLoadingLabelColor.h"
 
 @interface ContactsOurTeamCollectionViewController : PFQueryCollectionViewController
 
