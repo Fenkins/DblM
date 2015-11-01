@@ -653,30 +653,6 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="backgroundLayer.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="isF-KW-OjE">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dmG-el-qV7">
-                                <rect key="frame" x="20" y="135" width="290" height="30"/>
-                                <state key="normal" title="Расписание работы">
-                                    <color key="titleColor" red="0.2470588235" green="0.68235294120000001" blue="0.74901960779999999" alpha="1" colorSpace="calibratedRGB"/>
-                                </state>
-                                <connections>
-                                    <segue destination="bL8-hi-PJU" kind="show" id="o3G-oV-4uP"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8H8-ue-7Xn">
-                                <rect key="frame" x="20" y="233" width="132" height="30"/>
-                                <state key="normal" title="Показать на карте">
-                                    <color key="titleColor" red="0.2470588235" green="0.68235294120000001" blue="0.74901960779999999" alpha="1" colorSpace="calibratedRGB"/>
-                                </state>
-                                <connections>
-                                    <action selector="openMapButton:" destination="zi5-2h-DNr" eventType="touchUpInside" id="9qu-yp-nna"/>
-                                </connections>
-                            </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Адрес г. Ростов-на-Дону, Серафимовича 74" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3dN-vR-uHB">
-                                <rect key="frame" x="20" y="204" width="354" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.59999999999999998" green="0.56078431370000004" blue="0.23921568630000001" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aww-eY-QX9">
                                 <rect key="frame" x="3" y="351" width="90" height="90"/>
                                 <state key="normal" image="call_us">
@@ -702,6 +678,33 @@
                                 </state>
                                 <connections>
                                     <action selector="instagramButton:" destination="zi5-2h-DNr" eventType="touchUpInside" id="wF3-7E-nK0"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8H8-ue-7Xn">
+                                <rect key="frame" x="20" y="149" width="150" height="150"/>
+                                <state key="normal" image="map">
+                                    <color key="titleColor" red="0.2470588235" green="0.68235294120000001" blue="0.74901960779999999" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="openMapButton:" destination="zi5-2h-DNr" eventType="touchUpInside" id="9qu-yp-nna"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="84q-NI-bCr">
+                                <rect key="frame" x="312" y="251" width="46" height="30"/>
+                                <state key="normal" title="Button">
+                                    <color key="titleColor" red="0.2470588235" green="0.68235294120000001" blue="0.74901960779999999" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <segue destination="bL8-hi-PJU" kind="show" id="dNB-lP-C4Y"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dmG-el-qV7">
+                                <rect key="frame" x="200" y="460" width="179" height="73"/>
+                                <state key="normal" title="Расписание работы">
+                                    <color key="titleColor" red="0.2470588235" green="0.68235294120000001" blue="0.74901960779999999" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <segue destination="bL8-hi-PJU" kind="show" id="o3G-oV-4uP"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -896,6 +899,7 @@
         <image name="contacts" width="30" height="30"/>
         <image name="hookah" width="150" height="150"/>
         <image name="instagram" width="110" height="110"/>
+        <image name="map" width="150" height="150"/>
         <image name="teacup" width="150" height="150"/>
         <image name="telephone_signal" width="30" height="30"/>
         <image name="tobacco" width="150" height="150"/>
@@ -905,5 +909,6 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="TPR-zs-HAH"/>
+        <segue reference="o3G-oV-4uP"/>
     </inferredMetricsTieBreakers>
 </document>
