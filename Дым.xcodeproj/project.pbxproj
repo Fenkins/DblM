@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		18F95C5AA80914EACDB5E5FA /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 37AC6A06FF451A7595A55063 /* libPods.a */; };
 		AA0B37B31BDD290100CF144B /* LocationChangerSegue.m in Sources */ = {isa = PBXBuildFile; fileRef = AA0B37B21BDD290100CF144B /* LocationChangerSegue.m */; };
+		AA196D1E1BE7F17D0061A227 /* NSString+StringsFromNumbers.m in Sources */ = {isa = PBXBuildFile; fileRef = AA196D1D1BE7F17D0061A227 /* NSString+StringsFromNumbers.m */; };
 		AA2CBB0F1BC17C44003A8801 /* MenuDetailTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = AA2CBB0E1BC17C44003A8801 /* MenuDetailTableViewCell.m */; };
 		AA2CBB121BC184EB003A8801 /* MenuDetailProductViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AA2CBB111BC184EB003A8801 /* MenuDetailProductViewController.m */; };
 		AA39A2BB1BC581B1009BE4AB /* ContactsSegmentsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AA39A2BA1BC581B1009BE4AB /* ContactsSegmentsViewController.m */; };
@@ -50,6 +51,8 @@
 		AA013E451BBDC28900BEE017 /* ru */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = ru; path = ru.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		AA0B37B11BDD290100CF144B /* LocationChangerSegue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocationChangerSegue.h; sourceTree = "<group>"; };
 		AA0B37B21BDD290100CF144B /* LocationChangerSegue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocationChangerSegue.m; sourceTree = "<group>"; };
+		AA196D1C1BE7F17D0061A227 /* NSString+StringsFromNumbers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+StringsFromNumbers.h"; sourceTree = "<group>"; };
+		AA196D1D1BE7F17D0061A227 /* NSString+StringsFromNumbers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+StringsFromNumbers.m"; sourceTree = "<group>"; };
 		AA2CBB0D1BC17C44003A8801 /* MenuDetailTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuDetailTableViewCell.h; sourceTree = "<group>"; };
 		AA2CBB0E1BC17C44003A8801 /* MenuDetailTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuDetailTableViewCell.m; sourceTree = "<group>"; };
 		AA2CBB101BC184EB003A8801 /* MenuDetailProductViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuDetailProductViewController.h; sourceTree = "<group>"; };
@@ -167,6 +170,8 @@
 			children = (
 				AA4F2C2C1BC7F19F000FBF8F /* ContactsAboutViewController.h */,
 				AA4F2C2D1BC7F19F000FBF8F /* ContactsAboutViewController.m */,
+				AA196D1C1BE7F17D0061A227 /* NSString+StringsFromNumbers.h */,
+				AA196D1D1BE7F17D0061A227 /* NSString+StringsFromNumbers.m */,
 				AA72F23E1BCC2F0400B6EC82 /* ContactsAboutSheduleTableViewCell.h */,
 				AA72F23F1BCC2F0400B6EC82 /* ContactsAboutSheduleTableViewCell.m */,
 				AA72F23B1BCC27DD00B6EC82 /* ContactsAboutSheduleViewController.h */,
@@ -416,6 +421,7 @@
 				AA2CBB121BC184EB003A8801 /* MenuDetailProductViewController.m in Sources */,
 				AA6500001BDBA6C6002AC0D7 /* SpecialsDetailTableViewController.m in Sources */,
 				AA0B37B31BDD290100CF144B /* LocationChangerSegue.m in Sources */,
+				AA196D1E1BE7F17D0061A227 /* NSString+StringsFromNumbers.m in Sources */,
 				AA83DCBD1BDA6BA20097370D /* SpecialsDetailViewController.m in Sources */,
 				AA911A851BD13D1F005ECC6F /* LocationSupplementary.m in Sources */,
 				AA4B8B9E1BC05A250029C815 /* MenuDetailTableViewController.m in Sources */,

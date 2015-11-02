@@ -56,11 +56,22 @@ static const NSString* kCCnullStringPhrase = @"Сегодня мы работа�
         }
     }];
     
-    // Setting up button name with Schedule
-    if (self.sheduleButtonLine && ![self.sheduleButtonLine isEqualToString:(NSString*)kCCnullStringPhrase]) {
-        [self.sheduleButtonOutlet setTitle:self.sheduleButtonLine forState:UIControlStateNormal];
+    // Setting up button name with Schedule (No need for that anymore)
+//    if (self.sheduleButtonLine && ![self.sheduleButtonLine isEqualToString:(NSString*)kCCnullStringPhrase]) {
+//        [self.sheduleButtonOutlet setTitle:self.sheduleButtonLine forState:UIControlStateNormal];
+//    }
+//    NSLog(@"%@",self.sheduleButtonLine);
+
+    // Setting up calendar's group objects
+    if (self.suppliedScheduleDayOfWeekNumber &&
+        self.suppliedScheduleStartTime &&
+        self.suppliedScheduleEndTime) {
+        self.calendarButtonDayLabelOutlet.text = [NSString stringWithDayOfWeekNumber:self.suppliedScheduleDayOfWeekNumber];
+        self.calendarButtonStartTimeLabelOutlet.text = [NSString stringWithStartTime:self.suppliedScheduleStartTime];
+        self.calendarButtonEndTimeLabelOutlet.text = [NSString stringWithEndTime:self.suppliedScheduleEndTime];
+    } else {
+        NSLog(@"Was unable to setup calendar's group objects!");
     }
-    NSLog(@"%@",self.sheduleButtonLine);
     
     // Drawing circles background
     [self drawCircleBackgroundForButton:self.callButtonOutlet
@@ -93,7 +104,10 @@ static const NSString* kCCnullStringPhrase = @"Сегодня мы работа�
 }
 
 - (void)viewDidAppear:(BOOL)animated {
-    NSLog(@"sheduleButtonLineReceived: %@",self.sheduleButtonLine);
+    NSLog(@"Those are the numberz: Start: %@, End: %@, Day: %@",
+                                        self.suppliedScheduleStartTime,
+                                        self.suppliedScheduleEndTime,
+                                        self.suppliedScheduleDayOfWeekNumber);
 }
 
 

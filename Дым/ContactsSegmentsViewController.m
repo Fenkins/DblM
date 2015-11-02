@@ -9,7 +9,9 @@
 #import "ContactsSegmentsViewController.h"
 
 @interface ContactsSegmentsViewController (){
-    NSString* _sheduleButtonLinePrep;
+    NSNumber* _startTimeRetrievedFromDefaults;
+    NSNumber* _endTimeRetrievedFromDefaults;
+    NSNumber* _dayOfWeekNumberRetrievedFromDefaults;
 }
 @property (nonatomic) NSArray* viewControllersArray;
 @property (nonatomic) UIViewController* currentViewController;
@@ -25,15 +27,19 @@
     // We want to receive shedule for today
     ContactsSheduleSupplementary *receiveShedule = [[ContactsSheduleSupplementary alloc]initWithDate:[NSDate date]];
     if ([receiveShedule isTodaysSheduleValid]) {
-        _sheduleButtonLinePrep = [receiveShedule loadTodaysSheduleQuery];
+        _startTimeRetrievedFromDefaults = [receiveShedule loadTodaysScheduleStartTime];
+        _endTimeRetrievedFromDefaults = [receiveShedule loadTodaysScheduleEndTime];
+        _dayOfWeekNumberRetrievedFromDefaults = [receiveShedule loadTodaysScheduleDayOfWeekNumber];
     } else {
         [receiveShedule queryForShedule:[NSDate date]];
     }
     
     // Loading vc1
     ContactsAboutViewController *howtoFind = [self.storyboard instantiateViewControllerWithIdentifier:@"howto-find"];
-    if (_sheduleButtonLinePrep) {
-        howtoFind.sheduleButtonLine = _sheduleButtonLinePrep;
+    if (_startTimeRetrievedFromDefaults && _endTimeRetrievedFromDefaults && _dayOfWeekNumberRetrievedFromDefaults) {
+        howtoFind.suppliedScheduleStartTime = _startTimeRetrievedFromDefaults;
+        howtoFind.suppliedScheduleEndTime = _endTimeRetrievedFromDefaults;
+        howtoFind.suppliedScheduleDayOfWeekNumber = _dayOfWeekNumberRetrievedFromDefaults;
     } else {
         NSLog(@"NOOOOOOOOOO!!!!!!!");
     }

@@ -19,6 +19,12 @@
 -(void)queryForShedule:(NSDate*)date;
 // Checks if the stored shedule valid
 -(BOOL)isTodaysSheduleValid;
-// Loads the string with our desired shedule
--(NSString*)loadTodaysSheduleQuery;
+// Loads the string with our desired shedule (not anymore)
+//-(NSString*)loadTodaysSheduleQuery;
+
+// Loads the start/end time and day of week stored in defaults
+-(NSNumber*)loadTodaysScheduleStartTime;
+-(NSNumber*)loadTodaysScheduleEndTime;
+-(NSNumber*)loadTodaysScheduleDayOfWeekNumber;
+
 @end

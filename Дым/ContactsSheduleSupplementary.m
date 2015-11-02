@@ -12,6 +12,11 @@ static const NSString* kCCDayIndex = @"dayIndex";
 static const NSString* kCCStartTime = @"startTime";
 static const NSString* kCCEndTime = @"endTime";
 
+// NSData const
+static const NSString* kCCStartTimeDefaults = @"scheduleStartTime";
+static const NSString* kCCEndTimeDefaults = @"scheduleEndTime";
+static const NSString* kCCDayOfWeekNumber = @"dayOfWeekNumber";
+
 @interface ContactsSheduleSupplementary()
 // Using current date to store date received when class is loaded
 @property (nonatomic) NSDate* currentDate;
@@ -38,7 +43,7 @@ static const NSString* kCCEndTime = @"endTime";
     NSNumber* weekdayNBR = [NSNumber numberWithInteger:weekday];
     NSLog(@"What day is it? %li",(long)weekday);
     
-    // Query for shedule
+    // Query for schedule
     PFQuery *query = [PFQuery queryWithClassName:(NSString*)kCCSheduleClassName];
     [query whereKey:(NSString*)kCCDayIndex equalTo:weekdayNBR];
     // Adding location check to query
@@ -51,25 +56,39 @@ static const NSString* kCCEndTime = @"endTime";
 
         if ([[object objectForKey:(NSString*)kCCStartTime] isKindOfClass:[NSNumber class]] ||
             [[object objectForKey:(NSString*)kCCEndTime] isKindOfClass:[NSNumber class]]) {
-            NSString* startTimeString = [NSString stringWithFormat:@"%@",
-                                         [object objectForKey:(NSString*)kCCStartTime]];
-            NSString* endTimeString = [NSString stringWithFormat:@"%@",
-                                       [object objectForKey:(NSString*)kCCEndTime]];
-            // Formatting the strings to HH:MM format
-            NSString* startTimeFormatted = [NSString stringWithFormat:@"%@:%@",
-                                            [startTimeString substringToIndex:[startTimeString length]-2],
-                                            [startTimeString substringFromIndex:[startTimeString length]-2]];
-            // Formatting the strings to HH:MM format
-            NSString* endTimeFormatted = [NSString stringWithFormat:@"%@:%@",
-                                          [endTimeString substringToIndex:[endTimeString length]-2],
-                                          [endTimeString substringFromIndex:[endTimeString length]-2]];
-            NSString* sheduleString = [NSString stringWithFormat:
-                                       @"Сегодня мы работаем с %@ до %@",
-                                       startTimeFormatted,
-                                       endTimeFormatted];
-            [[NSUserDefaults standardUserDefaults]setObject:sheduleString forKey:@"sheduleForDayNumber"];
-            [[NSUserDefaults standardUserDefaults]setObject:weekdayNBR forKey:@"weekDayNumber"];
+            // We dont need code from this
+            
+//            NSString* startTimeString = [NSString stringWithFormat:@"%@",
+//                                         [object objectForKey:(NSString*)kCCStartTime]];
+//            NSString* endTimeString = [NSString stringWithFormat:@"%@",
+//                                       [object objectForKey:(NSString*)kCCEndTime]];
+//            // Formatting the strings to HH:MM format
+//            NSString* startTimeFormatted = [NSString stringWithFormat:@"%@:%@",
+//                                            [startTimeString substringToIndex:[startTimeString length]-2],
+//                                            [startTimeString substringFromIndex:[startTimeString length]-2]];
+//            // Formatting the strings to HH:MM format
+//            NSString* endTimeFormatted = [NSString stringWithFormat:@"%@:%@",
+//                                          [endTimeString substringToIndex:[endTimeString length]-2],
+//                                          [endTimeString substringFromIndex:[endTimeString length]-2]];
+//            NSString* sheduleString = [NSString stringWithFormat:
+//                                       @"Сегодня мы работаем с %@ до %@",
+//                                       startTimeFormatted,
+//                                       endTimeFormatted];
+//            [[NSUserDefaults standardUserDefaults]setObject:sheduleString forKey:@"sheduleForDayNumber"];
+//            [[NSUserDefaults standardUserDefaults]setObject:weekdayNBR forKey:@"weekDayNumber"];
+//            [[NSUserDefaults standardUserDefaults]synchronize];
+            
+            // To this
+            
+            NSNumber* startTime = [object objectForKey:(NSString*)kCCStartTime];
+            NSNumber* endTime = [object objectForKey:(NSString*)kCCEndTime];
+
+            [[NSUserDefaults standardUserDefaults]setObject:startTime forKey:(NSString*)kCCStartTime];
+            [[NSUserDefaults standardUserDefaults]setObject:endTime forKey:(NSString*)kCCEndTime];
+            [[NSUserDefaults standardUserDefaults]setObject:weekdayNBR forKey:(NSString*)kCCDayOfWeekNumber];
             [[NSUserDefaults standardUserDefaults]synchronize];
+            
+            
         } else {
             NSLog(@"Not able to retrieve schedule from server and store it in NSUserDefaults");
         }
@@ -78,7 +97,7 @@ static const NSString* kCCEndTime = @"endTime";
 
 
 -(BOOL)isTodaysSheduleValid {
-    NSNumber *weekDayStored = [[NSUserDefaults standardUserDefaults]objectForKey:@"weekDayNumber"];
+    NSNumber *weekDayStored = [[NSUserDefaults standardUserDefaults]objectForKey:(NSString*)kCCDayOfWeekNumber];
     NSCalendar *calendar = [[NSCalendar alloc]initWithCalendarIdentifier:NSCalendarIdentifierGregorian];
     NSDateComponents *dateComps = [calendar components:NSCalendarUnitWeekday fromDate:[NSDate date]];
     NSInteger weekday = [dateComps weekday];
@@ -91,9 +110,24 @@ static const NSString* kCCEndTime = @"endTime";
     }
 }
 
--(NSString*)loadTodaysSheduleQuery {
-    NSString* queryString = [[NSUserDefaults standardUserDefaults]objectForKey:@"sheduleForDayNumber"];
-    return queryString;
+//-(NSString*)loadTodaysSheduleQuery {
+//    NSString* queryString = [[NSUserDefaults standardUserDefaults]objectForKey:@"sheduleForDayNumber"];
+//    return queryString;
+//}
+
+-(NSNumber*)loadTodaysScheduleStartTime {
+    NSNumber* storedNumber = [[NSUserDefaults standardUserDefaults]objectForKey:(NSString*)kCCStartTime];
+    return storedNumber;
+}
+
+-(NSNumber*)loadTodaysScheduleEndTime {
+    NSNumber* storedNumber = [[NSUserDefaults standardUserDefaults]objectForKey:(NSString*)kCCEndTime];
+    return storedNumber;
+}
+
+-(NSNumber*)loadTodaysScheduleDayOfWeekNumber {
+    NSNumber* storedNumber = [[NSUserDefaults standardUserDefaults]objectForKey:(NSString*)kCCDayOfWeekNumber];
+    return storedNumber;
 }
 
 @end

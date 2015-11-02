@@ -11,11 +11,15 @@
 #import <Bolts.h>
 #import <MapKit/MapKit.h>
 #import "LocationSupplementary.h"
+#import "NSString+StringsFromNumbers.h"
 #import "UIImageView+DarkBlurry.h"
 #import "UIImage+GPUImageBlur.h"
 
 @interface ContactsAboutViewController : UIViewController
-@property (weak, nonatomic) IBOutlet UIButton *sheduleButtonOutlet;
+
+@property (weak, nonatomic) IBOutlet UILabel *calendarButtonDayLabelOutlet;
+@property (weak, nonatomic) IBOutlet UILabel *calendarButtonStartTimeLabelOutlet;
+@property (weak, nonatomic) IBOutlet UILabel *calendarButtonEndTimeLabelOutlet;
 
 @property (weak, nonatomic) IBOutlet UIButton *callButtonOutlet;
 @property (weak, nonatomic) IBOutlet UIButton *vkButtonOutlet;
@@ -28,5 +32,7 @@
 - (IBAction)vkButton:(UIButton *)sender;
 - (IBAction)instagramButton:(UIButton *)sender;
 
-@property (nonatomic) NSString* sheduleButtonLine;
+@property (nonatomic) NSNumber* suppliedScheduleStartTime;
+@property (nonatomic) NSNumber* suppliedScheduleEndTime;
+@property (nonatomic) NSNumber* suppliedScheduleDayOfWeekNumber;
 @end

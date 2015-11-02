@@ -660,7 +660,7 @@
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                             </imageView>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3IL-jr-AXZ" userLabel="On the Map Group">
-                                <rect key="frame" x="0.0" y="102" width="203" height="215"/>
+                                <rect key="frame" x="-30" y="102" width="203" height="215"/>
                                 <subviews>
                                     <view alpha="0.29999999999999999" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jqg-jn-oml" userLabel="darkBackground">
                                         <rect key="frame" x="0.0" y="0.0" width="203" height="215"/>
@@ -689,7 +689,7 @@
                                 </subviews>
                             </view>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="GtK-Tt-sdy" userLabel="Schedule Group">
-                                <rect key="frame" x="205" y="102" width="240" height="215"/>
+                                <rect key="frame" x="180" y="102" width="240" height="215"/>
                                 <subviews>
                                     <view alpha="0.29999999999999999" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="atx-fa-DMl" userLabel="darkBackground">
                                         <rect key="frame" x="0.0" y="0.0" width="240" height="215"/>
@@ -715,14 +715,14 @@
                                             <segue destination="bL8-hi-PJU" kind="show" id="dNB-lP-C4Y"/>
                                         </connections>
                                     </button>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Пн" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="olE-lE-cPb">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="-" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="olE-lE-cPb">
                                         <rect key="frame" x="65" y="60" width="108" height="21"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                         <color key="textColor" red="0.19607843137254902" green="0.95294117647058818" blue="0.96470588235294119" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="20:00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UFB-8h-dn5">
-                                        <rect key="frame" x="65" y="145" width="108" height="21"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="00:00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UFB-8h-dn5">
+                                        <rect key="frame" x="65" y="145" width="108" height="27"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                         <color key="textColor" red="0.1960784314" green="0.95294117649999999" blue="0.96470588239999999" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
@@ -733,23 +733,14 @@
                                         <color key="textColor" red="0.1960784314" green="0.95294117649999999" blue="0.96470588239999999" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="10:00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h6p-uA-OmX">
-                                        <rect key="frame" x="65" y="99" width="108" height="21"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="00:00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h6p-uA-OmX">
+                                        <rect key="frame" x="65" y="99" width="108" height="27"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                         <color key="textColor" red="0.1960784314" green="0.95294117649999999" blue="0.96470588239999999" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dmG-el-qV7">
-                                <rect key="frame" x="105" y="502" width="179" height="73"/>
-                                <state key="normal" title="Расписание работы">
-                                    <color key="titleColor" red="0.2470588235" green="0.68235294120000001" blue="0.74901960779999999" alpha="1" colorSpace="calibratedRGB"/>
-                                </state>
-                                <connections>
-                                    <segue destination="bL8-hi-PJU" kind="show" id="o3G-oV-4uP"/>
-                                </connections>
-                            </button>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7ld-DD-pkh" userLabel="Social Medua Group">
                                 <rect key="frame" x="5" y="332" width="300" height="180"/>
                                 <subviews>
@@ -802,9 +793,11 @@
                     </view>
                     <connections>
                         <outlet property="backgroundImageLayer" destination="isF-KW-OjE" id="Y7J-aa-hdn"/>
+                        <outlet property="calendarButtonDayLabelOutlet" destination="olE-lE-cPb" id="XC0-nz-Zbe"/>
+                        <outlet property="calendarButtonEndTimeLabelOutlet" destination="UFB-8h-dn5" id="VuR-CW-2QG"/>
+                        <outlet property="calendarButtonStartTimeLabelOutlet" destination="h6p-uA-OmX" id="c5r-Gl-Z7K"/>
                         <outlet property="callButtonOutlet" destination="aww-eY-QX9" id="vVf-jV-Tzr"/>
                         <outlet property="instagramButtonOutlet" destination="hb3-aa-9is" id="P3T-Du-JkI"/>
-                        <outlet property="sheduleButtonOutlet" destination="dmG-el-qV7" id="Ljz-eE-RFN"/>
                         <outlet property="vkButtonOutlet" destination="zE1-Aa-7ga" id="2ge-Wp-XPW"/>
                     </connections>
                 </viewController>
@@ -1000,6 +993,5 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="TPR-zs-HAH"/>
-        <segue reference="o3G-oV-4uP"/>
     </inferredMetricsTieBreakers>
 </document>
