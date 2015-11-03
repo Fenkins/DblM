@@ -15,6 +15,7 @@
 #import "MenuDetailProductViewController.h"
 #import "UIImageView+DarkBlurry.h"
 #import "PFQueryTableViewController+ChangeLoadingLabelColor.h"
+#import "NSString+PriceInRubles.h"
 
 @interface SpecialsDetailTableViewController : PFQueryTableViewController
 @property (nonatomic) PFObject* object;

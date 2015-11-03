@@ -98,11 +98,14 @@
     if ([[object objectForKey:@"priceSpecialEnabled"]boolValue]) {
         // Preparing crossed out string
         NSDictionary *attributes = @{NSStrikethroughStyleAttributeName:[NSNumber numberWithInt:NSUnderlineStyleSingle]};
-        NSAttributedString *attributedString = [[NSAttributedString alloc]initWithString:[[object objectForKey:@"priceRegular"]stringValue] attributes:attributes];
+        NSAttributedString *attributedString = [[NSAttributedString alloc]
+                                                initWithString:[NSString priceWithCurrencySymbol:[object objectForKey:@"priceRegular"] kopeikasEnabled:NO]
+                                                attributes:attributes];
         cell.specialsDetailPriceLabel.attributedText = attributedString;
-        cell.specialsDetailSpecialPriceLabel.text = [[object objectForKey:@"priceSpecial"]stringValue];
+        cell.specialsDetailSpecialPriceLabel.text = [NSString priceWithCurrencySymbol:[object objectForKey:@"priceSpecial"] kopeikasEnabled:NO];
     } else {
-        cell.specialsDetailPriceLabel.text = [[object objectForKey:@"priceRegular"]stringValue];
+        cell.specialsDetailPriceLabel.text = [NSString priceWithCurrencySymbol:[object objectForKey:@"priceRegular"] kopeikasEnabled:NO];
+//        cell.specialsDetailPriceLabel.text = [[object objectForKey:@"priceRegular"]stringValue];
         cell.specialsDetailSpecialPriceLabel.hidden = YES;
     }
     
@@ -111,12 +114,13 @@
     cell.specialsDetailImageView.image = [UIImage imageNamed:@"placeholder"];
     cell.specialsDetailImageView.backgroundColor = [UIColor blackColor];
     [cell.specialsDetailImageView setContentMode:UIViewContentModeScaleAspectFill];
-    //  Making it nice and round
-    cell.specialsDetailImageView.layer.cornerRadius = cell.specialsDetailImageView.bounds.size.width/2;
-    //  Turning it on, to increase performance
-    cell.specialsDetailImageView.layer.shouldRasterize = YES;
     //  Making sure we will have a round image by clipping it to the bounds
     cell.specialsDetailImageView.clipsToBounds = YES;
+    
+//    //  Making it nice and round
+//    cell.specialsDetailImageView.layer.cornerRadius = cell.specialsDetailImageView.bounds.size.width/2;
+//    //  Turning it on, to increase performance
+//    cell.specialsDetailImageView.layer.shouldRasterize = YES;
     
     PFFile *thumbnail = [object objectForKey:@"image"];
     [thumbnail getDataInBackgroundWithBlock:^(NSData *data, NSError *error) {
@@ -128,6 +132,20 @@
             NSLog(@"Error: %@ %@", error, [error userInfo]);
         }
     }];
+    
+    // Drawing circle behind view
+    //Colored Edge
+    [self drawCircleBackgroundForView:cell.specialsDetailPriceCircleView
+                                 edge:0.0
+                              opacity:1.0
+                          strokeColor:[UIColor redColor]
+                            fillColor:[UIColor clearColor]];
+    //Circle itself
+    [self drawCircleBackgroundForView:cell.specialsDetailPriceCircleView
+                                 edge:0.0
+                              opacity:0.1
+                          strokeColor:[UIColor clearColor]
+                            fillColor:[UIColor blackColor]];
     
     return cell;
 }
@@ -149,6 +167,17 @@
         MenuDetailProductViewController *controller = segue.destinationViewController;
         controller.object = object;
     }
+}
+
+- (void)drawCircleBackgroundForView:(UIView*)view edge:(CGFloat)edge opacity:(CGFloat)opacity strokeColor:(UIColor*)strokeColor fillColor:(UIColor*)fillColor {
+    CAShapeLayer* circleLayer = [CAShapeLayer layer];
+    [circleLayer setPath:[[UIBezierPath bezierPathWithOvalInRect:CGRectMake(-edge, -edge, view.bounds.size.width + edge*2, view.bounds.size.height + edge*2)]CGPath]];
+    [circleLayer setStrokeColor:[strokeColor CGColor]];
+    [circleLayer setFillColor:[fillColor CGColor]];
+    circleLayer.zPosition = -1.0;
+    circleLayer.opacity = opacity;
+    view.layer.zPosition = 1.0;
+    [[view layer]addSublayer:circleLayer];
 }
 
 @end

@@ -12,6 +12,7 @@
 #import <UIKit/UIKit.h>
 #import "UIImageView+DarkBlurry.h"
 #import "UIImage+GPUImageBlur.h"
+#import "NSString+PriceInRubles.h"
 
 @interface MenuDetailProductViewController : UIViewController
 @property (weak, nonatomic) IBOutlet UIImageView *productImageView;

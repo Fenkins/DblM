@@ -20,13 +20,13 @@
     self.productImageView.image = [UIImage imageNamed:@"placeholder"];
     self.productImageView.backgroundColor = [UIColor blackColor];
     [self.productImageView setContentMode:UIViewContentModeScaleAspectFill];
-    
-    //  Making it nice and round
-    self.productImageView.layer.cornerRadius = self.productImageView.bounds.size.width/2;
-    //  Turning it on, to increase performance
-    self.productImageView.layer.shouldRasterize = YES;
     //  Making sure we will have a round image by clipping it to the bounds
     self.productImageView.clipsToBounds = YES;
+    
+//    //  Making it nice and round
+//    self.productImageView.layer.cornerRadius = self.productImageView.bounds.size.width/2;
+//    //  Turning it on, to increase performance
+//    self.productImageView.layer.shouldRasterize = YES;
     
     PFFile *thumbnail = [_object objectForKey:@"image"];
     [thumbnail getDataInBackgroundWithBlock:^(NSData *data, NSError *error) {
@@ -43,11 +43,13 @@
     if ([[_object objectForKey:@"priceSpecialEnabled"]boolValue]) {
         // Preparing crossed out string
         NSDictionary *attributes = @{NSStrikethroughStyleAttributeName:[NSNumber numberWithInt:NSUnderlineStyleSingle]};
-        NSAttributedString *attributedString = [[NSAttributedString alloc]initWithString:[[_object objectForKey:@"priceRegular"]stringValue] attributes:attributes];
+        NSAttributedString *attributedString = [[NSAttributedString alloc]
+                                                initWithString:[NSString priceWithCurrencySymbol:[_object objectForKey:@"priceRegular"] kopeikasEnabled:NO]
+                                                attributes:attributes];
         self.productPriceLabel.attributedText = attributedString;
-        self.productSpecialPriceLabel.text = [[_object objectForKey:@"priceSpecial"]stringValue];
+        self.productSpecialPriceLabel.text = [NSString priceWithCurrencySymbol:[_object objectForKey:@"priceSpecial"] kopeikasEnabled:NO];
     } else {
-        self.productPriceLabel.text = [[_object objectForKey:@"priceRegular"]stringValue];
+        self.productPriceLabel.text = [NSString priceWithCurrencySymbol:[_object objectForKey:@"priceRegular"] kopeikasEnabled:NO];;
         self.productSpecialPriceLabel.hidden = YES;
     }
     self.productNameLabel.text = [_object objectForKey:@"name"];

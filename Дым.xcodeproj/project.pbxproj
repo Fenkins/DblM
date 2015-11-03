@@ -40,6 +40,7 @@
 		AADD012C1BC0414A00069573 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AADD012B1BC0414A00069573 /* Assets.xcassets */; };
 		AAE1E3CC1BE28FE70028152B /* backgroundLayer.jpg in Resources */ = {isa = PBXBuildFile; fileRef = AAE1E3CB1BE28FE70028152B /* backgroundLayer.jpg */; };
 		AAE1E3D21BE2BBA40028152B /* UIImageView+DarkBlurry.m in Sources */ = {isa = PBXBuildFile; fileRef = AAE1E3D11BE2BBA40028152B /* UIImageView+DarkBlurry.m */; };
+		AAEB85D41BE9613300E4E6E2 /* NSString+PriceInRubles.m in Sources */ = {isa = PBXBuildFile; fileRef = AAEB85D31BE9613300E4E6E2 /* NSString+PriceInRubles.m */; };
 		AAFD71721BCD9A5C00100E79 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AAFD71711BCD9A5C00100E79 /* MapKit.framework */; };
 		AAFD71751BCEB97C00100E79 /* LocationChangerTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AAFD71741BCEB97C00100E79 /* LocationChangerTableViewController.m */; };
 		AAFD71791BCEC0A900100E79 /* LocationPlaceTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = AAFD71781BCEC0A900100E79 /* LocationPlaceTableViewCell.m */; };
@@ -108,6 +109,8 @@
 		AAE1E3CB1BE28FE70028152B /* backgroundLayer.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = backgroundLayer.jpg; sourceTree = "<group>"; };
 		AAE1E3D01BE2BBA40028152B /* UIImageView+DarkBlurry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImageView+DarkBlurry.h"; sourceTree = "<group>"; };
 		AAE1E3D11BE2BBA40028152B /* UIImageView+DarkBlurry.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+DarkBlurry.m"; sourceTree = "<group>"; };
+		AAEB85D21BE9613300E4E6E2 /* NSString+PriceInRubles.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+PriceInRubles.h"; sourceTree = "<group>"; };
+		AAEB85D31BE9613300E4E6E2 /* NSString+PriceInRubles.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+PriceInRubles.m"; sourceTree = "<group>"; };
 		AAFD71711BCD9A5C00100E79 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		AAFD71731BCEB97C00100E79 /* LocationChangerTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocationChangerTableViewController.h; sourceTree = "<group>"; };
 		AAFD71741BCEB97C00100E79 /* LocationChangerTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocationChangerTableViewController.m; sourceTree = "<group>"; };
@@ -170,8 +173,6 @@
 			children = (
 				AA4F2C2C1BC7F19F000FBF8F /* ContactsAboutViewController.h */,
 				AA4F2C2D1BC7F19F000FBF8F /* ContactsAboutViewController.m */,
-				AA196D1C1BE7F17D0061A227 /* NSString+StringsFromNumbers.h */,
-				AA196D1D1BE7F17D0061A227 /* NSString+StringsFromNumbers.m */,
 				AA72F23E1BCC2F0400B6EC82 /* ContactsAboutSheduleTableViewCell.h */,
 				AA72F23F1BCC2F0400B6EC82 /* ContactsAboutSheduleTableViewCell.m */,
 				AA72F23B1BCC27DD00B6EC82 /* ContactsAboutSheduleViewController.h */,
@@ -228,6 +229,10 @@
 				AA4104171BE3B71100478894 /* Appearance Categories */,
 				AA543CBC1BBDC18D0074329E /* AppDelegate.h */,
 				AA543CBD1BBDC18D0074329E /* AppDelegate.m */,
+				AAEB85D21BE9613300E4E6E2 /* NSString+PriceInRubles.h */,
+				AAEB85D31BE9613300E4E6E2 /* NSString+PriceInRubles.m */,
+				AA196D1C1BE7F17D0061A227 /* NSString+StringsFromNumbers.h */,
+				AA196D1D1BE7F17D0061A227 /* NSString+StringsFromNumbers.m */,
 				AA543CC51BBDC18D0074329E /* Main.storyboard */,
 				AA543CCA1BBDC18D0074329E /* LaunchScreen.storyboard */,
 				AA543CCD1BBDC18D0074329E /* Info.plist */,
@@ -437,6 +442,7 @@
 				AAFD71791BCEC0A900100E79 /* LocationPlaceTableViewCell.m in Sources */,
 				AAE1E3D21BE2BBA40028152B /* UIImageView+DarkBlurry.m in Sources */,
 				AAB78AD11BD3FFE800104B0C /* ContactsOurTeamCollectionViewCell.m in Sources */,
+				AAEB85D41BE9613300E4E6E2 /* NSString+PriceInRubles.m in Sources */,
 				AA83DCB61BDA56FE0097370D /* SpecialsTableViewController.m in Sources */,
 				AA83DCBA1BDA57740097370D /* SpecialsTableViewCell.m in Sources */,
 				AA3C970D1BD5371700BE99AF /* ContactsOurTeamDetailViewController.m in Sources */,

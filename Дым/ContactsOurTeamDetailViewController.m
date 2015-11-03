@@ -19,6 +19,14 @@
     // Do any additional setup after loading the view.
     self.teamMemberImage.image = [UIImage imageNamed:@"placeholder"];
     self.teamMemberImage.backgroundColor = [UIColor blackColor];
+    [self.teamMemberImage setContentMode:UIViewContentModeScaleAspectFill];
+    //  Making sure we will have a round image by clipping it to the bounds
+    self.teamMemberImage.clipsToBounds = YES;
+    
+    //  Making it nice and round
+    self.teamMemberImage.layer.cornerRadius = self.teamMemberImage.bounds.size.width/2;
+    //  Turning it on, to increase performance
+    self.teamMemberImage.layer.shouldRasterize = YES;    
     
     PFFile *thumbnail = [_object objectForKey:@"image"];
     [thumbnail getDataInBackgroundWithBlock:^(NSData *data, NSError *error) {
