@@ -18,7 +18,15 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     self.specialsImageView.image = [UIImage imageNamed:@"placeholder"];
+    [self.specialsImageView setContentMode:UIViewContentModeScaleAspectFill];
     self.specialsImageView.backgroundColor = [UIColor blackColor];
+    
+    //  Making it nice and round
+    self.specialsImageView.layer.cornerRadius = self.specialsImageView.bounds.size.width/2;
+    //  Turning it on, to increase performance
+    self.specialsImageView.layer.shouldRasterize = YES;
+    //  Making sure we will have a round image by clipping it to the bounds
+    self.specialsImageView.clipsToBounds = YES;
     
     PFFile *thumbnail = [_object objectForKey:@"image"];
     [thumbnail getDataInBackgroundWithBlock:^(NSData *data, NSError *error) {

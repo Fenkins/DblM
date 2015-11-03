@@ -19,6 +19,14 @@
     // Do any additional setup after loading the view.
     self.productImageView.image = [UIImage imageNamed:@"placeholder"];
     self.productImageView.backgroundColor = [UIColor blackColor];
+    [self.productImageView setContentMode:UIViewContentModeScaleAspectFill];
+    
+    //  Making it nice and round
+    self.productImageView.layer.cornerRadius = self.productImageView.bounds.size.width/2;
+    //  Turning it on, to increase performance
+    self.productImageView.layer.shouldRasterize = YES;
+    //  Making sure we will have a round image by clipping it to the bounds
+    self.productImageView.clipsToBounds = YES;
     
     PFFile *thumbnail = [_object objectForKey:@"image"];
     [thumbnail getDataInBackgroundWithBlock:^(NSData *data, NSError *error) {

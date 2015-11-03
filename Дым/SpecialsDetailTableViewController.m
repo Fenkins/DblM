@@ -110,6 +110,13 @@
     //  Set your placeholder image first
     cell.specialsDetailImageView.image = [UIImage imageNamed:@"placeholder"];
     cell.specialsDetailImageView.backgroundColor = [UIColor blackColor];
+    [cell.specialsDetailImageView setContentMode:UIViewContentModeScaleAspectFill];
+    //  Making it nice and round
+    cell.specialsDetailImageView.layer.cornerRadius = cell.specialsDetailImageView.bounds.size.width/2;
+    //  Turning it on, to increase performance
+    cell.specialsDetailImageView.layer.shouldRasterize = YES;
+    //  Making sure we will have a round image by clipping it to the bounds
+    cell.specialsDetailImageView.clipsToBounds = YES;
     
     PFFile *thumbnail = [object objectForKey:@"image"];
     [thumbnail getDataInBackgroundWithBlock:^(NSData *data, NSError *error) {
