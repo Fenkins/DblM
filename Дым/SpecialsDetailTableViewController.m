@@ -105,7 +105,10 @@
         cell.specialsDetailSpecialPriceLabel.text = [NSString priceWithCurrencySymbol:[object objectForKey:@"priceSpecial"] kopeikasEnabled:NO];
     } else {
         cell.specialsDetailPriceLabel.text = [NSString priceWithCurrencySymbol:[object objectForKey:@"priceRegular"] kopeikasEnabled:NO];
-//        cell.specialsDetailPriceLabel.text = [[object objectForKey:@"priceRegular"]stringValue];
+        // Moving label to the center
+        [UILabel animateWithDuration:0.0 animations:^{
+            cell.specialsDetailPriceLabel.transform = CGAffineTransformTranslate(cell.specialsDetailPriceLabel.transform, 0.0, cell.specialsDetailPriceCircleView.frame.size.height/3);
+        }];
         cell.specialsDetailSpecialPriceLabel.hidden = YES;
     }
     

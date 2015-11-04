@@ -106,6 +106,10 @@
         cell.specialPriceLabel.text = [[object objectForKey:@"priceSpecial"]stringValue];
     } else {
         cell.priceLabel.text = [[object objectForKey:@"priceRegular"]stringValue];
+        // Moving label to the center
+        [UILabel animateWithDuration:0.0 animations:^{
+            cell.priceLabel.transform = CGAffineTransformTranslate(cell.priceLabel.transform, 0.0, cell.priceCircleView.frame.size.height/3);
+        }];
         cell.specialPriceLabel.hidden = YES;
     }
     
@@ -133,6 +137,20 @@
         }
     }];
     
+    // Drawing circle behind view
+    //Colored Edge
+    [self drawCircleBackgroundForView:cell.priceCircleView
+                                 edge:0.0
+                              opacity:1.0
+                          strokeColor:[UIColor redColor]
+                            fillColor:[UIColor clearColor]];
+    //Circle itself
+    [self drawCircleBackgroundForView:cell.priceCircleView
+                                 edge:0.0
+                              opacity:0.1
+                          strokeColor:[UIColor clearColor]
+                            fillColor:[UIColor blackColor]];
+    
     return cell;
 }
 
@@ -155,5 +173,15 @@
     }
 }
 
+- (void)drawCircleBackgroundForView:(UIView*)view edge:(CGFloat)edge opacity:(CGFloat)opacity strokeColor:(UIColor*)strokeColor fillColor:(UIColor*)fillColor {
+    CAShapeLayer* circleLayer = [CAShapeLayer layer];
+    [circleLayer setPath:[[UIBezierPath bezierPathWithOvalInRect:CGRectMake(-edge, -edge, view.bounds.size.width + edge*2, view.bounds.size.height + edge*2)]CGPath]];
+    [circleLayer setStrokeColor:[strokeColor CGColor]];
+    [circleLayer setFillColor:[fillColor CGColor]];
+    circleLayer.zPosition = -1.0;
+    circleLayer.opacity = opacity;
+    view.layer.zPosition = 1.0;
+    [[view layer]addSublayer:circleLayer];
+}
 
 @end

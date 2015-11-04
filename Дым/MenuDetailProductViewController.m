@@ -49,7 +49,11 @@
         self.productPriceLabel.attributedText = attributedString;
         self.productSpecialPriceLabel.text = [NSString priceWithCurrencySymbol:[_object objectForKey:@"priceSpecial"] kopeikasEnabled:NO];
     } else {
-        self.productPriceLabel.text = [NSString priceWithCurrencySymbol:[_object objectForKey:@"priceRegular"] kopeikasEnabled:NO];;
+        self.productPriceLabel.text = [NSString priceWithCurrencySymbol:[_object objectForKey:@"priceRegular"] kopeikasEnabled:NO];
+        // Moving label to the center
+        [UILabel animateWithDuration:0.0 animations:^{
+            self.productPriceLabel.transform = CGAffineTransformTranslate(self.productPriceLabel.transform, self.view.frame.size.width/2, 0.0);
+        }];
         self.productSpecialPriceLabel.hidden = YES;
     }
     self.productNameLabel.text = [_object objectForKey:@"name"];
