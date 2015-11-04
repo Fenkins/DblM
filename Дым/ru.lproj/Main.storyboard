@@ -308,7 +308,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="backgroundLayer.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="VVQ-FE-DFR">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="backgroundLayer.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="VVQ-FE-DFR">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                             </imageView>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cAq-jU-fkf">
@@ -376,6 +376,12 @@
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="VVQ-FE-DFR" firstAttribute="centerX" secondItem="tsR-hK-woN" secondAttribute="centerX" id="8tq-EO-eJe"/>
+                            <constraint firstItem="VVQ-FE-DFR" firstAttribute="height" secondItem="tsR-hK-woN" secondAttribute="height" id="FbD-Ib-GEJ"/>
+                            <constraint firstItem="VVQ-FE-DFR" firstAttribute="width" secondItem="tsR-hK-woN" secondAttribute="width" id="uc4-IR-Jmw"/>
+                            <constraint firstItem="VVQ-FE-DFR" firstAttribute="centerY" secondItem="tsR-hK-woN" secondAttribute="centerY" id="usV-K8-7Kr"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="EXM-cw-U4m">
                         <barButtonItem key="rightBarButtonItem" title="выбор места" id="Xwb-D5-abo">
