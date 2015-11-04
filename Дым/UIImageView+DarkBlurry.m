@@ -20,6 +20,17 @@
     blackScreen.alpha = 0.7;
 }
 
+- (void)applyDarkBackgroundUsingSuperViewBounds {
+    UIView *blackScreen = [[UIView alloc]init];
+    blackScreen.frame = CGRectMake(self.superview.bounds.origin.x,
+                                   self.superview.bounds.origin.y,
+                                   self.superview.bounds.size.width,
+                                   self.superview.bounds.size.height);
+    blackScreen.backgroundColor = [UIColor blackColor];
+    [self addSubview:blackScreen];
+    blackScreen.alpha = 0.7;
+}
+
 - (void)applyBlurryBackground {
     UIBlurEffect *blurryBackgroundEffect = [UIBlurEffect effectWithStyle:UIBlurEffectStyleDark];
     UIVisualEffectView *blurryBackground = [[UIVisualEffectView alloc]initWithEffect:blurryBackgroundEffect];

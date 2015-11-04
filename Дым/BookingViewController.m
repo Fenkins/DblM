@@ -47,10 +47,14 @@ static const NSString* kCCPhoneNumberKey = @"phoneNumber";
     UIImage *blurredImage = [UIImage blurryGPUImage:[UIImage imageNamed:@"backgroundLayer.jpg"]];
     
     self.backgroundImageLayer.image = blurredImage;
+    self.backgroundImageLayer.clipsToBounds = YES;
+    [self.backgroundImageLayer setContentMode:UIViewContentModeScaleAspectFill];
     // This way our image wont fool around/hang out betweet transitions
     
     // Adding layer of dark and blur
-    [self.backgroundImageLayer applyDarkBackground];
+    [self.backgroundImageLayer applyDarkBackgroundUsingSuperViewBounds];
+    NSLog(@"Image Bounds: %f Image Frame: %f",self.backgroundImageLayer.bounds.size.height, self.backgroundImageLayer.frame.size.height);
+    NSLog(@"View Bounds: %f View Frame: %f",self.view.bounds.size.height, self.view.frame.size.height);
 }
 
 - (void)didReceiveMemoryWarning {

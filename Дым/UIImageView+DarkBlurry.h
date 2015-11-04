@@ -11,4 +11,5 @@
 @interface UIImageView (DarkBlurry)
 - (void)applyDarkBackground;
 - (void)applyBlurryBackground;
+- (void)applyDarkBackgroundUsingSuperViewBounds;
 @end

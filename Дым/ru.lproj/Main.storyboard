@@ -411,11 +411,15 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="backgroundLayer.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="MVT-dA-ALh">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="backgroundLayer.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="MVT-dA-ALh">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mpp-gE-T1j">
-                                <rect key="frame" x="100" y="376" width="90" height="90"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mpp-gE-T1j">
+                                <rect key="frame" x="255" y="414" width="90" height="90"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="90" id="BBR-zh-ZIw"/>
+                                    <constraint firstAttribute="width" constant="90" id="lGD-oL-NZT"/>
+                                </constraints>
                                 <state key="normal" image="call_us">
                                     <color key="titleColor" red="0.2470588235" green="0.68235294120000001" blue="0.74901960779999999" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
@@ -423,11 +427,17 @@
                                     <action selector="callUsButton:" destination="8rJ-Kc-sve" eventType="touchUpInside" id="r8e-sG-7UU"/>
                                 </connections>
                             </button>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Vkf-2i-p8d">
-                                <rect key="frame" x="30" y="150" width="350" height="120"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Vkf-2i-p8d">
+                                <rect key="frame" x="125" y="126" width="350" height="120"/>
                                 <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Оставьте заявку сейчас, чтобы не пропустить самое интересное!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Phy-nL-jre">
+                                        <rect key="frame" x="33" y="11" width="284" height="99"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                        <color key="textColor" red="0.59999999999999998" green="0.5607843137254902" blue="0.23921568627450979" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                     <view alpha="0.29999999999999999" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="E5Q-XV-dcw">
-                                        <rect key="frame" x="0.0" y="0.0" width="345" height="99"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="350" height="120"/>
                                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
@@ -435,16 +445,24 @@
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                     </view>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Оставьте заявку сейчас, чтобы не пропустить самое интересное!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Phy-nL-jre">
-                                        <rect key="frame" x="33" y="0.0" width="284" height="99"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <color key="textColor" red="0.59999999999999998" green="0.5607843137254902" blue="0.23921568627450979" alpha="1" colorSpace="calibratedRGB"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
                                 </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="120" id="0d3-Ue-mjq"/>
+                                    <constraint firstAttribute="width" constant="350" id="8qk-5A-rYs"/>
+                                </constraints>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Djb-ko-YwX" firstAttribute="top" secondItem="Mpp-gE-T1j" secondAttribute="bottom" constant="47" id="8RB-mf-wEa"/>
+                            <constraint firstItem="MVT-dA-ALh" firstAttribute="width" secondItem="QS5-Rx-YEW" secondAttribute="width" id="EJX-BE-gC8"/>
+                            <constraint firstItem="Vkf-2i-p8d" firstAttribute="top" secondItem="L7p-HK-0SC" secondAttribute="bottom" constant="106" id="Gvw-Bi-cBH"/>
+                            <constraint firstItem="MVT-dA-ALh" firstAttribute="centerY" secondItem="QS5-Rx-YEW" secondAttribute="centerY" id="P1I-A5-JpO"/>
+                            <constraint firstItem="MVT-dA-ALh" firstAttribute="centerX" secondItem="QS5-Rx-YEW" secondAttribute="centerX" id="Ulg-Es-PMD"/>
+                            <constraint firstItem="MVT-dA-ALh" firstAttribute="height" secondItem="QS5-Rx-YEW" secondAttribute="height" id="Yd0-56-1mP"/>
+                            <constraint firstItem="Vkf-2i-p8d" firstAttribute="centerX" secondItem="MVT-dA-ALh" secondAttribute="centerX" id="rYU-Ug-X5g"/>
+                            <constraint firstItem="Mpp-gE-T1j" firstAttribute="centerX" secondItem="MVT-dA-ALh" secondAttribute="centerX" id="vCk-xC-iTF"/>
+                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Забронировать" image="telephone_signal" id="cPa-gy-q4n"/>
                     <connections>
