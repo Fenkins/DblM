@@ -3,7 +3,6 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--Menu Detail Product View Controller-->
@@ -312,6 +311,7 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" image="backgroundLayer.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="VVQ-FE-DFR">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                             </imageView>
+<<<<<<< HEAD
                             <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hl9-97-H4F">
                                 <rect key="frame" x="240" y="143" width="120" height="120"/>
                                 <constraints>
@@ -392,6 +392,13 @@
                                 <subviews>
                                     <view alpha="0.29999999999999999" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Yz4-Nt-ayN">
                                         <rect key="frame" x="8" y="6" width="544" height="52"/>
+=======
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cAq-jU-fkf">
+                                <rect key="frame" x="9" y="72" width="302" height="63"/>
+                                <subviews>
+                                    <view alpha="0.29999999999999999" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Yz4-Nt-ayN">
+                                        <rect key="frame" x="11" y="6" width="275" height="52"/>
+>>>>>>> parent of 7c4848f... man I hate these constraints
                                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
@@ -399,8 +406,13 @@
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                     </view>
+<<<<<<< HEAD
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1xj-GD-ODW">
                                         <rect key="frame" x="15" y="13" width="475" height="37"/>
+=======
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1xj-GD-ODW">
+                                        <rect key="frame" x="16" y="13" width="216" height="37"/>
+>>>>>>> parent of 7c4848f... man I hate these constraints
                                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                         <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <state key="normal" title="Специальные предложения">
@@ -410,18 +422,28 @@
                                             <segue destination="Xdr-ir-OSh" kind="show" identifier="showSpecialsSegue" id="YPT-lx-CP7"/>
                                         </connections>
                                     </button>
+<<<<<<< HEAD
                                     <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="v1s-eO-pzn">
                                         <rect key="frame" x="500" y="12" width="40" height="40"/>
+=======
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="v1s-eO-pzn">
+                                        <rect key="frame" x="240" y="11" width="40" height="40"/>
+>>>>>>> parent of 7c4848f... man I hate these constraints
                                         <state key="normal" image="close"/>
                                         <connections>
                                             <action selector="specialsHideButton:" destination="9pv-A4-QxB" eventType="touchUpInside" id="vhd-cI-KTj"/>
                                         </connections>
                                     </button>
+<<<<<<< HEAD
                                     <button hidden="YES" opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nfE-l3-357">
                                         <rect key="frame" x="500" y="12" width="40" height="40"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="40" id="X1x-dZ-UsB"/>
                                         </constraints>
+=======
+                                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nfE-l3-357">
+                                        <rect key="frame" x="240" y="11" width="40" height="40"/>
+>>>>>>> parent of 7c4848f... man I hate these constraints
                                         <state key="normal" image="warning"/>
                                         <variation key="default">
                                             <mask key="constraints">
@@ -438,6 +460,7 @@
                                         </connections>
                                     </button>
                                 </subviews>
+<<<<<<< HEAD
                                 <constraints>
                                     <constraint firstItem="Yz4-Nt-ayN" firstAttribute="centerY" secondItem="v1s-eO-pzn" secondAttribute="centerY" id="4o6-VC-7VG"/>
                                     <constraint firstItem="1xj-GD-ODW" firstAttribute="centerY" secondItem="cAq-jU-fkf" secondAttribute="centerY" id="Bc3-ZY-QSo"/>
@@ -519,6 +542,40 @@
                             <constraint firstItem="4ug-Mw-9AY" firstAttribute="top" secondItem="7pt-iJ-pEs" secondAttribute="bottom" constant="8" symbolic="YES" id="nHo-C9-9H8"/>
                             <constraint firstItem="7pt-iJ-pEs" firstAttribute="leading" secondItem="YJH-ej-YLZ" secondAttribute="leading" id="z4p-e9-fCm"/>
                             <constraint firstItem="cAq-jU-fkf" firstAttribute="top" secondItem="Ia1-K6-d13" secondAttribute="bottom" constant="8" symbolic="YES" id="zfC-Cu-Re4"/>
+=======
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7pt-iJ-pEs">
+                                <rect key="frame" x="110" y="398" width="100" height="100"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <state key="normal" image="teacup"/>
+                                <connections>
+                                    <segue destination="gF8-28-OA7" kind="show" identifier="teaSegueID" id="yJ7-Z9-yI5"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YJH-ej-YLZ">
+                                <rect key="frame" x="110" y="274" width="100" height="100"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <state key="normal" image="tobacco"/>
+                                <connections>
+                                    <segue destination="gF8-28-OA7" kind="show" identifier="tobaccoSegueID" id="aT7-P9-lNn"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hl9-97-H4F">
+                                <rect key="frame" x="110" y="153" width="100" height="100"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <state key="normal" image="hookah"/>
+                                <connections>
+                                    <segue destination="gF8-28-OA7" kind="show" identifier="hookahSegueID" id="TPR-zs-HAH"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="VVQ-FE-DFR" firstAttribute="centerX" secondItem="tsR-hK-woN" secondAttribute="centerX" id="8tq-EO-eJe"/>
+                            <constraint firstItem="VVQ-FE-DFR" firstAttribute="height" secondItem="tsR-hK-woN" secondAttribute="height" id="FbD-Ib-GEJ"/>
+                            <constraint firstItem="VVQ-FE-DFR" firstAttribute="width" secondItem="tsR-hK-woN" secondAttribute="width" id="uc4-IR-Jmw"/>
+                            <constraint firstItem="VVQ-FE-DFR" firstAttribute="centerY" secondItem="tsR-hK-woN" secondAttribute="centerY" id="usV-K8-7Kr"/>
+>>>>>>> parent of 7c4848f... man I hate these constraints
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
