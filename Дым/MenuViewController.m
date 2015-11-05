@@ -42,6 +42,9 @@
         }
     });
     
+    // Setting label's text size
+    [self.specialsButtonOutlet setTitle:@"Специальные предложения" forState:UIControlStateNormal];
+    [self.specialsButtonOutlet sizeToFit];
     
     // Setting animation for specialsShowButton
     if ([[NSUserDefaults standardUserDefaults]boolForKey:@"isSpecialsHidden"]) {
