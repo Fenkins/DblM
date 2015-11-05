@@ -82,6 +82,7 @@
     [self menuButtonPopAnimate:self.menuTobaccoButtonOutlet];
     [self menuButtonPopAnimate:self.menuTeaButtonOutlet];
     
+    NSLog(@"\n SB width: %f,\n SB height: %f",self.menuHookahButtonOutlet.bounds.size.width,self.menuHookahButtonOutlet.bounds.size.height);
     
     // Drawing circles background
     [self drawCircleBackgroundForButton:self.menuHookahButtonOutlet edge:2.0 strokeColor:[UIColor orangeColor] fillColor:[UIColor orangeColor]];
@@ -138,6 +139,7 @@
 }
 
 - (void)viewDidAppear:(BOOL)animated {
+    NSLog(@"\n Runtime width: %f,\n Runtime height: %f",self.menuHookahButtonOutlet.bounds.size.width,self.menuHookahButtonOutlet.bounds.size.height);
 }
 
 - (void)didReceiveMemoryWarning {
