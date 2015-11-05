@@ -108,7 +108,7 @@
         cell.priceLabel.text = [[object objectForKey:@"priceRegular"]stringValue];
         // Moving label to the center
         [UILabel animateWithDuration:0.0 animations:^{
-            cell.priceLabel.transform = CGAffineTransformMakeTranslation(0.0, cell.priceCircleView.frame.size.height/8);
+            cell.priceLabel.transform = CGAffineTransformTranslate(cell.priceLabel.transform, 0.0, cell.priceCircleView.frame.size.height/3);
         }];
         cell.specialPriceLabel.hidden = YES;
     }

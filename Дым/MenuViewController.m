@@ -93,11 +93,9 @@
     
     self.backgroundImageLayer.image = blurredImage;
     // This way our image wont fool around/hang out betweet transitions
-    self.backgroundImageLayer.clipsToBounds = YES;
-    [self.backgroundImageLayer setContentMode:UIViewContentModeScaleAspectFill];
     
     // Adding layer of dark and blur
-    [self.backgroundImageLayer applyDarkBackgroundUsingSuperViewBounds];
+    [self.backgroundImageLayer applyDarkBackground];
     
 //  This should work, but its not
 //    self.specialsShowButtonOutlet.imageView.image = [self.specialsShowButtonOutlet.imageView.image imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
