@@ -342,9 +342,9 @@
                                             <action selector="specialsShowButton:" destination="9pv-A4-QxB" eventType="touchUpInside" id="Ybd-iT-OyF"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1xj-GD-ODW">
-                                        <rect key="frame" x="15" y="13" width="475" height="37"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1xj-GD-ODW">
+                                        <rect key="frame" x="15" y="10" width="475" height="37"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                         <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <state key="normal" title="Специальные предложения">
                                             <color key="titleColor" red="0.2470588235" green="0.68235294120000001" blue="0.74901960779999999" alpha="1" colorSpace="calibratedRGB"/>
@@ -357,21 +357,19 @@
                                 <constraints>
                                     <constraint firstItem="nfE-l3-357" firstAttribute="top" secondItem="cAq-jU-fkf" secondAttribute="top" constant="12" id="5oc-bb-ljq"/>
                                     <constraint firstItem="v1s-eO-pzn" firstAttribute="bottom" secondItem="nfE-l3-357" secondAttribute="bottom" id="6Ko-av-6y2"/>
-                                    <constraint firstItem="1xj-GD-ODW" firstAttribute="centerY" secondItem="cAq-jU-fkf" secondAttribute="centerY" id="Ij3-A2-w14"/>
                                     <constraint firstItem="v1s-eO-pzn" firstAttribute="leading" secondItem="nfE-l3-357" secondAttribute="leading" id="Jbf-hU-HAq"/>
                                     <constraint firstItem="nfE-l3-357" firstAttribute="leading" secondItem="1xj-GD-ODW" secondAttribute="trailing" constant="10" id="JfJ-hR-Qi8"/>
+                                    <constraint firstAttribute="bottom" secondItem="1xj-GD-ODW" secondAttribute="bottom" constant="16" id="SnB-if-LCS"/>
                                     <constraint firstItem="Yz4-Nt-ayN" firstAttribute="leading" secondItem="cAq-jU-fkf" secondAttribute="leadingMargin" id="SqC-nf-Zvd"/>
-                                    <constraint firstItem="1xj-GD-ODW" firstAttribute="centerY" secondItem="v1s-eO-pzn" secondAttribute="centerY" id="aW1-la-ha6"/>
-                                    <constraint firstAttribute="height" constant="63" id="ahg-hC-NYf"/>
-                                    <constraint firstAttribute="width" secondItem="1xj-GD-ODW" secondAttribute="height" multiplier="560:37" id="c8L-lf-M8x"/>
+                                    <constraint firstItem="1xj-GD-ODW" firstAttribute="centerY" secondItem="v1s-eO-pzn" secondAttribute="centerY" constant="-3.5" id="aW1-la-ha6"/>
                                     <constraint firstItem="Yz4-Nt-ayN" firstAttribute="top" secondItem="cAq-jU-fkf" secondAttribute="top" constant="6" id="c9h-Zk-Uct"/>
                                     <constraint firstItem="Yz4-Nt-ayN" firstAttribute="trailing" secondItem="cAq-jU-fkf" secondAttribute="trailingMargin" id="d5I-tJ-ykf"/>
                                     <constraint firstAttribute="trailing" secondItem="v1s-eO-pzn" secondAttribute="trailing" constant="20" id="giH-Od-toj"/>
-                                    <constraint firstItem="Yz4-Nt-ayN" firstAttribute="centerY" secondItem="1xj-GD-ODW" secondAttribute="centerY" id="iCy-Ew-YHh"/>
+                                    <constraint firstItem="Yz4-Nt-ayN" firstAttribute="centerY" secondItem="1xj-GD-ODW" secondAttribute="centerY" constant="3.5" id="iCy-Ew-YHh"/>
                                     <constraint firstItem="v1s-eO-pzn" firstAttribute="top" secondItem="nfE-l3-357" secondAttribute="top" id="j5g-8I-ubh"/>
                                     <constraint firstItem="v1s-eO-pzn" firstAttribute="trailing" secondItem="nfE-l3-357" secondAttribute="trailing" id="oKx-Z0-r93"/>
                                     <constraint firstItem="1xj-GD-ODW" firstAttribute="leading" secondItem="cAq-jU-fkf" secondAttribute="leading" constant="15" id="x32-sd-QjY"/>
-                                    <constraint firstItem="1xj-GD-ODW" firstAttribute="top" secondItem="cAq-jU-fkf" secondAttribute="top" constant="13" id="z6h-ec-0EH"/>
+                                    <constraint firstItem="1xj-GD-ODW" firstAttribute="top" secondItem="cAq-jU-fkf" secondAttribute="top" constant="10" id="z6h-ec-0EH"/>
                                 </constraints>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hl9-97-H4F">
@@ -427,6 +425,11 @@
                             <constraint firstItem="VVQ-FE-DFR" firstAttribute="centerY" secondItem="tsR-hK-woN" secondAttribute="centerY" id="usV-K8-7Kr"/>
                             <constraint firstItem="cAq-jU-fkf" firstAttribute="centerX" secondItem="VVQ-FE-DFR" secondAttribute="centerX" id="yMO-BP-9Dt"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="6rx-Cf-i28"/>
+                            </mask>
+                        </variation>
                     </view>
                     <navigationItem key="navigationItem" id="EXM-cw-U4m">
                         <barButtonItem key="rightBarButtonItem" title="выбор места" id="Xwb-D5-abo">
