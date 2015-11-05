@@ -327,9 +327,6 @@
                                     </view>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="v1s-eO-pzn">
                                         <rect key="frame" x="500" y="12" width="40" height="40"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="40" id="t1z-Zj-neB"/>
-                                        </constraints>
                                         <state key="normal" image="close"/>
                                         <connections>
                                             <action selector="specialsHideButton:" destination="9pv-A4-QxB" eventType="touchUpInside" id="vhd-cI-KTj"/>
@@ -337,14 +334,17 @@
                                     </button>
                                     <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nfE-l3-357">
                                         <rect key="frame" x="500" y="12" width="40" height="40"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="nfE-l3-357" secondAttribute="height" multiplier="1:1" id="Ayr-bL-9MQ"/>
+                                        </constraints>
                                         <state key="normal" image="warning"/>
                                         <connections>
                                             <action selector="specialsShowButton:" destination="9pv-A4-QxB" eventType="touchUpInside" id="Ybd-iT-OyF"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1xj-GD-ODW">
-                                        <rect key="frame" x="15" y="13" width="475" height="37"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                        <rect key="frame" x="15" y="10" width="475" height="37"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                         <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <state key="normal" title="Специальные предложения">
                                             <color key="titleColor" red="0.2470588235" green="0.68235294120000001" blue="0.74901960779999999" alpha="1" colorSpace="calibratedRGB"/>
@@ -357,20 +357,19 @@
                                 <constraints>
                                     <constraint firstItem="nfE-l3-357" firstAttribute="top" secondItem="cAq-jU-fkf" secondAttribute="top" constant="12" id="5oc-bb-ljq"/>
                                     <constraint firstItem="v1s-eO-pzn" firstAttribute="bottom" secondItem="nfE-l3-357" secondAttribute="bottom" id="6Ko-av-6y2"/>
-                                    <constraint firstItem="1xj-GD-ODW" firstAttribute="centerY" secondItem="cAq-jU-fkf" secondAttribute="centerY" id="Ij3-A2-w14"/>
                                     <constraint firstItem="v1s-eO-pzn" firstAttribute="leading" secondItem="nfE-l3-357" secondAttribute="leading" id="Jbf-hU-HAq"/>
                                     <constraint firstItem="nfE-l3-357" firstAttribute="leading" secondItem="1xj-GD-ODW" secondAttribute="trailing" constant="10" id="JfJ-hR-Qi8"/>
+                                    <constraint firstAttribute="bottom" secondItem="1xj-GD-ODW" secondAttribute="bottom" constant="16" id="SnB-if-LCS"/>
                                     <constraint firstItem="Yz4-Nt-ayN" firstAttribute="leading" secondItem="cAq-jU-fkf" secondAttribute="leadingMargin" id="SqC-nf-Zvd"/>
-                                    <constraint firstItem="1xj-GD-ODW" firstAttribute="centerY" secondItem="v1s-eO-pzn" secondAttribute="centerY" id="aW1-la-ha6"/>
-                                    <constraint firstAttribute="height" constant="63" id="ahg-hC-NYf"/>
+                                    <constraint firstItem="1xj-GD-ODW" firstAttribute="centerY" secondItem="v1s-eO-pzn" secondAttribute="centerY" constant="-3.5" id="aW1-la-ha6"/>
                                     <constraint firstItem="Yz4-Nt-ayN" firstAttribute="top" secondItem="cAq-jU-fkf" secondAttribute="top" constant="6" id="c9h-Zk-Uct"/>
                                     <constraint firstItem="Yz4-Nt-ayN" firstAttribute="trailing" secondItem="cAq-jU-fkf" secondAttribute="trailingMargin" id="d5I-tJ-ykf"/>
                                     <constraint firstAttribute="trailing" secondItem="v1s-eO-pzn" secondAttribute="trailing" constant="20" id="giH-Od-toj"/>
-                                    <constraint firstItem="Yz4-Nt-ayN" firstAttribute="centerY" secondItem="1xj-GD-ODW" secondAttribute="centerY" id="iCy-Ew-YHh"/>
+                                    <constraint firstItem="Yz4-Nt-ayN" firstAttribute="centerY" secondItem="1xj-GD-ODW" secondAttribute="centerY" constant="3.5" id="iCy-Ew-YHh"/>
                                     <constraint firstItem="v1s-eO-pzn" firstAttribute="top" secondItem="nfE-l3-357" secondAttribute="top" id="j5g-8I-ubh"/>
                                     <constraint firstItem="v1s-eO-pzn" firstAttribute="trailing" secondItem="nfE-l3-357" secondAttribute="trailing" id="oKx-Z0-r93"/>
                                     <constraint firstItem="1xj-GD-ODW" firstAttribute="leading" secondItem="cAq-jU-fkf" secondAttribute="leading" constant="15" id="x32-sd-QjY"/>
-                                    <constraint firstItem="1xj-GD-ODW" firstAttribute="top" secondItem="cAq-jU-fkf" secondAttribute="top" constant="13" id="z6h-ec-0EH"/>
+                                    <constraint firstItem="1xj-GD-ODW" firstAttribute="top" secondItem="cAq-jU-fkf" secondAttribute="top" constant="10" id="z6h-ec-0EH"/>
                                 </constraints>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hl9-97-H4F">
@@ -404,8 +403,10 @@
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="4ug-Mw-9AY" firstAttribute="top" secondItem="7pt-iJ-pEs" secondAttribute="bottom" constant="8" symbolic="YES" id="17V-xE-Lej"/>
+                            <constraint firstItem="Hl9-97-H4F" firstAttribute="width" secondItem="1xj-GD-ODW" secondAttribute="height" multiplier="120:37" id="6rx-Cf-i28"/>
                             <constraint firstItem="VVQ-FE-DFR" firstAttribute="centerX" secondItem="tsR-hK-woN" secondAttribute="centerX" id="8tq-EO-eJe"/>
                             <constraint firstItem="YJH-ej-YLZ" firstAttribute="height" secondItem="7pt-iJ-pEs" secondAttribute="height" id="BTj-0O-RMm"/>
+                            <constraint firstItem="Hl9-97-H4F" firstAttribute="width" secondItem="cAq-jU-fkf" secondAttribute="height" multiplier="40:21" id="EZw-K4-alg"/>
                             <constraint firstItem="VVQ-FE-DFR" firstAttribute="height" secondItem="tsR-hK-woN" secondAttribute="height" id="FbD-Ib-GEJ"/>
                             <constraint firstItem="Hl9-97-H4F" firstAttribute="top" secondItem="cAq-jU-fkf" secondAttribute="bottom" constant="8" symbolic="YES" id="Hkx-jv-Z2N"/>
                             <constraint firstItem="7pt-iJ-pEs" firstAttribute="top" secondItem="YJH-ej-YLZ" secondAttribute="bottom" constant="20" id="OyS-6Z-xI5"/>
@@ -424,6 +425,11 @@
                             <constraint firstItem="VVQ-FE-DFR" firstAttribute="centerY" secondItem="tsR-hK-woN" secondAttribute="centerY" id="usV-K8-7Kr"/>
                             <constraint firstItem="cAq-jU-fkf" firstAttribute="centerX" secondItem="VVQ-FE-DFR" secondAttribute="centerX" id="yMO-BP-9Dt"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="6rx-Cf-i28"/>
+                            </mask>
+                        </variation>
                     </view>
                     <navigationItem key="navigationItem" id="EXM-cw-U4m">
                         <barButtonItem key="rightBarButtonItem" title="выбор места" id="Xwb-D5-abo">
