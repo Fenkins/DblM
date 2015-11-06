@@ -17,7 +17,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    
+    NSLog(@"ViewDidLoad %f %f",self.menuHookahButtonOutlet.bounds.size.width,self.menuHookahButtonOutlet.bounds.size.height);
+
     // Checkin for schedule
     ContactsSheduleSupplementary *sheduleCheck = [[ContactsSheduleSupplementary alloc]initWithDate:[NSDate date]];
     
@@ -105,7 +106,8 @@
 -(void)viewWillAppear:(BOOL)animated {
     // TEMPORARY DISABLING FOR DEVELOPMENT, ENABLE UPON RELEASE OF THE FULL VERSION
     //[[self navigationController]setNavigationBarHidden:YES];
-    
+    NSLog(@"ViewWillAppear %f %f",self.menuHookahButtonOutlet.bounds.size.width,self.menuHookahButtonOutlet.bounds.size.height);
+
     LocationSupplementary *suppObject = [LocationSupplementary loadCustomObjectWithKey:@"StoredLocation"];
     if (suppObject) {
         NSLog(@"We got our name %@",suppObject.storedPlaceName);
@@ -137,9 +139,11 @@
 }
 
 - (void)viewDidAppear:(BOOL)animated {
+    NSLog(@"ViewDidAppear %f %f",self.menuHookahButtonOutlet.bounds.size.width,self.menuHookahButtonOutlet.bounds.size.height);
 }
 
 - (void)viewDidLayoutSubviews {
+    NSLog(@"LayoutSubviews %f %f",self.menuHookahButtonOutlet.bounds.size.width,self.menuHookahButtonOutlet.bounds.size.height);
     // Drawing circles background
     [self drawCircleBackgroundForButton:self.menuHookahButtonOutlet edge:2.0 strokeColor:[UIColor orangeColor] fillColor:[UIColor orangeColor]];
     [self drawCircleBackgroundForButton:self.menuTobaccoButtonOutlet edge:2.0 strokeColor:[UIColor orangeColor] fillColor:[UIColor orangeColor]];
@@ -248,7 +252,13 @@
 
 - (void)drawCircleBackgroundForButton:(UIButton*)button edge:(CGFloat)edge strokeColor:(UIColor*)strokeColor fillColor:(UIColor*)fillColor {
     CAShapeLayer* circleLayer = [CAShapeLayer layer];
-    [circleLayer setPath:[[UIBezierPath bezierPathWithOvalInRect:CGRectMake(-edge, -edge, button.bounds.size.width + edge*2, button.bounds.size.height + edge*2)]CGPath]];
+    // We will have an issues if we will scale the background circles bigger then image original size becouse our original images has a size of 150/300/450p for respectively 1x/2x/3x
+    if (button.bounds.size.height<=150.0 && button.bounds.size.width<=150.0) {
+        [circleLayer setPath:[[UIBezierPath bezierPathWithOvalInRect:CGRectMake(-edge, -edge, button.bounds.size.width + edge*2, button.bounds.size.height + edge*2)]CGPath]];
+    } else {
+        [circleLayer setPath:[[UIBezierPath bezierPathWithOvalInRect:CGRectMake(-edge + button.bounds.size.width/2 - 150.0/2, -edge + button.bounds.size.height/2 - 150.0/2, 150.0 + edge*2, 150.0 + edge*2)]CGPath]];
+    }
+
     [circleLayer setStrokeColor:[strokeColor CGColor]];
     [circleLayer setFillColor:[fillColor CGColor]];
     circleLayer.zPosition = -1.0;
