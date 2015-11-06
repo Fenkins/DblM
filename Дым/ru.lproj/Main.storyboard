@@ -343,7 +343,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1xj-GD-ODW">
-                                        <rect key="frame" x="15" y="7" width="476" height="37"/>
+                                        <rect key="frame" x="15" y="2" width="476" height="37"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="45"/>
                                         <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <state key="normal" title="Специальные предложения">
@@ -359,17 +359,17 @@
                                     <constraint firstItem="v1s-eO-pzn" firstAttribute="bottom" secondItem="nfE-l3-357" secondAttribute="bottom" id="6Ko-av-6y2"/>
                                     <constraint firstItem="v1s-eO-pzn" firstAttribute="leading" secondItem="nfE-l3-357" secondAttribute="leading" id="Jbf-hU-HAq"/>
                                     <constraint firstItem="nfE-l3-357" firstAttribute="leading" secondItem="1xj-GD-ODW" secondAttribute="trailing" constant="10" id="JfJ-hR-Qi8"/>
-                                    <constraint firstAttribute="bottom" secondItem="1xj-GD-ODW" secondAttribute="bottom" constant="19" id="SnB-if-LCS"/>
+                                    <constraint firstAttribute="bottom" secondItem="1xj-GD-ODW" secondAttribute="bottom" constant="24" id="SnB-if-LCS"/>
                                     <constraint firstItem="Yz4-Nt-ayN" firstAttribute="leading" secondItem="cAq-jU-fkf" secondAttribute="leadingMargin" id="SqC-nf-Zvd"/>
-                                    <constraint firstItem="1xj-GD-ODW" firstAttribute="centerY" secondItem="v1s-eO-pzn" secondAttribute="centerY" constant="-6" id="aW1-la-ha6"/>
+                                    <constraint firstItem="1xj-GD-ODW" firstAttribute="centerY" secondItem="v1s-eO-pzn" secondAttribute="centerY" constant="-11" id="aW1-la-ha6"/>
                                     <constraint firstItem="Yz4-Nt-ayN" firstAttribute="top" secondItem="cAq-jU-fkf" secondAttribute="top" constant="6" id="c9h-Zk-Uct"/>
                                     <constraint firstItem="Yz4-Nt-ayN" firstAttribute="trailing" secondItem="cAq-jU-fkf" secondAttribute="trailingMargin" id="d5I-tJ-ykf"/>
                                     <constraint firstAttribute="trailing" secondItem="v1s-eO-pzn" secondAttribute="trailing" constant="20" id="giH-Od-toj"/>
-                                    <constraint firstItem="Yz4-Nt-ayN" firstAttribute="centerY" secondItem="1xj-GD-ODW" secondAttribute="centerY" constant="6" id="iCy-Ew-YHh"/>
+                                    <constraint firstItem="Yz4-Nt-ayN" firstAttribute="centerY" secondItem="1xj-GD-ODW" secondAttribute="centerY" constant="11" id="iCy-Ew-YHh"/>
                                     <constraint firstItem="v1s-eO-pzn" firstAttribute="top" secondItem="nfE-l3-357" secondAttribute="top" id="j5g-8I-ubh"/>
                                     <constraint firstItem="v1s-eO-pzn" firstAttribute="trailing" secondItem="nfE-l3-357" secondAttribute="trailing" id="oKx-Z0-r93"/>
                                     <constraint firstItem="1xj-GD-ODW" firstAttribute="leading" secondItem="cAq-jU-fkf" secondAttribute="leading" constant="15" id="x32-sd-QjY"/>
-                                    <constraint firstItem="1xj-GD-ODW" firstAttribute="top" secondItem="cAq-jU-fkf" secondAttribute="top" constant="7" id="z6h-ec-0EH"/>
+                                    <constraint firstItem="1xj-GD-ODW" firstAttribute="top" secondItem="cAq-jU-fkf" secondAttribute="top" constant="2" id="z6h-ec-0EH"/>
                                 </constraints>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hl9-97-H4F">
