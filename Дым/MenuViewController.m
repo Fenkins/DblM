@@ -87,11 +87,6 @@
     [self menuButtonPopAnimate:self.menuTeaButtonOutlet];
     
     
-    // Drawing circles background
-    [self drawCircleBackgroundForButton:self.menuHookahButtonOutlet edge:2.0 strokeColor:[UIColor orangeColor] fillColor:[UIColor orangeColor]];
-    [self drawCircleBackgroundForButton:self.menuTobaccoButtonOutlet edge:2.0 strokeColor:[UIColor orangeColor] fillColor:[UIColor orangeColor]];
-    [self drawCircleBackgroundForButton:self.menuTeaButtonOutlet edge:2.0 strokeColor:[UIColor orangeColor] fillColor:[UIColor orangeColor]];
-    
     UIImage *blurredImage = [UIImage blurryGPUImage:[UIImage imageNamed:@"backgroundLayer.jpg"]];
     
     self.backgroundImageLayer.image = blurredImage;
@@ -142,6 +137,13 @@
 }
 
 - (void)viewDidAppear:(BOOL)animated {
+}
+
+- (void)viewDidLayoutSubviews {
+    // Drawing circles background
+    [self drawCircleBackgroundForButton:self.menuHookahButtonOutlet edge:2.0 strokeColor:[UIColor orangeColor] fillColor:[UIColor orangeColor]];
+    [self drawCircleBackgroundForButton:self.menuTobaccoButtonOutlet edge:2.0 strokeColor:[UIColor orangeColor] fillColor:[UIColor orangeColor]];
+    [self drawCircleBackgroundForButton:self.menuTeaButtonOutlet edge:2.0 strokeColor:[UIColor orangeColor] fillColor:[UIColor orangeColor]];
 }
 
 - (void)didReceiveMemoryWarning {
