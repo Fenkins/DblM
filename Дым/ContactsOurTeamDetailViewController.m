@@ -43,7 +43,7 @@
     self.teamMemberPositionLabel.text = [_object objectForKey:@"position"];
     self.teamMemberDescriptionMember.text = [_object objectForKey:@"description"];
     
-    // Adding background UIImageView to a table
+    // Adding background UIImageView to a view
     UIImageView *backgroundImageLayer = [[UIImageView alloc]
                                          initWithImage:[UIImage imageNamed:@"backgroundLayer.jpg"]];
     backgroundImageLayer.layer.zPosition = -1.0;
@@ -60,6 +60,15 @@
     
     // Adding layer of dark and blur
     [backgroundImageLayer applyDarkBackground];
+    NSLog(@"%f",self.view.bounds.size.height);
+}
+
+-(void)viewWillLayoutSubviews {
+    NSLog(@"%f",self.view.bounds.size.height);
+}
+
+-(void)viewDidAppear:(BOOL)animated {
+    NSLog(@"%f",self.view.bounds.size.height);
 }
 
 - (void)didReceiveMemoryWarning {
