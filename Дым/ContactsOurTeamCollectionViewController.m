@@ -41,6 +41,10 @@
     [backgroundImageLayer applyDarkBackground];
 }
 
+-(void)viewWillLayoutSubviews {
+    self.collectionView.contentInset = UIEdgeInsetsMake(self.navigationController.navigationBar.bounds.size.height*3/2, 0, self.tabBarController.tabBar.bounds.size.height, 0);
+}
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.

@@ -60,8 +60,10 @@
     if (newVC) {
         // Setting the new VC frame
         // Calculate any other frame animations here
-        newVC.view.frame = CGRectMake(CGRectGetMinX(self.view.bounds), CGRectGetMinY(self.view.bounds), CGRectGetWidth(self.view.bounds), CGRectGetHeight(self.view.bounds));
-    
+        newVC.view.frame = CGRectMake(CGRectGetMinX(self.view.bounds),
+                                      CGRectGetMinY(self.view.bounds),
+                                      CGRectGetWidth(self.view.bounds),
+                                      CGRectGetHeight(self.view.bounds));
         if (oldVC) {
             // Start both VC transitions
             [oldVC willMoveToParentViewController:nil];

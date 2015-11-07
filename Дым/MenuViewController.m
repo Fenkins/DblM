@@ -17,6 +17,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    
     NSLog(@"ViewDidLoad %f %f",self.menuHookahButtonOutlet.bounds.size.width,self.menuHookahButtonOutlet.bounds.size.height);
 
     // Checkin for schedule
