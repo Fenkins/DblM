@@ -144,7 +144,6 @@
 }
 
 - (void)viewDidLayoutSubviews {
-    NSLog(@"LayoutSubviews %f %f",self.menuHookahButtonOutlet.bounds.size.width,self.menuHookahButtonOutlet.bounds.size.height);
     // Drawing circles background
     [self drawCircleBackgroundForButton:self.menuHookahButtonOutlet edge:2.0 strokeColor:[UIColor orangeColor] fillColor:[UIColor orangeColor]];
     [self drawCircleBackgroundForButton:self.menuTobaccoButtonOutlet edge:2.0 strokeColor:[UIColor orangeColor] fillColor:[UIColor orangeColor]];
