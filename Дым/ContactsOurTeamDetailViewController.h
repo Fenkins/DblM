@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import <Parse.h>
 #import <Bolts.h>
-#import "UIImageView+DarkBlurry.h"
+#import "UIView+DarkBlurry.h"
 #import "UIImage+GPUImageBlur.h"
 
 @interface ContactsOurTeamDetailViewController : UIViewController <UIScrollViewDelegate>

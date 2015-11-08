@@ -9,7 +9,8 @@
 #import "ContactsOurTeamDetailViewController.h"
 
 @interface ContactsOurTeamDetailViewController ()
-@property UIView* blackScreen;
+@property UIView* darkLayer;
+@property UIImageView* blurryLayer;
 @end
 
 @implementation ContactsOurTeamDetailViewController
@@ -44,41 +45,30 @@
     self.teamMemberDescriptionMember.text = [_object objectForKey:@"description"];
     
     // Adding background UIImageView to a view
-//    UIImageView *backgroundImageLayer = [[UIImageView alloc]
-//                                         initWithImage:[UIImage imageNamed:@"backgroundLayer.jpg"]];
-//    backgroundImageLayer.layer.zPosition = -1.0;
-//    [backgroundImageLayer setFrame:self.view.frame];
-//    // This way our image wont fool around/hang out betweet transitions
-//    backgroundImageLayer.clipsToBounds = YES;
-//    [backgroundImageLayer setContentMode:UIViewContentModeScaleAspectFill];
-//    [self.view addSubview:backgroundImageLayer];
-//    
+    _blurryLayer = [[UIImageView alloc]
+                                         initWithImage:[UIImage imageNamed:@"backgroundLayer.jpg"]];
+    _blurryLayer.layer.zPosition = -1.0;
+    [_blurryLayer setFrame:self.view.frame];
+    // This way our image wont fool around/hang out betweet transitions
+    _blurryLayer.clipsToBounds = YES;
+    [_blurryLayer setContentMode:UIViewContentModeScaleAspectFill];
+    [self.view addSubview:_blurryLayer];
+    
     UIImage *blurredImage = [UIImage blurryGPUImage:[UIImage imageNamed:@"backgroundLayer.jpg"]];
     
-    //backgroundImageLayer.image = blurredImage;
-    [self.teamMemberScrollView setBackgroundColor:[UIColor colorWithPatternImage:blurredImage]];
-    // This way our image wont fool around/hang out betweet transitions
-    
-    // Adding layer of dark and blur
-    //[self.teamMemberScrollView.layer applyDarkBackground];
-    
-    _blackScreen = [[UIView alloc]init];
-    _blackScreen.frame = CGRectMake(self.teamMemberScrollView.bounds.origin.x,
-                                   self.teamMemberScrollView.bounds.origin.y,
-                                   self.teamMemberScrollView.bounds.size.width,
-                                   self.teamMemberScrollView.bounds.size.height);
-    _blackScreen.backgroundColor = [UIColor blackColor];
-    _blackScreen.layer.zPosition = -1.0;
-    [self.teamMemberScrollView addSubview:_blackScreen];
-    _blackScreen.alpha = 0.7;
+    _blurryLayer.image = blurredImage;
+
+
+    _darkLayer = [UIView createDarkBackgroundUnderScrollView:self.teamMemberScrollView];
+    [self.teamMemberScrollView addSubview:_darkLayer];
     
     NSLog(@"%f",self.view.bounds.size.height);
 }
 
 -(void)viewWillLayoutSubviews {
     NSLog(@"%f",self.view.bounds.size.height);
-    _blackScreen.frame = CGRectMake(_blackScreen.bounds.origin.x, _blackScreen.bounds.origin.y + self.view.bounds.origin.y, _blackScreen.frame.size.width, _blackScreen.frame.size.height);
-
+    _blurryLayer.frame = CGRectMake(_blurryLayer.bounds.origin.x, _blurryLayer.bounds.origin.y + self.view.bounds.origin.y, _blurryLayer.frame.size.width, _blurryLayer.frame.size.height);
+    _darkLayer.frame = CGRectMake(_darkLayer.bounds.origin.x, _darkLayer.bounds.origin.y + self.view.bounds.origin.y, _darkLayer.frame.size.width, _darkLayer.frame.size.height);
 }
 
 -(void)viewDidAppear:(BOOL)animated {
