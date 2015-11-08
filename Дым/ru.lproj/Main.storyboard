@@ -1030,7 +1030,6 @@
                             <constraint firstAttribute="trailing" secondItem="TEx-HB-hvx" secondAttribute="trailing" id="0m7-mf-Fej"/>
                             <constraint firstItem="UO4-76-goO" firstAttribute="trailing" secondItem="JPi-ft-dW5" secondAttribute="trailing" id="1tb-uG-hUJ"/>
                             <constraint firstItem="vqd-2F-Y3D" firstAttribute="top" secondItem="FRV-b0-XMJ" secondAttribute="top" id="5l4-w4-WQw"/>
-                            <constraint firstAttribute="trailing" secondItem="uaZ-NU-47g" secondAttribute="trailing" constant="175" id="6dM-bD-eKy"/>
                             <constraint firstItem="UO4-76-goO" firstAttribute="top" secondItem="JPi-ft-dW5" secondAttribute="top" id="7Gn-OF-46J"/>
                             <constraint firstItem="uaZ-NU-47g" firstAttribute="centerX" secondItem="rPe-G4-csc" secondAttribute="centerX" id="7W7-8j-SZg"/>
                             <constraint firstItem="FRV-b0-XMJ" firstAttribute="leading" secondItem="rPe-G4-csc" secondAttribute="leading" id="C1a-9x-xqO"/>
@@ -1047,7 +1046,6 @@
                             <constraint firstItem="TEx-HB-hvx" firstAttribute="centerX" secondItem="uaZ-NU-47g" secondAttribute="centerX" id="dHJ-oz-8qH"/>
                             <constraint firstItem="UO4-76-goO" firstAttribute="width" secondItem="JPi-ft-dW5" secondAttribute="width" id="e62-fQ-4lG"/>
                             <constraint firstAttribute="bottom" secondItem="JPi-ft-dW5" secondAttribute="bottom" id="eCm-62-MDC"/>
-                            <constraint firstItem="uaZ-NU-47g" firstAttribute="leading" secondItem="rPe-G4-csc" secondAttribute="leading" constant="175" id="eh1-1y-bGt"/>
                             <constraint firstItem="FRV-b0-XMJ" firstAttribute="top" secondItem="TEx-HB-hvx" secondAttribute="bottom" constant="20" id="k4h-ut-DyB"/>
                             <constraint firstAttribute="trailing" secondItem="JPi-ft-dW5" secondAttribute="trailing" id="kHX-6i-7AY"/>
                             <constraint firstItem="JPi-ft-dW5" firstAttribute="top" secondItem="FRV-b0-XMJ" secondAttribute="bottom" constant="17" id="l5I-Nf-npP"/>
@@ -1060,18 +1058,13 @@
                             <constraint firstItem="iL3-Mp-4HZ" firstAttribute="leading" secondItem="TEx-HB-hvx" secondAttribute="leading" id="zSg-3e-pag"/>
                             <constraint firstItem="vqd-2F-Y3D" firstAttribute="bottom" secondItem="FRV-b0-XMJ" secondAttribute="bottom" id="zXU-0x-fcp"/>
                         </constraints>
-                        <variation key="default">
-                            <mask key="constraints">
-                                <exclude reference="6dM-bD-eKy"/>
-                                <exclude reference="eh1-1y-bGt"/>
-                            </mask>
-                        </variation>
                     </scrollView>
                     <connections>
                         <outlet property="teamMemberDescriptionMember" destination="UO4-76-goO" id="3aZ-I8-Pid"/>
                         <outlet property="teamMemberImage" destination="uaZ-NU-47g" id="2Qr-d3-yPr"/>
                         <outlet property="teamMemberNameLabel" destination="iL3-Mp-4HZ" id="m1O-Ix-caq"/>
                         <outlet property="teamMemberPositionLabel" destination="vqd-2F-Y3D" id="xI7-dk-pPR"/>
+                        <outlet property="teamMemberScrollView" destination="rPe-G4-csc" id="iBh-W0-wgV"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DKs-9e-Ht7" userLabel="First Responder" sceneMemberID="firstResponder"/>
