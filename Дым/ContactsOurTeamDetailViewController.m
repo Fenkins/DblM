@@ -44,9 +44,8 @@
     self.teamMemberPositionLabel.text = [_object objectForKey:@"position"];
     self.teamMemberDescriptionMember.text = [_object objectForKey:@"description"];
     
-    // Adding background UIImageView to a view
-    _blurryLayer = [[UIImageView alloc]
-                                         initWithImage:[UIImage imageNamed:@"backgroundLayer.jpg"]];
+    // Adding background UIImageView to a scrollView
+    _blurryLayer = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"backgroundLayer.jpg"]];
     _blurryLayer.layer.zPosition = -1.0;
     [_blurryLayer setFrame:self.view.frame];
     // This way our image wont fool around/hang out betweet transitions
@@ -58,24 +57,14 @@
     
     _blurryLayer.image = blurredImage;
 
-
+    // Adding dark background to a scrollView
     _darkLayer = [UIView createDarkBackgroundUnderScrollView:self.teamMemberScrollView];
     [self.teamMemberScrollView addSubview:_darkLayer];
-    
-    NSLog(@"%f",self.view.bounds.size.height);
 }
 
 -(void)viewWillLayoutSubviews {
-    NSLog(@"%f",self.view.bounds.size.height);
     _blurryLayer.frame = CGRectMake(_blurryLayer.bounds.origin.x, _blurryLayer.bounds.origin.y + self.view.bounds.origin.y, _blurryLayer.frame.size.width, _blurryLayer.frame.size.height);
     _darkLayer.frame = CGRectMake(_darkLayer.bounds.origin.x, _darkLayer.bounds.origin.y + self.view.bounds.origin.y, _darkLayer.frame.size.width, _darkLayer.frame.size.height);
-}
-
--(void)viewDidAppear:(BOOL)animated {
-    NSLog(@"%f",self.view.bounds.size.height);
-}
-
--(void)scrollViewDidScroll:(UIScrollView *)scrollView {
 }
 
 - (void)didReceiveMemoryWarning {
