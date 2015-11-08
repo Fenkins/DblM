@@ -911,37 +911,66 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="T7l-KF-wVo">
-                            <size key="itemSize" width="148" height="273"/>
+                            <size key="itemSize" width="200" height="273"/>
                             <size key="headerReferenceSize" width="0.0" height="0.0"/>
                             <size key="footerReferenceSize" width="0.0" height="0.0"/>
                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                         </collectionViewFlowLayout>
                         <cells>
                             <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="teamMemberCell" id="LuL-uF-raU" customClass="ContactsOurTeamCollectionViewCell">
-                                <rect key="frame" x="0.0" y="0.0" width="148" height="273"/>
+                                <rect key="frame" x="0.0" y="0.0" width="200" height="273"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                    <rect key="frame" x="0.0" y="0.0" width="148" height="273"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="200" height="273"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="250" verticalCompressionResistancePriority="250" fixedFrame="YES" text="name" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cLf-bM-3qD">
-                                            <rect key="frame" x="0.0" y="154" width="148" height="58"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="26"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="name" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cLf-bM-3qD">
+                                            <rect key="frame" x="0.0" y="154" width="200" height="58"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="58" id="6EX-3b-HBv"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                             <color key="textColor" red="0.59999999999999998" green="0.56078431370000004" blue="0.23921568630000001" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="250" verticalCompressionResistancePriority="250" fixedFrame="YES" text="position" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eue-6o-mQe">
-                                            <rect key="frame" x="0.0" y="214" width="148" height="59"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="250" verticalCompressionResistancePriority="250" text="position" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eue-6o-mQe">
+                                            <rect key="frame" x="0.0" y="214" width="200" height="59"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="59" id="ObO-NX-St7"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                             <color key="textColor" red="0.59999999999999998" green="0.56078431370000004" blue="0.23921568630000001" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="MGC-hR-FPZ">
-                                            <rect key="frame" x="9" y="8" width="130" height="130"/>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="MGC-hR-FPZ">
+                                            <rect key="frame" x="35" y="8" width="130" height="130"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="130" id="Hnn-3X-eVf"/>
+                                                <constraint firstAttribute="width" constant="130" id="OHh-Js-LR8"/>
+                                            </constraints>
                                         </imageView>
                                     </subviews>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </view>
+                                <constraints>
+                                    <constraint firstItem="MGC-hR-FPZ" firstAttribute="top" secondItem="LuL-uF-raU" secondAttribute="topMargin" id="1hm-kj-Lh0"/>
+                                    <constraint firstItem="MGC-hR-FPZ" firstAttribute="centerX" secondItem="LuL-uF-raU" secondAttribute="centerX" id="4Lz-RR-C7b"/>
+                                    <constraint firstAttribute="trailing" secondItem="MGC-hR-FPZ" secondAttribute="trailing" constant="35" id="9qC-oI-JQ6"/>
+                                    <constraint firstItem="eue-6o-mQe" firstAttribute="top" secondItem="cLf-bM-3qD" secondAttribute="bottom" constant="2" id="OrM-2u-FTI"/>
+                                    <constraint firstItem="cLf-bM-3qD" firstAttribute="top" secondItem="MGC-hR-FPZ" secondAttribute="bottom" constant="16" id="SwI-Te-bBn"/>
+                                    <constraint firstAttribute="bottom" secondItem="eue-6o-mQe" secondAttribute="bottom" id="VaZ-zx-nGI"/>
+                                    <constraint firstAttribute="trailing" secondItem="eue-6o-mQe" secondAttribute="trailing" id="Wkr-Cz-AlB"/>
+                                    <constraint firstItem="cLf-bM-3qD" firstAttribute="leading" secondItem="eue-6o-mQe" secondAttribute="leading" id="btM-Xb-lSg"/>
+                                    <constraint firstItem="eue-6o-mQe" firstAttribute="trailing" secondItem="cLf-bM-3qD" secondAttribute="trailing" id="fei-K1-c4c"/>
+                                    <constraint firstItem="cLf-bM-3qD" firstAttribute="leading" secondItem="LuL-uF-raU" secondAttribute="leading" id="vel-Vf-okG"/>
+                                    <constraint firstItem="MGC-hR-FPZ" firstAttribute="leading" secondItem="LuL-uF-raU" secondAttribute="leadingMargin" constant="27" id="xKd-kZ-Yyj"/>
+                                </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="9qC-oI-JQ6"/>
+                                        <exclude reference="xKd-kZ-Yyj"/>
+                                    </mask>
+                                </variation>
                                 <connections>
                                     <outlet property="teamMemberImage" destination="MGC-hR-FPZ" id="Mcd-Jl-gQQ"/>
                                     <outlet property="teamMemberNameLabel" destination="cLf-bM-3qD" id="T2U-8r-abW"/>
