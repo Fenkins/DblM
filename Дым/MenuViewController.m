@@ -102,6 +102,8 @@
 //  This should work, but its not
 //    self.specialsShowButtonOutlet.imageView.image = [self.specialsShowButtonOutlet.imageView.image imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
 //    [self.specialsShowButtonOutlet.imageView setTintColor:[UIColor redColor]];
+    
+    [self.specialsButtonOutlet.titleLabel setTextAlignment:NSTextAlignmentCenter];
 }
 
 -(void)viewWillAppear:(BOOL)animated {
