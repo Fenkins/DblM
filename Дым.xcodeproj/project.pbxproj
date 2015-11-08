@@ -40,6 +40,7 @@
 		AADD012C1BC0414A00069573 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AADD012B1BC0414A00069573 /* Assets.xcassets */; };
 		AAE1E3CC1BE28FE70028152B /* backgroundLayer.jpg in Resources */ = {isa = PBXBuildFile; fileRef = AAE1E3CB1BE28FE70028152B /* backgroundLayer.jpg */; };
 		AAE1E3D21BE2BBA40028152B /* UIImageView+DarkBlurry.m in Sources */ = {isa = PBXBuildFile; fileRef = AAE1E3D11BE2BBA40028152B /* UIImageView+DarkBlurry.m */; };
+		AAE3325F1BEF796D0025BBDC /* UIView+DarkBlurry.m in Sources */ = {isa = PBXBuildFile; fileRef = AAE3325E1BEF796D0025BBDC /* UIView+DarkBlurry.m */; };
 		AAEB85D41BE9613300E4E6E2 /* NSString+PriceInRubles.m in Sources */ = {isa = PBXBuildFile; fileRef = AAEB85D31BE9613300E4E6E2 /* NSString+PriceInRubles.m */; };
 		AAFD71721BCD9A5C00100E79 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AAFD71711BCD9A5C00100E79 /* MapKit.framework */; };
 		AAFD71751BCEB97C00100E79 /* LocationChangerTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AAFD71741BCEB97C00100E79 /* LocationChangerTableViewController.m */; };
@@ -109,6 +110,8 @@
 		AAE1E3CB1BE28FE70028152B /* backgroundLayer.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = backgroundLayer.jpg; sourceTree = "<group>"; };
 		AAE1E3D01BE2BBA40028152B /* UIImageView+DarkBlurry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImageView+DarkBlurry.h"; sourceTree = "<group>"; };
 		AAE1E3D11BE2BBA40028152B /* UIImageView+DarkBlurry.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+DarkBlurry.m"; sourceTree = "<group>"; };
+		AAE3325D1BEF796D0025BBDC /* UIView+DarkBlurry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+DarkBlurry.h"; sourceTree = "<group>"; };
+		AAE3325E1BEF796D0025BBDC /* UIView+DarkBlurry.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+DarkBlurry.m"; sourceTree = "<group>"; };
 		AAEB85D21BE9613300E4E6E2 /* NSString+PriceInRubles.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+PriceInRubles.h"; sourceTree = "<group>"; };
 		AAEB85D31BE9613300E4E6E2 /* NSString+PriceInRubles.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+PriceInRubles.m"; sourceTree = "<group>"; };
 		AAFD71711BCD9A5C00100E79 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
@@ -190,6 +193,8 @@
 				AA925B661BE5257F00EC69AB /* PFQueryCollectionViewController+ChangeLoadingLabelColor.m */,
 				AAE1E3D01BE2BBA40028152B /* UIImageView+DarkBlurry.h */,
 				AAE1E3D11BE2BBA40028152B /* UIImageView+DarkBlurry.m */,
+				AAE3325D1BEF796D0025BBDC /* UIView+DarkBlurry.h */,
+				AAE3325E1BEF796D0025BBDC /* UIView+DarkBlurry.m */,
 				AA925B5F1BE5064400EC69AB /* UIImage+vImageBlur.h */,
 				AA925B601BE5064400EC69AB /* UIImage+vImageBlur.m */,
 				AA925B621BE508C900EC69AB /* UIImage+GPUImageBlur.h */,
@@ -441,6 +446,7 @@
 				AAFD71751BCEB97C00100E79 /* LocationChangerTableViewController.m in Sources */,
 				AAFD71791BCEC0A900100E79 /* LocationPlaceTableViewCell.m in Sources */,
 				AAE1E3D21BE2BBA40028152B /* UIImageView+DarkBlurry.m in Sources */,
+				AAE3325F1BEF796D0025BBDC /* UIView+DarkBlurry.m in Sources */,
 				AAB78AD11BD3FFE800104B0C /* ContactsOurTeamCollectionViewCell.m in Sources */,
 				AAEB85D41BE9613300E4E6E2 /* NSString+PriceInRubles.m in Sources */,
 				AA83DCB61BDA56FE0097370D /* SpecialsTableViewController.m in Sources */,
