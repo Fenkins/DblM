@@ -761,9 +761,9 @@
                             <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="GtK-Tt-sdy" userLabel="Schedule Group">
                                 <rect key="frame" x="323" y="10" width="267" height="300"/>
                                 <subviews>
-                                    <view alpha="0.29999999999999999" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="atx-fa-DMl" userLabel="darkBackground">
+                                    <view alpha="0.29999999999999999" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="atx-fa-DMl" userLabel="darkBackground">
                                         <rect key="frame" x="0.0" y="0.0" width="267" height="300"/>
-                                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                        <color key="backgroundColor" red="0.96078431369999995" green="0.43921568630000002" blue="0.27450980390000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
                                                 <integer key="value" value="10"/>
@@ -810,14 +810,19 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
-                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstItem="atx-fa-DMl" firstAttribute="leading" secondItem="GtK-Tt-sdy" secondAttribute="leading" constant="10" id="aCc-Oj-GSV"/>
+                                    <constraint firstAttribute="bottom" secondItem="atx-fa-DMl" secondAttribute="bottom" constant="10" id="aI3-B2-EXd"/>
+                                    <constraint firstItem="atx-fa-DMl" firstAttribute="top" secondItem="GtK-Tt-sdy" secondAttribute="top" constant="10" id="c8g-5c-2Ph"/>
+                                    <constraint firstAttribute="trailing" secondItem="atx-fa-DMl" secondAttribute="trailing" constant="10" id="i0r-o7-bnQ"/>
+                                </constraints>
                             </view>
                             <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3IL-jr-AXZ" userLabel="On the Map Group">
                                 <rect key="frame" x="10" y="10" width="260" height="300"/>
                                 <subviews>
-                                    <view alpha="0.29999999999999999" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jqg-jn-oml" userLabel="darkBackground">
+                                    <view alpha="0.29999999999999999" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jqg-jn-oml" userLabel="darkBackground">
                                         <rect key="frame" x="0.0" y="0.0" width="260" height="300"/>
-                                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                        <color key="backgroundColor" red="0.96078431369999995" green="0.43921568630000002" blue="0.27450980390000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
                                                 <integer key="value" value="10"/>
@@ -840,14 +845,19 @@
                                         </connections>
                                     </button>
                                 </subviews>
-                                <color key="backgroundColor" red="0.02164875543" green="0.60243291440000002" blue="0.057436885819999998" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="jqg-jn-oml" secondAttribute="bottom" constant="10" id="79j-7A-Rap"/>
+                                    <constraint firstItem="jqg-jn-oml" firstAttribute="top" secondItem="3IL-jr-AXZ" secondAttribute="top" constant="10" id="7fJ-W4-YOW"/>
+                                    <constraint firstAttribute="trailing" secondItem="jqg-jn-oml" secondAttribute="trailing" constant="10" id="Iyy-lk-ypf"/>
+                                    <constraint firstItem="jqg-jn-oml" firstAttribute="leading" secondItem="3IL-jr-AXZ" secondAttribute="leading" constant="10" id="pGg-8T-Plh"/>
+                                </constraints>
                             </view>
                             <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7ld-DD-pkh" userLabel="Social Medua Group">
                                 <rect key="frame" x="10" y="332" width="580" height="260"/>
                                 <subviews>
-                                    <view alpha="0.29999999999999999" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Lw9-oH-m8B" userLabel="darkBackground">
+                                    <view alpha="0.29999999999999999" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Lw9-oH-m8B" userLabel="darkBackground">
                                         <rect key="frame" x="0.0" y="0.0" width="580" height="260"/>
-                                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                        <color key="backgroundColor" red="0.96078431369999995" green="0.43921568630000002" blue="0.27450980390000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
                                                 <integer key="value" value="10"/>
@@ -888,25 +898,38 @@
                                         </connections>
                                     </button>
                                 </subviews>
-                                <color key="backgroundColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="Lw9-oH-m8B" secondAttribute="trailing" constant="10" id="CNa-ma-6V4"/>
+                                    <constraint firstItem="Lw9-oH-m8B" firstAttribute="leading" secondItem="7ld-DD-pkh" secondAttribute="leading" constant="10" id="i7v-dA-FU6"/>
+                                    <constraint firstItem="Lw9-oH-m8B" firstAttribute="top" secondItem="7ld-DD-pkh" secondAttribute="top" constant="10" id="pAV-eK-uKU"/>
+                                    <constraint firstAttribute="bottom" secondItem="Lw9-oH-m8B" secondAttribute="bottom" constant="10" id="yQB-Ij-cFM"/>
+                                </constraints>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="7ld-DD-pkh" firstAttribute="top" secondItem="GtK-Tt-sdy" secondAttribute="bottom" constant="5" id="1wQ-im-wfL"/>
                             <constraint firstAttribute="trailing" secondItem="GtK-Tt-sdy" secondAttribute="trailing" id="21U-Us-lu1"/>
                             <constraint firstItem="3IL-jr-AXZ" firstAttribute="top" secondItem="qFx-LR-Yad" secondAttribute="top" id="6yk-ss-h3T"/>
                             <constraint firstItem="7ld-DD-pkh" firstAttribute="width" secondItem="qFx-LR-Yad" secondAttribute="width" id="AZU-Jw-94q"/>
-                            <constraint firstItem="7ld-DD-pkh" firstAttribute="height" secondItem="qFx-LR-Yad" secondAttribute="height" multiplier="0.5" id="BBc-8u-v7M"/>
+                            <constraint firstItem="7ld-DD-pkh" firstAttribute="height" secondItem="qFx-LR-Yad" secondAttribute="height" multiplier="0.37" id="BBc-8u-v7M"/>
                             <constraint firstItem="7ld-DD-pkh" firstAttribute="leading" secondItem="qFx-LR-Yad" secondAttribute="leading" id="GYj-bt-6Hp"/>
                             <constraint firstItem="GtK-Tt-sdy" firstAttribute="top" secondItem="qFx-LR-Yad" secondAttribute="top" id="GjV-21-bAJ"/>
                             <constraint firstItem="3IL-jr-AXZ" firstAttribute="width" secondItem="qFx-LR-Yad" secondAttribute="width" multiplier="0.5" id="OtN-zU-6KP"/>
                             <constraint firstAttribute="trailing" secondItem="7ld-DD-pkh" secondAttribute="trailing" id="aRt-Ov-1sm"/>
-                            <constraint firstItem="3IL-jr-AXZ" firstAttribute="height" secondItem="qFx-LR-Yad" secondAttribute="height" multiplier="0.5" id="k4x-sR-382"/>
+                            <constraint firstItem="3IL-jr-AXZ" firstAttribute="height" secondItem="qFx-LR-Yad" secondAttribute="height" multiplier="0.37" id="k4x-sR-382"/>
+                            <constraint firstItem="7ld-DD-pkh" firstAttribute="top" secondItem="3IL-jr-AXZ" secondAttribute="bottom" constant="5" id="mOE-hx-QbR"/>
                             <constraint firstItem="3IL-jr-AXZ" firstAttribute="leading" secondItem="qFx-LR-Yad" secondAttribute="leading" id="o0E-At-t1e"/>
                             <constraint firstItem="GtK-Tt-sdy" firstAttribute="width" secondItem="qFx-LR-Yad" secondAttribute="width" multiplier="0.5" id="qNX-bu-Ptz"/>
-                            <constraint firstItem="GtK-Tt-sdy" firstAttribute="height" secondItem="qFx-LR-Yad" secondAttribute="height" multiplier="0.5" id="tb9-Zf-DSd"/>
-                            <constraint firstItem="GI2-Xk-yjQ" firstAttribute="top" secondItem="7ld-DD-pkh" secondAttribute="bottom" id="v7u-Zf-Sps"/>
+                            <constraint firstItem="GtK-Tt-sdy" firstAttribute="height" secondItem="qFx-LR-Yad" secondAttribute="height" multiplier="0.37" id="tb9-Zf-DSd"/>
+                            <constraint firstItem="GI2-Xk-yjQ" firstAttribute="top" secondItem="7ld-DD-pkh" secondAttribute="bottom" constant="10" id="v7u-Zf-Sps"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="6yk-ss-h3T"/>
+                                <exclude reference="GjV-21-bAJ"/>
+                            </mask>
+                        </variation>
                     </view>
                     <connections>
                         <outlet property="backgroundImageLayer" destination="isF-KW-OjE" id="Y7J-aa-hdn"/>

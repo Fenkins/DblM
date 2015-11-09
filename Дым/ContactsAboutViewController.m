@@ -24,6 +24,10 @@ static const NSString* kCCnullStringPhrase = @"Сегодня мы работа�
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+        NSLog(@"load %f",self.view.bounds.size.height);
+        NSLog(@"bar load %f",self.navigationController.navigationBar.bounds.size.height);
+    
+    
     // Do any additional setup after loading the view.
     // Query for phone number & vk link & instagram link
     PFQuery *query = [PFQuery queryWithClassName:@"Locations"];
@@ -104,10 +108,19 @@ static const NSString* kCCnullStringPhrase = @"Сегодня мы работа�
 }
 
 - (void)viewDidAppear:(BOOL)animated {
-    NSLog(@"Those are the numberz: Start: %@, End: %@, Day: %@",
-                                        self.suppliedScheduleStartTime,
-                                        self.suppliedScheduleEndTime,
-                                        self.suppliedScheduleDayOfWeekNumber);
+//    NSLog(@"Those are the numberz: Start: %@, End: %@, Day: %@",
+//                                        self.suppliedScheduleStartTime,
+//                                        self.suppliedScheduleEndTime,
+//                                        self.suppliedScheduleDayOfWeekNumber);
+}
+
+-(void)viewWillLayoutSubviews {
+    //self.view.bounds = CGRectInset(self.view.frame, 0.0, self.navigationController.navigationBar.bounds.size.height/2);
+    //self.view.bounds = CGRectMake(self.view.bounds.origin.x, self.view.bounds.origin.y-self.navigationController.navigationBar.bounds.size.height, self.view.bounds.size.width, self.view.bounds.size.height);
+    
+    
+    NSLog(@"layout %f",self.view.bounds.size.height);
+    NSLog(@"bar layout %f",self.navigationController.navigationBar.bounds.size.height);
 }
 
 
