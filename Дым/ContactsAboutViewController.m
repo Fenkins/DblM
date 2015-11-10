@@ -28,7 +28,18 @@ static const NSString* kCCnullStringPhrase = @"Сегодня мы работа�
     NSLog(@"viewDidLoad nav bar height %f",self.navigationController.navigationBar.bounds.size.height);
     
     // This is hardcoded for iPhone 5 screen, I really dont know how to calculate this for bigger/smaller screens and on what basis this number was calculated, this is not a proper fix
-    self.view.bounds = CGRectInset(self.view.frame, 0.0, -64.0);
+    
+    if([[UIDevice currentDevice]userInterfaceIdiom]==UIUserInterfaceIdiomPhone) {
+        if ([[UIScreen mainScreen] bounds].size.height == 568)
+        {
+            self.view.bounds = CGRectInset(self.view.frame, 0.0, -64.0);
+        }
+        // TODO: Write exact same shit for 3.5, 4,7 and 5.5 inches
+        // else if (<#expression#>) {
+            
+        //}
+    }
+    
     
     // Do any additional setup after loading the view.
     // Query for phone number & vk link & instagram link
