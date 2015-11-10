@@ -915,7 +915,9 @@
                             <constraint firstItem="7ld-DD-pkh" firstAttribute="height" secondItem="qFx-LR-Yad" secondAttribute="height" multiplier="0.37" id="BBc-8u-v7M"/>
                             <constraint firstItem="7ld-DD-pkh" firstAttribute="leading" secondItem="qFx-LR-Yad" secondAttribute="leading" id="GYj-bt-6Hp"/>
                             <constraint firstItem="GtK-Tt-sdy" firstAttribute="top" secondItem="qFx-LR-Yad" secondAttribute="top" id="GjV-21-bAJ"/>
+                            <constraint firstItem="GtK-Tt-sdy" firstAttribute="top" secondItem="qFx-LR-Yad" secondAttribute="top" constant="10" id="Mhm-UX-KaC"/>
                             <constraint firstItem="3IL-jr-AXZ" firstAttribute="width" secondItem="qFx-LR-Yad" secondAttribute="width" multiplier="0.5" id="OtN-zU-6KP"/>
+                            <constraint firstItem="3IL-jr-AXZ" firstAttribute="top" secondItem="qFx-LR-Yad" secondAttribute="top" constant="10" id="VIH-6W-VAm"/>
                             <constraint firstAttribute="trailing" secondItem="7ld-DD-pkh" secondAttribute="trailing" id="aRt-Ov-1sm"/>
                             <constraint firstItem="3IL-jr-AXZ" firstAttribute="height" secondItem="qFx-LR-Yad" secondAttribute="height" multiplier="0.37" id="k4x-sR-382"/>
                             <constraint firstItem="7ld-DD-pkh" firstAttribute="top" secondItem="3IL-jr-AXZ" secondAttribute="bottom" constant="5" id="mOE-hx-QbR"/>

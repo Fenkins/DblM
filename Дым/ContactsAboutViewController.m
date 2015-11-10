@@ -24,9 +24,11 @@ static const NSString* kCCnullStringPhrase = @"Сегодня мы работа�
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-        NSLog(@"load %f",self.view.bounds.size.height);
-        NSLog(@"bar load %f",self.navigationController.navigationBar.bounds.size.height);
+    NSLog(@"viewDidLoad view height %f",self.view.bounds.size.height);
+    NSLog(@"viewDidLoad nav bar height %f",self.navigationController.navigationBar.bounds.size.height);
     
+    // This is hardcoded for iPhone 5 screen, I really dont know how to calculate this for bigger/smaller screens and on what basis this number was calculated, this is not a proper fix
+    self.view.bounds = CGRectInset(self.view.frame, 0.0, -64.0);
     
     // Do any additional setup after loading the view.
     // Query for phone number & vk link & instagram link
@@ -119,8 +121,8 @@ static const NSString* kCCnullStringPhrase = @"Сегодня мы работа�
     //self.view.bounds = CGRectMake(self.view.bounds.origin.x, self.view.bounds.origin.y-self.navigationController.navigationBar.bounds.size.height, self.view.bounds.size.width, self.view.bounds.size.height);
     
     
-    NSLog(@"layout %f",self.view.bounds.size.height);
-    NSLog(@"bar layout %f",self.navigationController.navigationBar.bounds.size.height);
+    NSLog(@"layoutWillLayoutSubviews view height %f",self.view.bounds.size.height);
+    NSLog(@"layoutWillLayoutSubviews nav bar height %f",self.navigationController.navigationBar.bounds.size.height);
 }
 
 
