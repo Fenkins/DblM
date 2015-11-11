@@ -35,4 +35,14 @@
 @property (nonatomic) NSNumber* suppliedScheduleStartTime;
 @property (nonatomic) NSNumber* suppliedScheduleEndTime;
 @property (nonatomic) NSNumber* suppliedScheduleDayOfWeekNumber;
+
+// Constraints
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *socialMediaGroupBottomToSuperViewButtonLayout;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *socialMediaGroupToScheduleGroupVerticalHeight;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *socialMediaGroupToMapGroupVerticalHeight;
+// Proportions constraints
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *socialMediaGroupProportionToSuperView;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *mapGroupProportionToSuperview;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *scheduleGroupProportionToSuperView;
+
 @end

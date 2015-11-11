@@ -107,8 +107,21 @@ static const NSString* kCCnullStringPhrase = @"Сегодня мы работа�
     self.backgroundImageLayer.image = blurredImage;
     // This way our image wont fool around/hang out betweet transitions
     
-    
 
+    // Correcting constraints for certain displays (I am sick of trying to make this crap universal, guys who is bringed constraints could fuck themselves)
+    if ([[UIDevice currentDevice]userInterfaceIdiom]==UIUserInterfaceIdiomPhone) {
+        // iPhone 5/5s
+        if ([[UIScreen mainScreen] bounds].size.height == 568) {
+            self.socialMediaGroupBottomToSuperViewButtonLayout.constant = 90.0;
+            self.socialMediaGroupToMapGroupVerticalHeight.constant = 35.0;
+            self.socialMediaGroupToScheduleGroupVerticalHeight.constant = 35.0;
+        }
+        if ([[UIScreen mainScreen] bounds].size.height == 480) {
+            self.socialMediaGroupBottomToSuperViewButtonLayout.constant = 80.0;
+            self.socialMediaGroupToMapGroupVerticalHeight.constant = 25.0;
+            self.socialMediaGroupToScheduleGroupVerticalHeight.constant = 25.0;
+        }
+    }
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -298,4 +311,5 @@ static const NSString* kCCnullStringPhrase = @"Сегодня мы работа�
     button.layer.zPosition = 1.0;
     [[button layer]addSublayer:circleLayer];
 }
+
 @end
