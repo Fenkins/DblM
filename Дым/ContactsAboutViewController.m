@@ -122,6 +122,10 @@ static const NSString* kCCnullStringPhrase = @"Сегодня мы работа�
             self.socialMediaGroupToScheduleGroupVerticalHeight.constant = 25.0;
         }
     }
+    
+    // Buttons constraints
+    self.mapButtonLeading.constant = 20;
+    self.mapButtonTrailing.constant = 20;
 }
 
 - (void)viewWillAppear:(BOOL)animated {

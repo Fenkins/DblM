@@ -774,9 +774,9 @@
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                     </view>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Расписание" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FEc-QC-5Xw" userLabel="Расписание">
-                                        <rect key="frame" x="0.0" y="20" width="267" height="60"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Расписание" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="15" translatesAutoresizingMaskIntoConstraints="NO" id="FEc-QC-5Xw" userLabel="Расписание">
+                                        <rect key="frame" x="5" y="5" width="275" height="42"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="35"/>
                                         <color key="textColor" red="0.59999999999999998" green="0.56078431370000004" blue="0.23921568630000001" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
@@ -815,10 +815,13 @@
                                     </label>
                                 </subviews>
                                 <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="FEc-QC-5Xw" secondAttribute="trailing" constant="5" id="GOO-Kg-Q7f"/>
+                                    <constraint firstItem="FEc-QC-5Xw" firstAttribute="leading" secondItem="GtK-Tt-sdy" secondAttribute="leading" constant="5" id="V6F-kl-Aa7"/>
                                     <constraint firstItem="atx-fa-DMl" firstAttribute="leading" secondItem="GtK-Tt-sdy" secondAttribute="leading" id="aCc-Oj-GSV"/>
                                     <constraint firstAttribute="bottom" secondItem="atx-fa-DMl" secondAttribute="bottom" id="aI3-B2-EXd"/>
                                     <constraint firstItem="atx-fa-DMl" firstAttribute="top" secondItem="GtK-Tt-sdy" secondAttribute="top" id="c8g-5c-2Ph"/>
                                     <constraint firstAttribute="trailing" secondItem="atx-fa-DMl" secondAttribute="trailing" id="i0r-o7-bnQ"/>
+                                    <constraint firstItem="FEc-QC-5Xw" firstAttribute="top" secondItem="GtK-Tt-sdy" secondAttribute="top" constant="5" id="pla-W5-Uzb"/>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3IL-jr-AXZ" userLabel="On the Map Group">
@@ -833,17 +836,28 @@
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                     </view>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="На карте" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ajc-5S-0ed">
-                                        <rect key="frame" x="0.0" y="20" width="260" height="60"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="На карте" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="15" translatesAutoresizingMaskIntoConstraints="NO" id="Ajc-5S-0ed">
+                                        <rect key="frame" x="20" y="5" width="245" height="34"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="35"/>
                                         <color key="textColor" red="0.59999999999999998" green="0.56078431370000004" blue="0.23921568630000001" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8H8-ue-7Xn" userLabel="Map button">
-                                        <rect key="frame" x="55" y="110" width="150" height="150"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8H8-ue-7Xn" userLabel="Map button">
+                                        <rect key="frame" x="72" y="49" width="141" height="141"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="8H8-ue-7Xn" secondAttribute="height" multiplier="1:1" id="66j-Es-Mk6"/>
+                                            <constraint firstAttribute="width" constant="140" id="iYg-xS-5YC"/>
+                                            <constraint firstAttribute="height" constant="140" id="yZM-rr-TXu"/>
+                                        </constraints>
                                         <state key="normal" image="map">
                                             <color key="titleColor" red="0.2470588235" green="0.68235294120000001" blue="0.74901960779999999" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
+                                        <variation key="default">
+                                            <mask key="constraints">
+                                                <exclude reference="iYg-xS-5YC"/>
+                                                <exclude reference="yZM-rr-TXu"/>
+                                            </mask>
+                                        </variation>
                                         <connections>
                                             <action selector="openMapButton:" destination="zi5-2h-DNr" eventType="touchUpInside" id="9qu-yp-nna"/>
                                         </connections>
@@ -852,9 +866,26 @@
                                 <constraints>
                                     <constraint firstAttribute="bottom" secondItem="jqg-jn-oml" secondAttribute="bottom" id="79j-7A-Rap"/>
                                     <constraint firstItem="jqg-jn-oml" firstAttribute="top" secondItem="3IL-jr-AXZ" secondAttribute="top" id="7fJ-W4-YOW"/>
+                                    <constraint firstItem="8H8-ue-7Xn" firstAttribute="top" secondItem="Ajc-5S-0ed" secondAttribute="bottom" constant="10" id="D6i-tc-oSR"/>
                                     <constraint firstAttribute="trailing" secondItem="jqg-jn-oml" secondAttribute="trailing" id="Iyy-lk-ypf"/>
+                                    <constraint firstItem="8H8-ue-7Xn" firstAttribute="width" secondItem="3IL-jr-AXZ" secondAttribute="width" multiplier="1:2" id="NDc-xa-Zvh"/>
+                                    <constraint firstItem="8H8-ue-7Xn" firstAttribute="leading" secondItem="3IL-jr-AXZ" secondAttribute="leading" constant="72" id="U4m-m0-Mqu"/>
+                                    <constraint firstItem="8H8-ue-7Xn" firstAttribute="centerX" secondItem="3IL-jr-AXZ" secondAttribute="centerX" id="WkT-ow-b0o"/>
+                                    <constraint firstAttribute="trailing" secondItem="Ajc-5S-0ed" secondAttribute="trailing" constant="20" id="Wsl-qq-pSv"/>
+                                    <constraint firstAttribute="trailing" secondItem="8H8-ue-7Xn" secondAttribute="trailing" constant="72" id="ZDP-gf-N5x"/>
+                                    <constraint firstItem="Ajc-5S-0ed" firstAttribute="top" secondItem="3IL-jr-AXZ" secondAttribute="top" constant="5" id="agg-gK-Aon"/>
+                                    <constraint firstAttribute="bottom" secondItem="8H8-ue-7Xn" secondAttribute="bottom" constant="20" id="jIs-f7-sr9"/>
+                                    <constraint firstItem="Ajc-5S-0ed" firstAttribute="leading" secondItem="3IL-jr-AXZ" secondAttribute="leading" constant="20" id="juT-Vi-EDy"/>
+                                    <constraint firstItem="8H8-ue-7Xn" firstAttribute="height" secondItem="3IL-jr-AXZ" secondAttribute="height" multiplier="0.5" id="kmH-Cr-4tO"/>
                                     <constraint firstItem="jqg-jn-oml" firstAttribute="leading" secondItem="3IL-jr-AXZ" secondAttribute="leading" id="pGg-8T-Plh"/>
                                 </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="NDc-xa-Zvh"/>
+                                        <exclude reference="WkT-ow-b0o"/>
+                                        <exclude reference="kmH-Cr-4tO"/>
+                                    </mask>
+                                </variation>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7ld-DD-pkh" userLabel="Social Medua Group">
                                 <rect key="frame" x="10" y="320" width="580" height="180"/>
@@ -868,9 +899,9 @@
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                     </view>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Свяжитесь с нами" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rhb-Lh-qss">
-                                        <rect key="frame" x="5" y="0.0" width="567" height="75"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="50"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Свяжитесь с нами" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="15" translatesAutoresizingMaskIntoConstraints="NO" id="rhb-Lh-qss">
+                                        <rect key="frame" x="20" y="5" width="540" height="42"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="35"/>
                                         <color key="textColor" red="0.59999999999999998" green="0.56078431370000004" blue="0.23921568630000001" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
@@ -904,6 +935,9 @@
                                 </subviews>
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="Lw9-oH-m8B" secondAttribute="trailing" id="CNa-ma-6V4"/>
+                                    <constraint firstAttribute="trailing" secondItem="rhb-Lh-qss" secondAttribute="trailing" constant="20" id="IQ8-56-qTG"/>
+                                    <constraint firstItem="rhb-Lh-qss" firstAttribute="leading" secondItem="7ld-DD-pkh" secondAttribute="leading" constant="20" id="NLo-l3-aiE"/>
+                                    <constraint firstItem="rhb-Lh-qss" firstAttribute="top" secondItem="7ld-DD-pkh" secondAttribute="top" constant="5" id="U6J-dv-g6d"/>
                                     <constraint firstItem="Lw9-oH-m8B" firstAttribute="leading" secondItem="7ld-DD-pkh" secondAttribute="leading" id="i7v-dA-FU6"/>
                                     <constraint firstItem="Lw9-oH-m8B" firstAttribute="top" secondItem="7ld-DD-pkh" secondAttribute="top" id="pAV-eK-uKU"/>
                                     <constraint firstAttribute="bottom" secondItem="Lw9-oH-m8B" secondAttribute="bottom" id="yQB-Ij-cFM"/>
@@ -938,6 +972,8 @@
                         <outlet property="calendarButtonStartTimeLabelOutlet" destination="h6p-uA-OmX" id="c5r-Gl-Z7K"/>
                         <outlet property="callButtonOutlet" destination="aww-eY-QX9" id="vVf-jV-Tzr"/>
                         <outlet property="instagramButtonOutlet" destination="hb3-aa-9is" id="P3T-Du-JkI"/>
+                        <outlet property="mapButtonLeading" destination="U4m-m0-Mqu" id="ugP-Zn-KdV"/>
+                        <outlet property="mapButtonTrailing" destination="ZDP-gf-N5x" id="kb2-Ae-XCi"/>
                         <outlet property="mapGroupProportionToSuperview" destination="k4x-sR-382" id="fcQ-eg-vbn"/>
                         <outlet property="scheduleGroupProportionToSuperView" destination="tb9-Zf-DSd" id="UKG-8Z-VOH"/>
                         <outlet property="socialMediaGroupBottomToSuperViewButtonLayout" destination="v7u-Zf-Sps" id="eAK-0D-8nU"/>
