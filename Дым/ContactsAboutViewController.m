@@ -11,6 +11,7 @@
 static const NSString* kCCnullStringPhrase = @"Сегодня мы работаем с (null) до (null)";
 
 @interface ContactsAboutViewController ()
+@property BOOL darkBackgroundAdded;
 @end
 
 @implementation ContactsAboutViewController {
@@ -30,14 +31,9 @@ static const NSString* kCCnullStringPhrase = @"Сегодня мы работа�
     // This is hardcoded for iPhone 5 screen, I really dont know how to calculate this for bigger/smaller screens and on what basis this number was calculated, this is not a proper fix
     
     if([[UIDevice currentDevice]userInterfaceIdiom]==UIUserInterfaceIdiomPhone) {
-        if ([[UIScreen mainScreen] bounds].size.height == 568)
-        {
-            self.view.bounds = CGRectInset(self.view.frame, 0.0, -64.0);
-        }
-        // TODO: Write exact same shit for 3.5, 4,7 and 5.5 inches
-        // else if (<#expression#>) {
-            
-        //}
+        // NavBar+StatusBar height = 64
+        // Should work with all phone models from iPhone 4s to iPhone 6s Plus
+        self.view.bounds = CGRectInset(self.view.frame, 0.0, -64.0);
     }
     
     
@@ -111,8 +107,7 @@ static const NSString* kCCnullStringPhrase = @"Сегодня мы работа�
     self.backgroundImageLayer.image = blurredImage;
     // This way our image wont fool around/hang out betweet transitions
     
-    // Adding layer of dark and blur
-    [self.backgroundImageLayer applyDarkBackground];
+    
 
 }
 
@@ -134,6 +129,26 @@ static const NSString* kCCnullStringPhrase = @"Сегодня мы работа�
     
     NSLog(@"layoutWillLayoutSubviews view height %f",self.view.bounds.size.height);
     NSLog(@"layoutWillLayoutSubviews nav bar height %f",self.navigationController.navigationBar.bounds.size.height);
+    NSLog(@"layoutWillLayoutSubviews window %f", self.view.window.bounds.size.height);
+    NSLog(@"layoutWillLayoutSubviews backgroundImageLayer %f", self.backgroundImageLayer.bounds.size.height);
+    
+    // Adding layer of dark and blur
+    // Our dark layer are not fitting the screen on iPhone 6 Plus, so we are making sure it will by doing some shit
+    // So this one is a special(exclusive) feature for iPhone 6 Plus
+    if([[UIDevice currentDevice]userInterfaceIdiom]==UIUserInterfaceIdiomPhone && !_darkBackgroundAdded) {
+        if ([[UIScreen mainScreen] bounds].size.height == 736 && self.backgroundImageLayer.bounds.size.height == 600) {
+            _darkBackgroundAdded = NO;
+        }
+        else if ([[UIScreen mainScreen] bounds].size.height == 736 && self.backgroundImageLayer.bounds.size.height == 687) {
+            [self.backgroundImageLayer applyDarkBackground];
+            _darkBackgroundAdded = YES;
+        }
+        // And that one, is for crappy old and tiny phones like iPhone 6/5 or whatever, who even got those, right?
+        else if (!_darkBackgroundAdded) {
+            [self.backgroundImageLayer applyDarkBackground];
+            _darkBackgroundAdded = YES;
+        }
+    }
 }
 
 
