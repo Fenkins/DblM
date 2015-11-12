@@ -35,4 +35,25 @@
 @property (nonatomic) NSNumber* suppliedScheduleStartTime;
 @property (nonatomic) NSNumber* suppliedScheduleEndTime;
 @property (nonatomic) NSNumber* suppliedScheduleDayOfWeekNumber;
+
+// Background Constraints
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *socialMediaGroupBottomToSuperViewButtonLayout;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *socialMediaGroupToScheduleGroupVerticalHeight;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *socialMediaGroupToMapGroupVerticalHeight;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *socialMediaGroupProportionToSuperView;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *mapGroupProportionToSuperview;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *scheduleGroupProportionToSuperView;
+// Map Button
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *mapButtonTrailing;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *mapButtonLeading;
+// Schedule Button
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *scheduleButtonLeading;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *scheduleButtonTrailing;
+// Social Buttons
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *socialMediaCallButtonLeading;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *socialMediaInstagramButtonTrailing;
+// Schedule calendar day
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *scheduleCalendarDayTop;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *scheduleCalendarStartTimeTopToDayBottom;
+
 @end

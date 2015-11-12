@@ -17,6 +17,15 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    
+    // Calculating cell size
+    #define kCellsPerRow 2
+    UICollectionViewFlowLayout *flowLayout = (UICollectionViewFlowLayout*)self.collectionView.collectionViewLayout;
+    CGFloat availableWidthForCells = CGRectGetWidth(self.collectionView.frame) - flowLayout.sectionInset.left - flowLayout.sectionInset.right - flowLayout.minimumInteritemSpacing * (kCellsPerRow - 1);
+    CGFloat cellWidth = availableWidthForCells / kCellsPerRow;
+    flowLayout.itemSize = CGSizeMake(cellWidth, flowLayout.itemSize.height);
+    
+    
     self.collectionView.backgroundColor = [UIColor blackColor];
     
     // Changing colors of the PFLoadingView

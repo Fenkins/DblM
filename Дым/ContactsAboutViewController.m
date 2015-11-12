@@ -11,6 +11,7 @@
 static const NSString* kCCnullStringPhrase = @"Сегодня мы работаем с (null) до (null)";
 
 @interface ContactsAboutViewController ()
+@property BOOL darkBackgroundAdded;
 @end
 
 @implementation ContactsAboutViewController {
@@ -24,6 +25,36 @@ static const NSString* kCCnullStringPhrase = @"Сегодня мы работа�
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    // Adding orange circles
+    if([[UIDevice currentDevice]userInterfaceIdiom]==UIUserInterfaceIdiomPhone) {
+        // iPhone 6 Plus
+        if ([[UIScreen mainScreen] bounds].size.height == 736) {
+            [self drawCirclesBackgroundBlockWithBoundsSizeCorrection:20.333333];
+        }
+        // iPhone 6
+        else if ([[UIScreen mainScreen] bounds].size.height == 667) {
+            [self drawCirclesBackgroundBlockWithBoundsSizeCorrection:10.0];
+        }
+        // iPhone 5/5s
+        else if ([[UIScreen mainScreen] bounds].size.height == 568) {
+            [self drawCirclesBackgroundBlockWithBoundsSizeCorrection:-5.0];
+        }
+        // iPhone 4/4s
+        else if ([[UIScreen mainScreen] bounds].size.height == 480) {
+            [self drawCirclesBackgroundBlockWithBoundsSizeCorrection:-18.0];
+        }
+    }
+    
+    
+    // Inset to fix navBar+statusBar gap
+    if([[UIDevice currentDevice]userInterfaceIdiom]==UIUserInterfaceIdiomPhone) {
+        // NavBar+StatusBar height = 64
+        // Should work with all phone models from iPhone 4s to iPhone 6s Plus
+        self.view.bounds = CGRectInset(self.view.frame, 0.0, -64.0);
+    }
+    
+    
     // Do any additional setup after loading the view.
     // Query for phone number & vk link & instagram link
     PFQuery *query = [PFQuery queryWithClassName:@"Locations"];
@@ -55,12 +86,6 @@ static const NSString* kCCnullStringPhrase = @"Сегодня мы работа�
             }
         }
     }];
-    
-    // Setting up button name with Schedule (No need for that anymore)
-//    if (self.sheduleButtonLine && ![self.sheduleButtonLine isEqualToString:(NSString*)kCCnullStringPhrase]) {
-//        [self.sheduleButtonOutlet setTitle:self.sheduleButtonLine forState:UIControlStateNormal];
-//    }
-//    NSLog(@"%@",self.sheduleButtonLine);
 
     // Setting up calendar's group objects
     if (self.suppliedScheduleDayOfWeekNumber &&
@@ -73,41 +98,101 @@ static const NSString* kCCnullStringPhrase = @"Сегодня мы работа�
         NSLog(@"Was unable to setup calendar's group objects!");
     }
     
-    // Drawing circles background
-    [self drawCircleBackgroundForButton:self.callButtonOutlet
-                                   edge:2.0
-                            strokeColor:[UIColor orangeColor]
-                              fillColor:[UIColor orangeColor]];
     
-    [self drawCircleBackgroundForButton:self.vkButtonOutlet
-                                   edge:2.0
-                            strokeColor:[UIColor orangeColor]
-                              fillColor:[UIColor orangeColor]];
-    
-    [self drawCircleBackgroundForButton:self.instagramButtonOutlet
-                                   edge:2.0
-                            strokeColor:[UIColor orangeColor]
-                              fillColor:[UIColor orangeColor]];
     
     UIImage *blurredImage = [UIImage blurryGPUImage:[UIImage imageNamed:@"backgroundLayer.jpg"]];
     
     self.backgroundImageLayer.image = blurredImage;
     // This way our image wont fool around/hang out betweet transitions
     
-    // Adding layer of dark and blur
-    [self.backgroundImageLayer applyDarkBackground];
 
+    // Correcting constraints for certain displays (I am sick of trying to make this crap universal, guys who is bringed constraints could fuck themselves)
+    if ([[UIDevice currentDevice]userInterfaceIdiom]==UIUserInterfaceIdiomPhone) {
+        // iPhone 5/5s
+        if ([[UIScreen mainScreen] bounds].size.height == 568) {
+            self.socialMediaGroupBottomToSuperViewButtonLayout.constant = 90.0;
+            self.socialMediaGroupToMapGroupVerticalHeight.constant = 35.0;
+            self.socialMediaGroupToScheduleGroupVerticalHeight.constant = 35.0;
+        }
+        if ([[UIScreen mainScreen] bounds].size.height == 480) {
+            self.socialMediaGroupBottomToSuperViewButtonLayout.constant = 80.0;
+            self.socialMediaGroupToMapGroupVerticalHeight.constant = 25.0;
+            self.socialMediaGroupToScheduleGroupVerticalHeight.constant = 25.0;
+        }
+    }
+    
+    // Buttons constraints
+    if ([[UIDevice currentDevice]userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
+        self.mapButtonLeading.constant = 20;
+        self.mapButtonTrailing.constant = 20;
+        self.scheduleButtonLeading.constant = 20;
+        self.scheduleButtonTrailing.constant = 20;
+    }
+    
+    // Schedule Calendar constraints
+    if ([[UIDevice currentDevice]userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
+        // iPhone 5/5s
+        if ([[UIScreen mainScreen] bounds].size.height == 568) {
+            self.scheduleCalendarDayTop.constant = 11;
+            self.scheduleCalendarStartTimeTopToDayBottom.constant = 9;
+        }
+        // iPhone 4/4s
+        if ([[UIScreen mainScreen] bounds].size.height == 480) {
+            self.scheduleCalendarDayTop.constant = 11;
+            self.scheduleCalendarStartTimeTopToDayBottom.constant = 7;
+        }
+    }
+    
+    // Social media buttons constraints
+    if ([[UIDevice currentDevice]userInterfaceIdiom]==UIUserInterfaceIdiomPhone) {
+        // iPhone 6 Plus
+        if ([[UIScreen mainScreen] bounds].size.height == 736) {
+            self.socialMediaCallButtonLeading.constant = 20;
+            self.socialMediaInstagramButtonTrailing.constant = 20;
+        }
+        // iPhone 6
+        if ([[UIScreen mainScreen] bounds].size.height == 667) {
+            self.socialMediaCallButtonLeading.constant = 15;
+            self.socialMediaInstagramButtonTrailing.constant = 15;
+        }
+        // iPhone 5/5s
+        if ([[UIScreen mainScreen] bounds].size.height == 568) {
+            self.socialMediaCallButtonLeading.constant = 10;
+            self.socialMediaInstagramButtonTrailing.constant = 10;
+        }
+        // iPhone 4/4s
+        if ([[UIScreen mainScreen] bounds].size.height == 480) {
+            self.socialMediaCallButtonLeading.constant = 20;
+            self.socialMediaInstagramButtonTrailing.constant = 20;
+        }
+    }
 }
 
 - (void)viewWillAppear:(BOOL)animated {
-    
 }
 
 - (void)viewDidAppear:(BOOL)animated {
-    NSLog(@"Those are the numberz: Start: %@, End: %@, Day: %@",
-                                        self.suppliedScheduleStartTime,
-                                        self.suppliedScheduleEndTime,
-                                        self.suppliedScheduleDayOfWeekNumber);
+}
+
+-(void)viewWillLayoutSubviews {
+    // Adding layer of dark and blur
+    // This crap wants to resize itself and mess with my perfectly good background? Fuck it, let it resize.
+    // So this one is a special(exclusive) feature for iPhone 6 Plus
+    if([[UIDevice currentDevice]userInterfaceIdiom]==UIUserInterfaceIdiomPhone && !_darkBackgroundAdded) {
+        if ([[UIScreen mainScreen] bounds].size.height == 736 && self.backgroundImageLayer.bounds.size.height == 600) {
+            _darkBackgroundAdded = NO;
+        }
+        else if ([[UIScreen mainScreen] bounds].size.height == 736 && self.backgroundImageLayer.bounds.size.height == 687) {
+            [self.backgroundImageLayer applyDarkBackground];
+            _darkBackgroundAdded = YES;
+        }
+        // And that one, is for crappy old and tiny phones like iPhone 6/5 or whatever, who even got those, right?
+        else if (!_darkBackgroundAdded) {
+            [self.backgroundImageLayer applyDarkBackground];
+            _darkBackgroundAdded = YES;
+        }
+    }
+    
 }
 
 
@@ -248,13 +333,35 @@ static const NSString* kCCnullStringPhrase = @"Сегодня мы работа�
 }
 
 
-- (void)drawCircleBackgroundForButton:(UIButton*)button edge:(CGFloat)edge strokeColor:(UIColor*)strokeColor fillColor:(UIColor*)fillColor {
+- (void)drawCircleBackgroundForButton:(UIButton*)button edge:(CGFloat)edge strokeColor:(UIColor*)strokeColor fillColor:(UIColor*)fillColor boundsSizeCorrection:(CGFloat)correction {
     CAShapeLayer* circleLayer = [CAShapeLayer layer];
-    [circleLayer setPath:[[UIBezierPath bezierPathWithOvalInRect:CGRectMake(-edge, -edge, button.bounds.size.width + edge*2, button.bounds.size.height + edge*2)]CGPath]];
+    [circleLayer setPath:[[UIBezierPath bezierPathWithOvalInRect:CGRectMake(-edge, -edge, button.bounds.size.width + edge*2 + correction, button.bounds.size.height + edge*2 + correction)]CGPath]];
     [circleLayer setStrokeColor:[strokeColor CGColor]];
     [circleLayer setFillColor:[fillColor CGColor]];
     circleLayer.zPosition = -1.0;
     button.layer.zPosition = 1.0;
     [[button layer]addSublayer:circleLayer];
 }
+
+- (void)drawCirclesBackgroundBlockWithBoundsSizeCorrection:(CGFloat)correction {
+    // Drawing circles background
+    [self drawCircleBackgroundForButton:self.callButtonOutlet
+                                   edge:2.0
+                            strokeColor:[UIColor orangeColor]
+                              fillColor:[UIColor orangeColor]
+                   boundsSizeCorrection:correction];
+    
+    [self drawCircleBackgroundForButton:self.vkButtonOutlet
+                                   edge:2.0
+                            strokeColor:[UIColor orangeColor]
+                              fillColor:[UIColor orangeColor]
+                   boundsSizeCorrection:correction];
+    
+    [self drawCircleBackgroundForButton:self.instagramButtonOutlet
+                                   edge:2.0
+                            strokeColor:[UIColor orangeColor]
+                              fillColor:[UIColor orangeColor]
+                   boundsSizeCorrection:correction];
+}
+
 @end
