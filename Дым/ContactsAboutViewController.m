@@ -12,6 +12,7 @@ static const NSString* kCCnullStringPhrase = @"Сегодня мы работа�
 
 @interface ContactsAboutViewController ()
 @property BOOL darkBackgroundAdded;
+@property BOOL circlesAdded;
 @end
 
 @implementation ContactsAboutViewController {
@@ -28,8 +29,7 @@ static const NSString* kCCnullStringPhrase = @"Сегодня мы работа�
     NSLog(@"viewDidLoad view height %f",self.view.bounds.size.height);
     NSLog(@"viewDidLoad nav bar height %f",self.navigationController.navigationBar.bounds.size.height);
     
-    // This is hardcoded for iPhone 5 screen, I really dont know how to calculate this for bigger/smaller screens and on what basis this number was calculated, this is not a proper fix
-    
+    // Inset to fix navBar+statusBar gap
     if([[UIDevice currentDevice]userInterfaceIdiom]==UIUserInterfaceIdiomPhone) {
         // NavBar+StatusBar height = 64
         // Should work with all phone models from iPhone 4s to iPhone 6s Plus
@@ -86,21 +86,7 @@ static const NSString* kCCnullStringPhrase = @"Сегодня мы работа�
         NSLog(@"Was unable to setup calendar's group objects!");
     }
     
-    // Drawing circles background
-    [self drawCircleBackgroundForButton:self.callButtonOutlet
-                                   edge:2.0
-                            strokeColor:[UIColor orangeColor]
-                              fillColor:[UIColor orangeColor]];
     
-    [self drawCircleBackgroundForButton:self.vkButtonOutlet
-                                   edge:2.0
-                            strokeColor:[UIColor orangeColor]
-                              fillColor:[UIColor orangeColor]];
-    
-    [self drawCircleBackgroundForButton:self.instagramButtonOutlet
-                                   edge:2.0
-                            strokeColor:[UIColor orangeColor]
-                              fillColor:[UIColor orangeColor]];
     
     UIImage *blurredImage = [UIImage blurryGPUImage:[UIImage imageNamed:@"backgroundLayer.jpg"]];
     
@@ -124,8 +110,12 @@ static const NSString* kCCnullStringPhrase = @"Сегодня мы работа�
     }
     
     // Buttons constraints
-    self.mapButtonLeading.constant = 20;
-    self.mapButtonTrailing.constant = 20;
+    if ([[UIDevice currentDevice]userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
+        self.mapButtonLeading.constant = 20;
+        self.mapButtonTrailing.constant = 20;
+        self.scheduleButtonLeading.constant = 20;
+        self.scheduleButtonTrailing.constant = 20;
+    }
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -166,6 +156,22 @@ static const NSString* kCCnullStringPhrase = @"Сегодня мы работа�
             _darkBackgroundAdded = YES;
         }
     }
+    
+    if([[UIDevice currentDevice]userInterfaceIdiom]==UIUserInterfaceIdiomPhone && !_circlesAdded) {
+        if ([[UIScreen mainScreen] bounds].size.height == 736 && self.backgroundImageLayer.bounds.size.height == 600) {
+            _circlesAdded = NO;
+        }
+        else if ([[UIScreen mainScreen] bounds].size.height == 736 && self.backgroundImageLayer.bounds.size.height == 687) {
+            [self drawCirclesBackgroundBlock];
+            _circlesAdded = YES;
+        }
+        // And that one, is for crappy old and tiny phones like iPhone 6/5 or whatever, who even got those, right?
+        else if (!_circlesAdded) {
+            [self drawCirclesBackgroundBlock];
+            _circlesAdded = YES;
+        }
+    }
+    
 }
 
 
@@ -314,6 +320,24 @@ static const NSString* kCCnullStringPhrase = @"Сегодня мы работа�
     circleLayer.zPosition = -1.0;
     button.layer.zPosition = 1.0;
     [[button layer]addSublayer:circleLayer];
+}
+
+- (void)drawCirclesBackgroundBlock {
+    // Drawing circles background
+    [self drawCircleBackgroundForButton:self.callButtonOutlet
+                                   edge:2.0
+                            strokeColor:[UIColor orangeColor]
+                              fillColor:[UIColor orangeColor]];
+    
+    [self drawCircleBackgroundForButton:self.vkButtonOutlet
+                                   edge:2.0
+                            strokeColor:[UIColor orangeColor]
+                              fillColor:[UIColor orangeColor]];
+    
+    [self drawCircleBackgroundForButton:self.instagramButtonOutlet
+                                   edge:2.0
+                            strokeColor:[UIColor orangeColor]
+                              fillColor:[UIColor orangeColor]];
 }
 
 @end

@@ -46,5 +46,8 @@
 // Map Button
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *mapButtonTrailing;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *mapButtonLeading;
+// Schedule Button
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *scheduleButtonLeading;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *scheduleButtonTrailing;
 
 @end
