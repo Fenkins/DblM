@@ -12,7 +12,6 @@ static const NSString* kCCnullStringPhrase = @"Сегодня мы работа�
 
 @interface ContactsAboutViewController ()
 @property BOOL darkBackgroundAdded;
-@property BOOL circlesAdded;
 @end
 
 @implementation ContactsAboutViewController {
@@ -26,8 +25,27 @@ static const NSString* kCCnullStringPhrase = @"Сегодня мы работа�
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    NSLog(@"viewDidLoad view height %f",self.view.bounds.size.height);
-    NSLog(@"viewDidLoad nav bar height %f",self.navigationController.navigationBar.bounds.size.height);
+    
+    // Adding orange circles
+    if([[UIDevice currentDevice]userInterfaceIdiom]==UIUserInterfaceIdiomPhone) {
+        // iPhone 6 Plus
+        if ([[UIScreen mainScreen] bounds].size.height == 736) {
+            [self drawCirclesBackgroundBlockWithBoundsSizeCorrection:20.333333];
+        }
+        // iPhone 6
+        else if ([[UIScreen mainScreen] bounds].size.height == 667) {
+            [self drawCirclesBackgroundBlockWithBoundsSizeCorrection:10.0];
+        }
+        // iPhone 5/5s
+        else if ([[UIScreen mainScreen] bounds].size.height == 568) {
+            [self drawCirclesBackgroundBlockWithBoundsSizeCorrection:-5.0];
+        }
+        // iPhone 4/4s
+        else if ([[UIScreen mainScreen] bounds].size.height == 480) {
+            [self drawCirclesBackgroundBlockWithBoundsSizeCorrection:-18.0];
+        }
+    }
+    
     
     // Inset to fix navBar+statusBar gap
     if([[UIDevice currentDevice]userInterfaceIdiom]==UIUserInterfaceIdiomPhone) {
@@ -68,12 +86,6 @@ static const NSString* kCCnullStringPhrase = @"Сегодня мы работа�
             }
         }
     }];
-    
-    // Setting up button name with Schedule (No need for that anymore)
-//    if (self.sheduleButtonLine && ![self.sheduleButtonLine isEqualToString:(NSString*)kCCnullStringPhrase]) {
-//        [self.sheduleButtonOutlet setTitle:self.sheduleButtonLine forState:UIControlStateNormal];
-//    }
-//    NSLog(@"%@",self.sheduleButtonLine);
 
     // Setting up calendar's group objects
     if (self.suppliedScheduleDayOfWeekNumber &&
@@ -157,26 +169,12 @@ static const NSString* kCCnullStringPhrase = @"Сегодня мы работа�
 }
 
 - (void)viewWillAppear:(BOOL)animated {
-    
 }
 
 - (void)viewDidAppear:(BOOL)animated {
-//    NSLog(@"Those are the numberz: Start: %@, End: %@, Day: %@",
-//                                        self.suppliedScheduleStartTime,
-//                                        self.suppliedScheduleEndTime,
-//                                        self.suppliedScheduleDayOfWeekNumber);
 }
 
 -(void)viewWillLayoutSubviews {
-    //self.view.bounds = CGRectInset(self.view.frame, 0.0, self.navigationController.navigationBar.bounds.size.height/2);
-    //self.view.bounds = CGRectMake(self.view.bounds.origin.x, self.view.bounds.origin.y-self.navigationController.navigationBar.bounds.size.height, self.view.bounds.size.width, self.view.bounds.size.height);
-    
-    
-    NSLog(@"layoutWillLayoutSubviews view height %f",self.view.bounds.size.height);
-    NSLog(@"layoutWillLayoutSubviews nav bar height %f",self.navigationController.navigationBar.bounds.size.height);
-    NSLog(@"layoutWillLayoutSubviews window %f", self.view.window.bounds.size.height);
-    NSLog(@"layoutWillLayoutSubviews backgroundImageLayer %f", self.backgroundImageLayer.bounds.size.height);
-    
     // Adding layer of dark and blur
     // This crap wants to resize itself and mess with my perfectly good background? Fuck it, let it resize.
     // So this one is a special(exclusive) feature for iPhone 6 Plus
@@ -192,46 +190,6 @@ static const NSString* kCCnullStringPhrase = @"Сегодня мы работа�
         else if (!_darkBackgroundAdded) {
             [self.backgroundImageLayer applyDarkBackground];
             _darkBackgroundAdded = YES;
-        }
-    }
-    
-    // Adding orange circles
-    if([[UIDevice currentDevice]userInterfaceIdiom]==UIUserInterfaceIdiomPhone && !_circlesAdded) {
-        // iPhone 6 Plus
-        if ([[UIScreen mainScreen] bounds].size.height == 736 && self.self.backgroundImageLayer.bounds.size.height == 600) {
-            _circlesAdded = NO;
-        }
-        // iPhone 6 Plus
-        else if ([[UIScreen mainScreen] bounds].size.height == 736 && self.backgroundImageLayer.bounds.size.height == 687) {
-            [self drawCirclesBackgroundBlock];
-            _circlesAdded = YES;
-        }
-        // iPhone 6
-        else if ([[UIScreen mainScreen] bounds].size.height == 667 && self.backgroundImageLayer.bounds.size.height == 600) {
-            _circlesAdded = NO;
-        }
-        // iPhone 6
-        else if ([[UIScreen mainScreen] bounds].size.height == 667 && self.backgroundImageLayer.bounds.size.height == 618) {
-            [self drawCirclesBackgroundBlock];
-            _circlesAdded = YES;
-        }
-        // iPhone 5/5s
-        else if ([[UIScreen mainScreen] bounds].size.height == 568 && self.backgroundImageLayer.bounds.size.height == 600) {
-            _circlesAdded = NO;
-        }
-        // iPhone 5/5s
-        else if ([[UIScreen mainScreen] bounds].size.height == 568 && self.backgroundImageLayer.bounds.size.height == 519) {
-            [self drawCirclesBackgroundBlock];
-            _circlesAdded = YES;
-        }
-        // iPhone 4/4s
-        else if ([[UIScreen mainScreen] bounds].size.height == 480 && self.backgroundImageLayer.bounds.size.height == 600) {
-            _circlesAdded = NO;
-        }
-        // iPhone 4/4s
-        else if ([[UIScreen mainScreen] bounds].size.height == 480 && self.backgroundImageLayer.bounds.size.height == 431) {
-            [self drawCirclesBackgroundBlock];
-            _circlesAdded = YES;
         }
     }
     
@@ -375,9 +333,9 @@ static const NSString* kCCnullStringPhrase = @"Сегодня мы работа�
 }
 
 
-- (void)drawCircleBackgroundForButton:(UIButton*)button edge:(CGFloat)edge strokeColor:(UIColor*)strokeColor fillColor:(UIColor*)fillColor {
+- (void)drawCircleBackgroundForButton:(UIButton*)button edge:(CGFloat)edge strokeColor:(UIColor*)strokeColor fillColor:(UIColor*)fillColor boundsSizeCorrection:(CGFloat)correction {
     CAShapeLayer* circleLayer = [CAShapeLayer layer];
-    [circleLayer setPath:[[UIBezierPath bezierPathWithOvalInRect:CGRectMake(-edge, -edge, button.bounds.size.width + edge*2, button.bounds.size.height + edge*2)]CGPath]];
+    [circleLayer setPath:[[UIBezierPath bezierPathWithOvalInRect:CGRectMake(-edge, -edge, button.bounds.size.width + edge*2 + correction, button.bounds.size.height + edge*2 + correction)]CGPath]];
     [circleLayer setStrokeColor:[strokeColor CGColor]];
     [circleLayer setFillColor:[fillColor CGColor]];
     circleLayer.zPosition = -1.0;
@@ -385,22 +343,25 @@ static const NSString* kCCnullStringPhrase = @"Сегодня мы работа�
     [[button layer]addSublayer:circleLayer];
 }
 
-- (void)drawCirclesBackgroundBlock {
+- (void)drawCirclesBackgroundBlockWithBoundsSizeCorrection:(CGFloat)correction {
     // Drawing circles background
     [self drawCircleBackgroundForButton:self.callButtonOutlet
                                    edge:2.0
                             strokeColor:[UIColor orangeColor]
-                              fillColor:[UIColor orangeColor]];
+                              fillColor:[UIColor orangeColor]
+                   boundsSizeCorrection:correction];
     
     [self drawCircleBackgroundForButton:self.vkButtonOutlet
                                    edge:2.0
                             strokeColor:[UIColor orangeColor]
-                              fillColor:[UIColor orangeColor]];
+                              fillColor:[UIColor orangeColor]
+                   boundsSizeCorrection:correction];
     
     [self drawCircleBackgroundForButton:self.instagramButtonOutlet
                                    edge:2.0
                             strokeColor:[UIColor orangeColor]
-                              fillColor:[UIColor orangeColor]];
+                              fillColor:[UIColor orangeColor]
+                   boundsSizeCorrection:correction];
 }
 
 @end
