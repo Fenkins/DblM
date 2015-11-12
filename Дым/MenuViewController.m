@@ -23,19 +23,19 @@
     if([[UIDevice currentDevice]userInterfaceIdiom]==UIUserInterfaceIdiomPhone) {
         // iPhone 6 Plus
         if ([[UIScreen mainScreen] bounds].size.height == 736) {
-            [self drawCirclesBackgroundBlockWithCorrection:38.666667];
+            [self drawCirclesBackgroundBlockWithCorrection:38.666667 edge:0.0];
         }
         // iPhone 6
         else if ([[UIScreen mainScreen] bounds].size.height == 667) {
-            [self drawCirclesBackgroundBlockWithCorrection:19.0];
+            [self drawCirclesBackgroundBlockWithCorrection:19.0 edge:2.0];
         }
         // iPhone 5/5s
         else if ([[UIScreen mainScreen] bounds].size.height == 568) {
-            [self drawCirclesBackgroundBlockWithCorrection:-9.0];
+            [self drawCirclesBackgroundBlockWithCorrection:-9.0 edge:2.0];
         }
         // iPhone 4/4s
         else if ([[UIScreen mainScreen] bounds].size.height == 480) {
-            [self drawCirclesBackgroundBlockWithCorrection:-34.0];
+            [self drawCirclesBackgroundBlockWithCorrection:-34.0 edge:2.0];
         }
     }
     
@@ -266,11 +266,11 @@
 
 }
 
-- (void)drawCirclesBackgroundBlockWithCorrection:(CGFloat)correction {
+- (void)drawCirclesBackgroundBlockWithCorrection:(CGFloat)correction edge:(CGFloat)edge {
     // Drawing circles background
-    [self drawCircleBackgroundForButton:self.menuHookahButtonOutlet edge:2.0 strokeColor:[UIColor orangeColor] fillColor:[UIColor orangeColor] boundsSizeCorrection:correction];
-    [self drawCircleBackgroundForButton:self.menuTobaccoButtonOutlet edge:2.0 strokeColor:[UIColor orangeColor] fillColor:[UIColor orangeColor]boundsSizeCorrection:correction];
-    [self drawCircleBackgroundForButton:self.menuTeaButtonOutlet edge:2.0 strokeColor:[UIColor orangeColor] fillColor:[UIColor orangeColor]boundsSizeCorrection:correction];
+    [self drawCircleBackgroundForButton:self.menuHookahButtonOutlet edge:edge strokeColor:[UIColor orangeColor] fillColor:[UIColor orangeColor] boundsSizeCorrection:correction];
+    [self drawCircleBackgroundForButton:self.menuTobaccoButtonOutlet edge:edge strokeColor:[UIColor orangeColor] fillColor:[UIColor orangeColor]boundsSizeCorrection:correction];
+    [self drawCircleBackgroundForButton:self.menuTeaButtonOutlet edge:edge strokeColor:[UIColor orangeColor] fillColor:[UIColor orangeColor]boundsSizeCorrection:correction];
 }
 
 - (void)drawCircleBackgroundForButton:(UIButton*)button edge:(CGFloat)edge strokeColor:(UIColor*)strokeColor fillColor:(UIColor*)fillColor boundsSizeCorrection:(CGFloat)correction{
