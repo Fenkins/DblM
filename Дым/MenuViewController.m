@@ -17,6 +17,27 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+        NSLog(@"Button size height load %f",self.menuHookahButtonOutlet.bounds.size.height);
+    
+    // Adding orange circles
+    if([[UIDevice currentDevice]userInterfaceIdiom]==UIUserInterfaceIdiomPhone) {
+        // iPhone 6 Plus
+        if ([[UIScreen mainScreen] bounds].size.height == 736) {
+            [self drawCirclesBackgroundBlockWithCorrection:38.666667];
+        }
+        // iPhone 6
+        else if ([[UIScreen mainScreen] bounds].size.height == 667) {
+            [self drawCirclesBackgroundBlockWithCorrection:19.0];
+        }
+        // iPhone 5/5s
+        else if ([[UIScreen mainScreen] bounds].size.height == 568) {
+            [self drawCirclesBackgroundBlockWithCorrection:-9.0];
+        }
+        // iPhone 4/4s
+        else if ([[UIScreen mainScreen] bounds].size.height == 480) {
+            [self drawCirclesBackgroundBlockWithCorrection:-34.0];
+        }
+    }
     
     NSLog(@"ViewDidLoad %f %f",self.menuHookahButtonOutlet.bounds.size.width,self.menuHookahButtonOutlet.bounds.size.height);
 
@@ -99,10 +120,6 @@
     // Adding layer of dark and blur
     [self.backgroundImageLayer applyDarkBackgroundUsingSuperViewBounds];
     
-//  This should work, but its not
-//    self.specialsShowButtonOutlet.imageView.image = [self.specialsShowButtonOutlet.imageView.image imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
-//    [self.specialsShowButtonOutlet.imageView setTintColor:[UIColor redColor]];
-    
     [self.specialsButtonOutlet.titleLabel setTextAlignment:NSTextAlignmentCenter];
 }
 
@@ -146,10 +163,7 @@
 }
 
 - (void)viewDidLayoutSubviews {
-    // Drawing circles background
-    [self drawCircleBackgroundForButton:self.menuHookahButtonOutlet edge:2.0 strokeColor:[UIColor orangeColor] fillColor:[UIColor orangeColor]];
-    [self drawCircleBackgroundForButton:self.menuTobaccoButtonOutlet edge:2.0 strokeColor:[UIColor orangeColor] fillColor:[UIColor orangeColor]];
-    [self drawCircleBackgroundForButton:self.menuTeaButtonOutlet edge:2.0 strokeColor:[UIColor orangeColor] fillColor:[UIColor orangeColor]];
+    NSLog(@"Button size height lay %f",self.menuHookahButtonOutlet.bounds.size.height);
 }
 
 - (void)didReceiveMemoryWarning {
@@ -252,13 +266,20 @@
 
 }
 
-- (void)drawCircleBackgroundForButton:(UIButton*)button edge:(CGFloat)edge strokeColor:(UIColor*)strokeColor fillColor:(UIColor*)fillColor {
+- (void)drawCirclesBackgroundBlockWithCorrection:(CGFloat)correction {
+    // Drawing circles background
+    [self drawCircleBackgroundForButton:self.menuHookahButtonOutlet edge:2.0 strokeColor:[UIColor orangeColor] fillColor:[UIColor orangeColor] boundsSizeCorrection:correction];
+    [self drawCircleBackgroundForButton:self.menuTobaccoButtonOutlet edge:2.0 strokeColor:[UIColor orangeColor] fillColor:[UIColor orangeColor]boundsSizeCorrection:correction];
+    [self drawCircleBackgroundForButton:self.menuTeaButtonOutlet edge:2.0 strokeColor:[UIColor orangeColor] fillColor:[UIColor orangeColor]boundsSizeCorrection:correction];
+}
+
+- (void)drawCircleBackgroundForButton:(UIButton*)button edge:(CGFloat)edge strokeColor:(UIColor*)strokeColor fillColor:(UIColor*)fillColor boundsSizeCorrection:(CGFloat)correction{
     CAShapeLayer* circleLayer = [CAShapeLayer layer];
     // We will have an issues if we will scale the background circles bigger then image original size becouse our original images has a size of 150/300/450p for respectively 1x/2x/3x
     if (button.bounds.size.height<=150.0 && button.bounds.size.width<=150.0) {
-        [circleLayer setPath:[[UIBezierPath bezierPathWithOvalInRect:CGRectMake(-edge, -edge, button.bounds.size.width + edge*2, button.bounds.size.height + edge*2)]CGPath]];
+        [circleLayer setPath:[[UIBezierPath bezierPathWithOvalInRect:CGRectMake(-edge, -edge, button.bounds.size.width + edge*2 + correction, button.bounds.size.height + edge*2 + correction)]CGPath]];
     } else {
-        [circleLayer setPath:[[UIBezierPath bezierPathWithOvalInRect:CGRectMake(-edge + button.bounds.size.width/2 - 150.0/2, -edge + button.bounds.size.height/2 - 150.0/2, 150.0 + edge*2, 150.0 + edge*2)]CGPath]];
+        [circleLayer setPath:[[UIBezierPath bezierPathWithOvalInRect:CGRectMake(-edge + button.bounds.size.width/2 - 150.0/2, -edge + button.bounds.size.height/2 - 150.0/2, 150.0 + edge*2 + correction, 150.0 + edge*2 + correction)]CGPath]];
     }
 
     [circleLayer setStrokeColor:[strokeColor CGColor]];
