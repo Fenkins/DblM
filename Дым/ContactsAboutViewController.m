@@ -116,6 +116,30 @@ static const NSString* kCCnullStringPhrase = @"Сегодня мы работа�
         self.scheduleButtonLeading.constant = 20;
         self.scheduleButtonTrailing.constant = 20;
     }
+    
+    // Social media buttons
+    if ([[UIDevice currentDevice]userInterfaceIdiom]==UIUserInterfaceIdiomPhone) {
+        // iPhone 6 Plus
+        if ([[UIScreen mainScreen] bounds].size.height == 736) {
+            self.socialMediaCallButtonLeading.constant = 20;
+            self.socialMediaInstagramButtonTrailing.constant = 20;
+        }
+        // iPhone 6
+        if ([[UIScreen mainScreen] bounds].size.height == 667) {
+            self.socialMediaCallButtonLeading.constant = 15;
+            self.socialMediaInstagramButtonTrailing.constant = 15;
+        }
+        // iPhone 5/5s
+        if ([[UIScreen mainScreen] bounds].size.height == 568) {
+            self.socialMediaCallButtonLeading.constant = 10;
+            self.socialMediaInstagramButtonTrailing.constant = 10;
+        }
+        // iPhone 4/4s
+        if ([[UIScreen mainScreen] bounds].size.height == 480) {
+            self.socialMediaCallButtonLeading.constant = 20;
+            self.socialMediaInstagramButtonTrailing.constant = 20;
+        }
+    }
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -140,7 +164,7 @@ static const NSString* kCCnullStringPhrase = @"Сегодня мы работа�
     NSLog(@"layoutWillLayoutSubviews backgroundImageLayer %f", self.backgroundImageLayer.bounds.size.height);
     
     // Adding layer of dark and blur
-    // Our dark layer are not fitting the screen on iPhone 6 Plus, so we are making sure it will by doing some shit
+    // This crap wants to resize itself and mess with my perfectly good background? Fuck it, let it resize.
     // So this one is a special(exclusive) feature for iPhone 6 Plus
     if([[UIDevice currentDevice]userInterfaceIdiom]==UIUserInterfaceIdiomPhone && !_darkBackgroundAdded) {
         if ([[UIScreen mainScreen] bounds].size.height == 736 && self.backgroundImageLayer.bounds.size.height == 600) {
@@ -157,16 +181,41 @@ static const NSString* kCCnullStringPhrase = @"Сегодня мы работа�
         }
     }
     
+    // Adding orange circles
     if([[UIDevice currentDevice]userInterfaceIdiom]==UIUserInterfaceIdiomPhone && !_circlesAdded) {
-        if ([[UIScreen mainScreen] bounds].size.height == 736 && self.backgroundImageLayer.bounds.size.height == 600) {
+        // iPhone 6 Plus
+        if ([[UIScreen mainScreen] bounds].size.height == 736 && self.self.backgroundImageLayer.bounds.size.height == 600) {
             _circlesAdded = NO;
         }
+        // iPhone 6 Plus
         else if ([[UIScreen mainScreen] bounds].size.height == 736 && self.backgroundImageLayer.bounds.size.height == 687) {
             [self drawCirclesBackgroundBlock];
             _circlesAdded = YES;
         }
-        // And that one, is for crappy old and tiny phones like iPhone 6/5 or whatever, who even got those, right?
-        else if (!_circlesAdded) {
+        // iPhone 6
+        else if ([[UIScreen mainScreen] bounds].size.height == 667 && self.backgroundImageLayer.bounds.size.height == 600) {
+            _circlesAdded = NO;
+        }
+        // iPhone 6
+        else if ([[UIScreen mainScreen] bounds].size.height == 667 && self.backgroundImageLayer.bounds.size.height == 618) {
+            [self drawCirclesBackgroundBlock];
+            _circlesAdded = YES;
+        }
+        // iPhone 5/5s
+        else if ([[UIScreen mainScreen] bounds].size.height == 568 && self.backgroundImageLayer.bounds.size.height == 600) {
+            _circlesAdded = NO;
+        }
+        // iPhone 5/5s
+        else if ([[UIScreen mainScreen] bounds].size.height == 568 && self.backgroundImageLayer.bounds.size.height == 519) {
+            [self drawCirclesBackgroundBlock];
+            _circlesAdded = YES;
+        }
+        // iPhone 4/4s
+        else if ([[UIScreen mainScreen] bounds].size.height == 480 && self.backgroundImageLayer.bounds.size.height == 600) {
+            _circlesAdded = NO;
+        }
+        // iPhone 4/4s
+        else if ([[UIScreen mainScreen] bounds].size.height == 480 && self.backgroundImageLayer.bounds.size.height == 431) {
             [self drawCirclesBackgroundBlock];
             _circlesAdded = YES;
         }

@@ -932,6 +932,7 @@
                                     </button>
                                 </subviews>
                                 <constraints>
+                                    <constraint firstItem="aww-eY-QX9" firstAttribute="leading" secondItem="7ld-DD-pkh" secondAttribute="leading" constant="135" id="6EG-sl-PTg"/>
                                     <constraint firstAttribute="trailing" secondItem="Lw9-oH-m8B" secondAttribute="trailing" id="CNa-ma-6V4"/>
                                     <constraint firstAttribute="bottom" secondItem="hb3-aa-9is" secondAttribute="bottom" constant="15" id="ErP-Sh-f1T"/>
                                     <constraint firstAttribute="trailing" secondItem="rhb-Lh-qss" secondAttribute="trailing" constant="20" id="IQ8-56-qTG"/>
@@ -948,6 +949,7 @@
                                     <constraint firstItem="aww-eY-QX9" firstAttribute="width" secondItem="7ld-DD-pkh" secondAttribute="height" multiplier="1:2" id="rYu-1f-Lnu"/>
                                     <constraint firstAttribute="bottom" secondItem="zE1-Aa-7ga" secondAttribute="bottom" constant="15" id="sIE-2r-PqX"/>
                                     <constraint firstAttribute="bottom" secondItem="Lw9-oH-m8B" secondAttribute="bottom" id="yQB-Ij-cFM"/>
+                                    <constraint firstAttribute="trailing" secondItem="hb3-aa-9is" secondAttribute="trailing" constant="135" id="ziC-6Q-66X"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -985,10 +987,12 @@
                         <outlet property="scheduleButtonLeading" destination="OIC-gp-Ih7" id="pva-za-z8Q"/>
                         <outlet property="scheduleButtonTrailing" destination="Ee0-cw-Id7" id="NfK-0d-Wsw"/>
                         <outlet property="scheduleGroupProportionToSuperView" destination="tb9-Zf-DSd" id="UKG-8Z-VOH"/>
+                        <outlet property="socialMediaCallButtonLeading" destination="6EG-sl-PTg" id="5Uv-Io-QBJ"/>
                         <outlet property="socialMediaGroupBottomToSuperViewButtonLayout" destination="v7u-Zf-Sps" id="eAK-0D-8nU"/>
                         <outlet property="socialMediaGroupProportionToSuperView" destination="BBc-8u-v7M" id="zIe-Uu-tOh"/>
                         <outlet property="socialMediaGroupToMapGroupVerticalHeight" destination="mOE-hx-QbR" id="l1V-dM-cdK"/>
                         <outlet property="socialMediaGroupToScheduleGroupVerticalHeight" destination="1wQ-im-wfL" id="lhV-ij-9Ob"/>
+                        <outlet property="socialMediaInstagramButtonTrailing" destination="ziC-6Q-66X" id="89a-zG-ZIc"/>
                         <outlet property="vkButtonOutlet" destination="zE1-Aa-7ga" id="2ge-Wp-XPW"/>
                     </connections>
                 </viewController>
