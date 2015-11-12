@@ -52,5 +52,8 @@
 // Social Buttons
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *socialMediaCallButtonLeading;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *socialMediaInstagramButtonTrailing;
+// Schedule calendar day
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *scheduleCalendarDayTop;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *scheduleCalendarStartTimeTopToDayBottom;
 
 @end

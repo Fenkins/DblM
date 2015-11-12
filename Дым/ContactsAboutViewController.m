@@ -117,7 +117,21 @@ static const NSString* kCCnullStringPhrase = @"Сегодня мы работа�
         self.scheduleButtonTrailing.constant = 20;
     }
     
-    // Social media buttons
+    // Schedule Calendar constraints
+    if ([[UIDevice currentDevice]userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
+        // iPhone 5/5s
+        if ([[UIScreen mainScreen] bounds].size.height == 568) {
+            self.scheduleCalendarDayTop.constant = 11;
+            self.scheduleCalendarStartTimeTopToDayBottom.constant = 9;
+        }
+        // iPhone 4/4s
+        if ([[UIScreen mainScreen] bounds].size.height == 480) {
+            self.scheduleCalendarDayTop.constant = 11;
+            self.scheduleCalendarStartTimeTopToDayBottom.constant = 7;
+        }
+    }
+    
+    // Social media buttons constraints
     if ([[UIDevice currentDevice]userInterfaceIdiom]==UIUserInterfaceIdiomPhone) {
         // iPhone 6 Plus
         if ([[UIScreen mainScreen] bounds].size.height == 736) {
