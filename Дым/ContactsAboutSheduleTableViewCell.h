@@ -10,5 +10,6 @@
 
 @interface ContactsAboutSheduleTableViewCell : UITableViewCell
 @property (weak, nonatomic) IBOutlet UILabel *sheduleDayText;
+@property (weak, nonatomic) IBOutlet UILabel *scheduleDayTIme;
 
 @end

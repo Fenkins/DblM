@@ -164,15 +164,48 @@ static const NSString* kCCEndTime = @"endTime";
             [endTimeString substringToIndex:[endTimeString length]-2],
             [endTimeString substringFromIndex:[endTimeString length]-2]];
         
-        cell.sheduleDayText.text = [NSString stringWithFormat:@"%@ с %@ до %@",
-                                        [object objectForKey:@"dayOfWeek"],
-                                        startTimeFormatted,
-                                        endTimeFormatted];
+        [self changeFontSizeForEveryOtherRowCells:cell];
+        cell.sheduleDayText.text = [NSString stringWithFormat:@"%@",
+                                        [object objectForKey:@"dayOfWeek"]];
+        
+        cell.scheduleDayTIme.text = [NSString stringWithFormat:@"с %@ до %@",
+                                                            startTimeFormatted,
+                                                            endTimeFormatted];
 
     } else if (indexPath.row < 1 && _doneLoading) {
+        [self changeFontSizeForZeroIndexPathRowCell:cell];
         cell.sheduleDayText.text = @"Расписание работы";
+        cell.scheduleDayTIme.text = nil;
     }
     return cell;
+}
+
+-(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    switch ((int)[[UIScreen mainScreen] bounds].size.height) {
+        // iPhone 6 Plus
+        case 736:
+            return 75;
+            break;
+        // iPhone 6
+        case 667:
+            return 65;
+            break;
+        // iPhone 5/5s
+        case 568:
+            return 55;
+            break;
+        // iPhone 4/4s
+        case 480:
+            return 45;
+            break;
+        default:
+            return 75;
+            break;
+    }
+}
+
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
 
 /*
@@ -184,5 +217,52 @@ static const NSString* kCCEndTime = @"endTime";
     // Pass the selected object to the new view controller.
 }
 */
+
+-(void)changeFontSizeForZeroIndexPathRowCell:(ContactsAboutSheduleTableViewCell*)cell {
+    // Setting up font for "Расписание работы"
+    if([[UIDevice currentDevice]userInterfaceIdiom]==UIUserInterfaceIdiomPhone) {
+        // iPhone 6 Plus
+        if ([[UIScreen mainScreen] bounds].size.height == 736) {
+            [cell.sheduleDayText setFont:[UIFont systemFontOfSize:38]];
+        }
+        // iPhone 6
+        else if ([[UIScreen mainScreen] bounds].size.height == 667) {
+            [cell.sheduleDayText setFont:[UIFont systemFontOfSize:34]];
+        }
+        // iPhone 5/5s
+        else if ([[UIScreen mainScreen] bounds].size.height == 568) {
+            [cell.sheduleDayText setFont:[UIFont systemFontOfSize:28]];
+        }
+        // iPhone 4/4s
+        else if ([[UIScreen mainScreen] bounds].size.height == 480) {
+            [cell.sheduleDayText setFont:[UIFont systemFontOfSize:24]];
+        }
+    }
+}
+
+-(void)changeFontSizeForEveryOtherRowCells:(ContactsAboutSheduleTableViewCell*)cell {
+    // Setting up font for "Расписание работы"
+    if([[UIDevice currentDevice]userInterfaceIdiom]==UIUserInterfaceIdiomPhone) {
+        // iPhone 6 Plus
+        if ([[UIScreen mainScreen] bounds].size.height == 736) {
+            [cell.sheduleDayText setFont:[UIFont systemFontOfSize:25]];
+            [cell.scheduleDayTIme setFont:[UIFont systemFontOfSize:23]];
+        }
+        // iPhone 6
+        else if ([[UIScreen mainScreen] bounds].size.height == 667) {
+            [cell.sheduleDayText setFont:[UIFont systemFontOfSize:24]];
+            [cell.scheduleDayTIme setFont:[UIFont systemFontOfSize:22]];
+        }
+        // iPhone 5/5s
+        else if ([[UIScreen mainScreen] bounds].size.height == 568) {
+            [cell.sheduleDayText setFont:[UIFont systemFontOfSize:20]];
+            [cell.scheduleDayTIme setFont:[UIFont systemFontOfSize:18]];
+        }
+        // iPhone 4/4s
+        else if ([[UIScreen mainScreen] bounds].size.height == 480) {
+            [cell.sheduleDayText setFont:[UIFont systemFontOfSize:18]];
+            [cell.scheduleDayTIme setFont:[UIFont systemFontOfSize:16]];        }
+    }
+}
 
 @end
