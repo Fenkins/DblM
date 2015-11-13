@@ -10,7 +10,7 @@
 static const NSString* kCCStartTime = @"startTime";
 static const NSString* kCCEndTime = @"endTime";
 @interface ContactsAboutSheduleViewController ()
-
+@property BOOL doneLoading;
 @end
 
 @implementation ContactsAboutSheduleViewController
@@ -108,6 +108,35 @@ static const NSString* kCCEndTime = @"endTime";
     return query;
 }
 
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    return (self.objects.count + 1);
+}
+
+- (PFObject *)objectAtIndexPath:(NSIndexPath *)indexPath
+{
+    if (_doneLoading == YES) {
+        if (indexPath.row < 1) {
+            return nil;
+        } else if (indexPath.row > (self.objects.count + 1)) {
+            return nil;
+        } else {
+            return [super objectAtIndexPath:[NSIndexPath indexPathForRow:indexPath.row-1 inSection:indexPath.section]];
+        }
+    }
+    
+    return nil;
+}
+
+-(void)objectsDidLoad:(NSError *)error {
+    _doneLoading = YES;
+    if (_doneLoading) {
+        [super objectsDidLoad:error];
+    }
+    if (error) {
+        NSLog(@"Error in loading objects %@",error);
+    }
+}
+
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath object:(PFObject *)object {
     
     static NSString *sheduleCellID = @"sheduleCell";
@@ -120,7 +149,7 @@ static const NSString* kCCEndTime = @"endTime";
     [cell setBackgroundColor:[UIColor clearColor]];
     if ([[object objectForKey:(NSString*)kCCStartTime]isKindOfClass:[NSNumber class]] &&
         [[object objectForKey:(NSString*)kCCEndTime]isKindOfClass:[NSNumber class]]) {
-        //  Configure the cell to show title and description
+        //  Configure the cell
         // Extracting start and end time
         NSString* startTimeString = [NSString stringWithFormat:@"%@",
                                      [object objectForKey:(NSString*)kCCStartTime]];
@@ -134,10 +163,14 @@ static const NSString* kCCEndTime = @"endTime";
         NSString* endTimeFormatted = [NSString stringWithFormat:@"%@:%@",
             [endTimeString substringToIndex:[endTimeString length]-2],
             [endTimeString substringFromIndex:[endTimeString length]-2]];
+        
         cell.sheduleDayText.text = [NSString stringWithFormat:@"%@ с %@ до %@",
-                                    [object objectForKey:@"dayOfWeek"],
-                                    startTimeFormatted,
-                                    endTimeFormatted];
+                                        [object objectForKey:@"dayOfWeek"],
+                                        startTimeFormatted,
+                                        endTimeFormatted];
+
+    } else if (indexPath.row < 1 && _doneLoading) {
+        cell.sheduleDayText.text = @"Расписание работы";
     }
     return cell;
 }
