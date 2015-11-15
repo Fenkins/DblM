@@ -126,6 +126,30 @@
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
 
+-(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    switch ((int)[[UIScreen mainScreen] bounds].size.height) {
+            // iPhone 6 Plus
+        case 736:
+            return 150;
+            break;
+            // iPhone 6
+        case 667:
+            return 135;
+            break;
+            // iPhone 5/5s
+        case 568:
+            return 100;
+            break;
+            // iPhone 4/4s
+        case 480:
+            return 100;
+            break;
+        default:
+            return 135;
+            break;
+    }
+}
+
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
