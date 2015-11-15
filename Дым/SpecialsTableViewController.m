@@ -90,7 +90,12 @@
         cell = [[SpecialsTableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:simpleTableIdentifier];
     }
     
+    // Cell colors
     [cell setBackgroundColor:[UIColor clearColor]];
+    UIView *bgColorView = [[UIView alloc] init];
+    bgColorView.backgroundColor = [UIColor colorWithRed:153/255.0 green:143/255.0 blue:61/255.0 alpha:0.1];
+    [cell setSelectedBackgroundView:bgColorView];
+    
     //  Configure the cell to show title and description
     cell.specialsNameLabel.text = [object objectForKey:@"name"];
     cell.specialsShortDescriptionLabel.text = [object objectForKey:@"shortDescription"];

@@ -146,7 +146,13 @@ static const NSString* kCCEndTime = @"endTime";
     if (cell == nil) {
         cell = [[ContactsAboutSheduleTableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:sheduleCellID];
     }
+    
+    // Cell colors
     [cell setBackgroundColor:[UIColor clearColor]];
+    UIView *bgColorView = [[UIView alloc] init];
+    bgColorView.backgroundColor = [UIColor colorWithRed:153/255.0 green:143/255.0 blue:61/255.0 alpha:0.1];
+    [cell setSelectedBackgroundView:bgColorView];
+    
     if ([[object objectForKey:(NSString*)kCCStartTime]isKindOfClass:[NSNumber class]] &&
         [[object objectForKey:(NSString*)kCCEndTime]isKindOfClass:[NSNumber class]]) {
         //  Configure the cell

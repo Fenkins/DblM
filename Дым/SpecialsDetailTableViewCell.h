@@ -15,5 +15,8 @@
 @property (weak, nonatomic) IBOutlet UILabel *specialsDetailShortDescriptionLabel;
 @property (weak, nonatomic) IBOutlet UILabel *specialsDetailSpecialPriceLabel;
 @property (weak, nonatomic) IBOutlet UIView *specialsDetailPriceCircleView;
+// Constraints
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *priceCircleViewWidth;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *priceCircleViewHeight;
 
 @end

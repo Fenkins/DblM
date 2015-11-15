@@ -87,11 +87,21 @@
     static NSString *simpleTableIdentifier = @"specialsDetailTableViewCell";
     
     SpecialsDetailTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:simpleTableIdentifier];
+
     if (cell == nil) {
         cell = [[SpecialsDetailTableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:simpleTableIdentifier];
     }
     
+    // Cell Constraints
+    cell.priceCircleViewWidth.constant = [self priceViewDimensions];
+    cell.priceCircleViewHeight.constant = [self priceViewDimensions];
+    
+    // Cell colors
     [cell setBackgroundColor:[UIColor clearColor]];
+    UIView *bgColorView = [[UIView alloc] init];
+    bgColorView.backgroundColor = [UIColor colorWithRed:153/255.0 green:143/255.0 blue:61/255.0 alpha:0.1];
+    [cell setSelectedBackgroundView:bgColorView];
+    
     //  Configure the cell to show title and description
     cell.specialsDetailNameLabel.text = [object objectForKey:@"name"];
     cell.specialsDetailShortDescriptionLabel.text = [object objectForKey:@"shortDescription"];
@@ -107,7 +117,7 @@
         cell.specialsDetailPriceLabel.text = [NSString priceWithCurrencySymbol:[object objectForKey:@"priceRegular"] kopeikasEnabled:NO];
         // Moving label to the center
         [UILabel animateWithDuration:0.0 animations:^{
-            cell.specialsDetailPriceLabel.transform = CGAffineTransformMakeTranslation(0.0, cell.specialsDetailPriceCircleView.frame.size.height/8);
+            cell.specialsDetailPriceLabel.transform = CGAffineTransformMakeTranslation(0.0, cell.specialsDetailPriceCircleView.frame.size.height/9);
         }];
         cell.specialsDetailSpecialPriceLabel.hidden = YES;
     }
@@ -120,10 +130,6 @@
     //  Making sure we will have a round image by clipping it to the bounds
     cell.specialsDetailImageView.clipsToBounds = YES;
     
-//    //  Making it nice and round
-//    cell.specialsDetailImageView.layer.cornerRadius = cell.specialsDetailImageView.bounds.size.width/2;
-//    //  Turning it on, to increase performance
-//    cell.specialsDetailImageView.layer.shouldRasterize = YES;
     
     PFFile *thumbnail = [object objectForKey:@"image"];
     [thumbnail getDataInBackgroundWithBlock:^(NSData *data, NSError *error) {
@@ -142,19 +148,47 @@
                                  edge:0.0
                               opacity:1.0
                           strokeColor:[UIColor redColor]
-                            fillColor:[UIColor clearColor]];
+                            fillColor:[UIColor clearColor]
+                 useCurrentSizeOfView:NO];
     //Circle itself
     [self drawCircleBackgroundForView:cell.specialsDetailPriceCircleView
                                  edge:0.0
                               opacity:0.1
                           strokeColor:[UIColor clearColor]
-                            fillColor:[UIColor blackColor]];
+                            fillColor:[UIColor blackColor]
+                 useCurrentSizeOfView:NO];
+    
+    NSLog(@"Circle bounds size %f",cell.specialsDetailPriceCircleView.bounds.size.height);
     
     return cell;
 }
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
+}
+
+-(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    switch ((int)[[UIScreen mainScreen] bounds].size.height) {
+            // iPhone 6 Plus
+        case 736:
+            return 150;
+            break;
+            // iPhone 6
+        case 667:
+            return 135;
+            break;
+            // iPhone 5/5s
+        case 568:
+            return 100;
+            break;
+            // iPhone 4/4s
+        case 480:
+            return 100;
+            break;
+        default:
+            return 135;
+            break;
+    }
 }
 
 #pragma mark - Navigation
@@ -172,15 +206,44 @@
     }
 }
 
-- (void)drawCircleBackgroundForView:(UIView*)view edge:(CGFloat)edge opacity:(CGFloat)opacity strokeColor:(UIColor*)strokeColor fillColor:(UIColor*)fillColor {
+- (void)drawCircleBackgroundForView:(UIView*)view edge:(CGFloat)edge opacity:(CGFloat)opacity strokeColor:(UIColor*)strokeColor fillColor:(UIColor*)fillColor useCurrentSizeOfView:(BOOL)useViewSize{
     CAShapeLayer* circleLayer = [CAShapeLayer layer];
-    [circleLayer setPath:[[UIBezierPath bezierPathWithOvalInRect:CGRectMake(-edge, -edge, view.bounds.size.width + edge*2, view.bounds.size.height + edge*2)]CGPath]];
+    if (useViewSize) {
+        [circleLayer setPath:[[UIBezierPath bezierPathWithOvalInRect:CGRectMake(-edge, -edge, view.bounds.size.width + edge*2, view.bounds.size.width + edge*2)]CGPath]];
+    } else {
+        [circleLayer setPath:[[UIBezierPath bezierPathWithOvalInRect:CGRectMake(-edge, -edge, [self priceViewDimensions] + edge*2, [self priceViewDimensions] + edge*2)]CGPath]];
+    }
+    
     [circleLayer setStrokeColor:[strokeColor CGColor]];
     [circleLayer setFillColor:[fillColor CGColor]];
     circleLayer.zPosition = -1.0;
     circleLayer.opacity = opacity;
     view.layer.zPosition = 1.0;
     [[view layer]addSublayer:circleLayer];
+}
+
+-(CGFloat)priceViewDimensions {
+    switch ((int)[[UIScreen mainScreen] bounds].size.height) {
+            // iPhone 6 Plus
+        case 736:
+            return 90;
+            break;
+            // iPhone 6
+        case 667:
+            return 85;
+            break;
+            // iPhone 5/5s
+        case 568:
+            return 80;
+            break;
+            // iPhone 4/4s
+        case 480:
+            return 70;
+            break;
+        default:
+            return 100;
+            break;
+    }
 }
 
 @end

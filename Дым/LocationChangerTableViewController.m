@@ -101,7 +101,12 @@ static const NSString* kCCimage = @"image";
     if (cell == nil) {
         cell = [[LocationPlaceTableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:simpleTableIdentifier];
     }
-    cell.backgroundColor = [UIColor clearColor];
+    
+    // Cell colors
+    [cell setBackgroundColor:[UIColor clearColor]];
+    UIView *bgColorView = [[UIView alloc] init];
+    bgColorView.backgroundColor = [UIColor colorWithRed:153/255.0 green:143/255.0 blue:61/255.0 alpha:0.1];
+    [cell setSelectedBackgroundView:bgColorView];
     
     //  Configure the cell to show title and description
     cell.locationName.text = [object objectForKey:(NSString*)kCCName];

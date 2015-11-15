@@ -94,8 +94,13 @@
         cell = [[MenuDetailTableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:simpleTableIdentifier];
     }
     
+    // Cell colors
     [cell setBackgroundColor:[UIColor clearColor]];
-//  Configure the cell to show title and description
+    UIView *bgColorView = [[UIView alloc] init];
+    bgColorView.backgroundColor = [UIColor colorWithRed:153/255.0 green:143/255.0 blue:61/255.0 alpha:0.1];
+    [cell setSelectedBackgroundView:bgColorView];
+    
+    //  Configure the cell to show title and description
     cell.nameLabel.text = [object objectForKey:@"name"];
     cell.shortDescriptionLabel.text = [object objectForKey:@"shortDescription"];
     if ([[object objectForKey:@"priceSpecialEnabled"]boolValue]) {

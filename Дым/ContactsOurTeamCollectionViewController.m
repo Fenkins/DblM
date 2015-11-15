@@ -96,6 +96,11 @@
         cell = [[ContactsOurTeamCollectionViewCell alloc] init];
     }
     
+    // Cell colors
+    [cell setBackgroundColor:[UIColor clearColor]];
+    UIView *bgColorView = [[UIView alloc] init];
+    bgColorView.backgroundColor = [UIColor colorWithRed:153/255.0 green:143/255.0 blue:61/255.0 alpha:0.1];
+    [cell setSelectedBackgroundView:bgColorView];
     
     //  Configure the cell to show title and description
     cell.teamMemberNameLabel.text = [object objectForKey:@"name"];
@@ -127,6 +132,10 @@
     }];
     
     return cell;
+}
+
+-(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
+    [collectionView deselectItemAtIndexPath:indexPath animated:YES];
 }
 
 #pragma mark - Navigation
