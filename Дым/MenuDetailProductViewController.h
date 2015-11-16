@@ -20,7 +20,10 @@
 @property (weak, nonatomic) IBOutlet UILabel *productDescriptionLabel;
 @property (weak, nonatomic) IBOutlet UILabel *productNameLabel;
 @property (weak, nonatomic) IBOutlet UILabel *productSpecialPriceLabel;
-
 @property (strong, nonatomic) IBOutlet UIScrollView *detailProductScrollView;
+// Constraints
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *productPriceLabelLeading;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *productSpecialPriceLabelTrailing;
+
 @property (nonatomic) PFObject *object;
 @end

@@ -24,11 +24,6 @@
     //  Making sure we will have a round image by clipping it to the bounds
     self.productImageView.clipsToBounds = YES;
     
-//    //  Making it nice and round
-//    self.productImageView.layer.cornerRadius = self.productImageView.bounds.size.width/2;
-//    //  Turning it on, to increase performance
-//    self.productImageView.layer.shouldRasterize = YES;
-    
     PFFile *thumbnail = [_object objectForKey:@"image"];
     [thumbnail getDataInBackgroundWithBlock:^(NSData *data, NSError *error) {
         if (!error) {
@@ -62,22 +57,10 @@
     
     // Background color
     self.view.backgroundColor = [UIColor blackColor];
-        
-//    // Adding background UIImageView to a table
-//    UIImage *blurredImage = [UIImage blurryGPUImage:[UIImage imageNamed:@"backgroundLayer.jpg"]];
-//    
-//    UIImageView *backgroundImageLayer = [[UIImageView alloc]
-//                                         initWithImage:blurredImage];
-//    backgroundImageLayer.layer.zPosition = -1.0;
-//    [backgroundImageLayer setFrame:self.view.frame];
-//    // This way our image wont fool around/hang out betweet transitions    
-//    backgroundImageLayer.clipsToBounds = YES;
-//    [backgroundImageLayer setContentMode:UIViewContentModeScaleAspectFill];
-//    [self.view addSubview:backgroundImageLayer];
-//    
-//    // Adding layer of dark and blur
-//    [backgroundImageLayer applyDarkBackground];
     
+//    // Constraints
+//    self.productPriceLabelLeading.constant = [self returnPriceLeadingTrailing];
+//    self.productSpecialPriceLabelTrailing.constant = -[self returnPriceLeadingTrailing];
     
     // Adding background UIImageView to a Scroll View
     _blurryLayer = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"backgroundLayer.jpg"]];
@@ -107,6 +90,30 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
+//-(CGFloat)returnPriceLeadingTrailing {
+//    switch ((int)[[UIScreen mainScreen] bounds].size.height) {
+//            // iPhone 6 Plus
+//        case 736:
+//            return 35;
+//            break;
+//            // iPhone 6
+//        case 667:
+//            return 25;
+//            break;
+//            // iPhone 5/5s
+//        case 568:
+//            return 25;
+//            break;
+//            // iPhone 4/4s
+//        case 480:
+//            return 20;
+//            break;
+//        default:
+//            return 30;
+//            break;
+//    }
+//}
 
 /*
 #pragma mark - Navigation

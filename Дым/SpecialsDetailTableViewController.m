@@ -234,7 +234,7 @@
             break;
             // iPhone 5/5s
         case 568:
-            return 80;
+            return 75;
             break;
             // iPhone 4/4s
         case 480:
