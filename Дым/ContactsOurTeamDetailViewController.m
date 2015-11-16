@@ -63,6 +63,7 @@
 }
 
 -(void)viewWillLayoutSubviews {
+    //  We also need to set the frame in viewWillLayoutSubviews to fill the whole scrollView with dark/blurry background
     _blurryLayer.frame = CGRectMake(_blurryLayer.bounds.origin.x, _blurryLayer.bounds.origin.y + self.view.bounds.origin.y, _blurryLayer.frame.size.width, _blurryLayer.frame.size.height);
     _darkLayer.frame = CGRectMake(_darkLayer.bounds.origin.x, _darkLayer.bounds.origin.y + self.view.bounds.origin.y, _darkLayer.frame.size.width, _darkLayer.frame.size.height);
 }

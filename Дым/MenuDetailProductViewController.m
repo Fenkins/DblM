@@ -9,7 +9,8 @@
 #import "MenuDetailProductViewController.h"
 
 @interface MenuDetailProductViewController ()
-
+@property UIView* darkLayer;
+@property UIImageView* blurryLayer;
 @end
 
 @implementation MenuDetailProductViewController
@@ -62,20 +63,44 @@
     // Background color
     self.view.backgroundColor = [UIColor blackColor];
         
-    // Adding background UIImageView to a table
+//    // Adding background UIImageView to a table
+//    UIImage *blurredImage = [UIImage blurryGPUImage:[UIImage imageNamed:@"backgroundLayer.jpg"]];
+//    
+//    UIImageView *backgroundImageLayer = [[UIImageView alloc]
+//                                         initWithImage:blurredImage];
+//    backgroundImageLayer.layer.zPosition = -1.0;
+//    [backgroundImageLayer setFrame:self.view.frame];
+//    // This way our image wont fool around/hang out betweet transitions    
+//    backgroundImageLayer.clipsToBounds = YES;
+//    [backgroundImageLayer setContentMode:UIViewContentModeScaleAspectFill];
+//    [self.view addSubview:backgroundImageLayer];
+//    
+//    // Adding layer of dark and blur
+//    [backgroundImageLayer applyDarkBackground];
+    
+    
+    // Adding background UIImageView to a Scroll View
+    _blurryLayer = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"backgroundLayer.jpg"]];
+    _blurryLayer.layer.zPosition = -1.0;
+    [_blurryLayer setFrame:self.view.frame];
+    // This way our image wont fool around/hang out betweet transitions
+    _blurryLayer.clipsToBounds = YES;
+    [_blurryLayer setContentMode:UIViewContentModeScaleAspectFill];
+    [self.view addSubview:_blurryLayer];
+    
     UIImage *blurredImage = [UIImage blurryGPUImage:[UIImage imageNamed:@"backgroundLayer.jpg"]];
     
-    UIImageView *backgroundImageLayer = [[UIImageView alloc]
-                                         initWithImage:blurredImage];
-    backgroundImageLayer.layer.zPosition = -1.0;
-    [backgroundImageLayer setFrame:self.view.frame];
-    // This way our image wont fool around/hang out betweet transitions    
-    backgroundImageLayer.clipsToBounds = YES;
-    [backgroundImageLayer setContentMode:UIViewContentModeScaleAspectFill];
-    [self.view addSubview:backgroundImageLayer];
+    _blurryLayer.image = blurredImage;
     
-    // Adding layer of dark and blur
-    [backgroundImageLayer applyDarkBackground];
+    // Adding dark background to a Scroll View
+    _darkLayer = [UIView createDarkBackgroundUnderScrollView:self.detailProductScrollView];
+    [self.detailProductScrollView addSubview:_darkLayer];
+}
+
+-(void)viewWillLayoutSubviews {
+//  We also need to set the frame in viewWillLayoutSubviews to fill the whole scrollView with dark/blurry background
+    _blurryLayer.frame = CGRectMake(_blurryLayer.bounds.origin.x, _blurryLayer.bounds.origin.y + self.view.bounds.origin.y, _blurryLayer.frame.size.width, _blurryLayer.frame.size.height);
+    _darkLayer.frame = CGRectMake(_darkLayer.bounds.origin.x, _darkLayer.bounds.origin.y + self.view.bounds.origin.y, _darkLayer.frame.size.width, _darkLayer.frame.size.height);
 }
 
 - (void)didReceiveMemoryWarning {

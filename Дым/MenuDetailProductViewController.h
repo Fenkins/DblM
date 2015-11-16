@@ -10,7 +10,7 @@
 #import <ParseUI.h>
 #import <Bolts.h>
 #import <UIKit/UIKit.h>
-#import "UIImageView+DarkBlurry.h"
+#import "UIView+DarkBlurry.h"
 #import "UIImage+GPUImageBlur.h"
 #import "NSString+PriceInRubles.h"
 
@@ -20,5 +20,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *productDescriptionLabel;
 @property (weak, nonatomic) IBOutlet UILabel *productNameLabel;
 @property (weak, nonatomic) IBOutlet UILabel *productSpecialPriceLabel;
+
+@property (strong, nonatomic) IBOutlet UIScrollView *detailProductScrollView;
 @property (nonatomic) PFObject *object;
 @end
