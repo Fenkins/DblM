@@ -14,8 +14,8 @@
 #import "LocationSupplementary.h"
 #import "PFQueryTableViewController+ChangeLoadingLabelColor.h"
 #import "UIImageView+DarkBlurry.h"
-//#import "UIImage+vImageBlur.h"
 #import "UIImage+GPUImageBlur.h"
+#import "NSString+PriceInRubles.h"
 
 @interface MenuDetailTableViewController : PFQueryTableViewController
 @property (nonatomic) NSString* menuName;

@@ -206,7 +206,7 @@
     }
 }
 
-- (void)drawCircleBackgroundForView:(UIView*)view edge:(CGFloat)edge opacity:(CGFloat)opacity strokeColor:(UIColor*)strokeColor fillColor:(UIColor*)fillColor useCurrentSizeOfView:(BOOL)useViewSize{
+- (void)drawCircleBackgroundForView:(UIView*)view edge:(CGFloat)edge opacity:(CGFloat)opacity strokeColor:(UIColor*)strokeColor fillColor:(UIColor*)fillColor useCurrentSizeOfView:(BOOL)useViewSize {
     CAShapeLayer* circleLayer = [CAShapeLayer layer];
     if (useViewSize) {
         [circleLayer setPath:[[UIBezierPath bezierPathWithOvalInRect:CGRectMake(-edge, -edge, view.bounds.size.width + edge*2, view.bounds.size.width + edge*2)]CGPath]];
