@@ -13,6 +13,7 @@
 @end
 
 static const NSString* kCCStaffMembersClassKey = @"StuffMembers";
+// Will make a query for a table to find Administrators, all calls will be directed to them
 static const NSString* kCCStaffPositionKey = @"Administrator";
 static const NSString* kCCPhoneNumberKey = @"phoneNumber";
 
@@ -31,8 +32,7 @@ static const NSString* kCCPhoneNumberKey = @"phoneNumber";
     }
     [query getFirstObjectInBackgroundWithBlock:^(PFObject *object, NSError *error) {
         if (!object) {
-            // DEFAULT PHONE NUMBER / CHANGE UPON RELEASE
-            _phoneNumber = @"9286110200";
+            _phoneNumber = @"9287772036";
             NSLog(@"Error while quering for phone number, %@",error);
         } else {
             // Administrator found
@@ -73,6 +73,10 @@ static const NSString* kCCPhoneNumberKey = @"phoneNumber";
 */
 
 - (IBAction)callUsButton:(UIButton *)sender {
+    // Our user could be impatient, so if we dont have proper number on our hands, we'll give him that one right away
+    if (!_phoneNumber) {
+        _phoneNumber = @"9287772036";
+    }
     NSURL *phoneUrl = [NSURL URLWithString:[NSString  stringWithFormat:@"telprompt://+7%@",_phoneNumber]];
     
     if ([[UIApplication sharedApplication] canOpenURL:phoneUrl]) {

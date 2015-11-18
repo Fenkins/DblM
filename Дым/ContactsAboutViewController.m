@@ -65,8 +65,7 @@ static const NSString* kCCnullStringPhrase = @"Сегодня мы работа�
     }
     [query getFirstObjectInBackgroundWithBlock:^(PFObject *object, NSError *error) {
         if (!object) {
-            // DEFAULT PHONE NUMBER / CHANGE UPON RELEASE
-            locationPhoneNumber = [NSNumber numberWithInt:(int)9286110200];
+            locationPhoneNumber = [NSNumber numberWithInt:(int)9287772036];
             locationVKLink = @"https://vk.com/dym_rostov";
             locationInstagramLink = @"https://instagram.com/dym_rostov/";
             NSLog(@"Error while quering for phone number, %@",error);
@@ -203,13 +202,13 @@ static const NSString* kCCnullStringPhrase = @"Сегодня мы работа�
 
 -(void)presentAlertSheet {
 
-    UIAlertController* alert = [UIAlertController alertControllerWithTitle:@"Choose Map App to open"
+    UIAlertController* alert = [UIAlertController alertControllerWithTitle:@"Показать на карте"
                                                                    message:nil
                                                             preferredStyle:UIAlertControllerStyleActionSheet];
     
     
     if ([[UIApplication sharedApplication]canOpenURL:[NSURL URLWithString:@"comgooglemaps://"]]) {
-        UIAlertAction* googleMapsButton = [UIAlertAction actionWithTitle:@"Open with Google Maps"
+        UIAlertAction* googleMapsButton = [UIAlertAction actionWithTitle:@"Google Maps"
                                                                    style:UIAlertActionStyleDefault
                                                                  handler:^(UIAlertAction * action) {
                                                                      NSString *string = [NSString stringWithFormat:@"comgooglemaps://?q=%@&center=%f,%f&zoom=16",locationPlaceName,desiredLocation.latitude,desiredLocation.longitude];
@@ -219,7 +218,7 @@ static const NSString* kCCnullStringPhrase = @"Сегодня мы работа�
         [alert addAction:googleMapsButton];
     }
     if ([[UIApplication sharedApplication]canOpenURL:[NSURL URLWithString:@"yandexmaps://"]]) {
-        UIAlertAction* yandexMapsButton = [UIAlertAction actionWithTitle:@"Open with Yandex Maps"
+        UIAlertAction* yandexMapsButton = [UIAlertAction actionWithTitle:@"Yandex Maps"
                                                                    style:UIAlertActionStyleDefault
                                                                  handler:^(UIAlertAction * action) {
                                                                      NSString *string = [NSString stringWithFormat:@"yandexmaps://?pt=%f,%f&z=16",desiredLocation.longitude,desiredLocation.latitude];
@@ -229,7 +228,7 @@ static const NSString* kCCnullStringPhrase = @"Сегодня мы работа�
         [alert addAction:yandexMapsButton];
     }
     if (true) {
-        UIAlertAction* appleMapsButton = [UIAlertAction actionWithTitle:@"Open with Apple Maps"
+        UIAlertAction* appleMapsButton = [UIAlertAction actionWithTitle:@"Apple Maps"
                                                                   style:UIAlertActionStyleDefault
                                                                 handler:^(UIAlertAction * action) {
                                                                     MKPlacemark* placeMark = [[MKPlacemark alloc]initWithCoordinate:desiredLocation addressDictionary:nil];
@@ -240,7 +239,7 @@ static const NSString* kCCnullStringPhrase = @"Сегодня мы работа�
                                                                 }];
         [alert addAction:appleMapsButton];
     }
-    UIAlertAction* cancelAction = [UIAlertAction actionWithTitle:@"Cancel" style:UIAlertActionStyleCancel handler:nil];
+    UIAlertAction* cancelAction = [UIAlertAction actionWithTitle:@"Отмена" style:UIAlertActionStyleCancel handler:nil];
     [alert addAction:cancelAction];
     [self presentViewController:alert animated:YES completion:nil];
 }
@@ -258,8 +257,7 @@ static const NSString* kCCnullStringPhrase = @"Сегодня мы работа�
             if (!object) {
                 NSLog(@"Error while quering for location,using default one %@",error);
                 desiredLocation = CLLocationCoordinate2DMake(47.219722, 39.715085);
-                // CHANGE THIS NUMBER UPON RELEASE
-                locationPhoneNumber = [NSNumber numberWithInt:(int)9286110200];
+                locationPhoneNumber = [NSNumber numberWithInt:(int)9287772036];
                 locationName = @"Дым Серафимовича";
                 NSString* locationPlaceNameTemp = @"Россия, Ростов-на-Дону, Серафимовича 74";
                 locationPlaceName = [locationPlaceNameTemp stringByReplacingOccurrencesOfString:@" " withString:@"+"];
@@ -305,6 +303,10 @@ static const NSString* kCCnullStringPhrase = @"Сегодня мы работа�
 }
 
 - (IBAction)callButton:(UIButton *)sender {
+    // Our user could be impatient, so if we dont have proper number on our hands, we'll give him that one right away
+    if (!locationPhoneNumber) {
+        locationPhoneNumber = [NSNumber numberWithInt:(int)9287772036];
+    }
     NSURL *phoneUrl = [NSURL URLWithString:[NSString  stringWithFormat:@"telprompt://+7%@",locationPhoneNumber]];
     
     if ([[UIApplication sharedApplication] canOpenURL:phoneUrl]) {
@@ -317,6 +319,10 @@ static const NSString* kCCnullStringPhrase = @"Сегодня мы работа�
 }
 
 - (IBAction)vkButton:(UIButton *)sender {
+    // Our user could be impatient, so if we dont have proper number on our hands, we'll give him that one right away
+    if (!locationVKLink) {
+        locationVKLink = @"https://vk.com/dym_rostov";
+    }
     if ([[UIApplication sharedApplication]canOpenURL:[NSURL URLWithString:@"vk://"]]) {
         [[UIApplication sharedApplication]openURL:[NSURL URLWithString:[NSString stringWithFormat:@"vk://%@",locationVKLink]]];
     } else {
@@ -325,6 +331,10 @@ static const NSString* kCCnullStringPhrase = @"Сегодня мы работа�
 }
 
 - (IBAction)instagramButton:(UIButton *)sender {
+    // Our user could be impatient, so if we dont have proper number on our hands, we'll give him that one right away
+    if (!locationInstagramLink) {
+        locationInstagramLink = @"https://instagram.com/dym_rostov/";
+    }
     if ([[UIApplication sharedApplication]canOpenURL:[NSURL URLWithString:@"instagram://"]]) {
         [[UIApplication sharedApplication]openURL:[NSURL URLWithString:[NSString stringWithFormat:@"instagram://%@",locationInstagramLink]]];
     } else {
