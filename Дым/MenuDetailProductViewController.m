@@ -48,7 +48,7 @@
         self.productPriceLabel.text = [NSString priceWithCurrencySymbol:[_object objectForKey:@"priceRegular"] kopeikasEnabled:NO];
         // Moving label to the center
         [UILabel animateWithDuration:0.0 animations:^{
-            self.productPriceLabel.transform = CGAffineTransformMakeTranslation(self.view.frame.size.width/2, 0.0);
+            self.productPriceLabel.transform = CGAffineTransformMakeTranslation(self.view.frame.size.width/4, 0.0);
         }];
         self.productSpecialPriceLabel.hidden = YES;
     }
